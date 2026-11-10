@@ -1,0 +1,27 @@
+{
+  "source_id": "mcp-tools-2025",
+  "catalog_url": "https://modelcontextprotocol.io/specification/2025-11-25/server/tools",
+  "catalog_title": "MCP tools, revision 2025-11-25",
+  "catalog_product": "MCP",
+  "catalog_versions": [
+    "2025-11-25"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:10.651687+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://modelcontextprotocol.io/specification/2025-11-25/server/tools",
+  "requested_url": "https://modelcontextprotocol.io/specification/2025-11-25/server/tools",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "e8caa37281ce113106080a6ae918711442ecc34c6bfd3258f701d6e8e68752d6",
+  "raw_bytes": 395898,
+  "extracted_sha256": "d89d203fbce42d758b8777fa52ad91ea072ca3084db4b2fb95ecfb24599bc9a9",
+  "extracted_bytes": 12075,
+  "words": 1619,
+  "document_title": "Tools - Model Context Protocol",
+  "extracted_links": 36,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:11.913100+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Authenticating Requests (AWS Signature Version 4) - Amazon Simple Storage Service</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="sig-v4-authenticating-requests" /><meta name="default_state" content="sig-v4-authenticating-requests" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html" /><link rel="alternate" type="text/markdown" href="https://docs.aws.amazon.com/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.md" title="Markdown version" /><meta name="description" content="Learn how AWS authenticates requests with HTTP headers or query string parameters." /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Simple Storage Service" /><meta name="guide" content="Developer Guide" /><meta name="abstract" content="Learn how to develop applications with Amazon Simple Storage Service (Amazon S3) using the REST API. This guide provides information about making requests, authentication, error handling, and other developer-focused topics." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html" /><link rel="alternate" href="https://docs.aws.amazon.com/id_id/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html" hreflang="id-id" /><link rel="alternate" href="https://docs.aws.amazon.com/id_id/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html" hreflang="id" /><link rel="alternate" href="https://docs.aws.amazon.com/de_de/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html" hreflang="de-de" /><link rel="alternate" href="https://docs.aws.amazon.com/de_de/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html" hreflang="de" /><link rel="alternate" href="https://docs.aws.amazon.com/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html" hreflang="en-us" /><link rel="alternate" href="https://docs.aws.amazon.com/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html" hreflang="en" /><link rel="alternate" href="https://docs.aws.amazon.com/es_es/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html" hreflang="es-es" /><link rel="alternate" href="https://docs.aws.amazon.com/es_es/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html" hreflang="es" /><link rel="alternate" href="https://docs.aws.amazon.com/fr_fr/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html" hreflang="fr-fr" /><link rel="alternate" href="https://docs.aws.amazon.com/fr_fr/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html" hreflang="fr" /><link rel="alternate" href="https://docs.aws.amazon.com/it_it/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html" hreflang="it-it" /><link rel="alternate" href="https://docs.aws.amazon.com/it_it/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html" hreflang="it" /><link rel="alternate" href="https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html" hreflang="ja-jp" /><link rel="alternate" href="https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html" hreflang="ja" /><link rel="alternate" href="https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html" hreflang="ko-kr" /><link rel="alternate" href="https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html" hreflang="ko" /><link rel="alternate" href="https://docs.aws.amazon.com/pt_br/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html" hreflang="pt-br" /><link rel="alternate" href="https://docs.aws.amazon.com/pt_br/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html" hreflang="pt" /><link rel="alternate" href="https://docs.aws.amazon.com/zh_cn/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html" hreflang="zh-cn" /><link rel="alternate" href="https://docs.aws.amazon.com/zh_tw/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html" hreflang="zh-tw" /><link rel="alternate" href="https://docs.aws.amazon.com/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html" hreflang="x-default" /><meta name="feedback-item" content="S3" /><meta name="this_doc_product" content="Amazon Simple Storage Service" /><meta name="this_doc_guide" content="Developer Guide" /><head xmlns="http://www.w3.org/1999/xhtml"> <script defer="" src="/assets/r/awsdocs-doc-page.2.0.0.js"></script><link href="/assets/r/awsdocs-doc-page.2.0.0.css" rel="stylesheet"/></head>
+<script defer="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'s3'}"></script><meta id="panorama-serviceSubSection" value="Developer Guide" /><meta id="panorama-serviceConsolePage" value="Authenticating Requests (AWS Signature Version 4)" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><p><a href="sig-v4-authenticating-requests.md">View a markdown version of this page</a></p><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Authenticating Requests (AWS Signature Version 4) - Amazon Simple Storage Service</title><meta name="pdf" content="/pdfs/AmazonS3/latest/developerguide/s3-devguide.pdf#sig-v4-authenticating-requests" /><meta name="rss" content="s3-devguide-rss-updates.rss" /><meta name="forums" content="https://repost.aws/tags/TADSTjraA0Q4-a1dxk6eUYaw" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=S3&amp;topic_url=https://docs.aws.amazon.com/en_us/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=https://docs.aws.amazon.com/en_us/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=https://docs.aws.amazon.com/en_us/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html" /><meta name="keywords" content="S3,Amazon S3,S3 Developer Guide,Amazon S3 Developer Guide,REST API,authentication,signing requests,AWS request authentication process,HTTP Authorization header,Query string parameters for authentication,Signing Requests" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Simple Storage Service (S3)",
+        "item" : "https://docs.aws.amazon.com/s3/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "Developer Guide",
+        "item" : "https://docs.aws.amazon.com/AmazonS3/latest/developerguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Authenticating Requests (AWS Signature Version 4)",
+        "item" : "https://docs.aws.amazon.com/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/AmazonS3/latest/developerguide/s3-devguide.pdf#sig-v4-authenticating-requests" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="/index.html">Documentation</a><a href="/s3/index.html">Amazon Simple Storage Service (S3)</a><a href="Welcome.html">Developer Guide</a></div><div id="page-toc-src"><a href="#auth-methods-intro">Authentication Methods</a><a href="#signing-request-intro">Introduction to Signing Requests</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="sig-v4-authenticating-requests">Authenticating Requests (AWS Signature Version 4)</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><div class="highlights"><h6>Topics</h6><ul><li><p><a href="#auth-methods-intro">Authentication Methods</a></p></li><li><p><a href="#signing-request-intro">Introduction to Signing Requests</a></p></li><li><p><a href="./sigv4-auth-using-authorization-header.html">Authenticating Requests: Using the Authorization Header (AWS Signature Version 4)</a></p></li><li><p><a href="./sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a></p></li><li><p><a href="./sig-v4-examples-using-sdks.html">Examples: Signature Calculations in AWS Signature Version 4</a></p></li><li><p><a href="./sigv4-authentication-HTTPPOST.html">Authenticating Requests: Browser-Based Uploads Using POST (AWS Signature Version 4)</a></p></li><li><p><a href="./bucket-policy-s3-sigv4-conditions.html">Amazon S3 Signature Version 4 Authentication Specific Policy Keys</a></p></li></ul></div><p>Every interaction with Amazon S3 is either authenticated or anonymous. This section explains
+		request authentication with the AWS Signature Version 4 algorithm.</p><p>
+		</p><div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>If you use the AWS SDKs (see <a href="https://aws.amazon.com/code" rel="noopener noreferrer" target="_blank"><span>Sample Code and
+				Libraries</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>) to send your requests, you don't need to read this section
+			because the SDK clients authenticate your requests by using access keys that you
+			provide. Unless you have a good reason not to, you should always use the AWS SDKs. In
+			Regions that support both signature versions, you can request AWS SDKs to use specific
+			signature version. For more information, see <a href="./AuthUsingAcctOrUserCredentials.html#send-authenticated-request-SDKs">Sending authenticated requests using the AWS SDKs</a>. You need to read this section only if you are
+			implementing the AWS Signature Version 4 algorithm in your custom client. </p></div></div><p>Authentication with AWS Signature Version 4 provides some or all of the following, depending
+		on how you choose to sign your request:</p><p>
+		</p><div class="itemizedlist">
+			 
+			 
+			 
+		<ul class="itemizedlist"><li class="listitem">
+				<p><span class="topcom"> Verification of the identity of the requester</span> –
+					Authenticated requests require a signature that you create by using your access
+					keys (access key ID, secret access key). For information about getting access
+					keys, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html">Understanding and Getting Your 
+						Security Credentials</a> in the <em>AWS General Reference</em>. If
+					you are using temporary security credentials, the signature calculations also
+					require a security token. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting Temporary Security
+						Credentials</a> in the <em>IAM User Guide</em>. </p>
+			</li><li class="listitem">
+				<p><span class="topcom">In-transit data protection</span> – In order to prevent
+					tampering with a request while it is in transit, you use some of the request
+					elements to calculate the request signature. Upon receiving the request, Amazon S3
+					calculates the signature by using the same request elements. If any request
+					component received by Amazon S3 does not match the component that was used to
+					calculate the signature, Amazon S3 will reject the request.</p>
+			</li><li class="listitem">
+				<p><span class="topcom">Protect against reuse of the signed portions of the request</span>
+				– The signed portions (using AWS Signatures) of requests are valid within 15
+				minutes of the timestamp in the request. An unauthorized party who has access to a
+				signed request can modify the unsigned portions of the request without affecting the
+				request's validity in the 15 minute window. Because of this, we recommend that you
+				maximize protection by signing request headers and body, making HTTPS requests to
+				Amazon S3, and by using the <code class="code">s3:x-amz-content-sha256</code> condition key (see <a href="./bucket-policy-s3-sigv4-conditions.html">Amazon S3 Signature Version 4 Authentication Specific Policy Keys</a>) in AWS policies to require
+				users to sign Amazon S3 request bodies. </p>
+			</li></ul></div><p></p><div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>Amazon S3 supports Signature Version 4, a protocol for authenticating inbound API requests to AWS
+			services, in all AWS Regions. At this time, AWS Regions created before January 30, 2014
+			will continue to support the previous protocol, Signature Version 2. Any new Regions
+			after January 30, 2014 will support only Signature Version 4 and therefore all requests
+			to those Regions must be made with Signature Version 4.
+			For
+			more information about AWS Signature Version 2, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/RESTAuthentication.html">Signing and Authenticating REST
+				Requests</a> in the <em>Amazon Simple Storage Service User Guide</em>. </p></div></div><h2 id="auth-methods-intro">Authentication Methods</h2>
+		
+
+		<p>You can express authentication information by using one of the following
+			methods:</p>
+		<p>
+			</p><div class="itemizedlist">
+				 
+				 
+
+			<ul class="itemizedlist"><li class="listitem">
+					<p><span class="topcom">HTTP Authorization header</span> – Using the HTTP
+							<code class="code">Authorization</code> header is the most common method of
+						authenticating an Amazon S3 request. All of the Amazon S3 REST operations (except for
+						browser-based uploads using POST requests) require this header. For more
+						information about the <code class="code">Authorization</code> header value, and how to calculate signature
+						and related options, see <a href="./sigv4-auth-using-authorization-header.html">Authenticating Requests: Using the Authorization Header (AWS Signature Version 4)</a>.</p>
+				</li><li class="listitem">
+					<p><span class="topcom">Query string parameters</span> – You can use
+						a query string to express a request entirely in a URL. In this case, you use
+						query parameters to provide request information, including the
+						authentication information. Because the request signature is part of the
+						URL, this type of URL is often referred to as a presigned URL. You can use
+						presigned URLs to embed clickable links, which can be valid for up to seven
+						days, in HTML. For more information, see <a href="./sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>. </p>
+				</li></ul></div>
+		<p> Amazon S3 also supports browser-based uploads that use HTTP POST requests. With an HTTP POST
+			request, you can upload content to Amazon S3 directly from the browser. For information about
+			authenticating POST requests, see <a href="./sigv4-UsingHTTPPOST.html">Browser-Based Uploads Using POST (AWS Signature Version 4)</a>.</p>
+		<p></p>
+		<p></p>
+	<h2 id="signing-request-intro">Introduction to Signing Requests</h2>
+		
+
+
+		<p>Authentication information that you send in a request must include a signature. To
+			calculate a signature, you first concatenate select request elements to form a string,
+			referred to as the <em>string to sign</em>. You then use a signing key to
+			calculate the hash-based message authentication code (HMAC) of the string to sign. </p>
+		<p>In AWS Signature Version 4, you don't use your secret access key to sign the request.
+			Instead, you first use your secret access key to derive a signing key.
+			
+			The derived signing key is specific to the date, service, and Region. For more information about how to derive a signing key in different programming languages, see <a href="https://docs.aws.amazon.com/general/latest/gr/signature-v4-examples.html">Examples of how to derive a signing key for Signature Version 4</a>.
+			
+		</p>
+		<p>The following diagram illustrates the general process of computing a signature.</p>
+	
+			<div class="mediaobject">
+				 
+					<img src="/images/AmazonS3/latest/developerguide/images/signing-overview.png" class="aws-docs-img-whiteBg aws-docs-img-padding" alt="Three-step process showing StringToSign creation, signing key derivation, and signature computation using HMAC-SHA256." data-alt-text-source="generated" />
+				 
+				 
+			</div>
+		
+		<p>The string to sign depends on the request type. For example, when you use the HTTP
+			Authorization header or the query parameters for authentication, you use a varying
+			combination of request elements to create the string to sign. For an HTTP POST request,
+			the POST policy in the request is the string you sign. For more information about
+			computing string to sign, follow links provided at the end of this section.</p>
+		<p>For signing key, the diagram shows series of calculations, where result of each step you
+			feed into the next step. The final step is the signing key.</p>
+		<p>Upon receiving an authenticated request, Amazon S3 servers re-create the signature by using
+			the authentication information that is contained in the request. If the signatures
+			match, Amazon S3 processes your request; otherwise, the request is rejected.
+			</p>
+		<p>For more information about authenticating requests, see the following topics:</p>
+		<div class="itemizedlist">
+			 
+			 
+			 
+		<ul class="itemizedlist"><li class="listitem">
+				<p><a href="./sigv4-auth-using-authorization-header.html">Authenticating Requests: Using the Authorization Header (AWS Signature Version 4)</a></p>
+			</li><li class="listitem">
+				<p><a href="./sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a></p>
+			</li><li class="listitem">
+				<p><a href="./sigv4-UsingHTTPPOST.html">Browser-Based Uploads Using POST (AWS Signature Version 4)</a></p>
+			</li></ul></div>
+	<awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./s3-directory-buckets_example_s3-directory-buckets_GeneratePresignedGetURLForDirectoryBucket_section.html">Create a presigned URL to get an object</div><div id="next" class="next-link" accesskey="n" href="./sigv4-auth-using-authorization-header.html">Using an Authorization Header</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=S3&amp;topic_url=https://docs.aws.amazon.com/en_us/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=S3&amp;topic_url=https://docs.aws.amazon.com/en_us/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

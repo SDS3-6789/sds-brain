@@ -1,0 +1,27 @@
+{
+  "source_id": "aws-s3-access-denied",
+  "catalog_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/troubleshoot-403-errors.html",
+  "catalog_title": "Troubleshoot access denied errors",
+  "catalog_product": "Amazon S3",
+  "catalog_versions": [
+    "service-current-reference"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:32.607827+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/troubleshoot-403-errors.html",
+  "requested_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/troubleshoot-403-errors.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "ee60a4e0eff04aa1ec29db1b9b94a84e1e3793e0e87fb37c8143437aba4c37c3",
+  "raw_bytes": 114150,
+  "extracted_sha256": "9454c9df1baf8613312d30a4b94563865248ef9eca994b09d2586e75c017c29f",
+  "extracted_bytes": 49460,
+  "words": 7614,
+  "document_title": "Troubleshoot access denied (403 Forbidden) errors in Amazon S3",
+  "extracted_links": 129,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:33.471850+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

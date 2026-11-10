@@ -1,0 +1,27 @@
+{
+  "source_id": "prometheus-naming",
+  "catalog_url": "https://prometheus.io/docs/practices/naming/",
+  "catalog_title": "Prometheus metric and label naming",
+  "catalog_product": "Prometheus",
+  "catalog_versions": [
+    "general"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:13.181945+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://prometheus.io/docs/practices/naming/",
+  "requested_url": "https://prometheus.io/docs/practices/naming/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "9087c5e09167c79031dc153a03e933a86b82cc9d5f3b685a520b4f22bbdac33b",
+  "raw_bytes": 201773,
+  "extracted_sha256": "27604a642aa166b70fce76e0c9f252204d57b3a97df8c26fc5136e0971f28a51",
+  "extracted_bytes": 6915,
+  "words": 1024,
+  "document_title": "Metric and label naming",
+  "extracted_links": 7,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:15.527459+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

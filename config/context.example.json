@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "customer": "customer-a",
+  "cluster": "cluster-a",
+  "classification": "private",
+  "inventory_verified": false,
+  "backend": null,
+  "ceph": {
+    "fsid": null,
+    "distribution": "Red Hat Ceph Storage - reported, verify per cluster",
+    "vendor_release": null,
+    "daemon_versions": [],
+    "container_images_and_digests": [],
+    "rgw_realms_zones_and_endpoints": [],
+    "read_only_identity_reference": null
+  },
+  "storagegrid": {
+    "version_and_build": null,
+    "grid_alias": null,
+    "tenant_ids_in_scope": [],
+    "s3_endpoints": [],
+    "management_api_version": null
+  },
+  "linux": {"release": null, "kernel": null, "podman": null},
+  "hardware": {"model": null, "generation": null, "ilo_version": null, "controller": null},
+  "observability": {
+    "grafana_url_reference": null,
+    "grafana_version": null,
+    "datasource_uids": [],
+    "elasticsearch_version": null,
+    "authorized_index_aliases": [],
+    "timestamp_field": null,
+    "customer_field": null,
+    "cluster_field": null,
+    "request_id_field": null,
+    "prometheus_present": null,
+    "exporter_schema_reference": null,
+    "dashboard_ids": []
+  },
+  "objectify": {"config_path_reference": null, "openapi_sha256": null},
+  "confluence": {"deployment": null, "space_ids_in_scope": []},
+  "incident_time_zone": "UTC",
+  "secrets": "Store secret references only. Actual values belong in the approved runtime credential mechanism."
+}

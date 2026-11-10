@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg119-client-ports",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/admin/summary-ip-addresses-and-ports-for-client-connections.html",
+  "catalog_title": "IP addresses and ports for client connections",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "11.9"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:30.796231+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-119/admin/summary-ip-addresses-and-ports-for-client-connections.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-119/admin/summary-ip-addresses-and-ports-for-client-connections.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "abc3858b55fa7f22d9f09ba6bafc8d71996461a523913fd3241eac623aa74387",
+  "raw_bytes": 59113,
+  "extracted_sha256": "2493212a5d4a81ef962a77c94b993b8e224eb61a18c99c27644a4a1d579a5804",
+  "extracted_bytes": 3567,
+  "words": 624,
+  "document_title": "Summary: IP addresses and ports for client connections",
+  "extracted_links": 4,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:33.411013+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

@@ -1,0 +1,27 @@
+{
+  "source_id": "aws-s3-list-multipart",
+  "catalog_url": "https://docs.aws.amazon.com/cli/latest/reference/s3api/list-multipart-uploads.html",
+  "catalog_title": "AWS CLI list-multipart-uploads reference",
+  "catalog_product": "Amazon S3",
+  "catalog_versions": [
+    "service-current-reference"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:34.639293+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.aws.amazon.com/cli/latest/reference/s3api/list-multipart-uploads.html",
+  "requested_url": "https://docs.aws.amazon.com/cli/latest/reference/s3api/list-multipart-uploads.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "9acf2bb2adb382ab3ed237332ce8cd6c32918a6d30157d1362d3c56fb6e9abe9",
+  "raw_bytes": 60452,
+  "extracted_sha256": "b2c35a0ab183825f985a60d1174245228b862dd4c78f223b322d4f210b699b2f",
+  "extracted_bytes": 23567,
+  "words": 3479,
+  "document_title": "list-multipart-uploads\u00b6",
+  "extracted_links": 49,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:36.949732+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

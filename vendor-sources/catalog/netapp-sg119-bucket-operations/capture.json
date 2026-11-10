@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg119-bucket-operations",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/s3/operations-on-buckets.html",
+  "catalog_title": "StorageGRID operations on buckets",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "11.9"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:26.835581+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-119/s3/operations-on-buckets.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-119/s3/operations-on-buckets.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "deaad6511bc957c6541e6d2533dd34d5a33bae6ffde1a413f06377cbcee13a30",
+  "raw_bytes": 76854,
+  "extracted_sha256": "bc1830efef26b88feb01ebebeb8c19e03e364ecac5c824ffeb4c9ba994e480ff",
+  "extracted_bytes": 13634,
+  "words": 2053,
+  "document_title": "Operations on buckets",
+  "extracted_links": 18,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:29.376049+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

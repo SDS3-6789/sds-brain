@@ -1,0 +1,27 @@
+{
+  "source_id": "grafana-prometheus",
+  "catalog_url": "https://grafana.com/docs/grafana/latest/datasources/prometheus/",
+  "catalog_title": "Grafana Prometheus data source",
+  "catalog_product": "Grafana",
+  "catalog_versions": [
+    "installed version unknown"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:11.847076+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://grafana.com/docs/grafana/latest/datasources/prometheus/",
+  "requested_url": "https://grafana.com/docs/grafana/latest/datasources/prometheus/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "61f1024e44a1c91defbbfa72a27da79a46c6dbcd297514eb1c070cb01f295460",
+  "raw_bytes": 337723,
+  "extracted_sha256": "0c0004620a9f23306bdc7c9ec77685acc658e12075d0b40de08241f312de86da",
+  "extracted_bytes": 6636,
+  "words": 980,
+  "document_title": "Prometheus data source",
+  "extracted_links": 42,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:14.252028+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

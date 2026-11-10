@@ -1,0 +1,14 @@
+{
+  "name": "sds-storage-brain",
+  "owner": {
+    "name": "SDS Team"
+  },
+  "plugins": [
+    {
+      "name": "team-brain",
+      "source": "./plugins/team-brain",
+      "description": "Offline SDS knowledge and storage investigation workflows.",
+      "version": "0.4.0"
+    }
+  ]
+}

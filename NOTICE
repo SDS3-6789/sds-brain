@@ -1,0 +1,19 @@
+SDS Storage Brain 0.4.0
+
+New repository implementation prepared for the user's SDS storage environment.
+Architecture inspiration: https://github.com/team-redbull/redbull-brain
+The local plugins/team-brain path hierarchy follows a pinned tree from that repository. SDS plugin code and workflows are original adaptations; copied or derived Apache-2.0 components retain their original license and attribution. No internal fleet data or credentials from the reference team are bundled. Third-party archive provenance and intended activation boundaries are documented in the plugin guide and reference-tree record.
+
+The source catalog points to third-party documentation. Original summaries and investigation guidance identify their sources. Linked documentation remains subject to its owner's terms and license. Authorized locally imported corpora retain their source restrictions and are excluded from the shared package by default.
+
+The Grafana integration bundles unmodified official mcp-grafana v2.2.0 release archives from https://github.com/grafana/mcp-grafana. Copyright 2025 Grafana Labs. This upstream component is licensed under Apache-2.0; the complete pinned upstream license is included at mcp/grafana/LICENSE.upstream. Archive provenance and checksums are recorded in mcp/grafana/release-manifest.json. The SDS launcher and integration configuration are separate original files. Preserve the upstream license and applicable notices when redistributing the archives.
+
+The exact local plugin hierarchy also contains three official containers/kubernetes-mcp-server v0.0.67 release bundles from https://github.com/containers/kubernetes-mcp-server. Their upstream license and notices remain inside the bundles; the standard Apache-2.0 license copy is retained under plugins/team-brain/third_party/openshift-hypershift/LICENSE. Versions, original download URLs, sizes and SHA-256 pins are recorded in plugins/team-brain/mcp-servers/vendor/manifest.json. Kubernetes execution is disabled in this SDS release.
+
+The additive data/sds-brain.db file contains indexed public document text, source metadata and original document bytes. It grants no additional rights to the included documentation or third-party material. The editable originals and their notices remain in the project. Private/local/customer imports are excluded from this shared snapshot.
+
+No production connectivity, vendor endorsement, support certification or native-client acceptance is implied by this package.
+
+At the user's request, this local package now includes public documentation/source snapshots from the catalog and the official NetAppDocs StorageGRID version repositories. Original captures, source URLs, hashes, version commits, original legal notices and searchable-derivative transformations are retained under vendor-sources/ and documented in docs/OFFLINE_KNOWLEDGE.md. Documentation remains subject to its original publisher's terms; no new or inferred documentation license is granted by SDS. Credential-shaped public examples are redacted only in the searchable derivatives, with original-byte provenance retained. These snapshots do not include private customer material or a comprehensive mirror of all vendor content.
+
+The optional Red Hat OKP MCP integration references rhel-lightspeed/okp-mcp (Apache-2.0) and the separately entitled Red Hat Offline Knowledge Portal. Only original SDS deployment templates, client profiles and source references are included; no OKP source code, image, access key or portal corpus is redistributed. Source-review provenance is recorded in mcp/okp/upstream-source.json. Obtain approved images and content under their applicable terms before deployment.

@@ -1,0 +1,27 @@
+{
+  "source_id": "ceph-reef-health",
+  "catalog_url": "https://docs.ceph.com/en/reef/rados/operations/health-checks/",
+  "catalog_title": "Ceph Reef health checks",
+  "catalog_product": "Ceph",
+  "catalog_versions": [
+    "reef"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:03.340707+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.ceph.com/en/reef/rados/operations/health-checks/",
+  "requested_url": "https://docs.ceph.com/en/reef/rados/operations/health-checks/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "7e4c792ca805b2aa30261a1bef8daa97e338ce4974017e19340da4e00029c9ef",
+  "raw_bytes": 145278,
+  "extracted_sha256": "95555e09e8636f6f71cb255963ec9b5220c94043ca15ffc280f5fb8a0aaff5e3",
+  "extracted_bytes": 64083,
+  "words": 9868,
+  "document_title": "Health checks\uf0c1",
+  "extracted_links": 130,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:04.159131+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

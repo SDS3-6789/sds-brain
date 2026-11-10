@@ -1,0 +1,617 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Use the AWS CLI 2.39.7 to run the s3api list-multipart-uploads command." name="description" />
+
+  
+    <title>list-multipart-uploads &#8212; AWS CLI 2.39.7 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../../_static/override.css" />
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/guzzle.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="list-object-annotations" href="list-object-annotations.html" />
+    <link rel="prev" title="list-directory-buckets" href="list-directory-buckets.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+<link rel="alternate" type="text/markdown" href="list-multipart-uploads.md" title="Markdown version" />
+  </head><body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a class="nav-link" href="../../index.html">Home</a></li>
+<li><a class="nav-link" href="https://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a class="nav-link" href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a class="nav-link" href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"  sandbox="allow-scripts"
+                  title="GitHub button showing the number of project stars."></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="list-object-annotations.html" title="list-object-annotations"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="list-directory-buckets.html" title="list-directory-buckets"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">AWS CLI 2.39.7 Command Reference</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >aws</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">s3api</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">list-multipart-uploads</a></li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="list-directory-buckets.html" title="previous chapter (use the left arrow)">&larr; list-directory-buckets</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="list-object-annotations.html" title="next chapter (use the right arrow)">list-object-annotations &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Amazon Web Services logo" height="63" />
+  </a>
+</p>
+  <div>
+    <h3><a href="../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">list-multipart-uploads</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#global-options">Global Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <label for="searchbox">Search box</label>
+        <input id="searchbox" type="search" name="q" style="width: 105px" class="input-small search-query" autocomplete="off" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script src="../../_static/searchbox.js"></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion to improve the documentation? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&topic_url=https%3A%2F%2Fdocs.aws.amazon.com%2Fcli%2Flatest%2Freference/s3api/list-multipart-uploads.html">Give us feedback</a>.
+    <br />
+    If you would like to suggest an improvement or fix for the AWS CLI, check out our <a href="https://github.com/aws/aws-cli/blob/v2/CONTRIBUTING.rst">contributing guide</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="https://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><span class="std std-ref">aws</span></a> . <a class="reference internal" href="index.html#cli-aws-s3api"><span class="std std-ref">s3api</span></a> ]</p>
+<div class="section" id="list-multipart-uploads">
+<span id="cli-aws-s3api-list-multipart-uploads"></span><h1>list-multipart-uploads<a class="headerlink" href="#list-multipart-uploads" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+<p>This operation lists in-progress multipart uploads in a bucket. An in-progress multipart upload is a multipart upload that has been initiated by the <code class="docutils literal notranslate"><span class="pre">CreateMultipartUpload</span></code> request, but has not yet been completed or aborted.</p>
+<div class="admonition note">
+<h3 class='admonition-title'>Note</h3><strong>Directory buckets</strong> - If multipart uploads in a directory bucket are in progress, you can’t delete the bucket until all the in-progress multipart uploads are aborted or completed. To delete these in-progress multipart uploads, use the <code class="docutils literal notranslate"><span class="pre">ListMultipartUploads</span></code> operation to list the in-progress multipart uploads in the bucket and use the <code class="docutils literal notranslate"><span class="pre">AbortMultipartUpload</span></code> operation to abort all the in-progress multipart uploads.</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">ListMultipartUploads</span></code> operation returns a maximum of 1,000 multipart uploads in the response. The limit of 1,000 multipart uploads is also the default value. You can further limit the number of uploads in a response by specifying the <code class="docutils literal notranslate"><span class="pre">max-uploads</span></code> request parameter. If there are more than 1,000 multipart uploads that satisfy your <code class="docutils literal notranslate"><span class="pre">ListMultipartUploads</span></code> request, the response returns an <code class="docutils literal notranslate"><span class="pre">IsTruncated</span></code> element with the value of <code class="docutils literal notranslate"><span class="pre">true</span></code> , a <code class="docutils literal notranslate"><span class="pre">NextKeyMarker</span></code> element, and a <code class="docutils literal notranslate"><span class="pre">NextUploadIdMarker</span></code> element. To list the remaining multipart uploads, you need to make subsequent <code class="docutils literal notranslate"><span class="pre">ListMultipartUploads</span></code> requests. In these requests, include two query parameters: <code class="docutils literal notranslate"><span class="pre">key-marker</span></code> and <code class="docutils literal notranslate"><span class="pre">upload-id-marker</span></code> . Set the value of <code class="docutils literal notranslate"><span class="pre">key-marker</span></code> to the <code class="docutils literal notranslate"><span class="pre">NextKeyMarker</span></code> value from the previous response. Similarly, set the value of <code class="docutils literal notranslate"><span class="pre">upload-id-marker</span></code> to the <code class="docutils literal notranslate"><span class="pre">NextUploadIdMarker</span></code> value from the previous response.</p>
+<div class="admonition note">
+<h3 class='admonition-title'>Note</h3><strong>Directory buckets</strong> - The <code class="docutils literal notranslate"><span class="pre">upload-id-marker</span></code> element and the <code class="docutils literal notranslate"><span class="pre">NextUploadIdMarker</span></code> element aren’t supported by directory buckets. To list the additional multipart uploads, you only need to set the value of <code class="docutils literal notranslate"><span class="pre">key-marker</span></code> to the <code class="docutils literal notranslate"><span class="pre">NextKeyMarker</span></code> value from the previous response.</div>
+<p>For more information about multipart uploads, see <a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading Objects Using Multipart Upload</a> in the <em>Amazon S3 User Guide</em> .</p>
+<div class="admonition note">
+<h3 class='admonition-title'>Note</h3><blockquote class="first">
+<div><strong>Directory buckets</strong> - For directory buckets, you must make requests for this API operation to the Zonal endpoint. These endpoints support virtual-hosted-style requests in the format <a href="#id1"><span class="problematic" id="id2">``</span></a><a class="reference external" href="https://">https://</a><em>amzn-s3-demo-bucket</em> .s3express-<em>zone-id</em> .*region-code* .amazonaws.com/<em>key-name</em> `` . Path-style requests are not supported. For more information about endpoints in Availability Zones, see <a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional and Zonal endpoints for directory buckets in Availability Zones</a> in the <em>Amazon S3 User Guide</em> . For more information about endpoints in Local Zones, see <a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts for directory buckets in Local Zones</a> in the <em>Amazon S3 User Guide</em> .</div></blockquote>
+<p class="last">Permissions</p>
+</div>
+<ul>
+<li><p class="first"><strong>General purpose bucket permissions</strong> - For information about permissions required to use the multipart upload API, see <a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart Upload and Permissions</a> in the <em>Amazon S3 User Guide</em> .</p>
+</li>
+<li><p class="first"><strong>Directory bucket permissions</strong> - To grant access to this API operation on a directory bucket, we recommend that you use the ` <code class="docutils literal notranslate"><span class="pre">CreateSession</span></code> <a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession">https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession</a>.html`__ API operation for session-based authorization. Specifically, you grant the <code class="docutils literal notranslate"><span class="pre">s3express:CreateSession</span></code> permission to the directory bucket in a bucket policy or an IAM identity-based policy. Then, you make the <code class="docutils literal notranslate"><span class="pre">CreateSession</span></code> API call on the bucket to obtain a session token. With the session token in your request header, you can make API requests to this operation. After the session token expires, you make another <code class="docutils literal notranslate"><span class="pre">CreateSession</span></code> API call to generate a new session token for use. Amazon Web Services CLI or SDKs create session and refresh the session token automatically to avoid service interruptions when a session expires. For more information about authorization, see ` <code class="docutils literal notranslate"><span class="pre">CreateSession</span></code> <a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession">https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession</a>.html`__ .</p>
+<p>Sorting of multipart uploads in response</p>
+</li>
+<li><p class="first"><strong>General purpose bucket</strong> - In the <code class="docutils literal notranslate"><span class="pre">ListMultipartUploads</span></code> response, the multipart uploads are sorted based on two criteria:</p>
+<ul class="simple">
+<li>Key-based sorting - Multipart uploads are initially sorted in ascending order based on their object keys.</li>
+<li>Time-based sorting - For uploads that share the same object key, they are further sorted in ascending order based on the upload initiation time. Among uploads with the same key, the one that was initiated first will appear before the ones that were initiated later.</li>
+</ul>
+</li>
+<li><p class="first"><strong>Directory bucket</strong> - In the <code class="docutils literal notranslate"><span class="pre">ListMultipartUploads</span></code> response, the multipart uploads aren’t sorted lexicographically based on the object keys.</p>
+<p>HTTP Host header syntax</p>
+</li>
+</ul>
+<blockquote>
+<div><strong>Directory buckets</strong> - The HTTP Host header syntax is `` <em>Bucket-name</em> .s3express-<em>zone-id</em> .*region-code* .amazonaws.com`` .</div></blockquote>
+<p>The following operations are related to <code class="docutils literal notranslate"><span class="pre">ListMultipartUploads</span></code> :</p>
+<ul class="simple">
+<li><a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a></li>
+<li><a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a></li>
+<li><a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a></li>
+<li><a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a></li>
+<li><a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a></li>
+</ul>
+<div class="admonition warning">
+<h3 class='admonition-title'>Warning</h3>You must URL encode any signed header values that contain spaces. For example, if your header value is <code class="docutils literal notranslate"><span class="pre">my</span> <span class="pre">file.txt</span></code> , containing two spaces after <code class="docutils literal notranslate"><span class="pre">my</span></code> , you must URL encode this value to <code class="docutils literal notranslate"><span class="pre">my%20%20file.txt</span></code> .</div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">AWS API Documentation</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">list-multipart-uploads</span></code> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <code class="docutils literal notranslate"><span class="pre">--no-paginate</span></code> argument.
+When using <code class="docutils literal notranslate"><span class="pre">--output</span> <span class="pre">text</span></code> and the <code class="docutils literal notranslate"><span class="pre">--query</span></code> argument on a paginated response, the <code class="docutils literal notranslate"><span class="pre">--query</span></code> argument must extract data from the results of the following query expressions: <code class="docutils literal notranslate"><span class="pre">Uploads</span></code>, <code class="docutils literal notranslate"><span class="pre">CommonPrefixes</span></code></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="nb">list</span><span class="o">-</span><span class="n">multipart</span><span class="o">-</span><span class="n">uploads</span>
+<span class="o">--</span><span class="n">bucket</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+<span class="p">[</span><span class="o">--</span><span class="n">delimiter</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">encoding</span><span class="o">-</span><span class="nb">type</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">prefix</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">expected</span><span class="o">-</span><span class="n">bucket</span><span class="o">-</span><span class="n">owner</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">request</span><span class="o">-</span><span class="n">payer</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">starting</span><span class="o">-</span><span class="n">token</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">page</span><span class="o">-</span><span class="n">size</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="nb">max</span><span class="o">-</span><span class="n">items</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">cli</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="n">json</span> <span class="o">|</span> <span class="o">--</span><span class="n">cli</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="n">yaml</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">generate</span><span class="o">-</span><span class="n">cli</span><span class="o">-</span><span class="n">skeleton</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">debug</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">endpoint</span><span class="o">-</span><span class="n">url</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">verify</span><span class="o">-</span><span class="n">ssl</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">paginate</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">output</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">query</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">profile</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">region</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">version</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">color</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">sign</span><span class="o">-</span><span class="n">request</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">ca</span><span class="o">-</span><span class="n">bundle</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">cli</span><span class="o">-</span><span class="n">read</span><span class="o">-</span><span class="n">timeout</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">cli</span><span class="o">-</span><span class="n">connect</span><span class="o">-</span><span class="n">timeout</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">cli</span><span class="o">-</span><span class="n">binary</span><span class="o">-</span><span class="nb">format</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cli</span><span class="o">-</span><span class="n">pager</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">cli</span><span class="o">-</span><span class="n">auto</span><span class="o">-</span><span class="n">prompt</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cli</span><span class="o">-</span><span class="n">auto</span><span class="o">-</span><span class="n">prompt</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">cli</span><span class="o">-</span><span class="n">error</span><span class="o">-</span><span class="nb">format</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="p">[</span><span class="o">--</span><span class="n">help</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">--bucket</span></code> (string) [required]</p>
+<blockquote>
+<div><p>The name of the bucket to which the multipart upload was initiated.</p>
+<blockquote>
+<div><p><strong>Directory buckets</strong> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format `` <em>Bucket-name</em> .s3express-<em>zone-id</em> .*region-code* .amazonaws.com`` . Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format `` <em>bucket-base-name</em> –<em>zone-id</em> –x-s3`` (for example, `` <em>amzn-s3-demo-bucket</em> –<em>usw2-az1</em> –x-s3`` ). For information about bucket naming restrictions, see <a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <em>Amazon S3 User Guide</em> .</p>
+<p><strong>Access points</strong> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <em>AccessPointName</em> -<em>AccountId</em> .s3-accesspoint.*Region* .amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <em>Amazon S3 User Guide</em> .</p>
+</div></blockquote>
+<div class="admonition note">
+<h3 class='admonition-title'>Note</h3><blockquote class="first">
+<div>Object Lambda access points are not supported by directory buckets.</div></blockquote>
+<p class="last"><strong>S3 on Outposts</strong> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form `` <em>AccessPointName</em> -<em>AccountId</em> .*outpostID* .s3-outposts.*Region* .amazonaws.com`` . When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <em>Amazon S3 User Guide</em> .</p>
+</div>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">--delimiter</span></code> (string)</p>
+<blockquote>
+<div><p>Character you use to group keys.</p>
+<p>All keys that contain the same string between the prefix, if specified, and the first occurrence of the delimiter after the prefix are grouped under a single result element, <code class="docutils literal notranslate"><span class="pre">CommonPrefixes</span></code> . If you don’t specify the prefix parameter, then the substring starts at the beginning of the key. The keys that are grouped under <code class="docutils literal notranslate"><span class="pre">CommonPrefixes</span></code> result element are not returned elsewhere in the response.</p>
+<blockquote>
+<div><code class="docutils literal notranslate"><span class="pre">CommonPrefixes</span></code> is filtered out from results if it is not lexicographically greater than the key-marker.</div></blockquote>
+<div class="admonition note">
+<h3 class='admonition-title'>Note</h3><strong>Directory buckets</strong> - For directory buckets, <code class="docutils literal notranslate"><span class="pre">/</span></code> is the only supported delimiter.</div>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">--encoding-type</span></code> (string)</p>
+<blockquote>
+<div><p>Encoding type used by Amazon S3 to encode the <a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html">object keys</a> in the response. Responses are encoded only in UTF-8. An object key can contain any Unicode character. However, the XML 1.0 parser can’t parse certain characters, such as characters with an ASCII value from 0 to 10. For characters that aren’t supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response. For more information about characters to avoid in object key names, see <a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-guidelines">Object key naming guidelines</a> .</p>
+<div class="admonition note">
+<h3 class='admonition-title'>Note</h3>When using the URL encoding type, non-ASCII characters that are used in an object’s key name will be percent-encoded according to UTF-8 code values. For example, the object <code class="docutils literal notranslate"><span class="pre">test_file(3).png</span></code> will appear as <code class="docutils literal notranslate"><span class="pre">test_file%283%29.png</span></code> .</div>
+<p>Possible values:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">url</span></code></li>
+</ul>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">--prefix</span></code> (string)</p>
+<blockquote>
+<div><p>Lists in-progress uploads only for those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different grouping of keys. (You can think of using <code class="docutils literal notranslate"><span class="pre">prefix</span></code> to make groups in the same way that you’d use a folder in a file system.)</p>
+<div class="admonition note">
+<h3 class='admonition-title'>Note</h3><strong>Directory buckets</strong> - For directory buckets, only prefixes that end in a delimiter (<code class="docutils literal notranslate"><span class="pre">/</span></code> ) are supported.</div>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">--expected-bucket-owner</span></code> (string)</p>
+<blockquote>
+<div>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code class="docutils literal notranslate"><span class="pre">403</span> <span class="pre">Forbidden</span></code> (access denied).</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">--request-payer</span></code> (string)</p>
+<blockquote>
+<div><p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for the corresponding charges. For information about downloading objects from Requester Pays buckets, see <a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <em>Amazon S3 User Guide</em> .</p>
+<div class="admonition note">
+<h3 class='admonition-title'>Note</h3>This functionality is not supported for directory buckets.</div>
+<p>Possible values:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">requester</span></code></li>
+</ul>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">--starting-token</span></code> (string)</p>
+<blockquote>
+<div><p>A token to specify where to start paginating. This is the <code class="docutils literal notranslate"><span class="pre">NextToken</span></code> from a previously truncated response.</p>
+<p>For usage examples, see <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <em>AWS Command Line Interface User Guide</em> .</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">--page-size</span></code> (integer)</p>
+<blockquote>
+<div><p>The size of each page to get in the AWS service call. This does not affect the number of items returned in the command’s output. Setting a smaller page size results in more calls to the AWS service, retrieving fewer items in each call. This can help prevent the AWS service calls from timing out.</p>
+<p>For usage examples, see <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <em>AWS Command Line Interface User Guide</em> .</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">--max-items</span></code> (integer)</p>
+<blockquote>
+<div><p>The total number of items to return in the command’s output. If the total number of items available is more than the value specified, a <code class="docutils literal notranslate"><span class="pre">NextToken</span></code> is provided in the command’s output. To resume pagination, provide the <code class="docutils literal notranslate"><span class="pre">NextToken</span></code> value in the <code class="docutils literal notranslate"><span class="pre">starting-token</span></code> argument of a subsequent command. <strong>Do not</strong> use the <code class="docutils literal notranslate"><span class="pre">NextToken</span></code> response element directly outside of the AWS CLI.</p>
+<p>For usage examples, see <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <em>AWS Command Line Interface User Guide</em> .</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">--cli-input-json</span></code> | <code class="docutils literal notranslate"><span class="pre">--cli-input-yaml</span></code> (string)
+Reads arguments from the JSON string provided. The JSON string follows the format provided by <code class="docutils literal notranslate"><span class="pre">--generate-cli-skeleton</span></code>. If other arguments are provided on the command line, those values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally. This may not be specified along with <code class="docutils literal notranslate"><span class="pre">--cli-input-yaml</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--generate-cli-skeleton</span></code> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <code class="docutils literal notranslate"><span class="pre">input</span></code>, prints a sample input JSON that can be used as an argument for <code class="docutils literal notranslate"><span class="pre">--cli-input-json</span></code>. Similarly, if provided <code class="docutils literal notranslate"><span class="pre">yaml-input</span></code> it will print a sample input YAML that can be used with <code class="docutils literal notranslate"><span class="pre">--cli-input-yaml</span></code>. If provided with the value <code class="docutils literal notranslate"><span class="pre">output</span></code>, it validates the command inputs and returns a sample output JSON for that command. The generated JSON skeleton is not stable between versions of the AWS CLI and there are no backwards compatibility guarantees in the JSON skeleton generated.</p>
+</div>
+<div class="section" id="global-options">
+<h2>Global Options<a class="headerlink" href="#global-options" title="Permalink to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">--debug</span></code> (boolean)</p>
+<p>Turn on debug logging.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--endpoint-url</span></code> (string)</p>
+<p>Override command’s default URL with the given URL.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--no-verify-ssl</span></code> (boolean)</p>
+<p>By default, the AWS CLI uses SSL when communicating with AWS services. For each SSL connection, the AWS CLI will verify SSL certificates. This option overrides the default behavior of verifying SSL certificates.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--no-paginate</span></code> (boolean)</p>
+<p>Disable automatic pagination. If automatic pagination is disabled, the AWS CLI will only make one call, for the first page of results.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--output</span></code> (string)</p>
+<p>The formatting style for command output.</p>
+<ul class="simple">
+<li>json</li>
+<li>text</li>
+<li>table</li>
+<li>yaml</li>
+<li>yaml-stream</li>
+<li>off</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">--query</span></code> (string)</p>
+<p>A JMESPath query to use in filtering the response data.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--profile</span></code> (string)</p>
+<p>Use a specific profile from your credential file.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--region</span></code> (string)</p>
+<p>The region to use. Overrides config/env settings.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--version</span></code> (string)</p>
+<p>Display the version of this tool.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--color</span></code> (string)</p>
+<p>Turn on/off color output.</p>
+<ul class="simple">
+<li>on</li>
+<li>off</li>
+<li>auto</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">--no-sign-request</span></code> (boolean)</p>
+<p>Do not sign requests. Credentials will not be loaded if this argument is provided.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--ca-bundle</span></code> (string)</p>
+<p>The CA certificate bundle to use when verifying SSL certificates. Overrides config/env settings.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--cli-read-timeout</span></code> (int)</p>
+<p>The maximum socket read time in seconds. If the value is set to 0, the socket read will be blocking and not timeout. The default value is 60 seconds.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--cli-connect-timeout</span></code> (int)</p>
+<p>The maximum socket connect time in seconds. If the value is set to 0, the socket connect will be blocking and not timeout. The default value is 60 seconds.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--cli-binary-format</span></code> (string)</p>
+<p>The formatting style to be used for binary blobs. The default format is base64. The base64 format expects binary blobs to be provided as a base64 encoded string. The raw-in-base64-out format preserves compatibility with AWS CLI V1 behavior and binary values must be passed literally. When providing contents from a file that map to a binary blob <code class="docutils literal notranslate"><span class="pre">fileb://</span></code> will always be treated as binary and use the file contents directly regardless of the <code class="docutils literal notranslate"><span class="pre">cli-binary-format</span></code> setting. When using <code class="docutils literal notranslate"><span class="pre">file://</span></code> the file contents will need to properly formatted for the configured <code class="docutils literal notranslate"><span class="pre">cli-binary-format</span></code>.</p>
+<ul class="simple">
+<li>base64</li>
+<li>raw-in-base64-out</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">--no-cli-pager</span></code> (boolean)</p>
+<p>Disable cli pager for output.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--cli-auto-prompt</span></code> (boolean)</p>
+<p>Automatically prompt for CLI input parameters.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--no-cli-auto-prompt</span></code> (boolean)</p>
+<p>Disable automatically prompt for CLI input parameters.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--cli-error-format</span></code> (string)</p>
+<p>The formatting style for error output. By default, errors are displayed in enhanced format.</p>
+<ul class="simple">
+<li>legacy</li>
+<li>json</li>
+<li>yaml</li>
+<li>text</li>
+<li>table</li>
+<li>enhanced</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">--help</span></code> (boolean)</p>
+<p>Display help for the command/subcommand.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+<div class="admonition note">
+<h3 class='admonition-title'>Note</h3><p class="first">To use the following examples, you must have the AWS CLI installed and configured. See the <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html">Getting started guide</a> in the <em>AWS CLI User Guide</em> for more information.</p>
+<p class="last">Unless otherwise stated, all examples have unix-like quotation rules. These examples will need to be adapted to your terminal’s quoting rules. See <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-quoting-strings.html">Using quotation marks with strings</a> in the <em>AWS CLI User Guide</em> .</p>
+</div>
+<p><strong>To list the active multipart uploads for a bucket</strong></p>
+<p>The following <code class="docutils literal notranslate"><span class="pre">list-multipart-uploads</span></code> example lists all of the active multipart uploads for a bucket named <code class="docutils literal notranslate"><span class="pre">amzn-s3-demo-bucket</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aws</span> <span class="n">s3api</span> <span class="nb">list</span><span class="o">-</span><span class="n">multipart</span><span class="o">-</span><span class="n">uploads</span> \
+    <span class="o">--</span><span class="n">bucket</span> <span class="n">amzn</span><span class="o">-</span><span class="n">s3</span><span class="o">-</span><span class="n">demo</span><span class="o">-</span><span class="n">bucket</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;Uploads&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;Initiator&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;DisplayName&quot;</span><span class="p">:</span> <span class="s2">&quot;username&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;ID&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::0123456789012:user/username&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;Initiated&quot;</span><span class="p">:</span> <span class="s2">&quot;2015-06-02T18:01:30.000Z&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;UploadId&quot;</span><span class="p">:</span> <span class="s2">&quot;dfRtDYU0WWCCcH43C3WFbkRONycyCpTJJvxu2i5GYkZljF.Yxwh6XG7WfS2vC4to6HiV6Yjlx.cph0gtNBtJ8P3URCSbB7rjxI5iEwVDmgaXZOGgkk5nVTW16HOQ5l0R&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;StorageClass&quot;</span><span class="p">:</span> <span class="s2">&quot;STANDARD&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Key&quot;</span><span class="p">:</span> <span class="s2">&quot;multipart/01&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Owner&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;DisplayName&quot;</span><span class="p">:</span> <span class="s2">&quot;aws-account-name&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;ID&quot;</span><span class="p">:</span> <span class="s2">&quot;100719349fc3b6dcd7c820a124bf7aecd408092c3d7b51b38494939801fc248b&quot;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;CommonPrefixes&quot;</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In progress multipart uploads incur storage costs in Amazon S3. Complete or abort an active multipart upload to remove its parts from your account.</p>
+<p>For more information, see <a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">Uploading and copying objects using multipart upload in Amazon S3</a> in the <em>Amazon S3 User Guide</em>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this heading">¶</a></h2>
+<p>Bucket -&gt; (string)</p>
+<blockquote>
+<div>The name of the bucket to which the multipart upload was initiated. Does not return the access point ARN or access point alias if used.</div></blockquote>
+<p>KeyMarker -&gt; (string)</p>
+<blockquote>
+<div>The key at or after which the listing began.</div></blockquote>
+<p>UploadIdMarker -&gt; (string)</p>
+<blockquote>
+<div><p>Together with key-marker, specifies the multipart upload after which listing should begin. If key-marker is not specified, the upload-id-marker parameter is ignored. Otherwise, any multipart uploads for a key equal to the key-marker might be included in the list only if they have an upload ID lexicographically greater than the specified <code class="docutils literal notranslate"><span class="pre">upload-id-marker</span></code> .</p>
+<div class="admonition note">
+<h3 class='admonition-title'>Note</h3>This functionality is not supported for directory buckets.</div>
+</div></blockquote>
+<p>NextKeyMarker -&gt; (string)</p>
+<blockquote>
+<div>When a list is truncated, this element specifies the value that should be used for the key-marker request parameter in a subsequent request.</div></blockquote>
+<p>Prefix -&gt; (string)</p>
+<blockquote>
+<div><p>When a prefix is provided in the request, this field contains the specified prefix. The result contains only keys starting with the specified prefix.</p>
+<div class="admonition note">
+<h3 class='admonition-title'>Note</h3><strong>Directory buckets</strong> - For directory buckets, only prefixes that end in a delimiter (<code class="docutils literal notranslate"><span class="pre">/</span></code> ) are supported.</div>
+</div></blockquote>
+<p>Delimiter -&gt; (string)</p>
+<blockquote>
+<div><p>Contains the delimiter you specified in the request. If you don’t specify a delimiter in your request, this element is absent from the response.</p>
+<div class="admonition note">
+<h3 class='admonition-title'>Note</h3><strong>Directory buckets</strong> - For directory buckets, <code class="docutils literal notranslate"><span class="pre">/</span></code> is the only supported delimiter.</div>
+</div></blockquote>
+<p>NextUploadIdMarker -&gt; (string)</p>
+<blockquote>
+<div><p>When a list is truncated, this element specifies the value that should be used for the <code class="docutils literal notranslate"><span class="pre">upload-id-marker</span></code> request parameter in a subsequent request.</p>
+<div class="admonition note">
+<h3 class='admonition-title'>Note</h3>This functionality is not supported for directory buckets.</div>
+</div></blockquote>
+<p>MaxUploads -&gt; (integer)</p>
+<blockquote>
+<div>Maximum number of multipart uploads that could have been included in the response.</div></blockquote>
+<p>IsTruncated -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether the returned list of multipart uploads is truncated. A value of true indicates that the list was truncated. The list can be truncated if the number of multipart uploads exceeds the limit allowed or specified by max uploads.</div></blockquote>
+<p>Uploads -&gt; (list)</p>
+<blockquote>
+<div><p>Container for elements related to a particular multipart upload. A response can contain zero or more <code class="docutils literal notranslate"><span class="pre">Upload</span></code> elements.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Container for the <code class="docutils literal notranslate"><span class="pre">MultipartUpload</span></code> for the Amazon S3 object.</p>
+<p>UploadId -&gt; (string)</p>
+<blockquote>
+<div>Upload ID that identifies the multipart upload.</div></blockquote>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div><p>Key of the object for which the multipart upload was initiated.</p>
+<p>Constraints:</p>
+<ul class="simple">
+<li>min: <code class="docutils literal notranslate"><span class="pre">1</span></code></li>
+</ul>
+</div></blockquote>
+<p>Initiated -&gt; (timestamp)</p>
+<blockquote>
+<div>Date and time at which the multipart upload was initiated.</div></blockquote>
+<p>StorageClass -&gt; (string)</p>
+<blockquote>
+<div><p>The class of storage used to store the object.</p>
+<div class="admonition note">
+<h3 class='admonition-title'>Note</h3><strong>Directory buckets</strong> - Directory buckets only support <code class="docutils literal notranslate"><span class="pre">EXPRESS_ONEZONE</span></code> (the S3 Express One Zone storage class) in Availability Zones and <code class="docutils literal notranslate"><span class="pre">ONEZONE_IA</span></code> (the S3 One Zone-Infrequent Access storage class) in Dedicated Local Zones.</div>
+<p>Possible values:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">STANDARD</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">REDUCED_REDUNDANCY</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">STANDARD_IA</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">ONEZONE_IA</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">INTELLIGENT_TIERING</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">GLACIER</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">DEEP_ARCHIVE</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">OUTPOSTS</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">GLACIER_IR</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">SNOW</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">EXPRESS_ONEZONE</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">FSX_OPENZFS</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">FSX_ONTAP</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">AWS_BACKUP_WARM</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">AWS_BACKUP_LOW_COST_WARM</span></code></li>
+</ul>
+</div></blockquote>
+<p>Owner -&gt; (structure)</p>
+<blockquote>
+<div><p>Specifies the owner of the object that is part of the multipart upload.</p>
+<div class="admonition note">
+<h3 class='admonition-title'>Note</h3><strong>Directory buckets</strong> - The bucket owner is returned as the object owner for all the objects.</div>
+<p>DisplayName -&gt; (string)</p>
+<p>ID -&gt; (string)</p>
+<blockquote>
+<div>Container for the ID of the owner.</div></blockquote>
+</div></blockquote>
+<p>Initiator -&gt; (structure)</p>
+<blockquote>
+<div><p>Identifies who initiated the multipart upload.</p>
+<p>ID -&gt; (string)</p>
+<blockquote>
+<div><p>If the principal is an Amazon Web Services account, it provides the Canonical User ID. If the principal is an IAM User, it provides a user ARN value.</p>
+<div class="admonition note">
+<h3 class='admonition-title'>Note</h3><strong>Directory buckets</strong> - If the principal is an Amazon Web Services account, it provides the Amazon Web Services account ID. If the principal is an IAM User, it provides a user ARN value.</div>
+</div></blockquote>
+<p>DisplayName -&gt; (string)</p>
+<blockquote>
+<div><div class="admonition note">
+<h3 class='admonition-title'>Note</h3>This functionality is not supported for directory buckets.</div>
+</div></blockquote>
+</div></blockquote>
+<p>ChecksumAlgorithm -&gt; (string)</p>
+<blockquote>
+<div><p>The algorithm that was used to create a checksum of the object.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">CRC32</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">CRC32C</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">SHA1</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">SHA256</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">CRC64NVME</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">SHA512</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">MD5</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">XXHASH64</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">XXHASH3</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">XXHASH128</span></code></li>
+</ul>
+</div></blockquote>
+<p>ChecksumType -&gt; (string)</p>
+<blockquote>
+<div><p>The checksum type that is used to calculate the object’s checksum value. For more information, see <a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <em>Amazon S3 User Guide</em> .</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">COMPOSITE</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">FULL_OBJECT</span></code></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>CommonPrefixes -&gt; (list)</p>
+<blockquote>
+<div><p>If you specify a delimiter in the request, then the result returns each distinct key prefix containing the delimiter in a <code class="docutils literal notranslate"><span class="pre">CommonPrefixes</span></code> element. The distinct key prefixes are returned in the <code class="docutils literal notranslate"><span class="pre">Prefix</span></code> child element.</p>
+<div class="admonition note">
+<h3 class='admonition-title'>Note</h3><strong>Directory buckets</strong> - For directory buckets, only prefixes that end in a delimiter (<code class="docutils literal notranslate"><span class="pre">/</span></code> ) are supported.</div>
+<p>(structure)</p>
+<blockquote>
+<div><p>Container for all (if there are any) keys between Prefix and the next occurrence of the string specified by a delimiter. CommonPrefixes lists keys that act like subdirectories in the directory specified by Prefix. For example, if the prefix is notes/ and the delimiter is a slash (/) as in notes/summer/july, the common prefix is notes/summer/.</p>
+<p>Prefix -&gt; (string)</p>
+<blockquote>
+<div>Container for the specified common prefix.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>EncodingType -&gt; (string)</p>
+<blockquote>
+<div><p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
+<p>If you specify the <code class="docutils literal notranslate"><span class="pre">encoding-type</span></code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
+<blockquote>
+<div><code class="docutils literal notranslate"><span class="pre">Delimiter</span></code> , <code class="docutils literal notranslate"><span class="pre">KeyMarker</span></code> , <code class="docutils literal notranslate"><span class="pre">Prefix</span></code> , <code class="docutils literal notranslate"><span class="pre">NextKeyMarker</span></code> , <code class="docutils literal notranslate"><span class="pre">Key</span></code> .</div></blockquote>
+<p>Possible values:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">url</span></code></li>
+</ul>
+</div></blockquote>
+<p>RequestCharged -&gt; (string)</p>
+<blockquote>
+<div><p>If present, indicates that the requester was successfully charged for the request. For more information, see <a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/RequesterPaysBuckets.html">Using Requester Pays buckets for storage transfers and usage</a> in the <em>Amazon Simple Storage Service user guide</em> .</p>
+<div class="admonition note">
+<h3 class='admonition-title'>Note</h3>This functionality is not supported for directory buckets.</div>
+<p>Possible values:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">requester</span></code></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="list-directory-buckets.html" title="previous chapter (use the left arrow)">&larr; list-directory-buckets</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="list-object-annotations.html" title="next chapter (use the right arrow)">list-object-annotations &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript" src="../../_static/analytics.js"></script>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="list-object-annotations.html" title="list-object-annotations"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="list-directory-buckets.html" title="list-directory-buckets"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">AWS CLI 2.39.7 Command Reference</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >aws</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >s3api</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">list-multipart-uploads</a></li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2026, Amazon Web Services. Created using <a href="https://www.sphinx-doc.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

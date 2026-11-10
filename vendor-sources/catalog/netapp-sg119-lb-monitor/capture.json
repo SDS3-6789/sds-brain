@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg119-lb-monitor",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/monitoring-load-balancing-operations.html",
+  "catalog_title": "Monitor load balancing operations",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "11.9"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:23.721926+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/monitoring-load-balancing-operations.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/monitoring-load-balancing-operations.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "99be6e1a7f3dae4c5a90364ea2ead761814004f09a7ff20906aa0b1ec838a04c",
+  "raw_bytes": 54580,
+  "extracted_sha256": "1a077aeb38243dc5813a63f4483d8882509aeae99a9fc9a6217afca04c9e0943",
+  "extracted_bytes": 2584,
+  "words": 420,
+  "document_title": "Monitor load balancing operations",
+  "extracted_links": 4,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:26.833483+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

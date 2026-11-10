@@ -1,0 +1,27 @@
+{
+  "source_id": "ceph-squid-rgw-metrics",
+  "catalog_url": "https://docs.ceph.com/en/squid/radosgw/metrics/",
+  "catalog_title": "Ceph Squid RGW metrics",
+  "catalog_product": "Ceph",
+  "catalog_versions": [
+    "squid"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:06.355252+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.ceph.com/en/squid/radosgw/metrics/",
+  "requested_url": "https://docs.ceph.com/en/squid/radosgw/metrics/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "e414b2af83802959cf3b19a43b40d89283bd98d8663144d5e96802f85858cd62",
+  "raw_bytes": 37566,
+  "extracted_sha256": "6e7ee3fb648530f99d6c5fd94c62196d1b64996dbb34a0cdda4865022bfb0479",
+  "extracted_bytes": 8236,
+  "words": 1150,
+  "document_title": "Metrics\uf0c1",
+  "extracted_links": 31,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:07.930549+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

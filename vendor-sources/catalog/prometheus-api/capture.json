@@ -1,0 +1,27 @@
+{
+  "source_id": "prometheus-api",
+  "catalog_url": "https://prometheus.io/docs/prometheus/latest/querying/api/",
+  "catalog_title": "Prometheus HTTP API",
+  "catalog_product": "Prometheus",
+  "catalog_versions": [
+    "installed version unknown"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:12.799462+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://prometheus.io/docs/prometheus/latest/querying/api/",
+  "requested_url": "https://prometheus.io/docs/prometheus/latest/querying/api/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "e33555727cc62dfee3b0ec6c7c505ec22a1e2b605d7694ed0ed24b29f595cebe",
+  "raw_bytes": 920035,
+  "extracted_sha256": "822f97d7ceb61d6926685174121e22c5ca1c395d3b4d31c15564705de1ae9a3a",
+  "extracted_bytes": 75195,
+  "words": 9571,
+  "document_title": "HTTP API",
+  "extracted_links": 100,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:14.618893+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

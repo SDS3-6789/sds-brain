@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "sds-objectify": {
+      "type": "stdio",
+      "command": "python3",
+      "args": [
+        "${SDS_BRAIN_DIR}/mcp/objectify/server.py",
+        "--config",
+        "${SDS_BRAIN_DIR}/mcp/objectify/config.local.json"
+      ]
+    },
+    "sds-grafana": {
+      "type": "stdio",
+      "command": "python3",
+      "args": [
+        "${SDS_BRAIN_DIR}/mcp/grafana/launch.py"
+      ]
+    }
+  }
+}

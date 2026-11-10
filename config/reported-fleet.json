@@ -1,0 +1,14 @@
+{
+  "source": "user intake 2026-11-09",
+  "status": "user-reported; not an installed per-cluster inventory",
+  "runtime": "Claude Code proposed and documented; client build not provided",
+  "ceph": {"deployment": "cephadm, containerized RGW", "vendor_releases": ["7.1z7", "8.1z3", "8.1z6", "8.1z7", "8.1z8", "8.1z9"]},
+  "storagegrid": {"reported_versions": ["11.8", "11.9", "12"], "unresolved": "12 minor and build"},
+  "rhel": {"reported_versions": ["9.6", "9.8"]},
+  "hardware": {"reported_names": ["HP exel420", "exel170", "exel190", "DL385"], "candidate_names": ["HPE XL420 / Apollo 4200", "HPE XL170r", "HPE XL190r", "HPE ProLiant DL385"], "generation_verified": false},
+  "monitoring": {"reported": ["Grafana", "custom exporter", "Elasticsearch"], "prometheus_confirmed": false},
+  "objectify": {"network": "internal only", "backends": ["Ceph RGW user", "StorageGRID tenant"], "first_release": "read-only"},
+  "internal_sources_available_to_user": ["Confluence", "Grafana dashboards", "full Red Hat documentation"],
+  "internal_sources_received": ["Objectify Swagger endpoint screenshot"],
+  "scope": "multiple customers and multiple clusters"
+}

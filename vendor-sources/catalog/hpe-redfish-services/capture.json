@@ -1,0 +1,28 @@
+{
+  "source_id": "hpe-redfish-services",
+  "catalog_url": "https://servermanagementportal.ext.hpe.com/docs/redfishservices",
+  "catalog_title": "HPE Redfish service references",
+  "catalog_product": "iLO Redfish",
+  "catalog_versions": [
+    "iLO version unknown"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:17.348606+00:00",
+  "attempts": [],
+  "status": "index_only",
+  "fetched_url": "https://servermanagementportal.ext.hpe.com/docs/redfishservices",
+  "requested_url": "https://servermanagementportal.ext.hpe.com/docs/redfishservices",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "787f1f0b0ef94964714069bf5e1731fe684d48ba4d6a9d158abb485c2e046f26",
+  "raw_bytes": 311331,
+  "extracted_sha256": "63d07d1bb136d5028d58918c4038d2c5f0695b9ee8f4bf626f1b15c8c78ca4fe",
+  "extracted_bytes": 348,
+  "words": 55,
+  "document_title": "HPE Redfish services",
+  "extracted_links": 2,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:20.265347+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data",
+  "reason": "Landing page or table of contents; linked documents were not captured by this target"
+}

@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg119-search-integration",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/understanding-search-integration-service.html",
+  "catalog_title": "Understand search integration service",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "11.9"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:29.441026+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/understanding-search-integration-service.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/understanding-search-integration-service.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "b7d21e5f842b9249b509a5a383ea6be89d45ce4c2225d07fe2168323bbd97853",
+  "raw_bytes": 56459,
+  "extracted_sha256": "e7f14565d12cc074effa5ded64891268edf7aa173e5e8ed4ef8ca10d830a6f47",
+  "extracted_bytes": 4067,
+  "words": 636,
+  "document_title": "Understand search integration service",
+  "extracted_links": 3,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:32.772924+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

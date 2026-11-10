@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg120-upgrade",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-120/upgrade/index.html",
+  "catalog_title": "Upgrade StorageGRID software to 12.0",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "12.0"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:25.222035+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-120/upgrade/index.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-120/upgrade/index.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "f4aac4da67873ba2e0febe777617edc9ce2a488a6d4e5bae0c0a93302244eb5f",
+  "raw_bytes": 52332,
+  "extracted_sha256": "c8d6cf6e5b63e3b4a35ea78b03030177e6ba27cd3c84f3c58b8716af28f378e4",
+  "extracted_bytes": 967,
+  "words": 159,
+  "document_title": "Upgrade StorageGRID software",
+  "extracted_links": 7,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:27.453817+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

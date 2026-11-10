@@ -1,0 +1,1102 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>podman-systemd.unit &#8212; Podman  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  
+<!-- RTD Extra Head -->
+
+
+
+<script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "builder": "sphinx", "canonical_url": null, "docroot": "/docs/source/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "markdown/podman-systemd.unit.5", "programming_language": "go", "project": "podman", "proxied_api_host": "/_", "source_suffix": ".md", "subprojects": {}, "theme": "alabaster", "user_analytics_code": "", "version": "v4.6.1"}</script>
+
+<!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+-->
+<script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script>
+
+
+
+<!-- end RTD <extrahead> -->
+<script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="podman" /><meta name="readthedocs-version-slug" content="v4.6.1" /><meta name="readthedocs-resolver-filename" content="/markdown/podman-systemd.unit.5.html" /><meta name="readthedocs-http-status" content="200" /></head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="name">
+<h1>NAME<a class="headerlink" href="#name" title="Permalink to this heading">¶</a></h1>
+<p>podman-systemd.unit - systemd units using Podman Quadlet</p>
+</section>
+<section id="synopsis">
+<h1>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h1>
+<p><em>name</em>.container, <em>name</em>.volume, <em>name</em>.network, <code class="docutils literal notranslate"><span class="pre">*.kube</span></code></p>
+<section id="podman-unit-search-path">
+<h2>Podman unit search path<a class="headerlink" href="#podman-unit-search-path" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>/etc/containers/systemd/</p></li>
+<li><p>/usr/share/containers/systemd/</p></li>
+</ul>
+</section>
+<section id="podman-user-unit-search-path">
+<h2>Podman user unit search path<a class="headerlink" href="#podman-user-unit-search-path" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>$XDG_CONFIG_HOME/containers/systemd/ or ~/.config/containers/systemd/</p></li>
+<li><p>/etc/containers/systemd/users/$(UID)</p></li>
+<li><p>/etc/containers/systemd/users/</p></li>
+</ul>
+</section>
+</section>
+<section id="description">
+<h1>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h1>
+<p>Podman supports starting containers (and creating volumes) via systemd by using a
+<a class="reference external" href="https://www.freedesktop.org/software/systemd/man/systemd.generator.html">systemd generator</a>.
+These files are read during boot (and when <code class="docutils literal notranslate"><span class="pre">systemctl</span> <span class="pre">daemon-reload</span></code> is run) and generate
+corresponding regular systemd service unit files. Both system and user systemd units are supported.</p>
+<p>The Podman generator reads the search paths above and reads files with the extensions <code class="docutils literal notranslate"><span class="pre">.container</span></code>
+<code class="docutils literal notranslate"><span class="pre">.volume</span></code> and <code class="docutils literal notranslate"><span class="pre">*.kube</span></code>, and for each file generates a similarly named <code class="docutils literal notranslate"><span class="pre">.service</span></code> file. Be aware that
+existing vendor services (i.e., in <code class="docutils literal notranslate"><span class="pre">/usr/</span></code>) are replaced if they have the same name. The generated unit files can
+be started and managed with <code class="docutils literal notranslate"><span class="pre">systemctl</span></code> like any other systemd service. <code class="docutils literal notranslate"><span class="pre">systemctl</span> <span class="pre">{--user}</span> <span class="pre">list-unit-files</span></code>
+lists existing unit files on the system.</p>
+<p>Files with the <code class="docutils literal notranslate"><span class="pre">.network</span></code> extension are only read if they are mentioned in a <code class="docutils literal notranslate"><span class="pre">.container</span></code> file. See the <code class="docutils literal notranslate"><span class="pre">Network=</span></code> key.</p>
+<p>The Podman files use the same format as <a class="reference external" href="https://www.freedesktop.org/software/systemd/man/systemd.syntax.html">regular systemd unit files</a>.
+Each file type has a custom section (for example, <code class="docutils literal notranslate"><span class="pre">[Container]</span></code>) that is handled by Podman, and all
+other sections are passed on untouched, allowing the use of any normal systemd configuration options
+like dependencies or cgroup limits.</p>
+<p>For rootless containers, when administrators place Quadlet files in the
+/etc/containers/systemd/users directory, all users’ sessions execute the
+Quadlet when the login session begins. If the administrator places a Quadlet
+file in the /etc/containers/systemd/users/${UID}/ directory, then only the
+user with the matching UID execute the Quadlet when the login
+session gets started.</p>
+<p>Note: When a Quadlet is starting, Podman often pulls one more container images which may take a considerable amount of time.
+Systemd defaults service start time to 90 seconds, or fails the service. Pre-pulling the image or extending
+the systemd timeout time for the service using the <em>TimeoutStartSec</em> Service option can fix the problem.</p>
+<p>Adding the following snippet to a Quadlet file extends the systemd timeout to 15 minutes.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Service</span><span class="p">]</span>
+<span class="n">TimeoutStartSec</span><span class="o">=</span><span class="mi">900</span>
+</pre></div>
+</div>
+<section id="enabling-unit-files">
+<h2>Enabling unit files<a class="headerlink" href="#enabling-unit-files" title="Permalink to this heading">¶</a></h2>
+<p>The services created by Podman are considered transient by systemd, which means they don’t have the same
+persistence rules as regular units. In particular, it is not possible to “systemctl enable” them
+in order for them to become automatically enabled on the next boot.</p>
+<p>To compensate for this, the generator manually applies the <code class="docutils literal notranslate"><span class="pre">[Install]</span></code> section of the container definition
+unit files during generation, in the same way <code class="docutils literal notranslate"><span class="pre">systemctl</span> <span class="pre">enable</span></code> does when run later.</p>
+<p>For example, to start a container on boot, add something like this to the file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Install</span><span class="p">]</span>
+<span class="n">WantedBy</span><span class="o">=</span><span class="n">default</span><span class="o">.</span><span class="n">target</span>
+</pre></div>
+</div>
+<p>Currently, only the <code class="docutils literal notranslate"><span class="pre">Alias</span></code>, <code class="docutils literal notranslate"><span class="pre">WantedBy</span></code> and <code class="docutils literal notranslate"><span class="pre">RequiredBy</span></code> keys are supported.</p>
+<p><strong>NOTE:</strong> To express dependencies between containers, use the generated names of the service. In other
+words <code class="docutils literal notranslate"><span class="pre">WantedBy=other.service</span></code>, not <code class="docutils literal notranslate"><span class="pre">WantedBy=other.container</span></code>. The same is
+true for other kinds of dependencies, too, like <code class="docutils literal notranslate"><span class="pre">After=other.service</span></code>.</p>
+</section>
+</section>
+<section id="container-units-container">
+<h1>Container units [Container]<a class="headerlink" href="#container-units-container" title="Permalink to this heading">¶</a></h1>
+<p>Container units are named with a <code class="docutils literal notranslate"><span class="pre">.container</span></code> extension and contain a <code class="docutils literal notranslate"><span class="pre">[Container]</span></code> section describing
+the container that is run as a service. The resulting service file contains a line like
+<code class="docutils literal notranslate"><span class="pre">ExecStart=podman</span> <span class="pre">run</span> <span class="pre">…</span> <span class="pre">image-name</span></code>, and most of the keys in this section control the command-line
+options passed to Podman. However, some options also affect the details of how systemd is set up to run and
+interact with the container.</p>
+<p>By default, the Podman container has the same name as the unit, but with a <code class="docutils literal notranslate"><span class="pre">systemd-</span></code> prefix.
+I.e. a <code class="docutils literal notranslate"><span class="pre">$name.container</span></code> file creates a <code class="docutils literal notranslate"><span class="pre">$name.service</span></code> unit and a <code class="docutils literal notranslate"><span class="pre">systemd-$name</span></code> Podman container.</p>
+<p>There is only one required key, <code class="docutils literal notranslate"><span class="pre">Image</span></code>, which defines the container image the service runs.</p>
+<p>Valid options for <code class="docutils literal notranslate"><span class="pre">[Container]</span></code> are listed below:</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>[Container] options</strong></p></th>
+<th class="head"><p><strong>podman run equivalent</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AddCapability=CAP</p></td>
+<td><p>--cap-add CAP</p></td>
+</tr>
+<tr class="row-odd"><td><p>AddDevice=/dev/foo</p></td>
+<td><p>--device /dev/foo</p></td>
+</tr>
+<tr class="row-even"><td><p>Annotation=”YXZ”</p></td>
+<td><p>--annotation “XYZ”</p></td>
+</tr>
+<tr class="row-odd"><td><p>AutoUpdate=registry</p></td>
+<td><p>--label “io.containers.autoupdate=registry”</p></td>
+</tr>
+<tr class="row-even"><td><p>ContainerName=name</p></td>
+<td><p>--name name</p></td>
+</tr>
+<tr class="row-odd"><td><p>DropCapability=CAP</p></td>
+<td><p>--cap-drop=CAP</p></td>
+</tr>
+<tr class="row-even"><td><p>Environment=foo=bar</p></td>
+<td><p>--env foo=bar</p></td>
+</tr>
+<tr class="row-odd"><td><p>EnvironmentFile=/tmp/env</p></td>
+<td><p>--env-file /tmp/env</p></td>
+</tr>
+<tr class="row-even"><td><p>EnvironmentHost=true</p></td>
+<td><p>--env-host</p></td>
+</tr>
+<tr class="row-odd"><td><p>Exec=/usr/bin/command</p></td>
+<td><p>Command after image specification - /usr/bin/command</p></td>
+</tr>
+<tr class="row-even"><td><p>ExposeHostPort=50-59</p></td>
+<td><p>--expose 50-59</p></td>
+</tr>
+<tr class="row-odd"><td><p>Group=1234</p></td>
+<td><p>--user UID:1234</p></td>
+</tr>
+<tr class="row-even"><td><p>HealthCmd=”/usr/bin/command”</p></td>
+<td><p>--health-cmd=”/usr/bin/command”</p></td>
+</tr>
+<tr class="row-odd"><td><p>HealthInterval=2m</p></td>
+<td><p>--health-interval=2m</p></td>
+</tr>
+<tr class="row-even"><td><p>HealthOnFailure=kill</p></td>
+<td><p>--health-on-failure=kill</p></td>
+</tr>
+<tr class="row-odd"><td><p>HealthRetries=5</p></td>
+<td><p>--health-retries=5</p></td>
+</tr>
+<tr class="row-even"><td><p>HealthStartPeriod=1m</p></td>
+<td><p>--health-start-period=period=1m</p></td>
+</tr>
+<tr class="row-odd"><td><p>HealthStartupCmd=”command”</p></td>
+<td><p>--health-startup-cmd=”command”</p></td>
+</tr>
+<tr class="row-even"><td><p>HealthStartupInterval=1m</p></td>
+<td><p>--health-startup-interval=2m</p></td>
+</tr>
+<tr class="row-odd"><td><p>HealthStartupRetries=8</p></td>
+<td><p>--health-startup-retries=8</p></td>
+</tr>
+<tr class="row-even"><td><p>HealthStartupSuccess=2</p></td>
+<td><p>--health-startup-success=2</p></td>
+</tr>
+<tr class="row-odd"><td><p>HealthStartupTimeout=1m33s</p></td>
+<td><p>--health-startup-timeout=1m33s</p></td>
+</tr>
+<tr class="row-even"><td><p>HealthTimeout=20s</p></td>
+<td><p>--health-timeout=20s</p></td>
+</tr>
+<tr class="row-odd"><td><p>HostName=new-host-name</p></td>
+<td><p>--hostname=”new-host-name”</p></td>
+</tr>
+<tr class="row-even"><td><p>Image=ubi8</p></td>
+<td><p>Image specification - ubi8</p></td>
+</tr>
+<tr class="row-odd"><td><p>IP=192.5.0.1</p></td>
+<td><p>--ip 192.5.0.0</p></td>
+</tr>
+<tr class="row-even"><td><p>IP6=fd46:db93:aa76:ac37::10</p></td>
+<td><p>--ip6 2001:db8::1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Label=”YXZ”</p></td>
+<td><p>--label “XYZ”</p></td>
+</tr>
+<tr class="row-even"><td><p>LogDriver=journald</p></td>
+<td><p>--log-driver journald</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mount=type=…</p></td>
+<td><p>--mount type=…</p></td>
+</tr>
+<tr class="row-even"><td><p>Network=host</p></td>
+<td><p>--net host</p></td>
+</tr>
+<tr class="row-odd"><td><p>NoNewPrivileges=true</p></td>
+<td><p>--security-opt no-new-privileges</p></td>
+</tr>
+<tr class="row-even"><td><p>Rootfs=/var/lib/rootfs</p></td>
+<td><p>--rootfs /var/lib/rootfs</p></td>
+</tr>
+<tr class="row-odd"><td><p>Notify=true</p></td>
+<td><p>--sdnotify container</p></td>
+</tr>
+<tr class="row-even"><td><p>PodmanArgs=--add-host foobar</p></td>
+<td><p>--add-host foobar</p></td>
+</tr>
+<tr class="row-odd"><td><p>PublishPort=50-59</p></td>
+<td><p>--publish 50-59</p></td>
+</tr>
+<tr class="row-even"><td><p>Pull=never</p></td>
+<td><p>--pull=never</p></td>
+</tr>
+<tr class="row-odd"><td><p>ReadOnly=true</p></td>
+<td><p>--read-only</p></td>
+</tr>
+<tr class="row-even"><td><p>RunInit=true</p></td>
+<td><p>--init</p></td>
+</tr>
+<tr class="row-odd"><td><p>SeccompProfile=/tmp/s.json</p></td>
+<td><p>--security-opt seccomp=/tmp/s.json</p></td>
+</tr>
+<tr class="row-even"><td><p>SecurityLabelDisable=true</p></td>
+<td><p>--security-opt label=disable</p></td>
+</tr>
+<tr class="row-odd"><td><p>SecurityLabelFileType=usr_t</p></td>
+<td><p>--security-opt label=filetype:usr_t</p></td>
+</tr>
+<tr class="row-even"><td><p>SecurityLabelLevel=s0:c1,c2</p></td>
+<td><p>--security-opt label=level:s0:c1,c2</p></td>
+</tr>
+<tr class="row-odd"><td><p>SecurityLabelNested=true</p></td>
+<td><p>--security-opt label=nested</p></td>
+</tr>
+<tr class="row-even"><td><p>SecurityLabelType=spc_t</p></td>
+<td><p>--security-opt label=type:spc_t</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sysctl=name=value</p></td>
+<td><p>--sysctl=name=value</p></td>
+</tr>
+<tr class="row-even"><td><p>Timezone=local</p></td>
+<td><p>--tz local</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tmpfs=/work</p></td>
+<td><p>--tmpfs /work</p></td>
+</tr>
+<tr class="row-even"><td><p>User=bin</p></td>
+<td><p>--user bin</p></td>
+</tr>
+<tr class="row-odd"><td><p>UserNS=keep-id:uid=200,gid=210</p></td>
+<td><p>--userns keep-id:uid=200,gid=210</p></td>
+</tr>
+<tr class="row-even"><td><p>VolatileTmp=true</p></td>
+<td><p>--tmpfs /tmp</p></td>
+</tr>
+<tr class="row-odd"><td><p>Volume=/source:/dest</p></td>
+<td><p>--volume /source:/dest</p></td>
+</tr>
+<tr class="row-even"><td><p>WorkingDir=$HOME</p></td>
+<td><p>--workdir $HOME</p></td>
+</tr>
+</tbody>
+</table>
+<p>Description of <code class="docutils literal notranslate"><span class="pre">[Container]</span></code> section are:</p>
+<section id="addcapability">
+<h2><code class="docutils literal notranslate"><span class="pre">AddCapability=</span></code><a class="headerlink" href="#addcapability" title="Permalink to this heading">¶</a></h2>
+<p>Add these capabilities, in addition to the default Podman capability set, to the container.</p>
+<p>This is a space separated list of capabilities. This key can be listed multiple times.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AddCapability</span><span class="o">=</span><span class="n">CAP_DAC_OVERRIDE</span> <span class="n">CAP_IPC_OWNER</span>
+</pre></div>
+</div>
+</section>
+<section id="adddevice">
+<h2><code class="docutils literal notranslate"><span class="pre">AddDevice=</span></code><a class="headerlink" href="#adddevice" title="Permalink to this heading">¶</a></h2>
+<p>Adds a device node from the host into the container. The format of this is
+<code class="docutils literal notranslate"><span class="pre">HOST-DEVICE[:CONTAINER-DEVICE][:PERMISSIONS]</span></code>, where <code class="docutils literal notranslate"><span class="pre">HOST-DEVICE</span></code> is the path of
+the device node on the host, <code class="docutils literal notranslate"><span class="pre">CONTAINER-DEVICE</span></code> is the path of the device node in
+the container, and <code class="docutils literal notranslate"><span class="pre">PERMISSIONS</span></code> is a list of permissions combining ‘r’ for read,
+‘w’ for write, and ‘m’ for mknod(2). The <code class="docutils literal notranslate"><span class="pre">-</span></code> prefix tells Quadlet to add the device
+only if it exists on the host.</p>
+<p>This key can be listed multiple times.</p>
+</section>
+<section id="annotation">
+<h2><code class="docutils literal notranslate"><span class="pre">Annotation=</span></code><a class="headerlink" href="#annotation" title="Permalink to this heading">¶</a></h2>
+<p>Set one or more OCI annotations on the container. The format is a list of <code class="docutils literal notranslate"><span class="pre">key=value</span></code> items,
+similar to <code class="docutils literal notranslate"><span class="pre">Environment</span></code>.</p>
+<p>This key can be listed multiple times.</p>
+</section>
+<section id="autoupdate">
+<h2><code class="docutils literal notranslate"><span class="pre">AutoUpdate=</span></code><a class="headerlink" href="#autoupdate" title="Permalink to this heading">¶</a></h2>
+<p>Indicates whether the container will be auto-updated (<a class="reference internal" href="podman-auto-update.1.html"><span class="std std-doc">podman-auto-update(1)</span></a>). The following values are supported:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">registry</span></code>: Requires a fully-qualified image reference (e.g., quay.io/podman/stable:latest) to be used to create the container. This enforcement is necessary to know which image to actually check and pull. If an image ID was used, Podman does not know which image to check/pull anymore.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">local</span></code>: Tells Podman to compare the image a container is using to the image with its raw name in local storage. If an image is updated locally, Podman simply restarts the systemd unit executing the container.</p></li>
+</ul>
+</section>
+<section id="containername">
+<h2><code class="docutils literal notranslate"><span class="pre">ContainerName=</span></code><a class="headerlink" href="#containername" title="Permalink to this heading">¶</a></h2>
+<p>The (optional) name of the Podman container. If this is not specified, the default value
+of <code class="docutils literal notranslate"><span class="pre">systemd-%N</span></code> is used, which is the same as the service name but with a <code class="docutils literal notranslate"><span class="pre">systemd-</span></code>
+prefix to avoid conflicts with user-managed containers.</p>
+</section>
+<section id="dropcapability">
+<h2><code class="docutils literal notranslate"><span class="pre">DropCapability=</span></code><a class="headerlink" href="#dropcapability" title="Permalink to this heading">¶</a></h2>
+<p>Drop these capabilities from the default podman capability set, or <code class="docutils literal notranslate"><span class="pre">all</span></code> to drop all capabilities.</p>
+<p>This is a space separated list of capabilities. This key can be listed multiple times.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DropCapability</span><span class="o">=</span><span class="n">CAP_DAC_OVERRIDE</span> <span class="n">CAP_IPC_OWNER</span>
+</pre></div>
+</div>
+</section>
+<section id="environment">
+<h2><code class="docutils literal notranslate"><span class="pre">Environment=</span></code><a class="headerlink" href="#environment" title="Permalink to this heading">¶</a></h2>
+<p>Set an environment variable in the container. This uses the same format as
+<a class="reference external" href="https://www.freedesktop.org/software/systemd/man/systemd.exec.html#Environment=">services in systemd</a>
+and can be listed multiple times.</p>
+</section>
+<section id="environmentfile">
+<h2><code class="docutils literal notranslate"><span class="pre">EnvironmentFile=</span></code><a class="headerlink" href="#environmentfile" title="Permalink to this heading">¶</a></h2>
+<p>Use a line-delimited file to set environment variables in the container.
+The path may be absolute or relative to the location of the unit file.
+This key may be used multiple times, and the order persists when passed to <code class="docutils literal notranslate"><span class="pre">podman</span> <span class="pre">run</span></code>.</p>
+</section>
+<section id="environmenthost">
+<h2><code class="docutils literal notranslate"><span class="pre">EnvironmentHost=</span></code><a class="headerlink" href="#environmenthost" title="Permalink to this heading">¶</a></h2>
+<p>Use the host environment inside of the container.</p>
+</section>
+<section id="exec">
+<h2><code class="docutils literal notranslate"><span class="pre">Exec=</span></code><a class="headerlink" href="#exec" title="Permalink to this heading">¶</a></h2>
+<p>If this is set then it defines what command line to run in the container. If it is not set the
+default entry point of the container image is used. The format is the same as for
+<a class="reference external" href="https://www.freedesktop.org/software/systemd/man/systemd.service.html#Command%20lines">systemd command lines</a>.</p>
+</section>
+<section id="exposehostport">
+<h2><code class="docutils literal notranslate"><span class="pre">ExposeHostPort=</span></code><a class="headerlink" href="#exposehostport" title="Permalink to this heading">¶</a></h2>
+<p>Exposes a port, or a range of ports (e.g. <code class="docutils literal notranslate"><span class="pre">50-59</span></code>), from the host to the container. Equivalent
+to the Podman <code class="docutils literal notranslate"><span class="pre">--expose</span></code> option.</p>
+<p>This key can be listed multiple times.</p>
+</section>
+<section id="group">
+<h2><code class="docutils literal notranslate"><span class="pre">Group=</span></code><a class="headerlink" href="#group" title="Permalink to this heading">¶</a></h2>
+<p>The (numeric) GID to run as inside the container. This does not need to match the GID on the host,
+which can be modified with <code class="docutils literal notranslate"><span class="pre">UsersNS</span></code>, but if that is not specified, this GID is also used on the host.</p>
+</section>
+<section id="healthcmd">
+<h2><code class="docutils literal notranslate"><span class="pre">HealthCmd=</span></code><a class="headerlink" href="#healthcmd" title="Permalink to this heading">¶</a></h2>
+<p>Set or alter a healthcheck command for a container. A value of none disables existing healthchecks.
+Equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--health-cmd</span></code> option.</p>
+</section>
+<section id="healthinterval">
+<h2><code class="docutils literal notranslate"><span class="pre">HealthInterval=</span></code><a class="headerlink" href="#healthinterval" title="Permalink to this heading">¶</a></h2>
+<p>Set an interval for the healthchecks. An interval of disable results in no automatic timer setup.
+Equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--health-interval</span></code> option.</p>
+</section>
+<section id="healthonfailure">
+<h2><code class="docutils literal notranslate"><span class="pre">HealthOnFailure=</span></code><a class="headerlink" href="#healthonfailure" title="Permalink to this heading">¶</a></h2>
+<p>Action to take once the container transitions to an unhealthy state.
+The “kill” action in combination integrates best with systemd. Once
+the container turns unhealthy, it gets killed, and systemd restarts the
+service.
+Equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--health-on-failure</span></code> option.</p>
+</section>
+<section id="healthretries">
+<h2><code class="docutils literal notranslate"><span class="pre">HealthRetries=</span></code><a class="headerlink" href="#healthretries" title="Permalink to this heading">¶</a></h2>
+<p>The number of retries allowed before a healthcheck is considered to be unhealthy.
+Equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--health-retries</span></code> option.</p>
+</section>
+<section id="healthstartperiod">
+<h2><code class="docutils literal notranslate"><span class="pre">HealthStartPeriod=</span></code><a class="headerlink" href="#healthstartperiod" title="Permalink to this heading">¶</a></h2>
+<p>The initialization time needed for a container to bootstrap.
+Equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--health-start-period</span></code> option.</p>
+</section>
+<section id="healthstartupcmd">
+<h2><code class="docutils literal notranslate"><span class="pre">HealthStartupCmd=</span></code><a class="headerlink" href="#healthstartupcmd" title="Permalink to this heading">¶</a></h2>
+<p>Set a startup healthcheck command for a container.
+Equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--health-startup-cmd</span></code> option.</p>
+</section>
+<section id="healthstartupinterval">
+<h2><code class="docutils literal notranslate"><span class="pre">HealthStartupInterval=</span></code><a class="headerlink" href="#healthstartupinterval" title="Permalink to this heading">¶</a></h2>
+<p>Set an interval for the startup healthcheck. An interval of disable results in no automatic timer setup.
+Equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--health-startup-interval</span></code> option.</p>
+</section>
+<section id="healthstartupretries">
+<h2><code class="docutils literal notranslate"><span class="pre">HealthStartupRetries=</span></code><a class="headerlink" href="#healthstartupretries" title="Permalink to this heading">¶</a></h2>
+<p>The number of attempts allowed before the startup healthcheck restarts the container.
+Equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--health-startup-retries</span></code> option.</p>
+</section>
+<section id="healthstartupsuccess">
+<h2><code class="docutils literal notranslate"><span class="pre">HealthStartupSuccess=</span></code><a class="headerlink" href="#healthstartupsuccess" title="Permalink to this heading">¶</a></h2>
+<p>The number of successful runs required before the startup healthcheck succeeds and the regular healthcheck begins.
+Equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--health-startup-success</span></code> option.</p>
+</section>
+<section id="healthstartuptimeout">
+<h2><code class="docutils literal notranslate"><span class="pre">HealthStartupTimeout=</span></code><a class="headerlink" href="#healthstartuptimeout" title="Permalink to this heading">¶</a></h2>
+<p>The maximum time a startup healthcheck command has to complete before it is marked as failed.
+Equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--health-startup-timeout</span></code> option.</p>
+</section>
+<section id="healthtimeout">
+<h2><code class="docutils literal notranslate"><span class="pre">HealthTimeout=</span></code><a class="headerlink" href="#healthtimeout" title="Permalink to this heading">¶</a></h2>
+<p>The maximum time allowed to complete the healthcheck before an interval is considered failed.
+Equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--health-timeout</span></code> option.</p>
+</section>
+<section id="hostname">
+<h2><code class="docutils literal notranslate"><span class="pre">HostName=</span></code><a class="headerlink" href="#hostname" title="Permalink to this heading">¶</a></h2>
+<p>Sets the host name that is available inside the container.
+Equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--hostname</span></code> option.</p>
+</section>
+<section id="image">
+<h2><code class="docutils literal notranslate"><span class="pre">Image=</span></code><a class="headerlink" href="#image" title="Permalink to this heading">¶</a></h2>
+<p>The image to run in the container.
+It is recommended to use a fully qualified image name rather than a short name, both for
+performance and robustness reasons.</p>
+<p>The format of the name is the same as when passed to <code class="docutils literal notranslate"><span class="pre">podman</span> <span class="pre">run</span></code>, so it supports e.g., using
+<code class="docutils literal notranslate"><span class="pre">:tag</span></code> or using digests guarantee a specific image version.</p>
+</section>
+<section id="ip">
+<h2><code class="docutils literal notranslate"><span class="pre">IP=</span></code><a class="headerlink" href="#ip" title="Permalink to this heading">¶</a></h2>
+<p>Specify a static IPv4 address for the container, for example <strong>10.88.64.128</strong>.
+Equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--ip</span></code> option.</p>
+</section>
+<section id="ip6">
+<h2><code class="docutils literal notranslate"><span class="pre">IP6=</span></code><a class="headerlink" href="#ip6" title="Permalink to this heading">¶</a></h2>
+<p>Specify a static IPv6 address for the container, for example <strong>fd46:db93:aa76:ac37::10</strong>.
+Equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--ip6</span></code> option.</p>
+</section>
+<section id="label">
+<h2><code class="docutils literal notranslate"><span class="pre">Label=</span></code><a class="headerlink" href="#label" title="Permalink to this heading">¶</a></h2>
+<p>Set one or more OCI labels on the container. The format is a list of <code class="docutils literal notranslate"><span class="pre">key=value</span></code> items,
+similar to <code class="docutils literal notranslate"><span class="pre">Environment</span></code>.</p>
+<p>This key can be listed multiple times.</p>
+</section>
+<section id="logdriver">
+<h2><code class="docutils literal notranslate"><span class="pre">LogDriver=</span></code><a class="headerlink" href="#logdriver" title="Permalink to this heading">¶</a></h2>
+<p>Set the log-driver used by Podman when running the container.
+Equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--log-driver</span></code> option.</p>
+</section>
+<section id="mount">
+<h2><code class="docutils literal notranslate"><span class="pre">Mount=</span></code><a class="headerlink" href="#mount" title="Permalink to this heading">¶</a></h2>
+<p>Attach a filesystem mount to the container.
+This is equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--mount</span></code> option, and
+generally has the form <code class="docutils literal notranslate"><span class="pre">type=TYPE,TYPE-SPECIFIC-OPTION[,...]</span></code>.</p>
+<p>As a special case, for <code class="docutils literal notranslate"><span class="pre">type=volume</span></code> if <code class="docutils literal notranslate"><span class="pre">source</span></code> ends with <code class="docutils literal notranslate"><span class="pre">.volume</span></code>, a Podman named volume called
+<code class="docutils literal notranslate"><span class="pre">systemd-$name</span></code> is used as the source, and the generated systemd service contains
+a dependency on the <code class="docutils literal notranslate"><span class="pre">$name-volume.service</span></code>. Such a volume can be automatically be lazily
+created by using a <code class="docutils literal notranslate"><span class="pre">$name.volume</span></code> Quadlet file.</p>
+<p>This key can be listed multiple times.</p>
+</section>
+<section id="network">
+<h2><code class="docutils literal notranslate"><span class="pre">Network=</span></code><a class="headerlink" href="#network" title="Permalink to this heading">¶</a></h2>
+<p>Specify a custom network for the container. This has the same format as the <code class="docutils literal notranslate"><span class="pre">--network</span></code> option
+to <code class="docutils literal notranslate"><span class="pre">podman</span> <span class="pre">run</span></code>. For example, use <code class="docutils literal notranslate"><span class="pre">host</span></code> to use the host network in the container, or <code class="docutils literal notranslate"><span class="pre">none</span></code> to
+not set up networking in the container.</p>
+<p>As a special case, if the <code class="docutils literal notranslate"><span class="pre">name</span></code> of the network ends with <code class="docutils literal notranslate"><span class="pre">.network</span></code>, a Podman network called
+<code class="docutils literal notranslate"><span class="pre">systemd-$name</span></code> is used, and the generated systemd service contains
+a dependency on the <code class="docutils literal notranslate"><span class="pre">$name-network.service</span></code>. Such a network can be automatically
+created by using a <code class="docutils literal notranslate"><span class="pre">$name.network</span></code> Quadlet file.</p>
+<p>This key can be listed multiple times.</p>
+</section>
+<section id="nonewprivileges-defaults-to-no">
+<h2><code class="docutils literal notranslate"><span class="pre">NoNewPrivileges=</span></code> (defaults to <code class="docutils literal notranslate"><span class="pre">no</span></code>)<a class="headerlink" href="#nonewprivileges-defaults-to-no" title="Permalink to this heading">¶</a></h2>
+<p>If enabled, this disables the container processes from gaining additional privileges via things like
+setuid and file capabilities.</p>
+</section>
+<section id="rootfs">
+<h2><code class="docutils literal notranslate"><span class="pre">Rootfs=</span></code><a class="headerlink" href="#rootfs" title="Permalink to this heading">¶</a></h2>
+<p>The rootfs to use for the container. Rootfs points to a directory on the system that contains the content to be run within the container. This option conflicts with the <code class="docutils literal notranslate"><span class="pre">Image</span></code> option.</p>
+<p>The format of the rootfs is the same as when passed to <code class="docutils literal notranslate"><span class="pre">podman</span> <span class="pre">run</span> <span class="pre">--rootfs</span></code>, so it supports ovelay mounts as well.</p>
+<p>Note: On SELinux systems, the rootfs needs the correct label, which is by default unconfined_u:object_r:container_file_t:s0.</p>
+</section>
+<section id="notify-defaults-to-no">
+<h2><code class="docutils literal notranslate"><span class="pre">Notify=</span></code> (defaults to <code class="docutils literal notranslate"><span class="pre">no</span></code>)<a class="headerlink" href="#notify-defaults-to-no" title="Permalink to this heading">¶</a></h2>
+<p>By default, Podman is run in such a way that the systemd startup notify command is handled by
+the container runtime. In other words, the service is deemed started when the container runtime
+starts the child in the container. However, if the container application supports
+<a class="reference external" href="https://www.freedesktop.org/software/systemd/man/sd_notify.html">sd_notify</a>, then setting
+<code class="docutils literal notranslate"><span class="pre">Notify</span></code> to true passes the notification details to the container allowing it to notify
+of startup on its own.</p>
+</section>
+<section id="podmanargs">
+<h2><code class="docutils literal notranslate"><span class="pre">PodmanArgs=</span></code><a class="headerlink" href="#podmanargs" title="Permalink to this heading">¶</a></h2>
+<p>This key contains a list of arguments passed directly to the end of the <code class="docutils literal notranslate"><span class="pre">podman</span> <span class="pre">run</span></code> command
+in the generated file (right before the image name in the command line). It can be used to
+access Podman features otherwise unsupported by the generator. Since the generator is unaware
+of what unexpected interactions can be caused by these arguments, is not recommended to use
+this option.</p>
+<p>The format of this is a space separated list of arguments, which can optionally be individually
+escaped to allow inclusion of whitespace and other control characters.</p>
+<p>This key can be listed multiple times.</p>
+</section>
+<section id="publishport">
+<h2><code class="docutils literal notranslate"><span class="pre">PublishPort=</span></code><a class="headerlink" href="#publishport" title="Permalink to this heading">¶</a></h2>
+<p>Exposes a port, or a range of ports (e.g. <code class="docutils literal notranslate"><span class="pre">50-59</span></code>), from the container to the host. Equivalent
+to the Podman <code class="docutils literal notranslate"><span class="pre">--publish</span></code> option. The format is similar to the Podman options, which is of
+the form <code class="docutils literal notranslate"><span class="pre">ip:hostPort:containerPort</span></code>, <code class="docutils literal notranslate"><span class="pre">ip::containerPort</span></code>, <code class="docutils literal notranslate"><span class="pre">hostPort:containerPort</span></code> or
+<code class="docutils literal notranslate"><span class="pre">containerPort</span></code>, where the number of host and container ports must be the same (in the case
+of a range).</p>
+<p>If the IP is set to 0.0.0.0 or not set at all, the port is bound on all IPv4 addresses on
+the host; use [::] for IPv6.</p>
+<p>Note that not listing a host port means that Podman automatically selects one, and it
+may be different for each invocation of service. This makes that a less useful option. The
+allocated port can be found with the <code class="docutils literal notranslate"><span class="pre">podman</span> <span class="pre">port</span></code> command.</p>
+<p>This key can be listed multiple times.</p>
+</section>
+<section id="pull">
+<h2><code class="docutils literal notranslate"><span class="pre">Pull=</span></code><a class="headerlink" href="#pull" title="Permalink to this heading">¶</a></h2>
+<p>Set the image pull policy.
+This is equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--pull</span></code> option</p>
+</section>
+<section id="readonly-defaults-to-no">
+<h2><code class="docutils literal notranslate"><span class="pre">ReadOnly=</span></code> (defaults to <code class="docutils literal notranslate"><span class="pre">no</span></code>)<a class="headerlink" href="#readonly-defaults-to-no" title="Permalink to this heading">¶</a></h2>
+<p>If enabled, makes the image read-only.</p>
+</section>
+<section id="runinit-default-to-no">
+<h2><code class="docutils literal notranslate"><span class="pre">RunInit=</span></code> (default to <code class="docutils literal notranslate"><span class="pre">no</span></code>)<a class="headerlink" href="#runinit-default-to-no" title="Permalink to this heading">¶</a></h2>
+<p>If enabled, the container has a minimal init process inside the
+container that forwards signals and reaps processes.</p>
+</section>
+<section id="seccompprofile">
+<h2><code class="docutils literal notranslate"><span class="pre">SeccompProfile=</span></code><a class="headerlink" href="#seccompprofile" title="Permalink to this heading">¶</a></h2>
+<p>Set the seccomp profile to use in the container. If unset, the default podman profile is used.
+Set to either the pathname of a json file, or <code class="docutils literal notranslate"><span class="pre">unconfined</span></code> to disable the seccomp filters.</p>
+</section>
+<section id="securitylabeldisable">
+<h2><code class="docutils literal notranslate"><span class="pre">SecurityLabelDisable=</span></code><a class="headerlink" href="#securitylabeldisable" title="Permalink to this heading">¶</a></h2>
+<p>Turn off label separation for the container.</p>
+</section>
+<section id="securitylabelfiletype">
+<h2><code class="docutils literal notranslate"><span class="pre">SecurityLabelFileType=</span></code><a class="headerlink" href="#securitylabelfiletype" title="Permalink to this heading">¶</a></h2>
+<p>Set the label file type for the container files.</p>
+</section>
+<section id="securitylabellevel">
+<h2><code class="docutils literal notranslate"><span class="pre">SecurityLabelLevel=</span></code><a class="headerlink" href="#securitylabellevel" title="Permalink to this heading">¶</a></h2>
+<p>Set the label process level for the container processes.</p>
+</section>
+<section id="securitylabelnested">
+<h2><code class="docutils literal notranslate"><span class="pre">SecurityLabelNested=</span></code><a class="headerlink" href="#securitylabelnested" title="Permalink to this heading">¶</a></h2>
+<p>Allow SecurityLabels to function within the container. This allows separation of containers created within the container.</p>
+</section>
+<section id="securitylabeltype">
+<h2><code class="docutils literal notranslate"><span class="pre">SecurityLabelType=</span></code><a class="headerlink" href="#securitylabeltype" title="Permalink to this heading">¶</a></h2>
+<p>Set the label process type for the container processes.</p>
+</section>
+<section id="secret">
+<h2><code class="docutils literal notranslate"><span class="pre">Secret=</span></code><a class="headerlink" href="#secret" title="Permalink to this heading">¶</a></h2>
+<p>Use a Podman secret in the container either as a file or an environment variable.
+This is equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--secret</span></code> option and generally has the form <code class="docutils literal notranslate"><span class="pre">secret[,opt=opt</span> <span class="pre">...]</span></code></p>
+</section>
+<section id="sysctl">
+<h2><code class="docutils literal notranslate"><span class="pre">Sysctl=</span></code><a class="headerlink" href="#sysctl" title="Permalink to this heading">¶</a></h2>
+<p>Configures namespaced kernel parameters for the container. The format is <code class="docutils literal notranslate"><span class="pre">Sysctl=name=value</span></code>.</p>
+<p>This is a space separated list of kernel parameters. This key can be listed multiple times.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sysctl</span><span class="o">=</span><span class="n">net</span><span class="o">.</span><span class="n">ipv6</span><span class="o">.</span><span class="n">conf</span><span class="o">.</span><span class="n">all</span><span class="o">.</span><span class="n">disable_ipv6</span><span class="o">=</span><span class="mi">1</span> <span class="n">net</span><span class="o">.</span><span class="n">ipv6</span><span class="o">.</span><span class="n">conf</span><span class="o">.</span><span class="n">all</span><span class="o">.</span><span class="n">use_tempaddr</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<section id="tmpfs">
+<h2><code class="docutils literal notranslate"><span class="pre">Tmpfs=</span></code><a class="headerlink" href="#tmpfs" title="Permalink to this heading">¶</a></h2>
+<p>Mount a tmpfs in the container. This is equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--tmpfs</span></code> option, and
+generally has the form <code class="docutils literal notranslate"><span class="pre">CONTAINER-DIR[:OPTIONS]</span></code>.</p>
+<p>This key can be listed multiple times.</p>
+</section>
+<section id="timezone-if-unset-uses-system-configured-default">
+<h2><code class="docutils literal notranslate"><span class="pre">Timezone=</span></code> (if unset uses system-configured default)<a class="headerlink" href="#timezone-if-unset-uses-system-configured-default" title="Permalink to this heading">¶</a></h2>
+<p>The timezone to run the container in.</p>
+</section>
+<section id="user">
+<h2><code class="docutils literal notranslate"><span class="pre">User=</span></code><a class="headerlink" href="#user" title="Permalink to this heading">¶</a></h2>
+<p>The (numeric) UID to run as inside the container. This does not need to match the UID on the host,
+which can be modified with <code class="docutils literal notranslate"><span class="pre">UserNS</span></code>, but if that is not specified, this UID is also used on the host.</p>
+</section>
+<section id="userns">
+<h2><code class="docutils literal notranslate"><span class="pre">UserNS=</span></code><a class="headerlink" href="#userns" title="Permalink to this heading">¶</a></h2>
+<p>Set the user namespace mode for the container. This is equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--userns</span></code> option and
+generally has the form <code class="docutils literal notranslate"><span class="pre">MODE[:OPTIONS,...]</span></code>.</p>
+</section>
+<section id="volatiletmp-defaults-to-no">
+<h2><code class="docutils literal notranslate"><span class="pre">VolatileTmp=</span></code> (defaults to <code class="docutils literal notranslate"><span class="pre">no</span></code>)<a class="headerlink" href="#volatiletmp-defaults-to-no" title="Permalink to this heading">¶</a></h2>
+<p>If enabled, the container has a fresh tmpfs mounted on <code class="docutils literal notranslate"><span class="pre">/tmp</span></code>.</p>
+<p><strong>NOTE:</strong> Podman automatically copies any content from the image onto the tmpfs</p>
+</section>
+<section id="volume">
+<h2><code class="docutils literal notranslate"><span class="pre">Volume=</span></code><a class="headerlink" href="#volume" title="Permalink to this heading">¶</a></h2>
+<p>Mount a volume in the container. This is equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--volume</span></code> option, and
+generally has the form <code class="docutils literal notranslate"><span class="pre">[[SOURCE-VOLUME|HOST-DIR:]CONTAINER-DIR[:OPTIONS]]</span></code>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">SOURCE-VOLUME</span></code> starts with <code class="docutils literal notranslate"><span class="pre">.</span></code>, Quadlet resolves the path relative to the location of the unit file.</p>
+<p>As a special case, if <code class="docutils literal notranslate"><span class="pre">SOURCE-VOLUME</span></code> ends with <code class="docutils literal notranslate"><span class="pre">.volume</span></code>, a Podman named volume called
+<code class="docutils literal notranslate"><span class="pre">systemd-$name</span></code> is used as the source, and the generated systemd service contains
+a dependency on the <code class="docutils literal notranslate"><span class="pre">$name-volume.service</span></code>. Such a volume can be automatically be lazily
+created by using a <code class="docutils literal notranslate"><span class="pre">$name.volume</span></code> Quadlet file.</p>
+<p>This key can be listed multiple times.</p>
+</section>
+<section id="workingdir">
+<h2><code class="docutils literal notranslate"><span class="pre">WorkingDir=</span></code><a class="headerlink" href="#workingdir" title="Permalink to this heading">¶</a></h2>
+<p>Working directory inside the container.</p>
+<p>The default working directory for running binaries within a container is the root directory (/). The image developer can set a different default with the WORKDIR instruction. This option overrides the working directory by using the -w option.</p>
+</section>
+</section>
+<section id="kube-units-kube">
+<h1>Kube units [Kube]<a class="headerlink" href="#kube-units-kube" title="Permalink to this heading">¶</a></h1>
+<p>Kube units are named with a <code class="docutils literal notranslate"><span class="pre">.kube</span></code> extension and contain a <code class="docutils literal notranslate"><span class="pre">[Kube]</span></code> section describing
+how <code class="docutils literal notranslate"><span class="pre">podman</span> <span class="pre">kube</span> <span class="pre">play</span></code> runs as a service. The resulting service file contains a line like
+<code class="docutils literal notranslate"><span class="pre">ExecStart=podman</span> <span class="pre">kube</span> <span class="pre">play</span> <span class="pre">…</span> <span class="pre">file.yml</span></code>, and most of the keys in this section control the command-line
+options passed to Podman. However, some options also affect the details of how systemd is set up to run and
+interact with the container.</p>
+<p>There is only one required key, <code class="docutils literal notranslate"><span class="pre">Yaml</span></code>, which defines the path to the Kubernetes YAML file.</p>
+<p>Valid options for <code class="docutils literal notranslate"><span class="pre">[Kube]</span></code> are listed below:</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>[Kube] options</strong></p></th>
+<th class="head"><p><strong>podman kube play equivalent</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ConfigMap=/tmp/config.map</p></td>
+<td><p>--config-map /tmp/config.map</p></td>
+</tr>
+<tr class="row-odd"><td><p>LogDriver=journald</p></td>
+<td><p>--log-driver journald</p></td>
+</tr>
+<tr class="row-even"><td><p>Network=host</p></td>
+<td><p>--net host</p></td>
+</tr>
+<tr class="row-odd"><td><p>PodmanArgs=--annotation=key=value</p></td>
+<td><p>--annotation=key=value</p></td>
+</tr>
+<tr class="row-even"><td><p>PublishPort=59-60</p></td>
+<td><p>--publish=59-60</p></td>
+</tr>
+<tr class="row-odd"><td><p>UserNS=keep-id:uid=200,gid=210</p></td>
+<td><p>--userns keep-id:uid=200,gid=210</p></td>
+</tr>
+<tr class="row-even"><td><p>Yaml=/tmp/kube.yaml</p></td>
+<td><p>podman kube play /tmp/kube.yaml</p></td>
+</tr>
+</tbody>
+</table>
+<p>Supported keys in the <code class="docutils literal notranslate"><span class="pre">[Kube]</span></code> section are:</p>
+<section id="configmap">
+<h2><code class="docutils literal notranslate"><span class="pre">ConfigMap=</span></code><a class="headerlink" href="#configmap" title="Permalink to this heading">¶</a></h2>
+<p>Pass the Kubernetes ConfigMap YAML at path to <code class="docutils literal notranslate"><span class="pre">podman</span> <span class="pre">kube</span> <span class="pre">play</span></code> via the <code class="docutils literal notranslate"><span class="pre">--configmap</span></code> argument.
+Unlike the <code class="docutils literal notranslate"><span class="pre">configmap</span></code> argument, the value may contain only one path but
+it may be absolute or relative to the location of the unit file.</p>
+<p>This key may be used multiple times</p>
+</section>
+<section id="exitcodepropagation">
+<h2><code class="docutils literal notranslate"><span class="pre">ExitCodePropagation=</span></code><a class="headerlink" href="#exitcodepropagation" title="Permalink to this heading">¶</a></h2>
+<p>Control how the main PID of the systemd service should exit.  The following values are supported:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">all</span></code>: exit non-zero if all containers have failed (i.e., exited non-zero)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">any</span></code>: exit non-zero if any container has failed</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">none</span></code>: exit zero and ignore failed containers</p></li>
+</ul>
+<p>The current default value is <code class="docutils literal notranslate"><span class="pre">none</span></code>.</p>
+</section>
+<section id="id1">
+<h2><code class="docutils literal notranslate"><span class="pre">LogDriver=</span></code><a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<p>Set the log-driver Podman uses when running the container.
+Equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--log-driver</span></code> option.</p>
+</section>
+<section id="mask">
+<h2><code class="docutils literal notranslate"><span class="pre">Mask=</span></code><a class="headerlink" href="#mask" title="Permalink to this heading">¶</a></h2>
+<p>Specify the paths to mask separated by a colon. <code class="docutils literal notranslate"><span class="pre">Mask=/path/1:/path/2</span></code>.  A masked path cannot be accessed inside the container.</p>
+</section>
+<section id="id2">
+<h2><code class="docutils literal notranslate"><span class="pre">Network=</span></code><a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>Specify a custom network for the container. This has the same format as the <code class="docutils literal notranslate"><span class="pre">--network</span></code> option
+to <code class="docutils literal notranslate"><span class="pre">podman</span> <span class="pre">kube</span> <span class="pre">play</span></code>. For example, use <code class="docutils literal notranslate"><span class="pre">host</span></code> to use the host network in the container, or <code class="docutils literal notranslate"><span class="pre">none</span></code> to
+not set up networking in the container.</p>
+<p>As a special case, if the <code class="docutils literal notranslate"><span class="pre">name</span></code> of the network ends with <code class="docutils literal notranslate"><span class="pre">.network</span></code>, a Podman network called
+<code class="docutils literal notranslate"><span class="pre">systemd-$name</span></code> is used, and the generated systemd service contains
+a dependency on the <code class="docutils literal notranslate"><span class="pre">$name-network.service</span></code>. Such a network can be automatically
+created by using a <code class="docutils literal notranslate"><span class="pre">$name.network</span></code> Quadlet file.</p>
+<p>This key can be listed multiple times.</p>
+</section>
+<section id="id3">
+<h2><code class="docutils literal notranslate"><span class="pre">PodmanArgs=</span></code><a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<p>This key contains a list of arguments passed directly to the end of the <code class="docutils literal notranslate"><span class="pre">podman</span> <span class="pre">kube</span> <span class="pre">play</span></code> command
+in the generated file (right before the path to the yaml file in the command line). It can be used to
+access Podman features otherwise unsupported by the generator. Since the generator is unaware
+of what unexpected interactions can be caused by these arguments, is not recommended to use
+this option.</p>
+<p>The format of this is a space separated list of arguments, which can optionally be individually
+escaped to allow inclusion of whitespace and other control characters.</p>
+<p>This key can be listed multiple times.</p>
+</section>
+<section id="id4">
+<h2><code class="docutils literal notranslate"><span class="pre">PublishPort=</span></code><a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<p>Exposes a port, or a range of ports (e.g. <code class="docutils literal notranslate"><span class="pre">50-59</span></code>), from the container to the host. Equivalent
+to the <code class="docutils literal notranslate"><span class="pre">podman</span> <span class="pre">kube</span> <span class="pre">play</span></code>’s <code class="docutils literal notranslate"><span class="pre">--publish</span></code> option. The format is similar to the Podman options, which is of
+the form <code class="docutils literal notranslate"><span class="pre">ip:hostPort:containerPort</span></code>, <code class="docutils literal notranslate"><span class="pre">ip::containerPort</span></code>, <code class="docutils literal notranslate"><span class="pre">hostPort:containerPort</span></code> or
+<code class="docutils literal notranslate"><span class="pre">containerPort</span></code>, where the number of host and container ports must be the same (in the case
+of a range).</p>
+<p>If the IP is set to 0.0.0.0 or not set at all, the port is bound on all IPv4 addresses on
+the host; use [::] for IPv6.</p>
+<p>The list of published ports specified in the unit file is merged with the list of ports specified
+in the Kubernetes YAML file. If the same container port and protocol is specified in both, the
+entry from the unit file takes precedence</p>
+<p>This key can be listed multiple times.</p>
+</section>
+<section id="unmask">
+<h2><code class="docutils literal notranslate"><span class="pre">Unmask=</span></code><a class="headerlink" href="#unmask" title="Permalink to this heading">¶</a></h2>
+<p>Specify the paths to unmask separated by a colon. unmask=ALL or /path/1:/path/2, or shell expanded paths (/proc/*):</p>
+<p>If set to <code class="docutils literal notranslate"><span class="pre">ALL</span></code>, Podman will unmask all the paths that are masked or made read-only by default.</p>
+<p>The default masked paths are /proc/acpi, /proc/kcore, /proc/keys, /proc/latency_stats, /proc/sched_debug, /proc/scsi, /proc/timer_list, /proc/timer_stats, /sys/firmware, and /sys/fs/selinux.</p>
+<p>The default paths that are read-only are /proc/asound, /proc/bus, /proc/fs, /proc/irq, /proc/sys, /proc/sysrq-trigger, /sys/fs/cgroup.</p>
+</section>
+<section id="id5">
+<h2><code class="docutils literal notranslate"><span class="pre">UserNS=</span></code><a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
+<p>Set the user namespace mode for the container. This is equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--userns</span></code> option and
+generally has the form <code class="docutils literal notranslate"><span class="pre">MODE[:OPTIONS,...]</span></code>.</p>
+</section>
+<section id="yaml">
+<h2><code class="docutils literal notranslate"><span class="pre">Yaml=</span></code><a class="headerlink" href="#yaml" title="Permalink to this heading">¶</a></h2>
+<p>The path, absolute or relative to the location of the unit file, to the Kubernetes YAML file to use.</p>
+</section>
+</section>
+<section id="network-units-network">
+<h1>Network units [Network]<a class="headerlink" href="#network-units-network" title="Permalink to this heading">¶</a></h1>
+<p>Network files are named with a <code class="docutils literal notranslate"><span class="pre">.network</span></code> extension and contain a section <code class="docutils literal notranslate"><span class="pre">[Network]</span></code> describing the
+named Podman network. The generated service is a one-time command that ensures that the network
+exists on the host, creating it if needed.</p>
+<p>For a network file named <code class="docutils literal notranslate"><span class="pre">$NAME.network</span></code>, the generated Podman network is called <code class="docutils literal notranslate"><span class="pre">systemd-$NAME</span></code>,
+and the generated service file <code class="docutils literal notranslate"><span class="pre">$NAME-network.service</span></code>.</p>
+<p>Using network units allows containers to depend on networks being automatically pre-created. This is
+particularly interesting when using special options to control network creation, as Podman otherwise creates networks with the default options.</p>
+<p>Valid options for <code class="docutils literal notranslate"><span class="pre">[Network]</span></code> are listed below:</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>[Network] options</strong></p></th>
+<th class="head"><p><strong>podman network create equivalent</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DisableDNS=true</p></td>
+<td><p>--disable-dns</p></td>
+</tr>
+<tr class="row-odd"><td><p>Driver=bridge</p></td>
+<td><p>--driver bridge</p></td>
+</tr>
+<tr class="row-even"><td><p>Gateway=192.168.55.3</p></td>
+<td><p>--gateway 192.168.55.3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Internal=true</p></td>
+<td><p>--internal</p></td>
+</tr>
+<tr class="row-even"><td><p>IPAMDriver=dhcp</p></td>
+<td><p>--ipam-driver dhcp</p></td>
+</tr>
+<tr class="row-odd"><td><p>IPRange=192.168.55.128/25</p></td>
+<td><p>--ip-range 192.168.55.128/25</p></td>
+</tr>
+<tr class="row-even"><td><p>IPv6=true</p></td>
+<td><p>--ipv6</p></td>
+</tr>
+<tr class="row-odd"><td><p>Label=”YXZ”</p></td>
+<td><p>--label “XYZ”</p></td>
+</tr>
+<tr class="row-even"><td><p>Options=isolate</p></td>
+<td><p>--opt isolate</p></td>
+</tr>
+<tr class="row-odd"><td><p>PodmanArgs=--dns=192.168.55.1</p></td>
+<td><p>--dns=192.168.55.1</p></td>
+</tr>
+<tr class="row-even"><td><p>Subnet=192.5.0.0/16</p></td>
+<td><p>--subnet 192.5.0.0/16</p></td>
+</tr>
+</tbody>
+</table>
+<p>Supported keys in <code class="docutils literal notranslate"><span class="pre">[Network]</span></code> section are:</p>
+<section id="disabledns-defaults-to-no">
+<h2><code class="docutils literal notranslate"><span class="pre">DisableDNS=</span></code> (defaults to <code class="docutils literal notranslate"><span class="pre">no</span></code>)<a class="headerlink" href="#disabledns-defaults-to-no" title="Permalink to this heading">¶</a></h2>
+<p>If enabled, disables the DNS plugin for this network.</p>
+<p>This is equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--disable-dns</span></code> option</p>
+</section>
+<section id="driver-defaults-to-bridge">
+<h2><code class="docutils literal notranslate"><span class="pre">Driver=</span></code> (defaults to <code class="docutils literal notranslate"><span class="pre">bridge</span></code>)<a class="headerlink" href="#driver-defaults-to-bridge" title="Permalink to this heading">¶</a></h2>
+<p>Driver to manage the network. Currently <code class="docutils literal notranslate"><span class="pre">bridge</span></code>, <code class="docutils literal notranslate"><span class="pre">macvlan</span></code> and <code class="docutils literal notranslate"><span class="pre">ipvlan</span></code> are supported.</p>
+<p>This is equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--driver</span></code> option</p>
+</section>
+<section id="gateway">
+<h2><code class="docutils literal notranslate"><span class="pre">Gateway=</span></code><a class="headerlink" href="#gateway" title="Permalink to this heading">¶</a></h2>
+<p>Define a gateway for the subnet. If you want to provide a gateway address, you must also provide a subnet option.</p>
+<p>This is equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--gateway</span></code> option</p>
+<p>This key can be listed multiple times.</p>
+</section>
+<section id="internal-defaults-to-no">
+<h2><code class="docutils literal notranslate"><span class="pre">Internal=</span></code> (defaults to <code class="docutils literal notranslate"><span class="pre">no</span></code>)<a class="headerlink" href="#internal-defaults-to-no" title="Permalink to this heading">¶</a></h2>
+<p>Restrict external access of this network.</p>
+<p>This is equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--internal</span></code> option</p>
+</section>
+<section id="ipamdriver">
+<h2><code class="docutils literal notranslate"><span class="pre">IPAMDriver=</span></code><a class="headerlink" href="#ipamdriver" title="Permalink to this heading">¶</a></h2>
+<p>Set the ipam driver (IP Address Management Driver) for the network. Currently <code class="docutils literal notranslate"><span class="pre">host-local</span></code>, <code class="docutils literal notranslate"><span class="pre">dhcp</span></code> and <code class="docutils literal notranslate"><span class="pre">none</span></code> are supported.</p>
+<p>This is equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--ipam-driver</span></code> option</p>
+</section>
+<section id="iprange">
+<h2><code class="docutils literal notranslate"><span class="pre">IPRange=</span></code><a class="headerlink" href="#iprange" title="Permalink to this heading">¶</a></h2>
+<p>Allocate  container  IP  from a range. The range must be a either a complete subnet in CIDR notation or be
+in the <code class="docutils literal notranslate"><span class="pre">&lt;startIP&gt;-&lt;endIP&gt;</span></code> syntax which allows for a more flexible range compared to the CIDR subnet.
+The ip-range option must be used with a subnet option.</p>
+<p>This is equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--ip-range</span></code> option</p>
+<p>This key can be listed multiple times.</p>
+</section>
+<section id="ipv6">
+<h2><code class="docutils literal notranslate"><span class="pre">IPv6=</span></code><a class="headerlink" href="#ipv6" title="Permalink to this heading">¶</a></h2>
+<p>Enable IPv6 (Dual Stack) networking.</p>
+<p>This is equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--ipv6</span></code> option</p>
+</section>
+<section id="id6">
+<h2><code class="docutils literal notranslate"><span class="pre">Label=</span></code><a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h2>
+<p>Set one or more OCI labels on the network. The format is a list of
+<code class="docutils literal notranslate"><span class="pre">key=value</span></code> items, similar to <code class="docutils literal notranslate"><span class="pre">Environment</span></code>.</p>
+<p>This key can be listed multiple times.</p>
+</section>
+<section id="options">
+<h2><code class="docutils literal notranslate"><span class="pre">Options=</span></code><a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
+<p>Set driver specific options.</p>
+<p>This is equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--opt</span></code> option</p>
+</section>
+<section id="id7">
+<h2><code class="docutils literal notranslate"><span class="pre">PodmanArgs=</span></code><a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h2>
+<p>This key contains a list of arguments passed directly to the end of the <code class="docutils literal notranslate"><span class="pre">podman</span> <span class="pre">network</span> <span class="pre">create</span></code> command
+in the generated file (right before the name of the network in the command line). It can be used to
+access Podman features otherwise unsupported by the generator. Since the generator is unaware
+of what unexpected interactions can be caused by these arguments, is not recommended to use
+this option.</p>
+<p>The format of this is a space separated list of arguments, which can optionally be individually
+escaped to allow inclusion of whitespace and other control characters.</p>
+<p>This key can be listed multiple times.</p>
+</section>
+<section id="subnet">
+<h2><code class="docutils literal notranslate"><span class="pre">Subnet=</span></code><a class="headerlink" href="#subnet" title="Permalink to this heading">¶</a></h2>
+<p>The subnet in CIDR notation.</p>
+<p>This is equivalent to the Podman <code class="docutils literal notranslate"><span class="pre">--subnet</span></code> option</p>
+<p>This key can be listed multiple times.</p>
+</section>
+</section>
+<section id="volume-units-volume">
+<h1>Volume units [Volume]<a class="headerlink" href="#volume-units-volume" title="Permalink to this heading">¶</a></h1>
+<p>Volume files are named with a <code class="docutils literal notranslate"><span class="pre">.volume</span></code> extension and contain a section <code class="docutils literal notranslate"><span class="pre">[Volume]</span></code> describing the
+named Podman volume. The generated service is a one-time command that ensures that the volume
+exists on the host, creating it if needed.</p>
+<p>For a volume file named <code class="docutils literal notranslate"><span class="pre">$NAME.volume</span></code>, the generated Podman volume is called <code class="docutils literal notranslate"><span class="pre">systemd-$NAME</span></code>,
+and the generated service file <code class="docutils literal notranslate"><span class="pre">$NAME-volume.service</span></code>.</p>
+<p>Using volume units allows containers to depend on volumes being automatically pre-created. This is
+particularly interesting when using special options to control volume creation,
+as Podman otherwise creates volumes with the default options.</p>
+<p>Valid options for <code class="docutils literal notranslate"><span class="pre">[Volume]</span></code> are listed below:</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>[Volume] options</strong></p></th>
+<th class="head"><p><strong>podman volume create equivalent</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Device=tmpfs</p></td>
+<td><p>--opt device=tmpfs</p></td>
+</tr>
+<tr class="row-odd"><td><p>Copy=true</p></td>
+<td><p>--opt copy</p></td>
+</tr>
+<tr class="row-even"><td><p>Group=192</p></td>
+<td><p>--opt group=192</p></td>
+</tr>
+<tr class="row-odd"><td><p>Label=”foo=bar”</p></td>
+<td><p>--label “foo=bar”</p></td>
+</tr>
+<tr class="row-even"><td><p>Options=XYZ</p></td>
+<td><p>--opt XYZ</p></td>
+</tr>
+<tr class="row-odd"><td><p>PodmanArgs=--driver=image</p></td>
+<td><p>--driver=image</p></td>
+</tr>
+</tbody>
+</table>
+<p>Supported keys in <code class="docutils literal notranslate"><span class="pre">[Volume]</span></code> section are:</p>
+<section id="copy-default-to-yes">
+<h2><code class="docutils literal notranslate"><span class="pre">Copy=</span></code> (default to <code class="docutils literal notranslate"><span class="pre">yes</span></code>)<a class="headerlink" href="#copy-default-to-yes" title="Permalink to this heading">¶</a></h2>
+<p>If enabled, the content of the image located at the mountpoint of the volume is copied into the
+volume on the first run.</p>
+</section>
+<section id="device">
+<h2><code class="docutils literal notranslate"><span class="pre">Device=</span></code><a class="headerlink" href="#device" title="Permalink to this heading">¶</a></h2>
+<p>The path of a device which is mounted for the volume.</p>
+</section>
+<section id="id8">
+<h2><code class="docutils literal notranslate"><span class="pre">Group=</span></code><a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h2>
+<p>The host (numeric) GID, or group name to use as the group for the volume</p>
+</section>
+<section id="id9">
+<h2><code class="docutils literal notranslate"><span class="pre">Label=</span></code><a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h2>
+<p>Set one or more OCI labels on the volume. The format is a list of
+<code class="docutils literal notranslate"><span class="pre">key=value</span></code> items, similar to <code class="docutils literal notranslate"><span class="pre">Environment</span></code>.</p>
+<p>This key can be listed multiple times.</p>
+</section>
+<section id="id10">
+<h2><code class="docutils literal notranslate"><span class="pre">Options=</span></code><a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h2>
+<p>The mount options to use for a filesystem as used by the <strong>mount(8)</strong> command <code class="docutils literal notranslate"><span class="pre">-o</span></code> option.</p>
+</section>
+<section id="id11">
+<h2><code class="docutils literal notranslate"><span class="pre">PodmanArgs=</span></code><a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h2>
+<p>This key contains a list of arguments passed directly to the end of the <code class="docutils literal notranslate"><span class="pre">podman</span> <span class="pre">volume</span> <span class="pre">create</span></code> command
+in the generated file (right before the name of the network in the command line). It can be used to
+access Podman features otherwise unsupported by the generator. Since the generator is unaware
+of what unexpected interactions can be caused by these arguments, is not recommended to use
+this option.</p>
+<p>The format of this is a space separated list of arguments, which can optionally be individually
+escaped to allow inclusion of whitespace and other control characters.</p>
+<p>This key can be listed multiple times.</p>
+</section>
+<section id="type">
+<h2><code class="docutils literal notranslate"><span class="pre">Type=</span></code><a class="headerlink" href="#type" title="Permalink to this heading">¶</a></h2>
+<p>The filesystem type of <code class="docutils literal notranslate"><span class="pre">Device</span></code> as used by the <strong>mount(8)</strong> commands <code class="docutils literal notranslate"><span class="pre">-t</span></code> option.</p>
+</section>
+<section id="id12">
+<h2><code class="docutils literal notranslate"><span class="pre">User=</span></code><a class="headerlink" href="#id12" title="Permalink to this heading">¶</a></h2>
+<p>The host (numeric) UID, or user name to use as the owner for the volume</p>
+</section>
+</section>
+<section id="examples">
+<h1>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h1>
+<p>Example <code class="docutils literal notranslate"><span class="pre">test.container</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Unit</span><span class="p">]</span>
+<span class="n">Description</span><span class="o">=</span><span class="n">A</span> <span class="n">minimal</span> <span class="n">container</span>
+
+<span class="p">[</span><span class="n">Container</span><span class="p">]</span>
+<span class="c1"># Use the centos image</span>
+<span class="n">Image</span><span class="o">=</span><span class="n">quay</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">centos</span><span class="o">/</span><span class="n">centos</span><span class="p">:</span><span class="n">latest</span>
+
+<span class="c1"># Use volume and network defined below</span>
+<span class="n">Volume</span><span class="o">=</span><span class="n">test</span><span class="o">.</span><span class="n">volume</span><span class="p">:</span><span class="o">/</span><span class="n">data</span>
+<span class="n">Network</span><span class="o">=</span><span class="n">test</span><span class="o">.</span><span class="n">network</span>
+
+<span class="c1"># In the container we just run sleep</span>
+<span class="n">Exec</span><span class="o">=</span><span class="n">sleep</span> <span class="mi">60</span>
+
+<span class="p">[</span><span class="n">Service</span><span class="p">]</span>
+<span class="c1"># Restart service when sleep finishes</span>
+<span class="n">Restart</span><span class="o">=</span><span class="n">always</span>
+<span class="c1"># Extend Timeout to allow time to pull the image</span>
+<span class="n">TimeoutStartSec</span><span class="o">=</span><span class="mi">900</span>
+
+<span class="p">[</span><span class="n">Install</span><span class="p">]</span>
+<span class="c1"># Start by default on boot</span>
+<span class="n">WantedBy</span><span class="o">=</span><span class="n">multi</span><span class="o">-</span><span class="n">user</span><span class="o">.</span><span class="n">target</span> <span class="n">default</span><span class="o">.</span><span class="n">target</span>
+</pre></div>
+</div>
+<p>Example <code class="docutils literal notranslate"><span class="pre">test.kube</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Unit</span><span class="p">]</span>
+<span class="n">Description</span><span class="o">=</span><span class="n">A</span> <span class="n">kubernetes</span> <span class="n">yaml</span> <span class="n">based</span> <span class="n">service</span>
+<span class="n">Before</span><span class="o">=</span><span class="n">local</span><span class="o">-</span><span class="n">fs</span><span class="o">.</span><span class="n">target</span>
+
+<span class="p">[</span><span class="n">Kube</span><span class="p">]</span>
+<span class="n">Yaml</span><span class="o">=/</span><span class="n">opt</span><span class="o">/</span><span class="n">k8s</span><span class="o">/</span><span class="n">deployment</span><span class="o">.</span><span class="n">yml</span>
+
+<span class="p">[</span><span class="n">Install</span><span class="p">]</span>
+<span class="c1"># Start by default on boot</span>
+<span class="n">WantedBy</span><span class="o">=</span><span class="n">multi</span><span class="o">-</span><span class="n">user</span><span class="o">.</span><span class="n">target</span> <span class="n">default</span><span class="o">.</span><span class="n">target</span>
+</pre></div>
+</div>
+<p>Example <code class="docutils literal notranslate"><span class="pre">test.volume</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Volume</span><span class="p">]</span>
+<span class="n">User</span><span class="o">=</span><span class="n">root</span>
+<span class="n">Group</span><span class="o">=</span><span class="n">root</span>
+<span class="n">Label</span><span class="o">=</span><span class="n">org</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">Key</span><span class="o">=</span><span class="n">value</span>
+</pre></div>
+</div>
+<p>Example <code class="docutils literal notranslate"><span class="pre">test.network</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Network</span><span class="p">]</span>
+<span class="n">Subnet</span><span class="o">=</span><span class="mf">172.16.0.0</span><span class="o">/</span><span class="mi">24</span>
+<span class="n">Gateway</span><span class="o">=</span><span class="mf">172.16.0.1</span>
+<span class="n">IPRange</span><span class="o">=</span><span class="mf">172.16.0.0</span><span class="o">/</span><span class="mi">28</span>
+<span class="n">Label</span><span class="o">=</span><span class="n">org</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">Key</span><span class="o">=</span><span class="n">value</span>
+</pre></div>
+</div>
+</section>
+<section id="see-also">
+<h1>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h1>
+<p><strong><a class="reference external" href="https://www.freedesktop.org/software/systemd/man/systemd.unit.html">systemd.unit(5)</a></strong>,
+<strong><a class="reference external" href="https://www.freedesktop.org/software/systemd/man/systemd.service.html">systemd.service(5)</a></strong>,
+<strong><a class="reference internal" href="podman-run.1.html"><span class="std std-doc">podman-run(1)</span></a></strong>,
+<strong><a class="reference internal" href="podman-network-create.1.html"><span class="std std-doc">podman-network-create(1)</span></a></strong>,
+<strong><a class="reference internal" href="podman-auto-update.1.html"><span class="std std-doc">podman-auto-update(1)</span></a></strong></p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Podman</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Commands.html">Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Reference.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Search.html">Search</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, team.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../_sources/markdown/podman-systemd.unit.5.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>HeadBucket - Amazon S3</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="API_HeadBucket" /><meta name="default_state" content="API_HeadBucket" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html" /><link rel="alternate" type="text/markdown" href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.md" title="Markdown version" /><meta name="description" content="You can use this operation to determine if a bucket exists and if you have permission to access it. The action returns a 200 OK HTTP status code if the bucket exists and you have permission to access it. You can make a HeadBucket call on any bucket name to any Region in the partition, and regardless of the permissions on the bucket, you will receive a response header with the correct bucket location so that you can then make a proper, signed request to the appropriate Regional endpoint." /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon S3" /><meta name="guide" content="API Reference" /><meta name="abstract" content="Welcome to the Amazon S3 API Reference. This guide explains the Amazon Simple Storage Service (Amazon S3) application programming interface (API)." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html" /><link rel="alternate" href="https://docs.aws.amazon.com/id_id/AmazonS3/latest/API/API_HeadBucket.html" hreflang="id-id" /><link rel="alternate" href="https://docs.aws.amazon.com/id_id/AmazonS3/latest/API/API_HeadBucket.html" hreflang="id" /><link rel="alternate" href="https://docs.aws.amazon.com/de_de/AmazonS3/latest/API/API_HeadBucket.html" hreflang="de-de" /><link rel="alternate" href="https://docs.aws.amazon.com/de_de/AmazonS3/latest/API/API_HeadBucket.html" hreflang="de" /><link rel="alternate" href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html" hreflang="en-us" /><link rel="alternate" href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html" hreflang="en" /><link rel="alternate" href="https://docs.aws.amazon.com/es_es/AmazonS3/latest/API/API_HeadBucket.html" hreflang="es-es" /><link rel="alternate" href="https://docs.aws.amazon.com/es_es/AmazonS3/latest/API/API_HeadBucket.html" hreflang="es" /><link rel="alternate" href="https://docs.aws.amazon.com/fr_fr/AmazonS3/latest/API/API_HeadBucket.html" hreflang="fr-fr" /><link rel="alternate" href="https://docs.aws.amazon.com/fr_fr/AmazonS3/latest/API/API_HeadBucket.html" hreflang="fr" /><link rel="alternate" href="https://docs.aws.amazon.com/it_it/AmazonS3/latest/API/API_HeadBucket.html" hreflang="it-it" /><link rel="alternate" href="https://docs.aws.amazon.com/it_it/AmazonS3/latest/API/API_HeadBucket.html" hreflang="it" /><link rel="alternate" href="https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/API/API_HeadBucket.html" hreflang="ja-jp" /><link rel="alternate" href="https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/API/API_HeadBucket.html" hreflang="ja" /><link rel="alternate" href="https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/API/API_HeadBucket.html" hreflang="ko-kr" /><link rel="alternate" href="https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/API/API_HeadBucket.html" hreflang="ko" /><link rel="alternate" href="https://docs.aws.amazon.com/pt_br/AmazonS3/latest/API/API_HeadBucket.html" hreflang="pt-br" /><link rel="alternate" href="https://docs.aws.amazon.com/pt_br/AmazonS3/latest/API/API_HeadBucket.html" hreflang="pt" /><link rel="alternate" href="https://docs.aws.amazon.com/zh_cn/AmazonS3/latest/API/API_HeadBucket.html" hreflang="zh-cn" /><link rel="alternate" href="https://docs.aws.amazon.com/zh_tw/AmazonS3/latest/API/API_HeadBucket.html" hreflang="zh-tw" /><link rel="alternate" href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html" hreflang="x-default" /><meta name="feedback-item" content="S3" /><meta name="this_doc_product" content="Amazon S3" /><meta name="this_doc_guide" content="API Reference" /><head xmlns="http://www.w3.org/1999/xhtml"> <script defer="" src="/assets/r/awsdocs-doc-page.2.0.0.js"></script><link href="/assets/r/awsdocs-doc-page.2.0.0.css" rel="stylesheet"/></head>
+<script defer="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'s3'}"></script><meta id="panorama-serviceSubSection" value="API Reference" /><meta id="panorama-serviceConsolePage" value="HeadBucket" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><p><a href="API_HeadBucket.md">View a markdown version of this page</a></p><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>HeadBucket - Amazon S3</title><meta name="pdf" content="/pdfs/AmazonS3/latest/API/s3-api.pdf#API_HeadBucket" /><meta name="forums" content="https://repost.aws/tags/TADSTjraA0Q4-a1dxk6eUYaw" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=S3&amp;topic_url=https://docs.aws.amazon.com/en_us/AmazonS3/latest/API/API_HeadBucket.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=https://docs.aws.amazon.com/en_us/AmazonS3/latest/API/API_HeadBucket.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=https://docs.aws.amazon.com/en_us/AmazonS3/latest/API/API_HeadBucket.html" /><meta name="keywords" content="API,requests,HeadBucket" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Simple Storage Service (S3)",
+        "item" : "https://docs.aws.amazon.com/s3/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "API Reference",
+        "item" : "https://docs.aws.amazon.com/AmazonS3/latest/API"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Actions",
+        "item" : "https://docs.aws.amazon.com/AmazonS3/latest/API/API_Operations.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "Amazon S3",
+        "item" : "https://docs.aws.amazon.com/AmazonS3/latest/API/API_Operations_Amazon_Simple_Storage_Service.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 6,
+        "name" : "HeadBucket",
+        "item" : "https://docs.aws.amazon.com/AmazonS3/latest/API/API_Operations_Amazon_Simple_Storage_Service.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/AmazonS3/latest/API/s3-api.pdf#API_HeadBucket" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="/index.html">Documentation</a><a href="/s3/index.html">Amazon Simple Storage Service (S3)</a><a href="Welcome.html">API Reference</a></div><div id="page-toc-src"><a href="#API_HeadBucket_RequestSyntax">Request Syntax</a><a href="#API_HeadBucket_RequestParameters">URI Request Parameters</a><a href="#API_HeadBucket_RequestBody">Request Body</a><a href="#API_HeadBucket_ResponseSyntax">Response Syntax</a><a href="#API_HeadBucket_ResponseElements">Response Elements</a><a href="#API_HeadBucket_Errors">Errors</a><a href="#API_HeadBucket_Examples">Examples</a><a href="#API_HeadBucket_SeeAlso">See Also</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="API_HeadBucket">HeadBucket</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><p>You can use this operation to determine if a bucket exists and if you have permission to access it.
+      The action returns a <code class="code">200 OK</code> HTTP status code if the bucket exists and you have 
+      permission to access it. You can make a <code class="code">HeadBucket</code> call on any bucket name to any 
+      Region in the partition, and regardless of the permissions on the bucket, you will receive a 
+      response header with the correct bucket location so that you can then make a proper, signed request 
+      to the appropriate Regional endpoint.</p><div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>If the bucket doesn't exist or you don't have permission to access it, the <code class="code">HEAD</code> 
+        request returns a generic <code class="code">400 Bad Request</code>, <code class="code">403 Forbidden</code>, or 
+        <code class="code">404 Not Found</code> HTTP status code. A message body isn't included, so you can't determine 
+        the exception beyond these HTTP response codes.</p></div></div><div class="variablelist">
+       
+       
+       
+   <dl>
+         <dt><span class="term">Authentication and authorization</span></dt>
+         <dd>
+            <p>
+               <b>General purpose buckets</b> - Request to public buckets that
+            grant the s3:ListBucket permission publicly do not need to be signed. All other
+              <code class="code">HeadBucket</code> requests must be authenticated and signed by using IAM credentials
+            (access key ID and secret access key for the IAM identities). All headers with the
+              <code class="code">x-amz-</code> prefix, including <code class="code">x-amz-copy-source</code>, must be signed. For more
+            information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a>.</p>
+            <p>
+               <b>Directory buckets</b> - You must use IAM credentials to
+            authenticate and authorize your access to the <code class="code">HeadBucket</code> API operation, instead of
+            using the temporary security credentials through the <code class="code">CreateSession</code> API
+            operation.</p>
+            <p>
+               AWS CLI or SDKs handles authentication and authorization on your behalf.</p>
+         </dd>
+       
+         <dt><span class="term">Permissions</span></dt>
+         <dd>
+            <p></p>
+            <div class="itemizedlist">
+                
+                
+            <ul class="itemizedlist"><li class="listitem">
+                  <p>
+                     <b>General purpose bucket permissions</b> - To use this
+                operation, you must have permissions to perform the <code class="code">s3:ListBucket</code> action. The
+                bucket owner has this permission by default and can grant this permission to others. For more
+                information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing access permissions to your
+                  Amazon S3 resources</a> in the <em>Amazon S3 User Guide</em>.</p>
+               </li><li class="listitem">
+                  <p>
+                     <b>Directory bucket permissions</b> - You must have the
+                  <b>
+                        <code class="code">s3express:CreateSession</code>
+                     </b> permission in the
+                  <code class="code">Action</code> element of a policy. If no session mode is specified, the session will be 
+                  created with the maximum allowable privilege, attempting <code class="code">ReadWrite</code> first, 
+                  then <code class="code">ReadOnly</code> if <code class="code">ReadWrite</code> is not permitted. If you want to explicitly 
+                  restrict the access to be read-only, you can set the <code class="code">s3express:SessionMode</code> condition key to 
+                  <code class="code">ReadOnly</code> on the bucket.</p>
+                  <p>For more information about example bucket policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-example-bucket-policies.html">Example
+                  bucket policies for S3 Express One Zone</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-identity-policies.html">AWS
+                  Identity and Access Management (IAM) identity-based policies for S3 Express One Zone</a> in the
+                  <em>Amazon S3 User Guide</em>.</p>
+               </li></ul></div>
+         </dd>
+       
+         <dt><span class="term">HTTP Host header syntax</span></dt>
+         <dd>
+            <p>
+               <b>Directory buckets </b> - The HTTP Host header syntax is <code class="code">
+                  <em>Bucket-name</em>.s3express-<em>zone-id</em>.<em>region-code</em>.amazonaws.com</code>.</p>
+            <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>You must make requests for this API operation to the Zonal endpoint. These endpoints support virtual-hosted-style requests in the format <code class="code">https://<em>bucket-name</em>.s3express-<em>zone-id</em>.<em>region-code</em>.amazonaws.com</code>. Path-style requests are not supported. For more information about endpoints in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional and Zonal endpoints for directory buckets in Availability Zones</a> in the
+    <em>Amazon S3 User Guide</em>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts for directory buckets in Local Zones</a> in the
+    <em>Amazon S3 User Guide</em>.</p></div></div>
+         </dd>
+      </dl></div><div class="awsdocs-note awsdocs-important"><div class="awsdocs-note-title"><awsui-icon name="status-warning" variant="error"></awsui-icon><h6>Important</h6></div><div class="awsdocs-note-text"><p>You must URL encode any signed header values that contain spaces. For example, if your header value is <code class="code">my  file.txt</code>, containing two spaces after <code class="code">my</code>, you must URL encode this value to <code class="code">my%20%20file.txt</code>.</p></div></div>
+      <h2 id="API_HeadBucket_RequestSyntax">Request Syntax</h2>
+      <pre class="programlisting"><div class="code-btn-container"></div><!--DEBUG: cli ()--><code class="nohighlight">HEAD / HTTP/1.1
+Host: <code class="replaceable">Bucket</code>.s3.amazonaws.com
+x-amz-expected-bucket-owner: <code class="replaceable">ExpectedBucketOwner</code>
+</code></pre>
+    
+      <h2 id="API_HeadBucket_RequestParameters">URI Request Parameters</h2>
+      <p>The request uses the following URI parameters.</p>
+      <div class="variablelist">
+          
+          
+      <dl>
+            <dt id="AmazonS3-HeadBucket-request-header-Bucket"><span class="term">
+               <b>
+                  <a href="#API_HeadBucket_RequestSyntax">Bucket</a>
+               </b>
+            </span></dt>
+            <dd>
+               <p>The bucket name.</p>
+               <p>
+                  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code class="code">
+                     <em>Bucket-name</em>.s3express-<em>zone-id</em>.<em>region-code</em>.amazonaws.com</code>. Path-style requests are not supported.  Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <code class="code">
+                     <em>bucket-base-name</em>--<em>zone-id</em>--x-s3</code> (for example, <code class="code">
+                     <em>amzn-s3-demo-bucket</em>--<em>usw2-az1</em>--x-s3</code>). For information about bucket naming
+         restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming
+            rules</a> in the <em>Amazon S3 User Guide</em>.</p>
+               <p>
+                  <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <em>AccessPointName</em>-<em>AccountId</em>.s3-accesspoint.<em>Region</em>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <em>Amazon S3 User Guide</em>.</p>
+               <p>
+                  <b>Object Lambda access points</b> - When you use this API operation with an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. 
+If the Object Lambda access point alias in a request is not valid, the error code <code class="code">InvalidAccessPointAliasError</code> is returned. 
+For more information about <code class="code">InvalidAccessPointAliasError</code>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of
+            Error Codes</a>.</p>
+               <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>Object Lambda access points are not supported by directory buckets.</p></div></div>
+               <p>
+                  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the 
+                     form <code class="code">
+                     <em>AccessPointName</em>-<em>AccountId</em>.<em>outpostID</em>.s3-outposts.<em>Region</em>.amazonaws.com</code>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <em>Amazon S3 User Guide</em>.</p>
+               <p>Required: Yes</p>
+            </dd>
+          
+            <dt id="AmazonS3-HeadBucket-request-header-ExpectedBucketOwner"><span class="term">
+               <b>
+                  <a href="#API_HeadBucket_RequestSyntax">x-amz-expected-bucket-owner</a>
+               </b>
+            </span></dt>
+            <dd>
+               <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code class="code">403 Forbidden</code> (access denied).</p>
+            </dd>
+         </dl></div>
+    
+      <h2 id="API_HeadBucket_RequestBody">Request Body</h2>
+      <p>The request does not have a request body.</p>
+    
+      <h2 id="API_HeadBucket_ResponseSyntax">Response Syntax</h2>
+      <pre class="programlisting"><div class="code-btn-container"></div><!--DEBUG: cli ()--><code class="nohighlight">HTTP/1.1 200
+x-amz-bucket-arn: <code class="replaceable">BucketArn</code>
+x-amz-bucket-location-type: <code class="replaceable">BucketLocationType</code>
+x-amz-bucket-location-name: <code class="replaceable">BucketLocationName</code>
+x-amz-bucket-region: <code class="replaceable">BucketRegion</code>
+x-amz-access-point-alias: <code class="replaceable">AccessPointAlias</code>
+</code></pre>
+    
+      <h2 id="API_HeadBucket_ResponseElements">Response Elements</h2>
+      <p>If the action is successful, the service sends back an HTTP 200 response.</p>
+      <p>The response returns the following HTTP headers.</p>
+      <div class="variablelist">
+          
+          
+          
+          
+          
+      <dl>
+            <dt id="AmazonS3-HeadBucket-response-header-AccessPointAlias"><span class="term">
+               <b>
+                  <a href="#API_HeadBucket_ResponseSyntax">x-amz-access-point-alias</a>
+               </b>
+            </span></dt>
+            <dd>
+               <p>Indicates whether the bucket name used in the request is an access point alias.</p>
+               <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>For directory buckets, the value of this field is <code class="code">false</code>.</p></div></div>
+            </dd>
+          
+            <dt id="AmazonS3-HeadBucket-response-header-BucketArn"><span class="term">
+               <b>
+                  <a href="#API_HeadBucket_ResponseSyntax">x-amz-bucket-arn</a>
+               </b>
+            </span></dt>
+            <dd>
+               <p>The Amazon Resource Name (ARN) of the S3 bucket. ARNs uniquely identify AWS resources across all
+      of AWS.</p>
+               <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>This parameter is only supported for S3 directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using tags with
+          directory buckets</a>.</p></div></div>
+               <p>Length Constraints: Minimum length of 1. Maximum length of 128.</p>
+               <p>Pattern: <code class="code">arn:[^:]+:(s3|s3express):.*</code>
+               </p>
+            </dd>
+          
+            <dt id="AmazonS3-HeadBucket-response-header-BucketLocationName"><span class="term">
+               <b>
+                  <a href="#API_HeadBucket_ResponseSyntax">x-amz-bucket-location-name</a>
+               </b>
+            </span></dt>
+            <dd>
+               <p>The name of the location where the bucket will be created.</p>
+               <p>For directory buckets, the Zone ID of the Availability Zone or the Local Zone where the bucket is created. An example
+      Zone ID value for an Availability Zone is <code class="code">usw2-az1</code>.</p>
+               <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>This functionality is only supported by directory buckets.</p></div></div>
+            </dd>
+          
+            <dt id="AmazonS3-HeadBucket-response-header-BucketLocationType"><span class="term">
+               <b>
+                  <a href="#API_HeadBucket_ResponseSyntax">x-amz-bucket-location-type</a>
+               </b>
+            </span></dt>
+            <dd>
+               <p>The type of location where the bucket is created.</p>
+               <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>This functionality is only supported by directory buckets.</p></div></div>
+               <p>Valid Values: <code class="code">AvailabilityZone | LocalZone</code>
+               </p>
+            </dd>
+          
+            <dt id="AmazonS3-HeadBucket-response-header-BucketRegion"><span class="term">
+               <b>
+                  <a href="#API_HeadBucket_ResponseSyntax">x-amz-bucket-region</a>
+               </b>
+            </span></dt>
+            <dd>
+               <p>The Region that the bucket is located.</p>
+               <p>Length Constraints: Minimum length of 0. Maximum length of 20.</p>
+            </dd>
+         </dl></div>
+    
+      <h2 id="API_HeadBucket_Errors">Errors</h2>
+      <div class="variablelist">
+          
+      <dl>
+            <dt><span class="term">
+               <b>
+                  NoSuchBucket
+               </b>
+            </span></dt>
+            <dd>
+               <p>The specified bucket does not exist.</p>
+               <p>HTTP Status Code: 404</p>
+            </dd>
+         </dl></div>
+    
+      <h2 id="API_HeadBucket_Examples">Examples</h2>
+       
+         <h3 id="API_HeadBucket_Example_1">Sample Request for general purpose buckets</h3>
+         <p>This example illustrates one usage of HeadBucket.</p>
+         
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli ()--><code class="">
+            HEAD / HTTP/1.1
+            Date: Fri, 10 Feb 2012 21:34:55 GMT
+            Authorization: authorization string
+            Host: myawsbucket.s3.amazonaws.com
+            Connection: Keep-Alive
+         </code></pre>
+         
+       
+       
+         <h3 id="API_HeadBucket_Example_2">Sample responses for general purpose buckets</h3>
+         <p>This example illustrates one usage of HeadBucket.</p>
+         
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli ()--><code class="">
+            HTTP/1.1 200 OK
+            x-amz-id-2: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+            x-amz-request-id: 28PG2CEB32F5EE25
+            x-amz-bucket-region: us-west-2
+            x-amz-access-point-alias: false
+            Date: Fri, 10 2012 21:34:56 GMT
+            Server: AmazonS3
+         </code></pre>
+         
+         
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli ()--><code class="">
+            HTTP/1.1 301 Moved Permanantly
+            x-amz-id-2: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+            x-amz-request-id: M8H3G2AJ0V6NQ8AJ 
+            Date: Tue, 06 May 2025 21:29:41 GMT 
+            x-amz-bucket-region: us-east-1 
+            x-amz-access-point-alias: false
+            Server: AmazonS3
+            </code></pre>
+         
+         
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli ()--><code class="">
+            HTTP/1.1 403 Forbidden
+            x-amz-bucket-region: us-east-1
+            x-amz-request-id: P6K9QSW8EN5YEPS 
+            x-amz-id-2: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+            Date: Tue, 06 May 2025 21:24:51 GMT
+            Server: AmazonS3
+            </code></pre>
+         
+       
+       
+         <h3 id="API_HeadBucket_Example_3">Example of anonymous request response</h3>
+         <p>This example illustrates one usage of HeadBucket.</p>
+         
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli ()--><code class="">
+            HTTP/1.1 403 Forbidden
+            x-amz-bucket-region: us-east-1 
+            x-amz-request-id: 7B3WF90PGN6J8F2 
+            x-amz-id-2: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+            Date: Tue, 06 May 2025 21:55:02 
+            GMT Server: AmazonS3
+            </code></pre>
+         
+       
+    
+      <h2 id="API_HeadBucket_SeeAlso">See Also</h2>
+      <p>For more information about using this API in one of the language-specific AWS SDKs, see the following:</p>
+      <div class="itemizedlist">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+      <ul class="itemizedlist"><li class="listitem">
+            <p>
+               <a href="https://docs.aws.amazon.com/goto/cli2/s3-2006-03-01/HeadBucket">AWS Command Line Interface V2</a>
+            </p>
+         </li><li class="listitem">
+            <p>
+               <a href="https://docs.aws.amazon.com/goto/DotNetSDKV4/s3-2006-03-01/HeadBucket">AWS SDK for .NET V4</a>
+            </p>
+         </li><li class="listitem">
+            <p>
+               <a href="https://docs.aws.amazon.com/goto/SdkForCpp/s3-2006-03-01/HeadBucket">AWS SDK for C++</a>
+            </p>
+         </li><li class="listitem">
+            <p>
+               <a href="https://docs.aws.amazon.com/goto/SdkForGoV2/s3-2006-03-01/HeadBucket">AWS SDK for Go v2</a>
+            </p>
+         </li><li class="listitem">
+            <p>
+               <a href="https://docs.aws.amazon.com/goto/SdkForJavaV2/s3-2006-03-01/HeadBucket">AWS SDK for Java V2</a>
+            </p>
+         </li><li class="listitem">
+            <p>
+               <a href="https://docs.aws.amazon.com/goto/SdkForJavaScriptV3/s3-2006-03-01/HeadBucket">AWS SDK for JavaScript V3</a>
+            </p>
+         </li><li class="listitem">
+            <p>
+               <a href="https://docs.aws.amazon.com/goto/SdkForKotlin/s3-2006-03-01/HeadBucket">AWS SDK for Kotlin</a>
+            </p>
+         </li><li class="listitem">
+            <p>
+               <a href="https://docs.aws.amazon.com/goto/SdkForPHPV3/s3-2006-03-01/HeadBucket">AWS SDK for PHP V3</a>
+            </p>
+         </li><li class="listitem">
+            <p>
+               <a href="https://docs.aws.amazon.com/goto/boto3/s3-2006-03-01/HeadBucket">AWS SDK for Python (Boto3)</a>
+            </p>
+         </li><li class="listitem">
+            <p>
+               <a href="https://docs.aws.amazon.com/goto/SdkForRubyV3/s3-2006-03-01/HeadBucket">AWS SDK for Ruby V3</a>
+            </p>
+         </li></ul></div>
+   <awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./API_GetPublicAccessBlock.html">GetPublicAccessBlock</div><div id="next" class="next-link" accesskey="n" href="./API_HeadObject.html">HeadObject</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=S3&amp;topic_url=https://docs.aws.amazon.com/en_us/AmazonS3/latest/API/API_HeadBucket.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=S3&amp;topic_url=https://docs.aws.amazon.com/en_us/AmazonS3/latest/API/API_HeadBucket.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

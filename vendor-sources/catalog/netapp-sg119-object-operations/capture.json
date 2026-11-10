@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg119-object-operations",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/s3/operations-on-objects.html",
+  "catalog_title": "StorageGRID operations on objects",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "11.9"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:26.835581+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-119/s3/operations-on-objects.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-119/s3/operations-on-objects.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "2d9450b2b30372dcc11b979b5eb3e029d143b0e75469cf297da8ffa273bacd32",
+  "raw_bytes": 63754,
+  "extracted_sha256": "d1696de530b3383efebc117613952f71d31e07bc30eba0e837d816b609fe075d",
+  "extracted_bytes": 6452,
+  "words": 1016,
+  "document_title": "Operations on objects",
+  "extracted_links": 16,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:28.803055+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

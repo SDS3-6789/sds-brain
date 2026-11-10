@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg119-logs",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/logs-files-reference.html",
+  "catalog_title": "StorageGRID log files reference",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "11.9"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:24.375782+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/logs-files-reference.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/logs-files-reference.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "d84ce4b5da031185eafedf718b76a34115beb832d3e2e955a170c05544b43bdf",
+  "raw_bytes": 64605,
+  "extracted_sha256": "b6454ecb25c0d502da3f93c0f344a444b1dfccb80e6fd465b46373c1e50119c3",
+  "extracted_bytes": 5237,
+  "words": 768,
+  "document_title": "Log files reference",
+  "extracted_links": 7,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:26.833483+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

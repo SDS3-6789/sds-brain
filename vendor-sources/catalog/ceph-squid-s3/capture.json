@@ -1,0 +1,27 @@
+{
+  "source_id": "ceph-squid-s3",
+  "catalog_url": "https://docs.ceph.com/en/squid/radosgw/s3/",
+  "catalog_title": "Ceph Squid S3 API and feature support",
+  "catalog_product": "Ceph",
+  "catalog_versions": [
+    "squid"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:05.618309+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.ceph.com/en/squid/radosgw/s3/",
+  "requested_url": "https://docs.ceph.com/en/squid/radosgw/s3/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "e48b4d877b49a9f80582c7a85d2e0f09e44e553cb4b67caada1b73e03cd4557f",
+  "raw_bytes": 20822,
+  "extracted_sha256": "f0e406fe201e726b5144cda9db4996c7fe7c4355fc8f633484b6d4243fca86a7",
+  "extracted_bytes": 1871,
+  "words": 311,
+  "document_title": "Ceph Object Gateway S3 API\uf0c1",
+  "extracted_links": 24,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:06.260062+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

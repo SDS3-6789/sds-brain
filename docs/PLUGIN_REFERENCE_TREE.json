@@ -1,0 +1,321 @@
+{
+  "repository": "https://github.com/team-redbull/redbull-brain",
+  "commit": "cd866d4ee510b299c415f92a90b7f525d30cf04c",
+  "checked_on": "2026-11-10",
+  "prefix": "plugins/team-brain",
+  "tree_api_truncated": false,
+  "entries": [
+    {
+      "path": ".claude-plugin",
+      "type": "tree",
+      "mode": "040000",
+      "sha": "e4460305a48c5ca5649c94ff6d9839b56d4cd714"
+    },
+    {
+      "path": ".claude-plugin/plugin.json",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "690d0f00bf08bb079d36620a626ada5424bb39ff",
+      "size": 250
+    },
+    {
+      "path": ".mcp.json",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "2c1d02ff3f88a51f7dd2c198acda2de7e463524b",
+      "size": 909
+    },
+    {
+      "path": "agents",
+      "type": "tree",
+      "mode": "040000",
+      "sha": "873dc3f0f543aae93c2e1c6e77a7f5739b622cf9"
+    },
+    {
+      "path": "agents/hcp-architect.md",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "8fccc2db2ad222652785694335edad3ddda678ef",
+      "size": 2388
+    },
+    {
+      "path": "hooks",
+      "type": "tree",
+      "mode": "040000",
+      "sha": "0c0135b96aa6e192b7f9adb1130d905a5bb1a501"
+    },
+    {
+      "path": "hooks/hooks.json",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "76d5474980b9840280d8c10525a2f8bb6e47cf73",
+      "size": 691
+    },
+    {
+      "path": "mcp-servers",
+      "type": "tree",
+      "mode": "040000",
+      "sha": "3ae86ac60425a149dae3ab0bf9340306c4985588"
+    },
+    {
+      "path": "mcp-servers/kubernetes.toml",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "9ffca02b1cf65a7244c995127818bdc426522819",
+      "size": 796
+    },
+    {
+      "path": "mcp-servers/launch.py",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "eb37079a7ba9ca3d472cab76fb5ff4d34d4df194",
+      "size": 3882
+    },
+    {
+      "path": "mcp-servers/team-knowledge",
+      "type": "tree",
+      "mode": "040000",
+      "sha": "0005bf33051600e53e092802a601ea93a9e6a586"
+    },
+    {
+      "path": "mcp-servers/team-knowledge/Containerfile",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "9009108d577dd1b1f1bddba9e1dbf9324bd19f68",
+      "size": 999
+    },
+    {
+      "path": "mcp-servers/team-knowledge/server.py",
+      "type": "blob",
+      "mode": "100755",
+      "sha": "fa35c5819eb259c79f1651d8df71c08cd569a129",
+      "size": 10889
+    },
+    {
+      "path": "mcp-servers/team-knowledge/tk",
+      "type": "tree",
+      "mode": "040000",
+      "sha": "00c4867f2879b22131990e4f3af770640d0c14b2"
+    },
+    {
+      "path": "mcp-servers/team-knowledge/tk/config.py",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "f70be98b672ab50bb4cad66e68797f0fb561bde3",
+      "size": 2596
+    },
+    {
+      "path": "mcp-servers/team-knowledge/tk/graph.py",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "bb2e0314898fe5b655af79539b4a6a21eb0be30d",
+      "size": 4565
+    },
+    {
+      "path": "mcp-servers/team-knowledge/tk/sources.py",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "fd92f120fb9647d435a43ef1c555a06abe738186",
+      "size": 25216
+    },
+    {
+      "path": "mcp-servers/team-knowledge/tk/textindex.py",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "5e095d60b74875d41283aa74fc3d14707897a3ee",
+      "size": 6417
+    },
+    {
+      "path": "mcp-servers/team-knowledge/tk/tools.py",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "fba1178983efc9a3de3551fc305cd06411bc5e32",
+      "size": 17319
+    },
+    {
+      "path": "mcp-servers/vendor",
+      "type": "tree",
+      "mode": "040000",
+      "sha": "4f7e5f20157a4e02389a3dc38f02f5cc6cf8d7b3"
+    },
+    {
+      "path": "mcp-servers/vendor/grafana",
+      "type": "tree",
+      "mode": "040000",
+      "sha": "5d3735719641c295309dcd7cd24717fba7fb188f"
+    },
+    {
+      "path": "mcp-servers/vendor/grafana/mcp-grafana_Darwin_arm64.tar.gz",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "6fd9c7f695a854bd4e36650d4e9a8164d30a1aaf",
+      "size": 16998767
+    },
+    {
+      "path": "mcp-servers/vendor/grafana/mcp-grafana_Linux_x86_64.tar.gz",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "aedbcfd408252a381411dd19bb64f5a304b94797",
+      "size": 17827457
+    },
+    {
+      "path": "mcp-servers/vendor/grafana/mcp-grafana_Windows_x86_64.zip",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "f77a4e1255286d5db21dc2a3657f232b95766fe4",
+      "size": 18297100
+    },
+    {
+      "path": "mcp-servers/vendor/kubernetes",
+      "type": "tree",
+      "mode": "040000",
+      "sha": "d19822b1b6ac86e69c7e724b9d4cca2c1d47b601"
+    },
+    {
+      "path": "mcp-servers/vendor/kubernetes/kubernetes-mcp-server-0.0.67-darwin-arm64.mcpb",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "0ef4fe13e8326ff6e808aa5470d4a914bf355520",
+      "size": 25172664
+    },
+    {
+      "path": "mcp-servers/vendor/kubernetes/kubernetes-mcp-server-0.0.67-linux-x64.mcpb",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "1da35040decf013eb2098d59f44deb752f214c27",
+      "size": 24263328
+    },
+    {
+      "path": "mcp-servers/vendor/kubernetes/kubernetes-mcp-server-0.0.67-windows-x64.mcpb",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "7756dba71abfc934c9be4b162b3af448e9ece624",
+      "size": 24812392
+    },
+    {
+      "path": "mcp-servers/vendor/manifest.json",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "d4a278646a8535f0cccdb0826a20acd720b7613e",
+      "size": 1568
+    },
+    {
+      "path": "scripts",
+      "type": "tree",
+      "mode": "040000",
+      "sha": "a134f19aa7faa30a59589ec4b45352e531ddb5b1"
+    },
+    {
+      "path": "scripts/brain-git.sh",
+      "type": "blob",
+      "mode": "100755",
+      "sha": "2798dc55953a641a6e69687502069a97ba8f4ab1",
+      "size": 3179
+    },
+    {
+      "path": "scripts/session-start.sh",
+      "type": "blob",
+      "mode": "100755",
+      "sha": "8e62d3ab3153ad2d02db5271e303111a043637b2",
+      "size": 3362
+    },
+    {
+      "path": "scripts/stop-capture-nudge.sh",
+      "type": "blob",
+      "mode": "100755",
+      "sha": "b4498e7d44444977fc50d74b4565b10d82a20c5e",
+      "size": 2141
+    },
+    {
+      "path": "skills",
+      "type": "tree",
+      "mode": "040000",
+      "sha": "4a90134869bdfacf546ef6df4026b8e2201cf0fe"
+    },
+    {
+      "path": "skills/brain-curate",
+      "type": "tree",
+      "mode": "040000",
+      "sha": "3370bd4866c2818efa1e470de7540b8d41274fbe"
+    },
+    {
+      "path": "skills/brain-curate/SKILL.md",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "c573c55b1ec1a467674c51f2896efc7d36faa1b7",
+      "size": 1595
+    },
+    {
+      "path": "skills/brain-learn",
+      "type": "tree",
+      "mode": "040000",
+      "sha": "1f50a50752c13a0612a4a4b5596e95c2e0207f65"
+    },
+    {
+      "path": "skills/brain-learn/SKILL.md",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "ec0c0dd14dead59af922c08cf5be6abf8858fa7c",
+      "size": 3101
+    },
+    {
+      "path": "skills/brain-lookup",
+      "type": "tree",
+      "mode": "040000",
+      "sha": "9266b86ff5566289685447ed04b9b83ac0dcd449"
+    },
+    {
+      "path": "skills/brain-lookup/SKILL.md",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "59a058c5c867c513d7c2d208fcafda65ead53dd1",
+      "size": 4370
+    },
+    {
+      "path": "skills/hypershift-debug",
+      "type": "tree",
+      "mode": "040000",
+      "sha": "8a49835c072e4a89bd94f55f2698b43af1ef6d42"
+    },
+    {
+      "path": "skills/hypershift-debug/SKILL.md",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "23eb4a219a5e5ec6073721e428d3dfa27610ec90",
+      "size": 13488
+    },
+    {
+      "path": "skills/incident-report",
+      "type": "tree",
+      "mode": "040000",
+      "sha": "83096fbc0771e6067ca039f36c2238dd2fe3c106"
+    },
+    {
+      "path": "skills/incident-report/SKILL.md",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "1b9b1ce2172018fc5d0885347d4fc3a1bf0e58f7",
+      "size": 1874
+    },
+    {
+      "path": "third_party",
+      "type": "tree",
+      "mode": "040000",
+      "sha": "8e9fb400b80c2448c871c5c2e874061501279954"
+    },
+    {
+      "path": "third_party/openshift-hypershift",
+      "type": "tree",
+      "mode": "040000",
+      "sha": "8f57a99980891ccc68701b94b94342f7ae0e02d6"
+    },
+    {
+      "path": "third_party/openshift-hypershift/LICENSE",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "size": 11357
+    }
+  ],
+  "adaptation": "Exact relative file and directory paths; original SDS runtime code. Reference bespoke code has no blanket root license. Grafana is pinned to existing SDS v2.2.0; Kubernetes v0.0.67 bundles are preserved but disabled. No binary execution during this acquisition."
+}

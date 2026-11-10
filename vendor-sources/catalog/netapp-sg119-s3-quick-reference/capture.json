@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg119-s3-quick-reference",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/s3/quick-reference-support-for-aws-apis.html",
+  "catalog_title": "Quick reference to supported S3 API requests",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "11.9"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:30.804093+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-119/s3/quick-reference-support-for-aws-apis.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-119/s3/quick-reference-support-for-aws-apis.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "f1288c77cf1965d7f1c8b1a296fac3aa40832c6f9289ed40c66a4cef7dea3f9d",
+  "raw_bytes": 103199,
+  "extracted_sha256": "8e0f2832a3cf57a6b5633e57ddd002dd608aba222e914caffbc6dad5ec9cfbf2",
+  "extracted_bytes": 19113,
+  "words": 2281,
+  "document_title": "Quick reference: Supported S3 API requests",
+  "extracted_links": 176,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:34.219178+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

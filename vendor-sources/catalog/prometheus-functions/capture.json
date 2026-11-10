@@ -1,0 +1,27 @@
+{
+  "source_id": "prometheus-functions",
+  "catalog_url": "https://prometheus.io/docs/prometheus/latest/querying/functions/",
+  "catalog_title": "PromQL query functions",
+  "catalog_product": "Prometheus",
+  "catalog_versions": [
+    "installed version unknown"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:13.181945+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://prometheus.io/docs/prometheus/latest/querying/functions/",
+  "requested_url": "https://prometheus.io/docs/prometheus/latest/querying/functions/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "dd74f6a6ed9c9421ec4763eb34949da970bc78c379561a488b34b1489e441112",
+  "raw_bytes": 426085,
+  "extracted_sha256": "fd064f2cce75eaea64975dd55b853b1e5961c1349dcd041c6f283664b8c40b61",
+  "extracted_bytes": 46351,
+  "words": 6998,
+  "document_title": "Query functions",
+  "extracted_links": 99,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:15.746546+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

@@ -1,0 +1,27 @@
+{
+  "source_id": "mcp-stdio-2025",
+  "catalog_url": "https://modelcontextprotocol.io/specification/2025-11-25/basic/transports",
+  "catalog_title": "MCP transports, revision 2025-11-25",
+  "catalog_product": "MCP",
+  "catalog_versions": [
+    "2025-11-25"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:11.047584+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://modelcontextprotocol.io/specification/2025-11-25/basic/transports",
+  "requested_url": "https://modelcontextprotocol.io/specification/2025-11-25/basic/transports",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "31b47cde4f2a1cd8e223cc0a494365b066eb2ac297fe580469886fbbce4a800b",
+  "raw_bytes": 191847,
+  "extracted_sha256": "1592af478014d61158ee23e5e02b0ab6a98dea67398f27ae73b2503461773ec7",
+  "extracted_bytes": 12658,
+  "words": 2018,
+  "document_title": "Transports - Model Context Protocol",
+  "extracted_links": 30,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:12.798003+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

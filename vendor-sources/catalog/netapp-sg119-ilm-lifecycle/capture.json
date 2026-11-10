@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg119-ilm-lifecycle",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/ilm/how-ilm-operates-throughout-objects-life.html",
+  "catalog_title": "How ILM operates throughout an object life",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "11.9"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:26.007809+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-119/ilm/how-ilm-operates-throughout-objects-life.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-119/ilm/how-ilm-operates-throughout-objects-life.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "562d804ab485c3c239e2739616a47a272ababd438c084855c17232d27ed44bee",
+  "raw_bytes": 53811,
+  "extracted_sha256": "df139af557013044410618f758798075ab39af1548b056534c39fe188c7e6561",
+  "extracted_bytes": 2083,
+  "words": 328,
+  "document_title": "How ILM operates throughout an object's life",
+  "extracted_links": 3,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:28.668518+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

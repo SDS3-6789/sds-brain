@@ -1,0 +1,11 @@
+{
+  "sourceId": "redhat-okp-mcp",
+  "originalURL": "https://github.com/rhel-lightspeed/okp-mcp/blob/a4469e1365789d1619a9d2276fa0ed2e80ee18b3/README.md",
+  "fetchedURL": "https://github.com/rhel-lightspeed/okp-mcp/blob/a4469e1365789d1619a9d2276fa0ed2e80ee18b3/README.md",
+  "repo": "rhel-lightspeed/okp-mcp",
+  "ref": "a4469e1365789d1619a9d2276fa0ed2e80ee18b3",
+  "blobSHA": "1bded4fc820859c3f6d0046b4534b936d0f6d27b",
+  "retrievedUTC": "2026-11-10T09:25:19Z",
+  "status": "retrieved",
+  "attribution": "Original upstream file content and its existing copyright/license notices are preserved. The source URL, repository, version ref and exact Git blob SHA identify the attributed source."
+}

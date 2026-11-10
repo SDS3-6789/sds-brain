@@ -1,0 +1,120 @@
+{
+  "symptom_checks_passed": 10,
+  "symptom_checks_total": 10,
+  "private_profile_argument_check": true,
+  "native_claude_client_tested": false,
+  "checks": [
+    {
+      "query": "PGs remain backfill_wait recovery not progressing",
+      "expected": "runbooks/ceph/slow-ops-and-recovery.md",
+      "top_documents": [
+        "runbooks/ceph/slow-ops-and-recovery.md",
+        "catalog:ibm-ceph-throttling",
+        "catalog:ibm-ceph-recovery"
+      ],
+      "passed": true
+    },
+    {
+      "query": "RGW pod restarts container failed cephadm",
+      "expected": "runbooks/ceph/cephadm-daemon-triage.md",
+      "top_documents": [
+        "runbooks/ceph/cephadm-daemon-triage.md",
+        "knowledge/linux/diagnostic-boundaries.md",
+        "knowledge/ceph/operational-model.md"
+      ],
+      "passed": true
+    },
+    {
+      "query": "S3 upload AccessDenied bucket policy user permissions",
+      "expected": "runbooks/s3/access-denied.md",
+      "top_documents": [
+        "runbooks/s3/access-denied.md",
+        "runbooks/s3/multipart-and-checksums.md",
+        "runbooks/ceph/rgw-request-triage.md"
+      ],
+      "passed": true
+    },
+    {
+      "query": "SDK upgrade uploads fail checksum mismatch",
+      "expected": "runbooks/s3/multipart-and-checksums.md",
+      "top_documents": [
+        "runbooks/s3/multipart-and-checksums.md",
+        "runbooks/s3/signature-and-tls.md",
+        "runbooks/ceph/rgw-request-triage.md"
+      ],
+      "passed": true
+    },
+    {
+      "query": "ILM placement bucket policy tag and multiple active policies",
+      "expected": "runbooks/storagegrid/ilm-backlog.md",
+      "top_documents": [
+        "runbooks/storagegrid/ilm-backlog.md",
+        "knowledge/storagegrid/capacity-and-ilm-model.md",
+        "catalog:netapp-sg119-ilm-policies"
+      ],
+      "passed": true
+    },
+    {
+      "query": "StorageGRID tenant quota full but physical storage available",
+      "expected": "runbooks/storagegrid/tenant-quota.md",
+      "top_documents": [
+        "runbooks/storagegrid/tenant-quota.md",
+        "runbooks/linux/resource-pressure.md",
+        "knowledge/storagegrid/capacity-and-ilm-model.md"
+      ],
+      "passed": true
+    },
+    {
+      "query": "Which disk bay is this slow Ceph OSD on HPE iLO",
+      "expected": "runbooks/hardware/read-only-triage.md",
+      "top_documents": [
+        "knowledge/hardware/hpe-inventory-boundaries.md",
+        "runbooks/ceph/slow-ops-and-recovery.md",
+        "runbooks/hardware/read-only-triage.md"
+      ],
+      "passed": true
+    },
+    {
+      "query": "Grafana Elasticsearch correlate request ID UTC timestamp logs",
+      "expected": "runbooks/observability/elasticsearch-correlation.md",
+      "top_documents": [
+        "runbooks/observability/elasticsearch-correlation.md",
+        "runbooks/observability/dashboard-to-evidence.md",
+        "runbooks/storagegrid/connectivity-and-load-balancer.md"
+      ],
+      "passed": true
+    },
+    {
+      "query": "Linux memory pressure swap OOM cgroup service",
+      "expected": "runbooks/linux/resource-pressure.md",
+      "top_documents": [
+        "runbooks/linux/resource-pressure.md",
+        "knowledge/linux/diagnostic-boundaries.md",
+        "docs/research-ceph-linux.md"
+      ],
+      "passed": true
+    },
+    {
+      "query": "S3 TLS handshake wrong certificate hostname",
+      "expected": "runbooks/s3/signature-and-tls.md",
+      "top_documents": [
+        "runbooks/s3/signature-and-tls.md",
+        "runbooks/linux/network-path.md",
+        "runbooks/storagegrid/connectivity-and-load-balancer.md"
+      ],
+      "passed": true
+    }
+  ],
+  "release": "0.2.0",
+  "checked_on": "2026-11-09",
+  "offline_grafana_retrieval": {
+    "query": "Grafana MCP internal network offline binary download",
+    "expected": "docs/observability-integration.md",
+    "top_documents": [
+      "docs/REVIEW.md",
+      "docs/observability-integration.md",
+      "README.md"
+    ],
+    "passed": true
+  }
+}

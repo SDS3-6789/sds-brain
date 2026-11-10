@@ -1,0 +1,27 @@
+{
+  "source_id": "ceph-squid-health",
+  "catalog_url": "https://docs.ceph.com/en/squid/rados/operations/health-checks/",
+  "catalog_title": "Ceph Squid health checks",
+  "catalog_product": "Ceph",
+  "catalog_versions": [
+    "squid"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:04.160114+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.ceph.com/en/squid/rados/operations/health-checks/",
+  "requested_url": "https://docs.ceph.com/en/squid/rados/operations/health-checks/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "14ef27b69848899d13c78ce7e2a5a00a57a4e44a6f9f85d5d879889a4c4a7730",
+  "raw_bytes": 181803,
+  "extracted_sha256": "7623fe51e749256b4ca8e411419288e4964091e974a348243b8aa733a6b8f483",
+  "extracted_bytes": 77615,
+  "words": 11803,
+  "document_title": "Health checks\uf0c1",
+  "extracted_links": 146,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:04.723127+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

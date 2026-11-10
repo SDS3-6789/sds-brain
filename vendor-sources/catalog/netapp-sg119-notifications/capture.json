@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg119-notifications",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/understanding-notifications-for-buckets.html",
+  "catalog_title": "Understand notifications for buckets",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "11.9"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:29.377285+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/understanding-notifications-for-buckets.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/understanding-notifications-for-buckets.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "f6f6398b50fe11ce9f04d619770173200ebbdcc7ff483ef3ca9b85b77dbb8a48",
+  "raw_bytes": 54876,
+  "extracted_sha256": "ecbae0064852463928165ebc1c60a8e3cf67fefbb3ac804411ed44209a0eb489",
+  "extracted_bytes": 2070,
+  "words": 299,
+  "document_title": "Understand notifications for buckets",
+  "extracted_links": 2,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:31.665754+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

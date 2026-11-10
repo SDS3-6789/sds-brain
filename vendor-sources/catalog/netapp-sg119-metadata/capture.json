@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg119-metadata",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/troubleshoot/troubleshooting-metadata-issues.html",
+  "catalog_title": "Troubleshoot metadata issues",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "11.9"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:28.051058+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-119/troubleshoot/troubleshooting-metadata-issues.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-119/troubleshoot/troubleshooting-metadata-issues.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "cf9357765cecb10d05cbc5045bfb4e16816af335ac4ca5e33dad099fe72aceed",
+  "raw_bytes": 56350,
+  "extracted_sha256": "2edf62cddc186cefeace3ae5fff1facb61cc6ff4cb4bfd24215bd4f0b494eb52",
+  "extracted_bytes": 3469,
+  "words": 555,
+  "document_title": "Troubleshoot metadata issues",
+  "extracted_links": 5,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:30.160047+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

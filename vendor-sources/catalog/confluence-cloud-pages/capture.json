@@ -1,0 +1,27 @@
+{
+  "source_id": "confluence-cloud-pages",
+  "catalog_url": "https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-page/",
+  "catalog_title": "Confluence Cloud REST API v2 pages",
+  "catalog_product": "Confluence Cloud",
+  "catalog_versions": [
+    "Cloud"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:15.053516+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-page/",
+  "requested_url": "https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-page/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "8f80f8ea2e1c0fd62377897be1a95c0acaa3c6f20ccefcd8480765bbba2fe8e5",
+  "raw_bytes": 1658562,
+  "extracted_sha256": "7cff891b5a71ee0510964d01f79249a92d1ad8852ef569dc6c933ffa3409c5c9",
+  "extracted_bytes": 21755,
+  "words": 3160,
+  "document_title": "Page",
+  "extracted_links": 104,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:16.712437+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

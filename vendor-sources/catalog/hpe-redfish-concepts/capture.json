@@ -1,0 +1,27 @@
+{
+  "source_id": "hpe-redfish-concepts",
+  "catalog_url": "https://servermanagementportal.ext.hpe.com/docs/concepts",
+  "catalog_title": "HPE Redfish concepts",
+  "catalog_product": "Redfish",
+  "catalog_versions": [
+    "match service schema"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:17.347619+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://servermanagementportal.ext.hpe.com/docs/concepts",
+  "requested_url": "https://servermanagementportal.ext.hpe.com/docs/concepts",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "b9d1bbf95dfc9c980e46d9fcdfbf50fa7eda5e9d7e427aae070322620a806989",
+  "raw_bytes": 330591,
+  "extracted_sha256": "71ea8983421c6103f54ad9d5ee97a36e550eca9ad01fb27b4d0ecd8363cf4edf",
+  "extracted_bytes": 1982,
+  "words": 301,
+  "document_title": "Redfish concepts",
+  "extracted_links": 5,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:19.592325+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

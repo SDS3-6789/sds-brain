@@ -1,0 +1,84 @@
+indexpage:
+  title: StorageGRID 12.0 software documentation
+  lead: NetApp StorageGRID is a software-defined object storage suite that supports a wide range of use cases across public, private, and hybrid multicloud environments. StorageGRID offers native support for the Amazon S3 API and delivers industry-leading innovations such as automated lifecycle management to store, secure, protect, and preserve unstructured data cost effectively over long periods.
+  summary: NetApp StorageGRID is a software-defined object storage suite that supports a wide range of use cases across public, private, and hybrid multicloud environments. StorageGRID offers native support for the Amazon S3 API and delivers industry-leading innovations such as automated lifecycle management to store, secure, protect, and preserve unstructured data cost effectively over long periods.
+  keywords: storagegrid documentation
+  tiles:
+    - title: Get started
+      links:
+      - title: What's new
+        url: /release-notes/whats-new.html
+      - title: Learn about StorageGRID
+        url: /primer/index.html
+      - title: Networking guidelines
+        url: /network/index.html
+      - title: StorageGRID quick start
+        url: /primer/quick-start.html
+    - title: Install, upgrade, and hotfix
+      links:
+      - title: Install StorageGRID appliances
+        url: https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/index.html    
+      - title: Install StorageGRID on software-based nodes
+        url: /swnodes/index.html
+      - title: Upgrade to new StorageGRID version
+        url: /upgrade/index.html
+      - title: Apply hotfix
+        url: /maintain/storagegrid-hotfix-procedure.html
+    - title: Configure the grid
+      links:
+      - title: Administer StorageGRID
+        url: /admin/index.html
+      - title: Manage objects with ILM
+        url: /ilm/index.html
+      - title: System hardening
+        url: /harden/index.html
+      - title: Configure StorageGRID for FabricPool
+        url: /fabricpool/index.html
+    - title: Manage objects
+      links:
+      - title: Use a tenant account
+        url: /tenant/index.html
+      - title: Use S3 REST API
+        url: /s3/index.html
+      - title: Use Swift REST API (end of life)
+        url: /swift/index.html
+    - title: Monitor and troubleshoot
+      links:
+      - title: Monitor your grid
+        url: /monitor/index.html
+      - title: Troubleshoot your grid
+        url: /troubleshoot/index.html
+      - title: Review audit logs
+        url: /audit/index.html
+    - title: Expand and maintain your grid
+      links:        
+      - title: Add volumes, nodes, and sites
+        url: /expand/index.html
+      - title: Maintain your grid
+        url: /maintain/index.html
+      - title: Recover or replace nodes
+        url: /maintain/warnings-and-considerations-for-grid-node-recovery.html
+      - title: Maintain StorageGRID appliances
+        url: https://docs.netapp.com/us-en/storagegrid-appliances/commonhardware/index.html
+    - title: Additional instructions
+      links:
+      - title: StorageGRID solutions and resources
+        url: https://docs.netapp.com/us-en/storagegrid-enable/index.html
+      - title: StorageGRID video library
+        url: https://www.youtube.com/playlist?list=PLdXI3bZJEw7nh2wGRA65iulXhtXwLiqrY
+      - title: NetApp learning services
+        url: https://www.netapp.com/support-and-training/netapp-university/
+      - title: StorageGRID management using NetApp Console
+        url: https://docs.netapp.com/us-en/storage-management-storagegrid/index.html
+    - title: More resources
+      links:
+      - title: StorageGRID support page
+        url: https://mysupport.netapp.com/site/products/all/details/5d9f1107e01d9c0001ee50f6/guideme-tab
+      - title: NetApp Interoperability Matrix Tool (IMT)
+        url: https://imt.netapp.com/matrix/#welcome
+      - title: StorageGRID knowledge base
+        url: https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID
+      - title: NetApp blog
+        url: https://netapp.com/blog/
+      - title: NetApp community
+        url: https://community.netapp.com/

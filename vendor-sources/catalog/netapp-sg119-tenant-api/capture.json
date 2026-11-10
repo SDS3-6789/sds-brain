@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg119-tenant-api",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/understanding-tenant-management-api.html",
+  "catalog_title": "Understand Tenant Management API",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "11.9"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:22.865413+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/understanding-tenant-management-api.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/understanding-tenant-management-api.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "5a6bd0dbc81bdcbebab1da77d5f242ede30cf5925bbd759e94d0f9b8d9f0f2fd",
+  "raw_bytes": 57429,
+  "extracted_sha256": "ee62b828c5933619f38bfdf85ec9f6af8103e5a6ee041b52e21e6a0770222140",
+  "extracted_bytes": 4189,
+  "words": 639,
+  "document_title": "Understand Tenant Management API",
+  "extracted_links": 5,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:25.222035+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg119-capacity",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/monitoring-storage-capacity.html",
+  "catalog_title": "Monitor storage capacity",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "11.9"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:22.927662+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/monitoring-storage-capacity.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/monitoring-storage-capacity.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "0d5d1839426b3eb956b48ebc371d3b064cb929ace383e7d0a418cf7c14e59a49",
+  "raw_bytes": 65849,
+  "extracted_sha256": "bb3e6ffe1028ab531389ce42b8448d787c2346e2591894239de9f8b8ecb41e4c",
+  "extracted_bytes": 8736,
+  "words": 1429,
+  "document_title": "Monitor storage capacity",
+  "extracted_links": 10,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:26.005849+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

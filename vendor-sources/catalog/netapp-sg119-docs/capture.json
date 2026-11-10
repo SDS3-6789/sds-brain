@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg119-docs",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/",
+  "catalog_title": "StorageGRID 11.9 documentation",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "11.9"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:19.300742+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-119/",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-119/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "277aa173af2fff558aa558b8bd0c456a75e43e09ac915d0bb973339cee1271c6",
+  "raw_bytes": 63636,
+  "extracted_sha256": "d620353a0a16e96bc2b577d02a0ec548bed93e6c215ddf47c2263ce77c3d3c23",
+  "extracted_bytes": 1613,
+  "words": 214,
+  "document_title": "StorageGRID 11.9 software documentation",
+  "extracted_links": 35,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:20.235596+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

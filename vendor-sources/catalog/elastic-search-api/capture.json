@@ -1,0 +1,27 @@
+{
+  "source_id": "elastic-search-api",
+  "catalog_url": "https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-search",
+  "catalog_title": "Elasticsearch Search API",
+  "catalog_product": "Elasticsearch",
+  "catalog_versions": [
+    "installed version unknown"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:14.463401+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-search",
+  "requested_url": "https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-search",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "4d03a23437e086f546859c9b839093c9df70803b64f1893207c7b8e33c71f5a5",
+  "raw_bytes": 1039333,
+  "extracted_sha256": "bceb3691e280d55731020792662bcb53aaa60b4efd42dc5824c839a7709c7177",
+  "extracted_bytes": 54223,
+  "words": 8017,
+  "document_title": "Run a search | Elasticsearch API documentation",
+  "extracted_links": 404,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:16.501543+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

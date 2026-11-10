@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg119-lb-endpoints",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/admin/configuring-load-balancer-endpoints.html",
+  "catalog_title": "Configure load balancer endpoints",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "11.9"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:28.088299+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-119/admin/configuring-load-balancer-endpoints.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-119/admin/configuring-load-balancer-endpoints.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "bffcafb47427c55ee788a73a8627729a42108a4c233eaa713935df442932117a",
+  "raw_bytes": 85435,
+  "extracted_sha256": "6dabb53dca43a283d9a3e33cfa6e0238729631cb7eabd085bb17448fff33c5c7",
+  "extracted_bytes": 16140,
+  "words": 2680,
+  "document_title": "Configure load balancer endpoints",
+  "extracted_links": 14,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:30.779547+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg118-docs",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-118/",
+  "catalog_title": "StorageGRID 11.8 documentation",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "11.8"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:19.254427+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-118/",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-118/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "919cf2a92d46d488a136f70d1c1ff013111e017f13eb27591db7cfa75aefe695",
+  "raw_bytes": 64165,
+  "extracted_sha256": "b5746fab20949d8613528609eda100a2e300d8da6ed4e802982cf8db651e10bd",
+  "extracted_bytes": 1667,
+  "words": 217,
+  "document_title": "StorageGRID 11.8 documentation",
+  "extracted_links": 37,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:20.234622+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

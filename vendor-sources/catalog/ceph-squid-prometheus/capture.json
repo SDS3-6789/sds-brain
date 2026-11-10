@@ -1,0 +1,27 @@
+{
+  "source_id": "ceph-squid-prometheus",
+  "catalog_url": "https://docs.ceph.com/en/squid/mgr/prometheus/",
+  "catalog_title": "Ceph Squid Prometheus module",
+  "catalog_product": "Ceph",
+  "catalog_versions": [
+    "squid"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:06.261040+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.ceph.com/en/squid/mgr/prometheus/",
+  "requested_url": "https://docs.ceph.com/en/squid/mgr/prometheus/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "37b1012508576efdd6a4564061fa030c3bb717b73a73200890b8096e6dd7bb2e",
+  "raw_bytes": 58243,
+  "extracted_sha256": "0382540e9bcea8c150a5465dfeada73be87eb1b368f2015a42a09361628d6dd3",
+  "extracted_bytes": 15175,
+  "words": 2116,
+  "document_title": "Prometheus Module\uf0c1",
+  "extracted_links": 40,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:07.152153+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

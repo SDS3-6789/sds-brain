@@ -1,0 +1,27 @@
+{
+  "source_id": "aws-s3-head-object",
+  "catalog_url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html",
+  "catalog_title": "HeadObject API reference",
+  "catalog_product": "Amazon S3",
+  "catalog_versions": [
+    "service-current-reference"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:32.774153+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html",
+  "requested_url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "e61c2f87bb93d7164d550c6285a2489ecf5aade45e502c37e1d65fa83b357369",
+  "raw_bytes": 97935,
+  "extracted_sha256": "22689cb873b52bd420f3100163b47f42dc2849f63a3962c887f7d16bb4689721",
+  "extracted_bytes": 37463,
+  "words": 4913,
+  "document_title": "HeadObject",
+  "extracted_links": 118,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:33.451843+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

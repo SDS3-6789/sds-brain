@@ -1,0 +1,3231 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Error responses - Amazon Simple Storage Service</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="ErrorResponses" /><meta name="default_state" content="ErrorResponses" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/AmazonS3/latest/developerguide/ErrorResponses.html" /><link rel="alternate" type="text/markdown" href="https://docs.aws.amazon.com/AmazonS3/latest/developerguide/ErrorResponses.md" title="Markdown version" /><meta name="description" content="Lists and describes the Amazon S3 error responses and their associated HTTP status codes." /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Simple Storage Service" /><meta name="guide" content="Developer Guide" /><meta name="abstract" content="Learn how to develop applications with Amazon Simple Storage Service (Amazon S3) using the REST API. This guide provides information about making requests, authentication, error handling, and other developer-focused topics." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/AmazonS3/latest/developerguide/ErrorResponses.html" /><link rel="alternate" href="https://docs.aws.amazon.com/id_id/AmazonS3/latest/developerguide/ErrorResponses.html" hreflang="id-id" /><link rel="alternate" href="https://docs.aws.amazon.com/id_id/AmazonS3/latest/developerguide/ErrorResponses.html" hreflang="id" /><link rel="alternate" href="https://docs.aws.amazon.com/de_de/AmazonS3/latest/developerguide/ErrorResponses.html" hreflang="de-de" /><link rel="alternate" href="https://docs.aws.amazon.com/de_de/AmazonS3/latest/developerguide/ErrorResponses.html" hreflang="de" /><link rel="alternate" href="https://docs.aws.amazon.com/AmazonS3/latest/developerguide/ErrorResponses.html" hreflang="en-us" /><link rel="alternate" href="https://docs.aws.amazon.com/AmazonS3/latest/developerguide/ErrorResponses.html" hreflang="en" /><link rel="alternate" href="https://docs.aws.amazon.com/es_es/AmazonS3/latest/developerguide/ErrorResponses.html" hreflang="es-es" /><link rel="alternate" href="https://docs.aws.amazon.com/es_es/AmazonS3/latest/developerguide/ErrorResponses.html" hreflang="es" /><link rel="alternate" href="https://docs.aws.amazon.com/fr_fr/AmazonS3/latest/developerguide/ErrorResponses.html" hreflang="fr-fr" /><link rel="alternate" href="https://docs.aws.amazon.com/fr_fr/AmazonS3/latest/developerguide/ErrorResponses.html" hreflang="fr" /><link rel="alternate" href="https://docs.aws.amazon.com/it_it/AmazonS3/latest/developerguide/ErrorResponses.html" hreflang="it-it" /><link rel="alternate" href="https://docs.aws.amazon.com/it_it/AmazonS3/latest/developerguide/ErrorResponses.html" hreflang="it" /><link rel="alternate" href="https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/developerguide/ErrorResponses.html" hreflang="ja-jp" /><link rel="alternate" href="https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/developerguide/ErrorResponses.html" hreflang="ja" /><link rel="alternate" href="https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/developerguide/ErrorResponses.html" hreflang="ko-kr" /><link rel="alternate" href="https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/developerguide/ErrorResponses.html" hreflang="ko" /><link rel="alternate" href="https://docs.aws.amazon.com/pt_br/AmazonS3/latest/developerguide/ErrorResponses.html" hreflang="pt-br" /><link rel="alternate" href="https://docs.aws.amazon.com/pt_br/AmazonS3/latest/developerguide/ErrorResponses.html" hreflang="pt" /><link rel="alternate" href="https://docs.aws.amazon.com/zh_cn/AmazonS3/latest/developerguide/ErrorResponses.html" hreflang="zh-cn" /><link rel="alternate" href="https://docs.aws.amazon.com/zh_tw/AmazonS3/latest/developerguide/ErrorResponses.html" hreflang="zh-tw" /><link rel="alternate" href="https://docs.aws.amazon.com/AmazonS3/latest/developerguide/ErrorResponses.html" hreflang="x-default" /><meta name="feedback-item" content="S3" /><meta name="this_doc_product" content="Amazon Simple Storage Service" /><meta name="this_doc_guide" content="Developer Guide" /><head xmlns="http://www.w3.org/1999/xhtml"> <script defer="" src="/assets/r/awsdocs-doc-page.2.0.0.js"></script><link href="/assets/r/awsdocs-doc-page.2.0.0.css" rel="stylesheet"/></head>
+<script defer="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'s3'}"></script><meta id="panorama-serviceSubSection" value="Developer Guide" /><meta id="panorama-serviceConsolePage" value="Error responses" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><p><a href="ErrorResponses.md">View a markdown version of this page</a></p><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Error responses - Amazon Simple Storage Service</title><meta name="pdf" content="/pdfs/AmazonS3/latest/developerguide/s3-devguide.pdf#ErrorResponses" /><meta name="rss" content="s3-devguide-rss-updates.rss" /><meta name="forums" content="https://repost.aws/tags/TADSTjraA0Q4-a1dxk6eUYaw" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=S3&amp;topic_url=https://docs.aws.amazon.com/en_us/AmazonS3/latest/developerguide/ErrorResponses.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=https://docs.aws.amazon.com/en_us/AmazonS3/latest/developerguide/ErrorResponses.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=https://docs.aws.amazon.com/en_us/AmazonS3/latest/developerguide/ErrorResponses.html" /><meta name="keywords" content="S3,Amazon S3,S3 Developer Guide,Amazon S3 Developer Guide,REST API,authentication,signing requests,Error handling" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Simple Storage Service (S3)",
+        "item" : "https://docs.aws.amazon.com/s3/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "Developer Guide",
+        "item" : "https://docs.aws.amazon.com/AmazonS3/latest/developerguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Error responses",
+        "item" : "https://docs.aws.amazon.com/AmazonS3/latest/developerguide/ErrorResponses.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/AmazonS3/latest/developerguide/s3-devguide.pdf#ErrorResponses" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="/index.html">Documentation</a><a href="/s3/index.html">Amazon Simple Storage Service (S3)</a><a href="Welcome.html">Developer Guide</a></div><div id="page-toc-src"><a href="#RESTErrorResponses">REST error responses</a><a href="#ErrorCodeList">List of error codes</a><a href="#SelectObjectContentErrorCodeList">List of SELECT Object Content Error Codes</a><a href="#ReplicationErrorCodeList">List of Replication-related error codes</a><a href="#S3TaggingErrorCodeList">List of Tagging-related error codes</a><a href="#S3AnnotationErrorCodeList">List of Amazon S3 annotation-related error codes</a><a href="#S3OutpostsErrorCodeList">List of Amazon S3 on Outposts error codes</a><a href="#S3LensErrorCodeList">List of Amazon S3 Storage Lens error codes</a><a href="#S3ObjectLambdaErrorCodeList">List of Amazon S3 Object Lambda error codes</a><a href="#S3AsynchronousErrorCodeList">List of Amazon S3 asynchronous error codes</a><a href="#S3AccessGrantsErrorCodeList">List of Amazon S3 Access Grants error codes</a><a href="#FSXErrorCodeList">List of Amazon FSx-related error codes</a><a href="#S3TablesErrorCodeList">List of Amazon S3 Tables error codes</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="ErrorResponses">Error responses</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><p>This section provides reference information about Amazon S3 errors.</p><div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><div class="itemizedlist">
+			 
+			 
+		<ul class="itemizedlist"><li class="listitem">
+				<p>In general, S3 bucket owners are billed for requests with 
+					HTTP <code class="code">200 OK</code> successful responses and HTTP <code class="code">4XX</code> client error responses. Bucket owners aren't billed for HTTP <code class="code">5XX</code> server error responses, such as HTTP <code class="code">503 Slow Down</code> errors. 
+					For more information on S3 error codes under HTTP <code class="code">3XX</code> and <code class="code">4XX</code> status codes that aren't billed, see <a href="/AmazonS3/latest/userguide/ErrorCodeBilling.html" rel="noopener noreferrer" target="_blank">Billing for Amazon S3 error responses</a> in the Amazon S3 User Guide. For more information about billing charges if your bucket is configured as a Requester Pays bucket, see <a href="/AmazonS3/latest/userguide/RequesterPaysBuckets.html#ChargeDetails" rel="noopener noreferrer" target="_blank">How Requester Pays charges work</a> in the Amazon S3 User Guide.</p>
+				
+			</li><li class="listitem">
+				<p>
+					SOAP support over HTTP is deprecated, but SOAP is still available over HTTPS. 
+					New Amazon S3 features are not supported for SOAP. Instead of using SOAP, we recommend that you use 
+					either the REST API or the AWS SDKs.
+				</p>
+			</li></ul></div></div></div><div class="highlights"><h6>Topics</h6><ul><li><p><a href="#RESTErrorResponses">REST error responses</a></p></li><li><p><a href="#ErrorCodeList">List of error codes</a></p></li><li><p><a href="#SelectObjectContentErrorCodeList">List of SELECT Object Content Error Codes</a></p></li><li><p><a href="#ReplicationErrorCodeList">List of Replication-related error codes</a></p></li><li><p><a href="#S3TaggingErrorCodeList">List of Tagging-related error codes</a></p></li><li><p><a href="#S3AnnotationErrorCodeList">List of Amazon S3 annotation-related error codes</a></p></li><li><p><a href="#S3OutpostsErrorCodeList">List of Amazon S3 on Outposts error codes</a></p></li><li><p><a href="#S3LensErrorCodeList">List of Amazon S3 Storage Lens error codes</a></p></li><li><p><a href="#S3ObjectLambdaErrorCodeList">List of Amazon S3 Object Lambda error codes</a></p></li><li><p><a href="#S3AsynchronousErrorCodeList">List of Amazon S3 asynchronous error codes</a></p></li><li><p><a href="#S3AccessGrantsErrorCodeList">List of Amazon S3 Access Grants error codes</a></p></li><li><p><a href="#FSXErrorCodeList">List of Amazon FSx-related error codes</a></p></li><li><p><a href="#S3TablesErrorCodeList">List of Amazon S3 Tables error codes</a></p></li><li><p><a href="./ErrorBestPractices.html">Amazon S3 error best practices</a></p></li></ul></div>
+		<h2 id="RESTErrorResponses">REST error responses</h2>
+
+		<p>When an error occurs, the header information contains the following:</p>
+		<div class="itemizedlist">
+			 
+			 
+		<ul class="itemizedlist"><li class="listitem">
+				<p>Content-Type: application/xml </p>
+			</li><li class="listitem">
+				<p>An appropriate 3xx, 4xx, or 5xx HTTP status code</p>
+			</li></ul></div>
+		<p>The body of the response also contains information about the error. The following sample
+			error response shows the structure of response elements common to all REST error
+			responses.</p>
+		<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (xml)--><code class="xml ">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;Error&gt;
+  &lt;Code&gt;NoSuchKey&lt;/Code&gt;
+  &lt;Message&gt;The resource you requested does not exist&lt;/Message&gt;
+  &lt;Resource&gt;/mybucket/myfoto.jpg&lt;/Resource&gt; 
+  &lt;RequestId&gt;4442587FB7D0A2F9&lt;/RequestId&gt;
+&lt;/Error&gt;</code></pre>
+		<p>The following table explains the REST error response elements.</p>
+		<div class="table-container"><div class="table-contents"><table id="d0e1"><thead>
+					<tr>
+						<th> Name </th>
+						<th> Description </th>
+					</tr>
+				</thead>
+					<tr>
+						<td tabindex="-1">
+							<code class="code">Code</code>
+						</td>
+						<td tabindex="-1">
+							<p>The error code is a string that uniquely identifies an error
+								condition. It is meant to be read and understood by programs that
+								detect and handle errors by type. For more information, see <a href="#ErrorCodeList">List of error codes</a>.</p>
+							<p>Type: String</p>
+							<p>Ancestor: <code class="code">Error</code></p>
+						</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">Error</code>
+						</td>
+						<td tabindex="-1">
+							<p>Container for all error elements.</p>
+							<p>Type: Container</p>
+							<p>Ancestor: None</p>
+						</td>
+					</tr>
+					<tr>
+						<td tabindex="-1">
+							<code class="code">Message</code>
+						</td>
+						<td tabindex="-1">
+							<p>The error message contains a generic description of the error
+								condition in English. It is intended for a human audience. Simple
+								programs display the message directly to the end user if they
+								encounter an error condition they don't know how or don't care to
+								handle. Sophisticated programs with more exhaustive error handling
+								and proper internationalization are more likely to ignore the error
+								message.</p>
+							<p>Type: String</p>
+							<p>Ancestor: <code class="code">Error</code></p>
+						</td>
+					</tr>
+					<tr>
+						<td tabindex="-1">
+							<code class="code">RequestId</code>
+						</td>
+						<td tabindex="-1">
+							<p>ID of the request associated with the error.</p>
+							<p>Type: String</p>
+							<p>Ancestor: <code class="code">Error</code></p>
+						</td>
+					</tr>
+					<tr>
+						<td tabindex="-1">
+							<code class="code">Resource</code>
+						</td>
+						<td tabindex="-1">
+							<p>The bucket or object that is involved in the error.</p>
+							<p>Type: String</p>
+							<p>Ancestor: <code class="code">Error</code></p>
+						</td>
+					</tr>
+				</table></div></div>
+		<p>Many error responses contain additional structured data meant to be read and understood by a
+			developer diagnosing programming errors. For example, if you send a Content-MD5 header
+			with a REST PUT request that doesn't match the digest calculated on the server, you
+			receive a <code class="code">BadDigest</code> error. The error response also includes as detail
+			elements the digest that the server calculated, and the digest that you told the server
+			to expect. During development, you can use this information to diagnose the error. In
+			production, a well-behaved program might include this information in its error
+			log.</p>
+		<p>For information about general response elements, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingRESTError.html">Error responses</a>.</p>
+	 
+		<h2 id="ErrorCodeList">List of error codes</h2>
+
+		<p>The following table lists Amazon S3 error codes.</p>
+		<div class="table-container"><div class="table-contents"><table id="d0e2"><thead>
+					<tr>
+						<th>Error code</th>
+						<th>Description</th>
+						<th>HTTP status code</th>
+						<th>SOAP fault code prefix</th>
+					</tr>
+				</thead>
+					<tr>
+						<td tabindex="-1"><code class="code">AccessControlListNotSupported</code></td>
+						<td tabindex="-1">The bucket does not allow ACLs.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">AccessDenied</code></td>
+						<td tabindex="-1">Access Denied</td>
+						<td tabindex="-1"><code class="code">403 Forbidden</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">AccessPointAlreadyOwnedByYou</code></td>
+						<td tabindex="-1">An access point with an identical name already exists in your
+							account.</td>
+						<td tabindex="-1"><code class="code">409 Conflict</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">AccountProblem</code></td>
+						<td tabindex="-1">There is a problem with your AWS account that prevents the operation from completing
+							successfully. For further assistance, see <a href="https://aws.amazon.com/contact-us/" rel="noopener noreferrer" target="_blank"><span>Contact Us</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</td>
+						<td tabindex="-1"><code class="code">403 Forbidden</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">AllAccessDisabled</code></td>
+						<td tabindex="-1">All access to this Amazon S3 resource has been disabled. For further assistance, see <a href="https://aws.amazon.com/contact-us/" rel="noopener noreferrer" target="_blank"><span>Contact Us</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</td>
+						<td tabindex="-1"><code class="code">403 Forbidden</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1">
+							<code class="code">AmbiguousGrantByEmailAddress</code>
+						</td>
+						<td tabindex="-1">The email address that you provided is associated with more than one account.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1">
+							<code class="code">AuthorizationHeaderMalformed</code>
+						</td>
+						<td tabindex="-1">The authorization header that you provided is not valid.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">N/A</td>
+					</tr>
+					<tr>
+						<td tabindex="-1">
+							<code class="code">AuthorizationQueryParametersError</code>
+						</td>
+						<td tabindex="-1">The authorization query parameters that you provided are not valid.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">N/A</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">BadDigest</code></td>
+						<td tabindex="-1">The Content-MD5 or checksum value that you specified did not match what the server
+							received.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">BucketAlreadyExists</code></td>
+						<td tabindex="-1">The requested bucket name is not available. The bucket namespace is shared by all users
+							of the system. Specify a different name and try again.</td>
+						<td tabindex="-1"><code class="code">409 Conflict</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">BucketAlreadyOwnedByYou</code></td>
+						<td tabindex="-1">The bucket that you tried to create already exists, and you own it. Amazon S3 returns this
+							error in all AWS Regions except in the US East (N. Virginia) Region
+							(us-east-1). For legacy compatibility, if you re-create an
+							existing bucket that you already own in us-east-1, Amazon S3
+							returns <code class="code">200 OK</code> and resets the bucket access control lists
+							(ACLs). <p>For Amazon S3 on Outposts, the bucket that you tried to create
+								already exists in your Outpost and you own it. </p>
+						</td>
+						<td tabindex="-1">
+							<p><code class="code">409 Conflict</code> (in all Regions except
+								us-east-1)</p>
+						</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">BucketHasAccessPointsAttached</code></td>
+						<td tabindex="-1">The bucket you tried to delete has access points attached. Delete your access points
+							before deleting your bucket.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">BucketNotEmpty</code></td>
+						<td tabindex="-1">The bucket that you tried to delete is not empty.</td>
+						<td tabindex="-1"><code class="code">409 Conflict</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ClientTokenConflict</code></td>
+						<td tabindex="-1">Your Multi-Region Access Point idempotency token was already used for
+							a different request.</td>
+						<td tabindex="-1"><code class="code">409 Conflict</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					
+					<tr>
+						<td tabindex="-1"><code class="code">ConnectionClosedByRequester</code></td>
+						<td tabindex="-1">Returned to the original caller when an error is encountered while reading the WriteGetObjectResponse body.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					
+					<tr>
+						<td tabindex="-1"><code class="code">ConditionalRequestConflict</code></td>
+						<td tabindex="-1">A conflicting operation occurred. If using <code class="code">PutObject</code> you
+							can retry the request. If using multipart upload you should initiate another
+								<code class="code">CreateMultipartUpload</code> request and re-upload each
+							part.</td>
+						<td tabindex="-1"><code class="code">409 Conflict</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">CredentialsNotSupported</code></td>
+						<td tabindex="-1">This request does not support credentials.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">CrossLocationLoggingProhibited</code></td>
+						<td tabindex="-1">Cross-Region logging is not allowed. Buckets in one AWS Region cannot log information
+							to a bucket in another
+							Region.</td>
+						<td tabindex="-1"><code class="code">403 Forbidden</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">DeviceNotActiveError</code></td>
+						<td tabindex="-1">The device is not currently active.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">EndpointNotFound</code></td>
+						<td tabindex="-1">Direct requests to the correct endpoint.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">EntityTooSmall</code></td>
+						<td tabindex="-1">Your proposed upload is smaller than the minimum allowed object
+							size.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td rowspan="2" tabindex="-1"><code class="code">EntityTooLarge</code></td>
+						<td tabindex="-1">Your proposed upload exceeds the maximum allowed object size. For more information, see
+								<a href="https://docs.aws.amazon.com/general/latest/gr/s3.html">Amazon Simple Storage Service endpoints and quotas</a> in the <em>AWS General Reference</em>.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1">Your proposed download exceeds the maximum allowed size. </td>
+						<td tabindex="-1"><code class="code">405 Method Not Allowed</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ExpiredToken</code></td>
+						<td tabindex="-1">The provided token has expired.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">IllegalLocationConstraintException</code></td>
+						<td tabindex="-1"><p>This error might occur for the following reasons:</p>
+							<div class="itemizedlist">
+								 
+								   
+							<ul class="itemizedlist"><li class="listitem">
+									<p>You are trying to access a bucket from a different Region than where the bucket exists.</p>
+								</li><li class="listitem">
+									<p>You attempt to create a bucket with a location constraint that corresponds to a different region than the regional endpoint the request was sent to.</p>
+								</li></ul></div></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">IllegalVersioningConfigurationException</code>
+						</td>
+						<td tabindex="-1">The versioning configuration specified in the request is not valid.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">IncompleteBody</code></td>
+						<td tabindex="-1">You did not provide the number of bytes specified by the
+							Content-Length HTTP header.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">IncorrectEndpoint</code></td>
+						<td tabindex="-1">The specified bucket exists in another Region. Direct requests to the correct endpoint.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">IncorrectNumberOfFilesInPostRequest</code></td>
+						<td tabindex="-1">POST requires exactly one file upload per request.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InlineDataTooLarge</code></td>
+						<td tabindex="-1">The inline data exceeds the maximum allowed
+							size.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InternalError</code></td>
+						<td tabindex="-1">An internal error occurred. Try again.</td>
+						<td tabindex="-1"><code class="code">500 Internal Server Error</code></td>
+						<td tabindex="-1">Server</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidAccessKeyId</code></td>
+						<td tabindex="-1">The AWS access key ID that you provided does not exist in our records.</td>
+						<td tabindex="-1"><code class="code">403 Forbidden</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidAccessPoint</code></td>
+						<td tabindex="-1">The specified access point name or account is not valid.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidAccessPointAliasError</code></td>
+						<td tabindex="-1">The specified access point alias name is not valid.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidAddressingHeader</code></td>
+						<td tabindex="-1">You must specify the Anonymous role.</td>
+						<td tabindex="-1">N/A</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidArgument</code></td>
+						<td tabindex="-1">
+							<p>This error might occur for the following reasons:</p>
+							<div class="itemizedlist">
+								 
+								 
+								 
+								 
+								 
+
+							<ul class="itemizedlist"><li class="listitem">
+									<p>A ListBuckets request is made to a Regional endpoint that
+										is different from the Region specified in the <code class="code">bucket-region</code>
+										parameter.</p>
+								</li><li class="listitem">
+									<p>The specified argument was not valid.</p>
+								</li><li class="listitem">
+									<p>The request was missing a required header.</p>
+								</li><li class="listitem">
+									<p>The specified argument was incomplete or in the wrong
+										format.</p>
+								</li><li class="listitem">
+									<p>The specified argument must have a length greater than or equal to 3.</p>
+								</li></ul></div></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidBucketAclWithObjectOwnership</code></td>
+						<td tabindex="-1">Bucket cannot have ACLs set with ObjectOwnership's
+							BucketOwnerEnforced setting.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidBucketName</code></td>
+						<td tabindex="-1">The specified bucket is not valid.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidBucketOwnerAWSAccountID</code></td>
+						<td tabindex="-1">The value of the expected bucket owner parameter must be an AWS account ID.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidBucketState</code></td>
+						<td tabindex="-1">The request is not valid for the current state of the bucket.</td>
+						<td tabindex="-1"><code class="code">409 Conflict</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidDigest</code></td>
+						<td tabindex="-1">The Content-MD5 or checksum value that you specified is not valid.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidEncryptionAlgorithmError</code></td>
+						<td tabindex="-1">The encryption request that you specified is not valid. The valid value is
+								<code class="code">AES256</code>.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidHostHeader</code></td>
+						<td tabindex="-1">The host headers provided in the request used the incorrect style addressing.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidHttpMethod</code></td>
+						<td tabindex="-1">The request is made using an unexpected HTTP method.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidLocationConstraint</code></td>
+						<td tabindex="-1">The specified location (Region) constraint is not valid. For more information about
+							selecting a Region for your buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingBucket.html#access-bucket-intro">Buckets
+								overview</a>. </td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidObjectState</code></td>
+						<td tabindex="-1">The operation is not valid for the current state of the
+							object.</td>
+						<td tabindex="-1"><code class="code">403 Forbidden</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidPart</code></td>
+						<td tabindex="-1">One or more of the specified parts could not be found. The part might
+							not have been uploaded, or the specified entity tag might not have
+							matched the part's entity tag.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidPartOrder</code></td>
+						<td tabindex="-1">The list of parts was not in ascending order. The parts list must be specified in order
+							by part number.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidPayer</code></td>
+						<td tabindex="-1">All access to this object has been disabled. For further assistance, see <a href="https://aws.amazon.com/contact-us/" rel="noopener noreferrer" target="_blank"><span>Contact Us</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</td>
+						<td tabindex="-1"><code class="code">403 Forbidden</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidPolicyDocument</code></td>
+						<td tabindex="-1">The content of the form does not meet the conditions specified in the
+							policy document.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1">InvalidRange</td>
+						<td tabindex="-1">The requested range cannot be satisfied.</td>
+						<td tabindex="-1">416 Requested Range Not Satisfiable</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1">InvalidRegion</td>
+						<td tabindex="-1">You've attempted to create a Multi-Region Access Point in a Region that you haven't opted in to.</td>
+						<td tabindex="-1">403 Forbidden</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidRequest</code></td>
+						<td tabindex="-1">
+							<p>This error might occur for the following reasons:</p>
+							<div class="itemizedlist">
+								 
+								 
+								 
+								 
+								 
+								 
+								 
+								 
+								 
+								 
+								 
+								 
+								 
+								 
+								 
+								 
+								 
+								 
+								 
+								 
+								 
+							<ul class="itemizedlist"><li class="listitem">
+									<p>An unpaginated ListBuckets request is made from an account that has an approved
+										general purpose bucket quota higher than 10,000. You must
+										make paginated requests to list the buckets in an account
+										with more than 10,000 buckets.</p>
+								</li><li class="listitem">
+									<p>The request is using the wrong signature version. Use <code class="code">AWS4-HMAC-SHA256</code>
+										(Signature Version 4).</p>
+								</li><li class="listitem">
+									<p>An access point can be created only for an existing bucket.</p>
+								</li><li class="listitem">
+									<p>The access point is not in a state where it can be deleted.</p>
+								</li><li class="listitem">
+									<p>An access point can be listed only for an existing bucket.</p>
+								</li><li class="listitem">
+									<p>The next token is not valid.</p>
+								</li><li class="listitem">
+									<p>At least one action must be specified in a lifecycle rule.</p>
+								</li><li class="listitem">
+									<p>At least one lifecycle rule must be specified.</p>
+								</li><li class="listitem">
+									<p>The number of lifecycle rules must not exceed the allowed limit of 1000 rules.</p>
+								</li><li class="listitem">
+									<p>The range for the <code class="code">MaxResults</code> parameter is not valid.</p>
+								</li><li class="listitem">
+									<p>SOAP requests must be made over an HTTPS
+										connection.</p>
+								</li><li class="listitem">
+									<p>Amazon S3 Transfer Acceleration is not supported for buckets with non-DNS compliant
+										names.</p>
+								</li><li class="listitem">
+									<p>Amazon S3 Transfer Acceleration is not supported for buckets with periods (.) in their
+										names.</p>
+								</li><li class="listitem">
+									<p>The Amazon S3 Transfer Acceleration endpoint supports only virtual style requests.</p>
+								</li><li class="listitem">
+									<p>Amazon S3 Transfer Acceleration is not configured on this bucket.</p>
+								</li><li class="listitem">
+									<p>Amazon S3 Transfer Acceleration is disabled on this bucket.</p>
+								</li><li class="listitem">
+									<p>Amazon S3 Transfer Acceleration is not supported on this bucket. For assistance, contact
+										<a href="https://aws.amazon.com/contact-us/" rel="noopener noreferrer" target="_blank"><span>Support</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</p>
+								</li><li class="listitem">
+									<p>Amazon S3 Transfer Acceleration cannot be enabled on this bucket. For assistance, contact
+										<a href="https://aws.amazon.com/contact-us/" rel="noopener noreferrer" target="_blank"><span>Support</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</p>
+								</li><li class="listitem">
+									<p> Conflicting values provided in HTTP headers and query
+										parameters. </p>
+								</li><li class="listitem">
+									<p> Conflicting values provided in HTTP headers and POST form
+										fields. </p>
+								</li><li class="listitem">
+									<p>CopyObject request made on objects larger than 5GB in
+										size.</p>
+								</li></ul></div>
+						</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidSessionException</code></td>
+						<td tabindex="-1">Returned if the session doesn't exist anymore because it timed out or expired.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidSignature</code></td>
+						<td tabindex="-1">The request signature that the server calculated does not match the signature that you provided. Check your AWS secret access key and signing method. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/RESTAuthentication.html">Signing and authenticating REST requests</a>.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidSecurity</code></td>
+						<td tabindex="-1">The provided security credentials are not valid.</td>
+						<td tabindex="-1"><code class="code">403 Forbidden</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidSOAPRequest</code></td>
+						<td tabindex="-1">The SOAP request body is not valid.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidStorageClass</code></td>
+						<td tabindex="-1">The storage class that you specified is not valid.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidTargetBucketForLogging</code></td>
+						<td tabindex="-1">The target bucket for logging either does not exist, is not owned by you, or does not
+							have the appropriate grants for the log-delivery group. </td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidToken</code></td>
+						<td tabindex="-1">The provided token is malformed or otherwise not valid.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidURI</code></td>
+						<td tabindex="-1">The specified URI couldn't be parsed.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">KeyTooLongError</code></td>
+						<td tabindex="-1">Your key is too long.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">KMS.DisabledException</code></td>
+						<td tabindex="-1">The request was rejected because the specified KMS key is not enabled.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">KMS.InvalidKeyUsageException</code></td>
+						<td tabindex="-1">The request was rejected for one of the following reasons: 
+							<div class="itemizedlist">
+								 
+								 
+							<ul class="itemizedlist"><li class="listitem"><p>The KeyUsage value of the KMS key is incompatible with the API operation. </p></li><li class="listitem"><p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key (KeySpec). </p></li></ul></div>
+							
+							<p>For encrypting, decrypting, re-encrypting, and generating data keys, the KeyUsage must be ENCRYPT_DECRYPT. For signing and verifying messages, the KeyUsage must be SIGN_VERIFY. For generating and verifying message authentication codes (MACs), the KeyUsage must be GENERATE_VERIFY_MAC. For deriving key agreement secrets, the KeyUsage must be KEY_AGREEMENT. To find the KeyUsage of a KMS key, use the DescribeKey operation. </p>
+							To find the encryption or signing algorithms supported for a particular KMS key, use the DescribeKey operation.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">KMS.KMSInvalidStateException</code></td>
+						<td tabindex="-1">The request was rejected because the state of the specified resource is not valid for this request. 
+							This exception means one of the following: 
+							<div class="itemizedlist">
+								 
+								 
+							<ul class="itemizedlist"><li class="listitem"><p>The key state of the KMS key is not compatible with the operation.</p><p>To find the key state, use the DescribeKey operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of AWS KMS keys</a> in the <em>AWS Key Management Service Developer Guide</em>. </p></li><li class="listitem"><p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p></li></ul></div>
+							
+							
+							</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">KMS.NotFoundException</code></td>
+						<td tabindex="-1">The request was rejected because the specified entity or resource could not be found.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">MalformedACLError</code></td>
+						<td tabindex="-1">The ACL that you provided was not well formed or did not validate against our published
+							schema.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+
+					<tr>
+						<td tabindex="-1"><code class="code">MalformedPOSTRequest</code>
+						</td>
+						<td tabindex="-1">The body of your POST request is not well-formed
+							multipart/form-data.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">MalformedXML</code></td>
+						<td tabindex="-1">The XML that you provided was not well formed or did not validate against our published
+							schema.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">MaxMessageLengthExceeded</code></td>
+						<td tabindex="-1">Your request was too large.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">MaxPostPreDataLengthExceededError</code></td>
+						<td tabindex="-1">Your POST request fields preceding the upload file were too large.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">MetadataTooLarge</code></td>
+						<td tabindex="-1">Your metadata headers exceed the maximum allowed metadata size.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">MethodNotAllowed</code></td>
+						<td tabindex="-1">The specified method is not allowed against this resource.</td>
+						<td tabindex="-1"><code class="code">405 Method Not Allowed</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">MissingAttachment</code></td>
+						<td tabindex="-1">A SOAP attachment was expected, but none was found.</td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">MissingAuthenticationToken</code></td>
+						<td tabindex="-1">The request was not signed.  </td>
+						<td tabindex="-1">403 Forbidden</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">MissingContentLength</code></td>
+						<td tabindex="-1">You must provide the Content-Length HTTP header.</td>
+						<td tabindex="-1"><code class="code">411 Length Required</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">MissingRequestBodyError</code></td>
+						<td tabindex="-1">You sent an empty XML document as a request. </td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">MissingSecurityElement</code></td>
+						<td tabindex="-1">The SOAP 1.1 request is missing a security element.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">MissingSecurityHeader</code></td>
+						<td tabindex="-1">Your request is missing a required header.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">NoLoggingStatusForKey</code></td>
+						<td tabindex="-1">There is no such thing as a logging status subresource for a
+							key.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+
+					<tr>
+						<td tabindex="-1"><code class="code">NoSuchAsyncRequest</code></td>
+						<td tabindex="-1">The specified request was not found.</td>
+						<td tabindex="-1"><code class="code">404 Not Found</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">NoSuchBucket</code></td>
+						<td tabindex="-1">The specified bucket does not exist.</td>
+						<td tabindex="-1"><code class="code">404 Not Found</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">NoSuchBucketPolicy</code></td>
+						<td tabindex="-1">The specified bucket does not have a bucket policy.</td>
+						<td tabindex="-1"><code class="code">404 Not Found</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">NoSuchCORSConfiguration</code></td>
+						<td tabindex="-1">The specified bucket does not have a CORS configuration.</td>
+						<td tabindex="-1"><code class="code">404 Not Found</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">NoSuchKey</code></td>
+						<td tabindex="-1">The specified key does not exist.</td>
+						<td tabindex="-1"><code class="code">404 Not Found</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">NoSuchLifecycleConfiguration</code></td>
+						<td tabindex="-1">The specified lifecycle configuration does not exist. </td>
+						<td tabindex="-1"><code class="code">404 Not Found</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">NoSuchMultiRegionAccessPoint</code></td>
+						<td tabindex="-1">The specified Multi-Region Access Point does not exist.</td>
+						<td tabindex="-1"><code class="code">404 Not Found</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">NoSuchObjectLockConfiguration</code></td>
+						<td tabindex="-1">The specified object does not have an ObjectLock configuration.</td>
+						<td tabindex="-1"><code class="code">404 Not Found</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">NoSuchWebsiteConfiguration</code></td>
+						<td tabindex="-1">The specified bucket does not have a website configuration.</td>
+						<td tabindex="-1"><code class="code">404 Not Found</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">NoSuchTagSet</code></td>
+						<td tabindex="-1">
+							<p>The specified tag does not exist.</p>
+						</td>
+						<td tabindex="-1"><code class="code">404 Not Found</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">NoSuchUpload</code></td>
+						<td tabindex="-1">The specified multipart upload does not exist. The upload ID might not be valid, or the
+							multipart upload might have been aborted or completed.</td>
+						<td tabindex="-1"><code class="code">404 Not Found</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">NoSuchVersion</code>
+						</td>
+						<td tabindex="-1">The version ID specified in the request does not match an existing version.</td>
+						<td tabindex="-1"><code class="code">404 Not Found</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">NotDeviceOwnerError</code></td>
+						<td tabindex="-1">The device that generated the token is not owned by the authenticated user.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">NotImplemented</code></td>
+						<td tabindex="-1">A header that you provided implies functionality that is not implemented.</td>
+						<td tabindex="-1"><code class="code">501 Not Implemented</code></td>
+						<td tabindex="-1">Server</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">NotModified</code></td>
+						<td tabindex="-1">The resource was not changed.</td>
+						<td tabindex="-1"><code class="code">304 Not Modified</code></td>
+						<td tabindex="-1">Server</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">NoTransformationDefined</code></td>
+						<td tabindex="-1">No transformation found for this Object Lambda Access Point.</td>
+						<td tabindex="-1"><code class="code">404 Not Found</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">NotSignedUp</code></td>
+						<td tabindex="-1">Your account is not signed up for the Amazon S3 service. You must sign up before you can use
+							Amazon S3. You can sign up at the following URL: <a href="https://aws.amazon.com/s3/" rel="noopener noreferrer" target="_blank"><span>https://aws.amazon.com/s3</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>
+						</td>
+						<td tabindex="-1"><code class="code">403 Forbidden</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ObjectLockConfigurationNotFoundError</code></td>
+						<td tabindex="-1">The Object Lock configuration does not exist for this bucket.</td>
+						<td tabindex="-1"><code class="code">404 Not Found</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">OwnershipControlsNotFoundError</code></td>
+						<td tabindex="-1">The bucket ownership controls were not found.</td>
+						<td tabindex="-1"><code class="code">404 Not Found</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">OperationAborted</code></td>
+						<td tabindex="-1">A conflicting conditional operation is currently in progress against
+							this resource. Try again.</td>
+						<td tabindex="-1"><code class="code">409 Conflict</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">PermanentRedirect</code></td>
+						<td tabindex="-1">The bucket that you are attempting to access must be addressed using the specified
+							endpoint. Send all future requests to this endpoint.</td>
+						<td tabindex="-1"><code class="code">301 Moved Permanently</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">PermanentRedirectControlError</code></td>
+						<td tabindex="-1">The API operation you are attempting to access must be addressed using the specified endpoint. Send all future requests to this endpoint.</td>
+						<td tabindex="-1"><code class="code">301 Moved Permanently</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">PreconditionFailed</code></td>
+						<td tabindex="-1">At least one of the preconditions that you specified did not hold.</td>
+						<td tabindex="-1"><code class="code">412 Precondition Failed</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">Redirect</code></td>
+						<td tabindex="-1">Temporary redirect. You are being redirected to the bucket while the Domain Name System
+							(DNS) server is being updated.</td>
+						<td tabindex="-1"><code class="code">307 Temporary Redirect</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">RequestHeaderSectionTooLarge</code></td>
+						<td tabindex="-1">The request header and query parameters used to make the request exceed the maximum
+							allowed size.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">RequestIsNotMultiPartContent</code></td>
+						<td tabindex="-1">A bucket POST request must be of the enclosure-type multipart/form-data.</td>
+						<td tabindex="-1"><code class="code">412 Precondition Failed</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">RequestTimeout</code></td>
+						<td tabindex="-1">Your socket connection to the server was not read from or written to
+							within the timeout period.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">RequestTimeTooSkewed</code></td>
+						<td tabindex="-1">The difference between the request time and the server's time is too
+							large.</td>
+						<td tabindex="-1"><code class="code">403 Forbidden</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+
+					<tr>
+						<td tabindex="-1"><code class="code">RequestTorrentOfBucketError</code></td>
+						<td tabindex="-1">Requesting the torrent file of a bucket is not permitted.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ResponseInterrupted</code></td>
+						<td tabindex="-1">Returned to the original caller when an error is encountered while reading the WriteGetObjectResponse body. </td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">RestoreAlreadyInProgress</code></td>
+						<td tabindex="-1">The object restore is already in progress.</td>
+						<td tabindex="-1"><code class="code">409 Conflict</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ServerSideEncryptionConfigurationNotFoundError</code></td>
+						<td tabindex="-1">The server-side encryption configuration was not found.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ServiceUnavailable</code></td>
+						<td tabindex="-1">Service is unable to handle request.</td>
+						<td tabindex="-1"><code class="code">503 Service Unavailable</code></td>
+						<td tabindex="-1">Server</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">SignatureDoesNotMatch</code></td>
+						<td tabindex="-1">The request signature that the server calculated does not match the signature that you
+							provided. Check your AWS secret access key and signing method. For
+							more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/RESTAuthentication.html">REST Authentication</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/SOAPAuthentication.html">SOAP
+								Authentication</a>.</td>
+						<td tabindex="-1"><code class="code">403 Forbidden</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">SlowDown</code></td>
+						<td tabindex="-1">Please reduce your request rate.</td>
+						<td tabindex="-1"><code class="code">503 Slow Down</code></td>
+						<td tabindex="-1">Server</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">503 SlowDown</code></td>
+						<td tabindex="-1">Slow Down</td>
+						<td tabindex="-1"><code class="code">503 Slow Down</code></td>
+						<td tabindex="-1">Server</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">TagPolicyException</code></td>
+						<td tabindex="-1">The tag policy does not allow the specified value for the following tag key.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">TemporaryRedirect</code></td>
+						<td tabindex="-1">You are being redirected to the bucket while the Domain Name System (DNS) server is
+							being updated.</td>
+						<td tabindex="-1"><code class="code">307 Temporary Redirect</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">TokenCodeInvalidError</code></td>
+						<td tabindex="-1">The serial number and/or token code you provided is not valid.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">TokenRefreshRequired</code></td>
+						<td tabindex="-1">The provided token must be refreshed.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">TooManyAccessPoints</code></td>
+						<td tabindex="-1">You have attempted to create more access points than are allowed for an account. For
+							more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/s3.html">Amazon Simple Storage Service endpoints and
+								quotas</a> in the <em>AWS General Reference</em>.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">TooManyBuckets</code></td>
+						<td tabindex="-1">You have attempted to create more buckets than are allowed for an account. For more
+							information, see <a href="https://docs.aws.amazon.com/general/latest/gr/s3.html">Amazon Simple Storage Service endpoints and
+								quotas</a> in the <em>AWS General Reference</em>.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+				    <tr>
+				        <td tabindex="-1"><code class="code">TooManyMultiRegionAccessPointregionsError</code></td>
+				        <td tabindex="-1">You have attempted to create a Multi-Region Access Point with more Regions than
+							are allowed for an account. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/s3.html">Amazon Simple Storage Service
+								endpoints and quotas</a> in the <em>AWS General Reference</em>.</td>
+				        <td tabindex="-1"><code class="code">400 Bad Request</code></td>
+				        <td tabindex="-1">Client</td>
+				    </tr>
+				    <tr>
+				        <td tabindex="-1"><code class="code">TooManyMultiRegionAccessPoints</code></td>
+				        <td tabindex="-1">You have attempted to create more Multi-Region Access Points than are allowed for
+							an account. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/s3.html">Amazon Simple Storage Service endpoints and
+								quotas</a> in the <em>AWS General Reference</em>.</td>
+				        <td tabindex="-1"><code class="code">400 Bad Request</code></td>
+				        <td tabindex="-1">Client</td>
+				    </tr>
+					<tr>
+						<td tabindex="-1"><code class="code">UnauthorizedAccessError</code></td>
+						<td tabindex="-1">Applicable in China Regions only. Returned when a request is made to a bucket that doesn't have an ICP license. For more information, see <a href="https://www.amazonaws.cn/en/support/icp/" rel="noopener noreferrer" target="_blank"><span>ICP Recordal</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</td>
+						<td tabindex="-1"><code class="code">403 Forbidden</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">UnexpectedContent</code></td>
+						<td tabindex="-1">This request contains unsupported content.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">UnexpectedIPError</code></td>
+						<td tabindex="-1">Applicable in China Regions only. This request was rejected because the IP was unexpected. </td>
+						<td tabindex="-1"><code class="code">403 Forbidden</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">UnsupportedArgument</code></td>
+						<td tabindex="-1">The request contained an unsupported argument.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">UnsupportedSignature</code></td>
+						<td tabindex="-1">The provided request is signed with an unsupported STS Token version or the signature version is not supported.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">UnresolvableGrantByEmailAddress</code></td>
+						<td tabindex="-1">The email address that you provided does not match any account on record.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">UserKeyMustBeSpecified</code></td>
+						<td tabindex="-1">The bucket POST request must contain the specified field name. If it is specified,
+							check the order of the fields.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">NoSuchAccessPoint</code></td>
+						<td tabindex="-1">The specified access point does not exist.</td>
+						<td tabindex="-1"><code class="code">404 Not Found</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidTag</code></td>
+						<td tabindex="-1">Your request contains tag input that is not valid. For example, your request might
+							contain duplicate keys, keys or values that are too long, or system
+							tags.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">MalformedPolicy</code></td>
+						<td tabindex="-1">Your policy contains a principal that is not valid.</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+				</table></div></div>
+	 
+		<h2 id="SelectObjectContentErrorCodeList">List of SELECT Object Content Error Codes</h2>
+		
+		<div class="awsdocs-note awsdocs-important"><div class="awsdocs-note-title"><awsui-icon name="status-warning" variant="error"></awsui-icon><h6>Important</h6></div><div class="awsdocs-note-text"><p>Amazon S3 Select is no longer available to new customers. Existing customers of Amazon S3 Select can continue to use the feature as usual. <a href="https://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/" rel="noopener noreferrer" target="_blank"><span>Learn more</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a></p></div></div>
+
+		<p>The following table contains special errors that <code class="code">SELECT Object Content</code>
+			might return. For general information about Amazon S3 errors and a list of error codes, see
+				<a href="./ErrorResponses.html">Error responses</a>.</p>
+		<div class="table-container"><div class="table-contents"><table id="d0e3"><thead>
+					<tr>
+						<th>Error code</th>
+						<th>Description</th>
+						<th>HTTP status code</th>
+						<th>SOAP fault code prefix</th>
+					</tr>
+				</thead>
+					<tr>
+						<td tabindex="-1"><code class="code">AmbiguousFieldName</code></td>
+						<td tabindex="-1">The field name matches to multiple fields in the file. Check the SQL
+							expression and the file, and try again.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">Busy</code></td>
+						<td tabindex="-1">The service is unavailable. Try again later.</td>
+						<td tabindex="-1">503</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">CastFailed</code></td>
+						<td tabindex="-1">An attempt to convert from one data type to another using
+								<code class="code">CAST</code> failed in the SQL expression.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+
+					<tr>
+						<td tabindex="-1"><code class="code">ColumnTooLong</code></td>
+						<td tabindex="-1">The length of a column in the result is greater than
+								<code class="code">maxCharsPerColumn</code> of 1 MB.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">CSVEscapingRecordDelimiter</code></td>
+						<td tabindex="-1">A quoted record delimiter was found in the file. To allow quoted
+							record delimiters, set <code class="code">AllowQuotedRecordDelimiter</code> to
+								<code class="code">'TRUE'</code>.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">CSVParsingError</code></td>
+						<td tabindex="-1">An error occurred while parsing the CSV file. Check the file and try
+							again.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+
+					<tr>
+						<td tabindex="-1"><code class="code">CSVUnescapedQuote</code></td>
+						<td tabindex="-1">An unescaped quote was found while parsing the CSV file. To allow
+							quoted record delimiters, set <code class="code">AllowQuotedRecordDelimiter</code> to
+								<code class="code">'TRUE'</code>.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">EmptyRequestBody</code></td>
+						<td tabindex="-1">The request body cannot be empty.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">EvaluatorBindingDoesNotExist</code></td>
+						<td tabindex="-1">A column name or a path provided does not exist in the SQL
+							expression.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">EvaluatorInvalidArguments</code></td>
+						<td tabindex="-1">There is an incorrect number of arguments in the function call in the
+							SQL expression.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">EvaluatorInvalidTimestampFormatPattern</code></td>
+						<td tabindex="-1">The timestamp format string in the SQL expression is not
+							valid.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">EvaluatorInvalidTimestampFormatPatternSymbol</code></td>
+						<td tabindex="-1">The timestamp format pattern contains a symbol in the SQL expression
+							that is not valid.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">EvaluatorInvalidTimestampFormatPatternSymbolForParsing</code></td>
+						<td tabindex="-1">The timestamp format pattern contains a valid format symbol that
+							cannot be applied to timestamp parsing in the SQL expression.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">EvaluatorInvalidTimestampFormatPatternToken</code></td>
+						<td tabindex="-1">The timestamp format pattern contains a token in the SQL expression
+							that is not valid.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">EvaluatorLikePatternInvalidEscapeSequence</code></td>
+						<td tabindex="-1">An argument given to the <code class="code">LIKE</code> expression was not
+							valid.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">EvaluatorNegativeLimit</code></td>
+						<td tabindex="-1"><code class="code">LIMIT</code> must not be negative.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">EvaluatorTimestampFormatPatternDuplicateFields</code></td>
+						<td tabindex="-1">The timestamp format pattern contains multiple format specifiers
+							representing the timestamp field in the SQL expression.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">EvaluatorTimestampFormatPatternHourClockAmPmMismatch</code></td>
+						<td tabindex="-1">The timestamp format pattern contains a 12-hour hour of day format
+							symbol but doesn't also contain an AM/PM field, or it contains a 24-hour
+							hour of day format specifier and contains an AM/PM field in the SQL
+							expression.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">EvaluatorUnterminatedTimestampFormatPatternToken</code></td>
+						<td tabindex="-1">The timestamp format pattern contains an unterminated token in the
+							SQL expression.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+
+					<tr>
+						<td tabindex="-1"><code class="code">ExpressionTooLong</code></td>
+						<td tabindex="-1">The SQL expression is too long. The maximum byte-length for an SQL
+							expression is 256 KB.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ExternalEvalException</code></td>
+						<td tabindex="-1">The query cannot be evaluated. Check the file and try again.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">IllegalSqlFunctionArgument</code></td>
+						<td tabindex="-1">An illegal argument was used in the SQL function.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">IncorrectSqlFunctionArgumentType</code></td>
+						<td tabindex="-1">An incorrect argument type was specified in a function call in the
+							SQL expression.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					
+					<tr>
+						<td tabindex="-1"><code class="code">IntegerOverflow</code></td>
+						<td tabindex="-1">An integer overflow or underflow occurred in the SQL
+							expression.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InternalError</code></td>
+						<td tabindex="-1">An internal error occurred.</td>
+						<td tabindex="-1">500</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidCast</code></td>
+						<td tabindex="-1">An attempt to convert from one data type to another using
+							<code class="code">CAST</code> failed in the SQL expression.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidColumnIndex</code></td>
+						<td tabindex="-1">The column index in the SQL expression is not valid.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidCompressionFormat</code></td>
+						<td tabindex="-1">The file is not in a supported compression format. Only GZIP and
+							BZIP2 are supported.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidDataSource</code></td>
+						<td tabindex="-1">The data source type is not valid. Only CSV, JSON, and Parquet are
+							supported.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidDataType</code></td>
+						<td tabindex="-1">The SQL expression contains a data type that is not valid.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidExpressionType</code></td>
+						<td tabindex="-1">The <code class="code">ExpressionType</code> value is not valid. Only SQL
+							expressions are supported.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidFileHeaderInfo</code></td>
+						<td tabindex="-1">The <code class="code">FileHeaderInfo</code> value is not valid. Only
+								<code class="code">NONE</code>, <code class="code">USE</code>, and <code class="code">IGNORE</code> are
+							supported.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidJsonType</code></td>
+						<td tabindex="-1">The <code class="code">JsonType</code> value is not valid. Only
+								<code class="code">DOCUMENT</code> and <code class="code">LINES</code> are supported.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidKeyPath</code></td>
+						<td tabindex="-1">The key path in the SQL expression is not valid.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidQuoteFields</code></td>
+						<td tabindex="-1">The <code class="code">QuoteFields</code> value is not valid. Only
+								<code class="code">ALWAYS</code> and <code class="code">ASNEEDED</code> are supported.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidRequestParameter</code></td>
+						<td tabindex="-1">The value of a parameter in the <code class="code">SelectRequest</code> element is
+							not valid. Check the service API documentation and try again.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidScanRange</code></td>
+						<td tabindex="-1">The provided scan range is not valid.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidTableAlias</code></td>
+						<td tabindex="-1">The SQL expression contains a table alias that is not valid.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidTextEncoding</code></td>
+						<td tabindex="-1">The encoding type is not valid. Only UTF-8 encoding is
+							supported.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">JSONParsingError</code></td>
+						<td tabindex="-1">An error occurred while parsing the JSON file. Check the file and try
+							again.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">LexerInvalidChar</code></td>
+						<td tabindex="-1">The SQL expression contains a character that is not valid.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">LexerInvalidIONLiteral</code></td>
+						<td tabindex="-1">The SQL expression contains an operator that is not valid.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">LexerInvalidLiteral</code></td>
+						<td tabindex="-1">The SQL expression contains an operator that is not valid.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">LexerInvalidOperator</code></td>
+						<td tabindex="-1">The SQL expression contains a literal that is not valid.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">LikeInvalidInputs</code></td>
+						<td tabindex="-1">The argument given to the <code class="code">LIKE</code> clause in the SQL
+							expression is not valid.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">MalformedXML</code></td>
+						<td tabindex="-1"> The XML provided was not well formed or did not validate against our
+							published schema. Check the service documentation and try again.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">MaxOperatorsExceeded</code></td>
+						<td tabindex="-1">Failed to parse SQL expression, try reducing complexity. For example,
+							reduce number of operators used.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">MethodNotAllowed</code></td>
+						<td tabindex="-1">The specified method is not allowed against this resource.</td>
+						<td tabindex="-1"><code class="code">405 Method Not Allowed</code></td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">MissingRequiredParameter</code></td>
+						<td tabindex="-1">The <code class="code">SelectRequest</code> entity is missing a required
+							parameter. Check the service documentation and try again.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">MultipleDataSourcesUnsupported</code></td>
+						<td tabindex="-1">Multiple data sources are not supported.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">NumberFormatError</code></td>
+						<td tabindex="-1">An error occurred while parsing a number. This error can be caused by
+							underflow or overflow of integers.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ObjectSerializationConflict</code></td>
+						<td tabindex="-1"><code class="code">InputSerialization</code> specifies more than one format (CSV,
+							JSON, or Parquet), or <code class="code">OutputSerialization</code> specifies more
+							than one format (CSV or JSON). For <code class="code">InputSerialization</code> and
+							<code class="code">OutputSerialization</code>, you can specify only one format
+							for each.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">OverMaxColumn</code></td>
+						<td tabindex="-1">The number of columns in the result is greater than the maximum
+							allowable number of columns.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">OverMaxParquetBlockSize</code></td>
+						<td tabindex="-1">The Parquet file is above the max row group size.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">OverMaxRecordSize</code></td>
+						<td tabindex="-1">The length of a record in the input or result is greater than the
+								<code class="code">maxCharsPerRecord</code> limit of 1 MB.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParquetParsingError</code></td>
+						<td tabindex="-1">An error occurred while parsing the Parquet file. Check the file and
+							try again.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParquetUnsupportedCompressionCodec</code></td>
+						<td tabindex="-1">The specified Parquet compression codec is not supported.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseAsteriskIsNotAloneInSelectList</code></td>
+						<td tabindex="-1">Other expressions are not allowed in the <code class="code">SELECT</code> list
+							when <code class="code">*</code> is used without dot notation in the SQL
+							expression.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseCannotMixSqbAndWildcardInSelectList</code></td>
+						<td tabindex="-1">Cannot mix <code class="code">[]</code> and <code class="code">*</code> in the same expression
+							in a <code class="code">SELECT</code> list in the SQL expression.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseCastArity</code></td>
+						<td tabindex="-1">The SQL expression <code class="code">CAST</code> has incorrect arity.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseEmptySelect</code></td>
+						<td tabindex="-1">The SQL expression contains an empty <code class="code">SELECT</code>
+							clause.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseExpected2TokenTypes</code></td>
+						<td tabindex="-1">The expected token in the SQL expression was not found.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseExpectedArgumentDelimiter</code></td>
+						<td tabindex="-1">The expected argument delimiter in the SQL expression was not
+							found.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseExpectedDatePart</code></td>
+						<td tabindex="-1">The expected date part in the SQL expression was not found.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseExpectedExpression</code></td>
+						<td tabindex="-1">The expected SQL expression was not found.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseExpectedIdentForAlias</code></td>
+						<td tabindex="-1">The expected identifier for the alias in the SQL expression was not
+							found.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseExpectedIdentForAt</code></td>
+						<td tabindex="-1">The expected identifier for <code class="code">AT</code> name in the SQL
+							expression was not found.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseExpectedIdentForGroupName</code></td>
+						<td tabindex="-1"><code class="code">GROUP</code> is not supported in the SQL expression.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseExpectedKeyword</code></td>
+						<td tabindex="-1">The expected keyword in the SQL expression was not found.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseExpectedLeftParenAfterCast</code></td>
+						<td tabindex="-1">The expected left parenthesis after <code class="code">CAST</code> in the SQL
+							expression was not found.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseExpectedLeftParenBuiltinFunctionCall</code></td>
+						<td tabindex="-1">The expected left parenthesis in the SQL expression was not
+							found.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseExpectedLeftParenValueConstructor</code></td>
+						<td tabindex="-1">The expected left parenthesis in the SQL expression was not
+							found.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseExpectedMember</code></td>
+						<td tabindex="-1">The SQL expression contains an unsupported use of
+							<code class="code">MEMBER</code>.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseExpectedNumber</code></td>
+						<td tabindex="-1">The expected number in the SQL expression was not found.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseExpectedRightParenBuiltinFunctionCall</code></td>
+						<td tabindex="-1">The expected right parenthesis character in the SQL expression was
+							not found.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseExpectedTokenType</code></td>
+						<td tabindex="-1">The expected token in the SQL expression was not found.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseExpectedTypeName</code></td>
+						<td tabindex="-1">The expected type name in the SQL expression was not found.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseExpectedWhenClause</code></td>
+						<td tabindex="-1">The expected <code class="code">WHEN</code> clause in the SQL expression was not
+							found. <code class="code">CASE</code> is not supported.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseInvalidContextForWildcardInSelectList</code></td>
+						<td tabindex="-1">The use of <code class="code">*</code> in the <code class="code">SELECT</code> list in the SQL
+							expression is not valid.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseInvalidPathComponent</code></td>
+						<td tabindex="-1">The SQL expression contains a path component that is not
+							valid.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseInvalidTypeParam</code></td>
+						<td tabindex="-1">The SQL expression contains a parameter value that is not
+							valid.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseMalformedJoin</code></td>
+						<td tabindex="-1"><code class="code">JOIN</code> is not supported in the SQL expression.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseMissingIdentAfterAt</code></td>
+						<td tabindex="-1">The expected identifier after the @ symbol in the SQL expression was
+							not found.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseNonUnaryAgregateFunctionCall</code></td>
+						<td tabindex="-1">Only one argument is supported for aggregate functions in the SQL
+							expression.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseSelectMissingFrom</code></td>
+						<td tabindex="-1">The SQL expression contains a missing <code class="code">FROM</code> after the
+							<code class="code">SELECT</code> list.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseUnExpectedKeyword</code></td>
+						<td tabindex="-1">The SQL expression contains an unexpected keyword.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseUnexpectedOperator</code></td>
+						<td tabindex="-1">The SQL expression contains an unexpected operator.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseUnexpectedTerm</code></td>
+						<td tabindex="-1">The SQL expression contains an unexpected term.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseUnexpectedToken</code></td>
+						<td tabindex="-1">The SQL expression contains an unexpected token.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseUnknownOperator</code></td>
+						<td tabindex="-1">The SQL expression contains an operator that is not valid.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseUnsupportedAlias</code></td>
+						<td tabindex="-1">The SQL expression contains an unsupported use of
+							<code class="code">ALIAS</code>.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseUnsupportedCallWithStar</code></td>
+						<td tabindex="-1">Only <code class="code">COUNT</code> with <code class="code">(*)</code> as a parameter is
+							supported in the SQL expression.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseUnsupportedCase</code></td>
+						<td tabindex="-1">The SQL expression contains an unsupported use of
+							<code class="code">CASE</code>.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseUnsupportedCaseClause</code></td>
+						<td tabindex="-1">The SQL expression contains an unsupported use of
+							<code class="code">CASE</code>.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseUnsupportedLiteralsGroupBy</code></td>
+						<td tabindex="-1">The SQL expression contains an unsupported use of <code class="code">GROUP
+							BY</code>.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseUnsupportedSelect</code></td>
+						<td tabindex="-1">The SQL expression contains an unsupported use of
+							<code class="code">SELECT</code>.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseUnsupportedSyntax</code></td>
+						<td tabindex="-1">The SQL expression contains unsupported syntax.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ParseUnsupportedToken</code></td>
+						<td tabindex="-1">The SQL expression contains an unsupported token.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">TruncatedInput</code></td>
+						<td tabindex="-1">Object decompression failed. Check that the object is properly
+							compressed using the format specified in the request.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">UnauthorizedAccess</code></td>
+						<td tabindex="-1">You are not authorized to perform this operation.</td>
+						<td tabindex="-1">401</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">UnrecognizedFormatException</code></td>
+						<td tabindex="-1">The record type is not valid.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">UnsupportedFunction</code></td>
+						<td tabindex="-1">S3 encountered an unsupported SQL function.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">UnsupportedParquetType</code></td>
+						<td tabindex="-1">The specified Parquet type is not supported.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">UnsupportedRangeHeader</code></td>
+						<td tabindex="-1">A range header is not supported for this operation.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">UnsupportedScanRangeInput</code></td>
+						<td tabindex="-1">Scan range queries are not supported on this type of object.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">UnsupportedSqlOperation</code></td>
+						<td tabindex="-1">S3 encountered an unsupported SQL operation.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">UnsupportedSqlStructure</code></td>
+						<td tabindex="-1">S3 encountered an unsupported SQL structure. Check the SQL
+							Reference.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">UnsupportedStorageClass</code></td>
+						<td tabindex="-1">The storage class is not supported. Only
+							<code class="code">STANDARD</code>, <code class="code">STANDARD_IA</code>, and<code class="code">
+								ONEZONE_IA</code> storage classes are supported.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">UnsupportedSyntax</code></td>
+						<td tabindex="-1">The syntax is not valid.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">UnsupportedTypeForQuerying</code></td>
+						<td tabindex="-1">Your query contains an unsupported type for comparison (e.g.
+							verifying that a Parquet INT96 column type is greater than 0).</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ValueParseFailure</code></td>
+						<td tabindex="-1">A timestamp parse failure occurred in the SQL expression.</td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+				</table></div></div>
+	 
+		<h2 id="ReplicationErrorCodeList">List of Replication-related error codes</h2>
+
+		<p>The following table contains special errors that the <code class="code">Replication</code>
+			operation might return. For general information about Amazon S3 errors and a list of error
+			codes, see <a href="./ErrorResponses.html">Error responses</a>.</p>
+		<div class="table-container"><div class="table-contents"><table id="d0e4"><thead>
+					<tr>
+						<th>Error code</th>
+						<th>Description</th>
+						<th>HTTP status code</th>
+						<th>SOAP fault code prefix</th>
+					</tr>
+				</thead>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidArgument</code></td>
+						<td tabindex="-1"><p>This error might occur for the following reasons:</p>
+							<div class="itemizedlist">
+								 
+								 
+								 
+								 
+								 
+								 
+								 
+								 
+								 
+							<ul class="itemizedlist"><li class="listitem">
+									<p>The <code class="code">&lt;Account&gt;</code> element is empty. It must contain a valid account
+										ID.</p>
+								</li><li class="listitem">
+									<p>The AWS account specified in the <code class="code">&lt;Account&gt;</code> element must match the
+										destination bucket owner.</p>
+								</li><li class="listitem">
+									<p><code class="code">ReplicationTime-Status</code> must contain a
+										value.</p>
+								</li><li class="listitem">
+									<p><code class="code">ReplicationTime-ReplicationTimeValue</code> must
+										contain a value.</p>
+								</li><li class="listitem">
+									<p><code class="code">Replication-ReplicationTimeValue-Minutes</code>
+										value must be 15.</p>
+								</li><li class="listitem">
+									<p><code class="code">ReplicationMetrics</code> must contain a
+											<code class="code">Status</code>.</p>
+								</li><li class="listitem">
+									<p><code class="code">ReplicationMetrics</code> must contain an
+											<code class="code">EventThreshold</code>.</p>
+								</li><li class="listitem">
+									<p><code class="code">EventThreshold-ReplicationTimeValue-Minutes</code>
+										value must be 15.</p>
+								</li><li class="listitem">
+									<p><code class="code">Rule ID</code> must not contain non-ASCII
+										characters.</p>
+								</li></ul></div></td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidRequest</code></td>
+						<td tabindex="-1"><p>This error might occur for the following reasons:</p>
+							<div class="itemizedlist">
+								 
+								 
+								 
+								 
+								 
+							<ul class="itemizedlist"><li class="listitem">
+									<p>The <code class="code">&lt;Owner&gt;</code> in <code class="code">&lt;AccessControlTranslation&gt;</code> has a
+										value, so the <code class="code">&lt;Account&gt;</code> element must be
+										specified. </p>
+								</li><li class="listitem">
+									<p>The <code class="code">&lt;Account&gt;</code> element is empty. It must contain a valid account
+										ID.</p>
+								</li><li class="listitem">
+									<p>The replication <code class="code">destination</code> must contain both
+											<code class="code">ReplicationTime</code> and <code class="code">Metrics</code>,
+										or neither.</p>
+								</li><li class="listitem">
+									<p><code class="code">ReplicationTime</code> and <code class="code">ReplicationMetrics</code> must have the same
+										status.</p>
+								</li><li class="listitem">
+									<p>S3 Replication Time Control (S3 RTC) is not supported in this
+										AWS Region.</p>
+								</li></ul></div></td>
+						<td tabindex="-1">400</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ReplicationConfigurationNotFoundError</code></td>
+						<td tabindex="-1">There is no replication configuration for this bucket.</td>
+						<td tabindex="-1">404 Not Found</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+				</table></div></div>
+	 
+		<h2 id="S3TaggingErrorCodeList">List of Tagging-related error codes</h2>
+		<p>The following table contains special errors that the <code class="code">TagResource</code>, <code class="code">UntagResource</code>, and <code class="code">ListTagsForResource</code> operations might return for Storage Lens groups. For
+			general information about general Amazon S3 errors and a list of error codes, see <a href="./ErrorResponses.html">Error responses</a>.</p>
+		<div class="table-container"><div class="table-contents"><table id="d0e5"><thead>
+					<tr>
+						<th>Error Code</th>
+						<th>Description</th>
+						<th>HTTP Status Code</th>
+						<th>SOAP Fault Code Prefix</th>
+					</tr>
+				</thead>
+					
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidRequest</code></td>
+						<td tabindex="-1"><p>The AWS Region in the resource ARN doesn't match the Region
+								that's specified in this request. The AWS account in the resource
+								ARN doesn't match the account ID that's specified in this request.
+								The AWS partition in the resourceArn is invalid.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidTag</code></td>
+						<td tabindex="-1"><p>This request contains a tag key or value that isn't valid.
+								Valid characters include the following:
+								<code class="code">[a-zA-Z+-=._:/]</code>. Tag keys can contain up to 128
+								characters. Tag values can contain up to 256 characters. There are
+								duplicate tag keys in your request. User-defined tag keys can't
+								start with <code class="code">aws:</code>.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					
+					<tr>
+						<td tabindex="-1"><code class="code">NoSuchResource</code></td>
+						<td tabindex="-1"><p>The specified resource doesn't exist.</p></td>
+						<td tabindex="-1"><code class="code">404 Not Found</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					
+					<tr>
+						<td tabindex="-1"><code class="code">TagPolicyException</code></td>
+						<td tabindex="-1"><p>The tag policy does not allow the specified value for the following tag key.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					
+					<tr>
+						<td tabindex="-1"><code class="code">TooManyTags</code></td>
+						<td tabindex="-1"><p>The number of tags exceeds the limit of 50 tags.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					
+				</table></div></div>
+	 
+		<h2 id="S3AnnotationErrorCodeList">List of Amazon S3 annotation-related error codes</h2>
+		<p>The following table contains special errors that annotation operations
+			(<code class="code">PutObjectAnnotation</code>, <code class="code">GetObjectAnnotation</code>,
+			<code class="code">ListObjectAnnotations</code>, <code class="code">DeleteObjectAnnotation</code>,
+			<code class="code">UpdateBucketMetadataAnnotationTableConfiguration</code>) and
+			annotation-related <code class="code">CopyObject</code> behavior might return. For general
+			information about Amazon S3 errors and a list of error codes, see <a href="./ErrorResponses.html">Error responses</a>.</p>
+		<div class="table-container"><div class="table-contents"><table id="d0e6"><thead>
+					<tr>
+						<th>Error Code</th>
+						<th>Description</th>
+						<th>HTTP Status Code</th>
+						<th>SOAP Fault Code Prefix</th>
+					</tr>
+				</thead>
+					<tr>
+						<td tabindex="-1"><code class="code">AccessDenied</code></td>
+						<td tabindex="-1"><p>Access Denied. The caller does not have permission to perform
+								the requested annotation operation, or the object is protected by
+								Object Lock in COMPLIANCE mode.</p></td>
+						<td tabindex="-1"><code class="code">403 Forbidden</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">AnnotationLimitExceeded</code></td>
+						<td tabindex="-1"><p>The object annotation count exceeds the limit
+								(1000).</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">AnnotationNameTooLong</code></td>
+						<td tabindex="-1"><p>Your annotation name is too long. Annotation names can be up
+								to 512 bytes in length.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">AnnotationRequestConflict</code></td>
+						<td tabindex="-1"><p>A conflicting operation is currently in progress against this
+								annotation. This can occur when a source annotation is deleted during
+								a cross-Region copy.</p></td>
+						<td tabindex="-1"><code class="code">409 Conflict</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">EntityTooSmall</code></td>
+						<td tabindex="-1"><p>Your proposed upload is smaller than the minimum allowed size.
+								The annotation payload must be at least 1 byte.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidAnnotationName</code></td>
+						<td tabindex="-1"><p>Your annotation name contains invalid characters, or the name
+								starts with a reserved prefix (<code class="code">aws</code> or <code class="code">s3</code>,
+								case-insensitive). Annotation names can contain only Unicode letters,
+								numbers, underscore (<code class="code">_</code>), period (<code class="code">.</code>), and
+								hyphen (<code class="code">-</code>).</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidArgument</code></td>
+						<td tabindex="-1"><p>The annotation directive is not valid. Valid values are
+								<code class="code">COPY</code> and <code class="code">EXCLUDE</code>. For
+								<code class="code">ListObjectAnnotations</code>,
+								<code class="code">max-annotation-results</code> must be between 1 and
+								1000.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidPrefix</code></td>
+						<td tabindex="-1"><p>The annotation prefix you have provided is not
+								valid.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidRequest</code></td>
+						<td tabindex="-1"><p>This error might occur for the following reasons: The object is
+								encrypted with SSE-C, which does not support annotations. The source
+								object has annotations that cannot be copied to the destination
+								because the destination is in an unsupported Region. The annotation
+								table configuration request is not valid (for example, disabling the
+								table while specifying encryption, enabling a table that is already
+								enabled, updating a table in CREATING status, or submitting an empty
+								request).</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">MethodNotAllowed</code></td>
+						<td tabindex="-1"><p>The specified method is not allowed against this resource. For
+								example, this error occurs when the request targets a delete
+								marker.</p></td>
+						<td tabindex="-1"><code class="code">405 Method Not Allowed</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">NoSuchAnnotation</code></td>
+						<td tabindex="-1"><p>The specified annotation does not exist.</p></td>
+						<td tabindex="-1"><code class="code">404 Not Found</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">NoSuchKey</code></td>
+						<td tabindex="-1"><p>The specified key does not exist.</p></td>
+						<td tabindex="-1"><code class="code">404 Not Found</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">NoSuchVersion</code></td>
+						<td tabindex="-1"><p>The version ID specified in the request does not match an
+								existing version.</p></td>
+						<td tabindex="-1"><code class="code">404 Not Found</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">NotImplemented</code></td>
+						<td tabindex="-1"><p>Annotations are not supported for Amazon S3 directory
+								buckets.</p></td>
+						<td tabindex="-1"><code class="code">501 Not Implemented</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">OperationAborted</code></td>
+						<td tabindex="-1"><p>A conflicting conditional operation is currently in progress
+								against this resource. This can occur during concurrent modifications
+								or when a source annotation count or ETag changes during a
+								cross-Region copy. Try again.</p></td>
+						<td tabindex="-1"><code class="code">409 Conflict</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">PreconditionFailed</code></td>
+						<td tabindex="-1"><p>At least one of the preconditions that you specified did not
+								hold. The <code class="code">x-amz-object-if-match</code> ETag does not match the
+								current object ETag.</p></td>
+						<td tabindex="-1"><code class="code">412 Precondition Failed</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">UnsupportedMediaType</code></td>
+						<td tabindex="-1"><p>The request payload contains an unsupported media type. The
+								annotation payload must be valid UTF-8 encoded text.</p></td>
+						<td tabindex="-1"><code class="code">415 Unsupported Media Type</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">UserAnnotationNameMustBeSpecified</code></td>
+						<td tabindex="-1"><p>You must specify a user annotation name.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+				</table></div></div>
+	 
+		<h2 id="S3OutpostsErrorCodeList">List of Amazon S3 on Outposts error codes</h2>
+
+		<p>The following table contains special errors that an Amazon S3 on Outposts operation might return.
+			For general information about Amazon S3 errors and a list of error codes, see <a href="./ErrorResponses.html">Error responses</a>.</p>
+		<div class="table-container"><div class="table-contents"><table id="d0e7"><thead>
+					<tr>
+						<th>Error code</th>
+						<th>Description</th>
+						<th>HTTP status code</th>
+						<th>SOAP fault code prefix</th>
+					</tr>
+				</thead>
+					<tr>
+						<td tabindex="-1"><code class="code">BadRequest</code></td>
+						<td tabindex="-1"><p>The bucket is in a transitional state because of a previous deletion attempt. Try again
+								later.</p>
+						</td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidRequest</code></td>
+						<td tabindex="-1">
+							<p>This error might occur for the following reasons:</p>
+							<div class="itemizedlist">
+								 
+								 
+							<ul class="itemizedlist"><li class="listitem">
+									<p>Amazon VPC configuration is required.</p>
+								</li><li class="listitem">
+									<p>Public access is not allowed on S3 on Outposts access points.</p>
+								</li></ul></div></td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Client</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidOutpostState</code></td>
+						<td tabindex="-1"><p>The request is not valid for the current state of the Outpost.</p>
+						</td>
+						<td tabindex="-1">409 Conflict</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidRequest</code></td>
+						<td tabindex="-1"><p>The access point is not in a state where it can be deleted.</p>
+						</td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">NoSuchOutpost</code></td>
+						<td tabindex="-1"><p>The specified Outpost does not exist.</p></td>
+						<td tabindex="-1">404 Not Found</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">UnsupportedOperation</code></td>
+						<td tabindex="-1"><p>The specified action was not supported.</p>
+						</td>
+						<td tabindex="-1">404 Not Found</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InsufficientCapacity</code></td>
+						<td tabindex="-1">
+							<p>Insufficient capacity.</p>
+						</td>
+						<td tabindex="-1">
+							<p>507 Insufficient Storage</p>
+						</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+				</table></div></div>
+	 
+		<h2 id="S3LensErrorCodeList">List of Amazon S3 Storage Lens error codes</h2>
+
+		<p>The following table contains special errors that Amazon S3 Storage Lens operations might return. For
+			general information about general Amazon S3 errors and a list of error codes, see <a href="./ErrorResponses.html">Error responses</a>.</p>
+		<div class="table-container"><div class="table-contents"><table id="d0e8"><thead>
+					<tr>
+						<th>Error code</th>
+						<th>Description</th>
+						<th>HTTP status code</th>
+						<th>SOAP fault code prefix</th>
+					</tr>
+				</thead>
+					<tr>
+						<td tabindex="-1"><code class="code">AccessDenied</code></td>
+						<td tabindex="-1"><p>This Region is not supported as a home Region for
+								S3 Storage Lens.</p>
+						</td>
+						<td tabindex="-1"><code class="code">403 Forbidden</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">AccountNotAuthorized</code></td>
+						<td tabindex="-1">
+							<p>This account not authorized to use AWS Organizations. Use your management
+								account or delegated administrator account. </p>
+						</td>
+						<td tabindex="-1"><code class="code">403 Forbidden</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ActivityMetricsMustEnabled</code></td>
+						<td tabindex="-1"><p>Activity metrics must be enabled.</p>
+						</td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">AWSOrganizationsNotInUseException</code></td>
+						<td tabindex="-1"><p>This account is not part of your organization.</p>
+						</td>
+						<td tabindex="-1"><code class="code">403 Forbidden</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">DefaultConfigurationDeleteForbidden</code></td>
+						<td tabindex="-1"><p>The Default configuration cannot be deleted.</p></td>
+						<td tabindex="-1"><code class="code">403 Forbidden</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">DuplicateStorageLensGroupARN</code></td>
+						<td tabindex="-1"><p>There are two or more entries of the same Storage Lens group
+								ARN in this configuration.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">EmptyExcludeContainer</code></td>
+						<td tabindex="-1"><p>This error occurs for the following reasons:</p>
+							<div class="itemizedlist">
+								 
+								 
+								 
+							<ul class="itemizedlist"><li class="listitem">
+									<p>The exclude container cannot be empty.</p>
+								</li><li class="listitem">
+									<p>The exclude container cannot have zero buckets.</p>
+								</li><li class="listitem">
+									<p>The exclude container cannot have zero Regions.</p>
+								</li></ul></div></td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">EmptyExcludeElement</code></td>
+						<td tabindex="-1"><p>You must specify a Storage Lens group with your Exclude
+								element.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">EmptyIncludeContainer</code></td>
+						<td tabindex="-1"><p>This error occurs for the following reasons:</p>
+							<div class="itemizedlist">
+								 
+								 
+								 
+							<ul class="itemizedlist"><li class="listitem">
+									<p>The include container cannot be empty.</p>
+								</li><li class="listitem">
+									<p>The include container cannot have zero buckets.</p>
+								</li><li class="listitem">
+									<p>The include container cannot have zero Regions.</p>
+								</li></ul></div></td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidAWSOrgArn</code></td>
+						<td tabindex="-1"><p>There is a malformed AWS Organizations ARN in the configuration.</p>
+						</td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">EmptyIncludeElement</code></td>
+						<td tabindex="-1"><p>You must specify a Storage Lens group with your Include
+								element.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidBucketFilter</code></td>
+						<td tabindex="-1"><p>Organization-level configurations do not support bucket
+								filters.</p>
+						</td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidConfigId</code></td>
+						<td tabindex="-1"><p>The configuration ID is not valid.</p>
+						</td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidDestination</code></td>
+						<td tabindex="-1"><p>The S3 bucket ARN is malformed.</p>
+						</td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidEncryptionMethod</code></td>
+						<td tabindex="-1"><p>Only one encryption method can be specified.</p>
+						</td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidFilterForDefaultConfiguration</code></td>
+						<td tabindex="-1"><p>The default configuration must not include any filters.</p>
+						</td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidIncludeExcludeContainers</code></td>
+						<td tabindex="-1"><p>You can specify either an Include container or an Exclude
+								container in a configuration. You cannot specify both in a
+								configuration.</p>
+						</td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidIncludeExcludeElements</code></td>
+						<td tabindex="-1"><p>Only one Include or Exclude element is allowed. At least one
+								Include or Exclude element must be present.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidKMSEncryptionKeyId</code></td>
+						<td tabindex="-1"><p>The KMS key ID ARN is not valid.</p>
+						</td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidMaximumPrefixDepth</code></td>
+						<td tabindex="-1"><p><code class="code">MaxDepth</code> must be within the range [1,10].</p>
+						</td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidMinimumStorageBytesPercentage</code></td>
+						<td tabindex="-1"><p><code class="code">MinStorageBytesPercentage</code> must be within the range
+								[1.00,100.00].</p>
+						</td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidOrganizationARN</code></td>
+						<td tabindex="-1"><p>The AWS Organizations ARN in the configuration is not valid.</p>
+						</td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidOrganizationForDefaultConfiguration</code></td>
+						<td tabindex="-1"><p>The default configuration does not support organization-level
+								metrics.</p>
+						</td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidRegionForDefaultConfiguration</code></td>
+						<td tabindex="-1"><p>The specified Region is not supported for default
+								configuration.</p>
+						</td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidRegionName</code></td>
+						<td tabindex="-1"><p>The Region name is not valid.</p>
+						</td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidStorageLensArn</code></td>
+						<td tabindex="-1"><p>The S3 Storage Lens ARN is not required in input.</p>
+						</td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidStorageLensGroupARN</code></td>
+						<td tabindex="-1"><p>This Storage Lens group ARN isn't valid or only Storage Lens
+								groups in your account are allowed. Additionally, you must follow
+								the Storage Lens group ARN structure: <code class="code">arn::s3:::storage-lens-group/</code>
+								and adhere to the 64 character limit. Storage Lens group names can
+								also contain only the following characters: a-z, A-Z, 0-9, hyphens
+								(-), and underscores (_). </p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">MissingAccountLevelActivityMetrics</code></td>
+						<td tabindex="-1"><p>Activity metrics must be enabled at the account level when
+								activity metrics are enabled at the bucket level.</p>
+						</td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">MissingBucketLevelActivityMetrics</code></td>
+						<td tabindex="-1"><p>Activity metrics must be enabled at the bucket level when
+								activity metrics are enabled at the account level.</p>
+						</td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">MissingEncryptionMethod</code></td>
+						<td tabindex="-1"><p>The encryption method cannot be blank. Specify either
+									<code class="code">SSE-KMS</code> or <code class="code">SSE-S3</code>.</p>
+						</td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">MissingPrefixLevelStorageMetrics</code></td>
+						<td tabindex="-1"><p>Storage metrics at the prefix level are mandatory when the
+								prefix level is enabled.</p>
+						</td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">OrganizationAccessDenied</code></td>
+						<td tabindex="-1"><p>This account is not authorized to add AWS Organizations.</p>
+						</td>
+						<td tabindex="-1">403 Forbidden</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">OrgConfigurationNotSupported</code></td>
+						<td tabindex="-1"><p>The specified Region does not support AWS Organizations in the
+								configuration.</p>
+						</td>
+						<td tabindex="-1">403 Forbidden</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ServiceNotEnabledForOrg</code></td>
+						<td tabindex="-1"><p>The S3 Storage Lens service-linked role is not enabled for the
+								organization.</p>
+						</td>
+						<td tabindex="-1">403 Forbidden</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">StorageMetricsMustEnabled</code></td>
+						<td tabindex="-1"><p>Prefix-level storage metrics must be enabled.</p>
+						</td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+
+					<tr>
+						<td tabindex="-1"><code class="code">TooManyBuckets</code></td>
+						<td tabindex="-1"><p>The buckets container cannot have more than 50 buckets.</p>
+						</td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">TooManyRegions</code></td>
+						<td tabindex="-1"><p>The Regions container cannot have more than 50 Regions.</p>
+						</td>
+						<td tabindex="-1">400 Bad Request</td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">TooManyStorageLensGroups</code></td>
+						<td tabindex="-1"><p>You can't attach more than 50 Storage Lens groups to your Storage Lens dashboard.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+				</table></div></div>
+		<p>The following table contains special errors that S3 Storage Lens groups operations might return. For
+			general information about general Amazon S3 errors and a list of error codes, see <a href="./ErrorResponses.html">Error responses</a>.</p>
+		<div class="table-container"><div class="table-contents"><table id="d0e9"><thead>
+					<tr>
+						<th>Error code</th>
+						<th>Description</th>
+						<th>HTTP status code</th>
+						<th>SOAP fault code prefix</th>
+					</tr>
+				</thead>
+					<tr>
+						<td tabindex="-1"><code class="code">AccessDenied</code></td>
+						<td tabindex="-1"><p>You don't have permission to perform Storage Lens group actions. This Region is not supported as home Region for S3 Storage Lens groups.</p></td>
+						<td tabindex="-1"><code class="code">403 Forbidden</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ConfigurationAlreadyExists</code></td>
+						<td tabindex="-1"><p>The specified configuration already exists.</p></td>
+						<td tabindex="-1"><code class="code">409 Conflict</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">DuplicateElement</code></td>
+						<td tabindex="-1"><p>Tags must be unique. The <code class="code">And</code> logical operator includes duplicate
+							tag keys. The <code class="code">Or</code> logical operator includes duplicate tags. Logical operator includes duplicate
+								prefixes or suffixes.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidAge</code></td>
+						<td tabindex="-1"><p><code class="code">DaysLessThan</code> and <code class="code">DaysGreaterThan</code> must
+								be positive numbers.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidFilter</code></td>
+						<td tabindex="-1"><p>A filter must include one of the following elements:
+									<code class="code">And</code>, <code class="code">Or</code>, <code class="code">MatchAnyTag</code>,
+									<code class="code">MatchAnyPrefix</code>, <code class="code">MatchAnySuffix</code>,
+									<code class="code">MatchObjectAge</code>,
+								<code class="code">MatchObjectSize</code>.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr><tr>
+						<td tabindex="-1"><code class="code">InvalidLogicalOperator</code></td>
+						<td tabindex="-1"><p>At least two sub elements must be present in the logical operators <code class="code">And</code> or <code class="code">Or</code>.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr><tr>
+						<td tabindex="-1"><code class="code">InvalidMatchAnyPrefix</code></td>
+						<td tabindex="-1"><p>The <code class="code">MatchAnyPrefix</code> parameter can't be empty.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr><tr>
+						<td tabindex="-1"><code class="code">InvalidMatchAnySuffix</code></td>
+						<td tabindex="-1"><p>The <code class="code">MatchAnySuffix</code> parameter can't be empty.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr><tr>
+						<td tabindex="-1"><code class="code">InvalidMatchAnyTag</code></td>
+						<td tabindex="-1"><p>The <code class="code">MatchAnyTag</code> parameter can't be empty.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr><tr>
+						<td tabindex="-1"><code class="code">InvalidMatchObjectAge</code></td>
+						<td tabindex="-1"><p>The <code class="code">MatchObjectAge</code> parameter can't be empty.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr><tr>
+						<td tabindex="-1"><code class="code">InvalidMatchObjectSize</code></td>
+						<td tabindex="-1"><p>The <code class="code">MatchObjectSize</code> parameter can't be empty.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidName</code></td>
+						<td tabindex="-1"><p>Storage Lens group Name parameter must be between 1 and 64
+								characters. The Storage Lens group <code class="code">Name</code> parameter must
+								use the <code class="code">^[a-zA-Z0-9\-_]+$</code> pattern.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr><tr>
+						<td tabindex="-1"><code class="code">InvalidNumericCombination</code></td>
+						<td tabindex="-1"><p>This object age or object size combination isn't valid.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr><tr>
+						<td tabindex="-1"><code class="code">InvalidPrefix</code></td>
+						<td tabindex="-1"><p>The maximum length of a prefix is 1,024 characters. The prefix string can't be empty.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidSize</code></td>
+						<td tabindex="-1"><p><code class="code">BytesLessThan</code> and <code class="code">BytesGreaterThan</code> must be positive numbers. The
+								maximum object size can't exceed 50 TB. The minimum object size
+								can't be greater than or equal to 50 TB.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr><tr>
+						<td tabindex="-1"><code class="code">InvalidSuffix</code></td>
+						<td tabindex="-1"><p>The maximum length of a suffix is 1,024 characters. The suffix string can't be empty.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidTag</code></td>
+						<td tabindex="-1"><p>The object tag key can't exceed 128 characters. The object tag
+								key string can't be null or empty. The maximum length of a tag value
+								is 256 characters. The object tag key contains characters that
+								aren't valid. The object tag key must contain only a-z, A-Z, 0-9,
+								spaces, and the following characters:
+								<code class="code">^(_.:/=+\-@]*)$</code>.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr><tr>
+						<td tabindex="-1"><code class="code">MismatchedName</code></td>
+						<td tabindex="-1"><p>The name specified in the request doesn't match the Storage Lens group name.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr><tr>
+						<td tabindex="-1"><code class="code">TooManyConfigurations</code></td>
+						<td tabindex="-1"><p>You have attempted to create more Storage Lens group configurations than the 50 allowed.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr><tr>
+						<td tabindex="-1"><code class="code">TooManyElements</code></td>
+						<td tabindex="-1"><p>The <code class="code">Element</code> exceeds the maximum number of elements allowed within a logical operator. Only 10 prefixes, suffixes, or tags are allowed.
+						</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+						<td tabindex="-1">Not supported</td>
+					</tr>
+					
+				</table></div></div>
+	 
+		<h2 id="S3ObjectLambdaErrorCodeList">List of Amazon S3 Object Lambda error codes</h2>
+
+		<p>The following table contains special errors that S3 Object Lambda might return. For
+			information about general Amazon S3 errors and a list of error codes, see <a href="./ErrorResponses.html">Error responses</a>.</p>
+		<p>Error responses received from the supporting access points during non-<code class="code">GetObject</code>
+			requests are sent to the caller unaltered.</p>
+		<div class="table-container"><div class="table-contents"><table id="d0e10"><thead>
+					<tr>
+						<th>Error code</th>
+						<th>Description</th>
+						<th>HTTP status code</th>
+					</tr>
+				</thead>
+					<tr>
+						<td tabindex="-1"><code class="code">LambdaInvalidResponse</code></td>
+						<td tabindex="-1">
+							<p>Returned to the original caller when
+									<code class="code">WriteGetObjectResponse</code> responds with
+									<code class="code">ValidationError</code> to AWS Lambda.</p>
+							<p>See the <code class="code">ValidationError</code> message for more details. Not
+								all cases of <code class="code">ValidationError</code> result in a
+									<code class="code">LambdaInvalidResponse</code> error.</p>
+						</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">LambdaInvocationFailed</code></td>
+						<td tabindex="-1">
+							<p>Lambda function invocation failed.</p>
+							<p>Callers might receive the following error when S3 Object Lambda is
+								unable to successfully invoke the configured Lambda function.</p>
+							<p>The error message might contain details about an eventual error
+								returned by the AWS Lambda service when invoking the function (for
+								example, status code, error code, error message and request
+								ID).</p>
+						</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">LambdaNotFound</code></td>
+						<td tabindex="-1"><p>The AWS Lambda function was not found.</p><p>The
+								configured Lambda function, version, or alias was not found when
+								attempting to invoke it. Ensure that the S3 Object Lambda Access
+								Point configuration points to the correct Lambda function
+								ARN.</p><p>The error message might contain details about an
+								eventual error returned by the AWS Lambda service when invoking the
+								function (for example, status code, error code, error message and
+								request ID).</p>
+						</td>
+						<td tabindex="-1"><code class="code">404 Not Found</code></td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">LambdaPermissionError</code></td>
+						<td tabindex="-1">
+							<p>The caller is not authorized to invoke the Lambda function.</p>
+							<p>The caller must have permission to invoke the Lambda function.
+								Check the policies attached to the caller and ensure that they've
+								been allowed to use <code class="code">lambda:Invoke</code> for the configured
+								function.</p>
+							<p>The error message might contain details about an eventual error
+								returned by the AWS Lambda service when invoking the function (for
+								example, status code, error code, error message and request
+								ID).</p>
+						</td>
+						<td tabindex="-1"><code class="code">403 Forbidden</code></td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">LambdaResponseNotReceived</code></td>
+						<td tabindex="-1"><p>The Lambda function exited without successfully calling
+									<code class="code">WriteGetObjectResponse</code>.</p><p><code class="code">GetObject</code>
+								response data is provided by the Lambda function by calling the
+									<code class="code">WriteGetObjectResponse</code> API operation. The Amazon CloudWatch
+								logs for the function might provide more insight into why the
+								function did not successfully call this API operation despite
+								exiting normally.</p>
+						</td>
+						<td tabindex="-1"><code class="code">500 Internal Service Error</code></td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">LambdaRuntimeError</code></td>
+						<td tabindex="-1"><p>The Lambda function failed during execution.</p><p>An
+								explicit error was received from the Lambda function. For details
+								about the failure, check the AWS CloudFormation logs.</p>
+						</td>
+						<td tabindex="-1"><code class="code">500 Internal Service Error</code></td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">LambdaTimeout</code></td>
+						<td tabindex="-1"><p>The Lambda function did not respond in the allowed
+								time.</p><p>The Lambda function failed to complete its call to
+									<code class="code">WriteGetObjectResponse</code> within 60 seconds.</p>
+						</td>
+						<td tabindex="-1"><code class="code">500 Internal Service Error</code></td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">SlowDown</code></td>
+						<td tabindex="-1"><p>Reduce your request rate for operations involving
+								AWS Lambda.</p><p>The function invocation was throttled by
+								AWS Lambda, perhaps because it has reached its configured concurrency
+								limitation. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing
+									concurrency for a Lambda function</a> in the
+									<em>AWS Lambda Developer Guide</em>.</p><p>The error
+								message might contain details about an eventual error returned by
+								the AWS Lambda service when invoking the function (for example,
+								status code, error code, error message and request ID).</p>
+						</td>
+						<td tabindex="-1"><code class="code">503 Slow Down</code></td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">ValidationError</code></td>
+						<td tabindex="-1">
+							<p>Validation errors might be returned from the
+									<code class="code">WriteGetObjectResponse</code> API operation and can occur
+								for numerous reasons. See the error message for more details.</p>
+						</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+					</tr>
+				</table></div></div>
+	 
+		<h2 id="S3AsynchronousErrorCodeList">List of Amazon S3 asynchronous error codes</h2>
+
+        <p>The following table contains special errors that asynchronous requests might return.
+			For general information about Amazon S3 errors and a list of error codes, see <a href="./ErrorResponses.html">Error responses</a>.</p>
+        <p>These errors are returned when you query about the state of an asynchronous request,
+			such as by using <code class="code">DescribeMultiRegionAccessPointOperation</code>. Because these
+			requests are asynchronous, all of these errors have a status code of <code class="code">200
+			OK</code>.</p>
+        <div class="table-container"><div class="table-contents"><table id="d0e11"><thead>
+                    <tr>
+                        <th>Error code</th>
+                        <th>Description</th>
+                        <th>HTTP status code</th>
+                    </tr>
+                </thead>
+                    <tr>
+                        <td tabindex="-1"><code class="code">AccessDenied</code></td>
+                        <td tabindex="-1"><p>Access denied.</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">200 OK</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">InternalErrors</code></td>
+                        <td tabindex="-1"><p>An internal server error occurred.</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">200 OK</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">MalformedPolicy</code></td>
+                        <td tabindex="-1"><p>The specified policy syntax is not valid.</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">200 OK</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">MultiRegionAccessPointAlreadyOwnedByYou</code></td>
+                        <td tabindex="-1"><p>You already have a Multi-Region Access Point with the same name.</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">200 OK</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">MultiRegionAccessPointModifiedByAnotherRequest</code></td>
+                        <td tabindex="-1"><p>The action failed because another request is modifying the specified resource. Try
+								resubmitting your request after the previous request has been
+								completed.</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">200 OK</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">MultiRegionAccessPointNotReady</code></td>
+                        <td tabindex="-1"><p>The specified Multi-Region Access Point is not ready to be updated.</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">200 OK</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">MultiRegionAccessPointSameBucketRegion</code></td>
+                        <td tabindex="-1"><p>The buckets used to create a Multi-Region Access Point cannot be in
+                            the same Region.</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">200 OK</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">MultiRegionAccessPointUnsupportedRegion</code></td>
+                        <td tabindex="-1"><p>One of the buckets supplied to create the Multi-Region Access Point is 
+                            in a Region that is not supported.</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">200 OK</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">NoSuchBucket</code></td>
+                        <td tabindex="-1"><p>The specified bucket does not exist.</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">200 OK</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">NoSuchMultiRegionAccessPoint</code></td>
+                        <td tabindex="-1"><p>The specified Multi-Region Access Point does not exist.</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">200 OK</code></td>
+                    </tr>
+                </table></div></div>
+     
+		<h2 id="S3AccessGrantsErrorCodeList">List of Amazon S3 Access Grants error codes</h2>
+
+        <p>The following table contains special errors that S3 Access Grants requests might return.
+			For general information about Amazon S3 errors and a list of error codes, see <a href="./ErrorResponses.html">Error responses</a>.</p>
+        <div class="table-container"><div class="table-contents"><table id="d0e12"><thead>
+                    <tr>
+                        <th>Error Code</th>
+                        <th>Description</th>
+                        <th>HTTP Status Code</th>
+                    </tr>
+                </thead>
+                    <tr>
+                        <td tabindex="-1"><code class="code">AccessGrantAlreadyExists</code></td>
+                        <td tabindex="-1"><p>The specified access grant already exists</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">409</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">AccessGrantsInstanceAlreadyExists</code></td>
+                        <td tabindex="-1"><p>Access Grants Instance already exists</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">409</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">AccessGrantsInstanceNotEmptyError</code></td>
+                        <td tabindex="-1"><p>Please clean up locations before deleting the access grants instance</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">400</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">AccessGrantsInstanceNotExistsError</code></td>
+                        <td tabindex="-1"><p>Access Grants Instance does not exist</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">404</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">AccessGrantsInstanceResourcePolicyNotExists</code></td>
+                        <td tabindex="-1"><p>Access Grants Instance Resource Policy does not exist</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">404</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">AccessGrantsLocationAlreadyExistsError</code></td>
+                        <td tabindex="-1"><p>The specified access grants location already exists</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">409</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">AccessGrantsLocationNotEmptyError</code></td>
+                        <td tabindex="-1"><p>Please clean up access grants before deleting access grants location</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">400</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">AccessGrantsLocationsQuotaExceededError</code></td>
+                        <td tabindex="-1"><p>The access grants location quota has been exceeded. Access Grants Locations Quota: <code class="replaceable">&lt;value&gt;</code>. Please reach out to S3 if an increase is required.</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">409</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">AccessGrantsQuotaExceededError</code></td>
+                        <td tabindex="-1"><p>The access grants quota has been exceeded. Access Grants Quota: <code class="replaceable">&lt;value&gt;</code>. Please reach out to S3 if an increase is required.</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">409</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">InvalidTag</code></td>
+                        <td tabindex="-1"><p>There are duplicate tag keys in your request. Remove the duplicate tag keys and try again.</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">400</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">InvalidAccessGrant</code></td>
+                        <td tabindex="-1"><p>The specified Access Grant is invalid</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">400</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">InvalidAccessGrantsLocation</code></td>
+                        <td tabindex="-1"><p>The specified Access Grants Location is invalid</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">400</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">InvalidIamRole</code></td>
+                        <td tabindex="-1"><p>The specified IAM Role is invalid</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">400</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">InvalidIdentityCenterInstance</code></td>
+                        <td tabindex="-1"><p>The specified identity center instance is invalid</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">400</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">InvalidResourcePolicy</code></td>
+                        <td tabindex="-1"><p>The specified Resource Policy is invalid</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">400</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">InvalidResourcePolicy</code></td>
+                        <td tabindex="-1"><p>The specified Resource Policy is invalid</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">400</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">InvalidTag</code></td>
+                        <td tabindex="-1"><p>This request contains a tag key or value that isn't valid. Valid characters include the following: [a-zA-Z+-=._:/]. Tag keys can contain up to 128 characters. Tag values can contain up to 256 characters.</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">400</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">NoSuchAccessGrantError</code></td>
+                        <td tabindex="-1"><p>The specified access grant does not exist</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">404</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">NoSuchAccessGrantsLocationError</code></td>
+                        <td tabindex="-1"><p>The specified access grants location does not exist</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">404</code></td>
+                    </tr>
+					<tr>
+						<td tabindex="-1"><code class="code">AccessDenied</code></td>
+						<td tabindex="-1">You do not have <code class="replaceable">&lt;requested permission&gt;</code> permissions to the requested S3 Prefix: <code class="replaceable">&lt;requested target&gt;</code></td>
+						<td tabindex="-1"><code class="code">403 Forbidden</code></td>
+					</tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">StsNotAuthorizedError</code></td>
+                        <td tabindex="-1"><p>An error occurred (<code class="code">StsNotAuthorizedError</code>) when calling the GetDataAccess operation: User: <code class="code">access-grants.s3.amazonaws.com</code> is not authorized to perform: <code class="code">sts:AssumeRole</code> on resource: <code class="replaceable">&lt;IAM Role ARN&gt;</code></p>
+                        </td>
+                        <td tabindex="-1"><code class="code">403</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">StsPackedPolicyTooLargeError</code></td>
+                        <td tabindex="-1"><p>An error occurred (<code class="code">StsPackedPolicyTooLargeError</code>) when calling the GetDataAccess operation: Serialized token too large for session</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">400</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">StsValidationError</code></td>
+                        <td tabindex="-1"><p><em>The error message varies depending on the validation error.</em></p>
+                        </td>
+                        <td tabindex="-1"><code class="code">400</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">InvalidTags</code></td>
+                        <td tabindex="-1"><p>Tag keys cannot start with AWS reserved prefix for system tags."</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">400</code></td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1"><code class="code">TooManyTags</code></td>
+                        <td tabindex="-1"><p>The number of tags exceeds the limit of 50 tags. Remove some tags and try again.</p>
+                        </td>
+                        <td tabindex="-1"><code class="code">400</code></td>
+                    </tr>
+                </table></div></div>
+     
+		<h2 id="FSXErrorCodeList">List of Amazon FSx-related error codes</h2>
+		
+		<p>The following table contains special errors that requests made to Amazon FSx through an Amazon S3 access point might return.
+			For general information about Amazon S3 errors and a list of error codes, see <a href="./ErrorResponses.html">Error responses</a>.</p>
+		<div class="table-container"><div class="table-contents"><table id="d0e13"><thead>
+					<tr>
+						<th>Error Code</th>
+						<th>Description</th>
+						<th>HTTP Status Code</th>
+					</tr>
+				</thead>
+					<tr>
+						<td tabindex="-1"><code class="code">AccessDenied</code></td>
+						<td tabindex="-1">						
+							<p>This error might occur for the following reasons:</p>
+							<div class="itemizedlist">
+								 
+								 
+							<ul class="itemizedlist"><li class="listitem">
+									<p>Caller is not authorized to preform specified S3 operation.</p>
+								</li><li class="listitem">
+									<p>Caller is not authorized to access the Amazon FSx resource for the specified key.</p>
+								</li></ul></div>
+						</td>
+						<td tabindex="-1"><code class="code">403 Forbidden</code></td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InsufficientCapacity</code></td>
+						<td tabindex="-1"><p>Maximum storage capacity of file system has been reached.</p>
+						</td>
+						<td tabindex="-1"><code class="code">507 Insufficient Capacity</code></td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">InvalidKey</code></td>
+						<td tabindex="-1"><p>The specified key is not valid.</p>
+						</td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+					</tr>
+					<tr>
+						<td tabindex="-1"><code class="code">SlowDown</code></td>
+						<td tabindex="-1"><p>Please reduce your request rate.</p>
+						</td>
+						<td tabindex="-1"><code class="code">503 Slow Down</code></td>
+					</tr>
+				</table></div></div>
+	 
+		<h2 id="S3TablesErrorCodeList">List of Amazon S3 Tables error codes</h2>
+		
+		<p>The following table contains special errors that Amazon S3 Tables operations might return. For
+			general information about Amazon S3 errors and a list of error codes, see <a href="./ErrorResponses.html">Error responses</a>.</p>
+		<div class="table-container"><div class="table-contents"><table id="d0e14"><thead>
+					<tr>
+						<th>Error Code</th>
+						<th>Description</th>
+						<th>HTTP Status Code</th>
+					</tr>
+				</thead>
+					
+					<tr>
+						<td tabindex="-1"><code class="code">AccessDeniedException</code></td>
+						<td tabindex="-1"><p>The action cannot be performed because you do not have the required permission.</p></td>
+						<td tabindex="-1"><code class="code">403 Forbidden</code></td>
+					</tr>
+					
+					<tr>
+						<td tabindex="-1"><code class="code">BadRequestException</code></td>
+						<td tabindex="-1"><p>The request is invalid or malformed.</p></td>
+						<td tabindex="-1"><code class="code">400 Bad Request</code></td>
+					</tr>
+					
+					<tr>
+						<td tabindex="-1"><code class="code">ConflictException</code></td>
+						<td tabindex="-1"><p>The request failed because there is a conflict with a previous write. You can retry the request.</p></td>
+						<td tabindex="-1"><code class="code">409 Conflict</code></td>
+					</tr>
+					
+					<tr>
+						<td tabindex="-1"><code class="code">ForbiddenException</code></td>
+						<td tabindex="-1"><p>The caller isn't authorized to make the request.</p></td>
+						<td tabindex="-1"><code class="code">403 Forbidden</code></td>
+					</tr>
+					
+					<tr>
+						<td tabindex="-1"><code class="code">InternalServerErrorException</code></td>
+						<td tabindex="-1"><p>The request failed due to an internal server error.</p></td>
+						<td tabindex="-1"><code class="code">500 Internal Server Error</code></td>
+					</tr>
+					
+					<tr>
+						<td tabindex="-1"><code class="code">NotFoundException</code></td>
+						<td tabindex="-1"><p>The request was rejected because the specified resource could not be found.</p></td>
+						<td tabindex="-1"><code class="code">404 Not Found</code></td>
+					</tr>
+					
+					<tr>
+						<td tabindex="-1"><code class="code">TooManyRequestsException</code></td>
+						<td tabindex="-1"><p>The limit on the number of requests per second was exceeded.</p></td>
+						<td tabindex="-1"><code class="code">429 Too Many Requests</code></td>
+					</tr>
+					
+				</table></div></div>
+	<awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./RESTCommonResponseHeaders.html">Common response headers</div><div id="next" class="next-link" accesskey="n" href="./ErrorBestPractices.html">Amazon S3 error best practices</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=S3&amp;topic_url=https://docs.aws.amazon.com/en_us/AmazonS3/latest/developerguide/ErrorResponses.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=S3&amp;topic_url=https://docs.aws.amazon.com/en_us/AmazonS3/latest/developerguide/ErrorResponses.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

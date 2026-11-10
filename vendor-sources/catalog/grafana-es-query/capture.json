@@ -1,0 +1,27 @@
+{
+  "source_id": "grafana-es-query",
+  "catalog_url": "https://grafana.com/docs/grafana/latest/datasources/elasticsearch/query-editor/",
+  "catalog_title": "Grafana Elasticsearch query editor",
+  "catalog_product": "Grafana",
+  "catalog_versions": [
+    "installed version unknown"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:11.820070+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://grafana.com/docs/grafana/latest/datasources/elasticsearch/query-editor/",
+  "requested_url": "https://grafana.com/docs/grafana/latest/datasources/elasticsearch/query-editor/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "3cc07145c81795d1174263dac25aab3b85f6d26d3fce22af69b13002a7d97608",
+  "raw_bytes": 355760,
+  "extracted_sha256": "37607d53ef1ae6a7db64de656f5d7c2564456bb7e9915e9ef01a661163398f49",
+  "extracted_bytes": 13603,
+  "words": 2172,
+  "document_title": "Elasticsearch query editor",
+  "extracted_links": 56,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:13.180974+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

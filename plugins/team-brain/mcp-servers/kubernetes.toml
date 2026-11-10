@@ -1,0 +1,14 @@
+# Preserved reference path. Kubernetes is not enabled in this SDS plugin.
+# A later integration needs an approved inventory and backend-scoped credentials.
+read_only = true
+toolsets = ["core", "config"]
+list_output = "table"
+disabled_tools = ["configuration_view"]
+
+[[denied_resources]]
+group = ""
+version = "v1"
+kind = "Secret"
+
+[telemetry]
+enabled = false

@@ -1,0 +1,752 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Prometheus Module &mdash; Ceph Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/ceph.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/ceph.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/rtd_sphinx_search.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/js/rtd_search_config.js"></script>
+        <script src="../../_static/js/rtd_sphinx_search.min.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="Influx Module" href="../influx/" />
+    <link rel="prev" title="Zabbix Module" href="../zabbix/" /> 
+<script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="ceph" /><meta name="readthedocs-version-slug" content="squid" /><meta name="readthedocs-resolver-filename" content="/mgr/prometheus/" /><meta name="readthedocs-http-status" content="200" /></head>
+
+<body class="wy-body-for-nav">
+
+   
+  <header class="top-bar">
+    <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">Ceph Manager Daemon</a></li>
+      <li class="breadcrumb-item active">Prometheus Module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/mgr/prometheus.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+  </header>
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #eee" >
+          
+
+          
+            <a href="../../" class="icon icon-home"> Ceph
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../start/">Intro to Ceph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">Installing Ceph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cephadm/">Cephadm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rados/">Ceph Storage Cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cephfs/">Ceph File System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rbd/">Ceph Block Device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../radosgw/">Ceph Object Gateway</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">Ceph Manager Daemon</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../administrator/">ceph-mgr administrator’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../administrator/#interpreting-manager-daemon-status">Interpreting Manager Daemon Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/">Writing modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../orchestrator_modules/">Writing orchestrator plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dashboard/">Dashboard module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ceph_api/">Ceph RESTful API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../alerts/">Alerts module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../diskprediction/">DiskPrediction module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../localpool/">Local pool module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../restful/">RESTful module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zabbix/">Zabbix module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Prometheus module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#enabling-prometheus-output">Enabling Prometheus output</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ceph-health-checks">Ceph Health Checks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rbd-io-statistics">RBD IO statistics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ceph-daemon-performance-counters-metrics">Ceph daemon performance counters metrics</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#statistic-names-and-labels">Statistic names and labels</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pool-and-osd-metadata-series">Pool and OSD metadata series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#correlating-drive-statistics-with-node-exporter">Correlating drive statistics with node_exporter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#use-label-replace">Use label_replace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-prometheus-server">Configuring Prometheus server</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#honor-labels">honor_labels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#node-exporter-hostname-labels">node_exporter hostname labels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-configuration">Example configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#notes">Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../influx/">Influx module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hello/">Hello module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../telegraf/">Telegraf module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../telemetry/">Telemetry module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../iostat/">Iostat module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../crash/">Crash module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../insights/">Insights module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../orchestrator/">Orchestrator module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rook/">Rook module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rgw/">RGW module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mds_autoscaler/">MDS Autoscaler module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nfs/">NFS module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../progress/">Progress Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli_api/">CLI API Commands module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dashboard/">Ceph Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../monitoring/">Monitoring overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../architecture/">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/developer_guide/">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/internals/">Ceph Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../governance/">Governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../foundation/">Ceph Foundation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ceph-volume/">ceph-volume</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.ceph.com/en/latest/releases/general/">Ceph Releases (general)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.ceph.com/en/latest/releases/">Ceph Releases (index)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware-monitoring/">Hardware monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jaegertracing/">Tracing</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">Ceph</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div id="docubetter" align="right" style="padding: 5px; font-weight: bold;">
+    <a href="https://pad.ceph.com/p/Report_Documentation_Bugs">Report a Documentation Bug</a>
+  </div>
+
+  
+  <section id="prometheus-module">
+<span id="mgr-prometheus"></span><h1>Prometheus Module<a class="headerlink" href="#prometheus-module" title="Permalink to this heading"></a></h1>
+<p>The Manager <code class="docutils literal notranslate"><span class="pre">prometheus</span></code> module implements a Prometheus exporter to expose
+Ceph performance counters from the collection point in the Manager.  The
+Manager receives <code class="docutils literal notranslate"><span class="pre">MMgrReport</span></code> messages from all <code class="docutils literal notranslate"><span class="pre">MgrClient</span></code> processes
+(including mons and OSDs) with performance counter schema data and counter
+data, and maintains a circular buffer of the latest samples.  This module
+listens on an HTTP endpoint and retrieves the latest sample of every counter
+when scraped.  The HTTP path and query parameters are ignored. All extant
+counters for all reporting entities are returned in the Prometheus exposition
+format.  (See the Prometheus <a class="reference external" href="https://prometheus.io/docs/instrumenting/exposition_formats/#text-format-details">documentation</a>.)</p>
+<section id="enabling-prometheus-output">
+<h2>Enabling Prometheus output<a class="headerlink" href="#enabling-prometheus-output" title="Permalink to this heading"></a></h2>
+<p>Enable the <code class="docutils literal notranslate"><span class="pre">prometheus</span></code> module by running the below command :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "# ";
+}
+</style><span class="prompt1">ceph<span class="w"> </span>mgr<span class="w"> </span>module<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>prometheus</span>
+</pre></div></div><section id="configuration">
+<h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">prometheus</span></code> Manager module must be restarted to apply configuration changes.</p>
+</div>
+<dl class="std confval">
+<dt class="sig sig-object std" id="confval-mgr-prometheus-server_addr">
+<span class="sig-name descname"><span class="pre">server_addr</span></span><a class="headerlink" href="#confval-mgr-prometheus-server_addr" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>the IPv4 or IPv6 address on which the module listens for HTTP requests</p>
+<dl class="field-list simple">
+<dt class="field-odd">type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+<dt class="field-even">default<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">::</span></code></p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="std confval">
+<dt class="sig sig-object std" id="confval-mgr-prometheus-server_port">
+<span class="sig-name descname"><span class="pre">server_port</span></span><a class="headerlink" href="#confval-mgr-prometheus-server_port" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>the port on which the module listens for HTTP requests</p>
+<dl class="field-list simple">
+<dt class="field-odd">type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+<dt class="field-even">default<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">9283</span></code></p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="std confval">
+<dt class="sig sig-object std" id="confval-mgr-prometheus-scrape_interval">
+<span class="sig-name descname"><span class="pre">scrape_interval</span></span><a class="headerlink" href="#confval-mgr-prometheus-scrape_interval" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd>
+<dt class="field-even">default<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">15.0</span></code></p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="std confval">
+<dt class="sig sig-object std" id="confval-mgr-prometheus-cache">
+<span class="sig-name descname"><span class="pre">cache</span></span><a class="headerlink" href="#confval-mgr-prometheus-cache" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+<dt class="field-even">default<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="std confval">
+<dt class="sig sig-object std" id="confval-mgr-prometheus-stale_cache_strategy">
+<span class="sig-name descname"><span class="pre">stale_cache_strategy</span></span><a class="headerlink" href="#confval-mgr-prometheus-stale_cache_strategy" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+<dt class="field-even">default<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">log</span></code></p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="std confval">
+<dt class="sig sig-object std" id="confval-mgr-prometheus-rbd_stats_pools">
+<span class="sig-name descname"><span class="pre">rbd_stats_pools</span></span><a class="headerlink" href="#confval-mgr-prometheus-rbd_stats_pools" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+<dt class="field-even">default<span class="colon">:</span></dt>
+<dd class="field-even"><p>&lt;empty string&gt;</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="std confval">
+<dt class="sig sig-object std" id="confval-mgr-prometheus-rbd_stats_pools_refresh_interval">
+<span class="sig-name descname"><span class="pre">rbd_stats_pools_refresh_interval</span></span><a class="headerlink" href="#confval-mgr-prometheus-rbd_stats_pools_refresh_interval" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+<dt class="field-even">default<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">300</span></code></p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="std confval">
+<dt class="sig sig-object std" id="confval-mgr-prometheus-standby_behaviour">
+<span class="sig-name descname"><span class="pre">standby_behaviour</span></span><a class="headerlink" href="#confval-mgr-prometheus-standby_behaviour" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+<dt class="field-even">default<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">default</span></code></p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="std confval">
+<dt class="sig sig-object std" id="confval-mgr-prometheus-standby_error_status_code">
+<span class="sig-name descname"><span class="pre">standby_error_status_code</span></span><a class="headerlink" href="#confval-mgr-prometheus-standby_error_status_code" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+<dt class="field-even">default<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">500</span></code></p>
+</dd>
+<dt class="field-odd">allowed range<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">[400,</span> <span class="pre">599]</span></code></p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="std confval">
+<dt class="sig sig-object std" id="confval-mgr-prometheus-exclude_perf_counters">
+<span class="sig-name descname"><span class="pre">exclude_perf_counters</span></span><a class="headerlink" href="#confval-mgr-prometheus-exclude_perf_counters" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Gathering perf-counters from a single Prometheus exporter can degrade
+ceph-mgr performance, especially in large clusters. Instead, Ceph-
+exporter daemons are now used by default for perf-counter gathering.
+This should only be disabled when no ceph-exporters are deployed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+<dt class="field-even">default<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="std confval">
+<dt class="sig sig-object std" id="confval-mgr-prometheus-healthcheck_history_max_entries">
+<span class="sig-name descname"><span class="pre">healthcheck_history_max_entries</span></span><a class="headerlink" href="#confval-mgr-prometheus-healthcheck_history_max_entries" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Maximum number of health check history entries to keep</p>
+<dl class="field-list simple">
+<dt class="field-odd">type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+<dt class="field-even">default<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">1000</span></code></p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<p>By default the module will accept HTTP requests on port <code class="docutils literal notranslate"><span class="pre">9283</span></code> on all IPv4
+and IPv6 addresses on the host.  The port and listen address are
+configurable with <code class="docutils literal notranslate"><span class="pre">ceph</span> <span class="pre">config</span> <span class="pre">set</span></code>, with keys
+<code class="docutils literal notranslate"><span class="pre">mgr/prometheus/server_addr</span></code> and <code class="docutils literal notranslate"><span class="pre">mgr/prometheus/server_port</span></code>.  This port
+is registered with Prometheus’s <a class="reference external" href="https://github.com/prometheus/prometheus/wiki/Default-port-allocations">registry</a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ceph<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>mgr<span class="w"> </span>mgr/prometheus/server_addr<span class="w"> </span><span class="m">0</span>.0.0.0</span>
+<span class="prompt1">ceph<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>mgr<span class="w"> </span>mgr/prometheus/server_port<span class="w"> </span><span class="m">9283</span></span>
+</pre></div></div><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <a class="reference internal" href="#confval-mgr-prometheus-scrape_interval"><code class="xref std std-confval docutils literal notranslate"><span class="pre">mgr/prometheus/scrape_interval</span></code></a> of this module should match
+Prometheus’ scrape interval to work properly.</p>
+</div>
+<p>The scrape interval in the module is used for caching purposes
+and to determine when a cache is stale.</p>
+<p>It is not recommended to use a scrape interval below 10 seconds.  It is
+recommended to use 15 seconds as scrape interval, though, in some cases it
+might be useful to increase the scrape interval.</p>
+<p>To set a different scrape interval in the Prometheus module, set
+<code class="docutils literal notranslate"><span class="pre">scrape_interval</span></code> to the desired value:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ceph<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>mgr<span class="w"> </span>mgr/prometheus/scrape_interval<span class="w"> </span><span class="m">20</span></span>
+</pre></div></div><p>On large clusters (&gt;1000 OSDs), the time to fetch the metrics may become
+significant.  Without the cache, the Prometheus manager module could, especially
+in conjunction with multiple Prometheus instances, overload the manager and lead
+to unresponsive or crashing Ceph Manager instances.  Hence, the cache is enabled
+by default.  This means that there is a possibility that the cache becomes
+stale.  The cache is considered stale when the time to fetch the metrics from
+Ceph exceeds the configured <a class="reference internal" href="#confval-mgr-prometheus-scrape_interval"><code class="xref std std-confval docutils literal notranslate"><span class="pre">mgr/prometheus/scrape_interval</span></code></a>.</p>
+<p>If that is the case, <strong>a warning will be logged</strong> and the module will either
+respond with a 503 HTTP status code (service unavailable) or
+it will return the content of the cache, even though it might be stale.</p>
+<p>This behavior can be configured. By default, it will return a 503 HTTP status
+code (service unavailable). You can set other options using the <code class="docutils literal notranslate"><span class="pre">ceph</span> <span class="pre">config</span>
+<span class="pre">set</span></code> commands.</p>
+<p>To configure the module to respond with possibly stale data, set
+the cache strategy to <code class="docutils literal notranslate"><span class="pre">return</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ceph<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>mgr<span class="w"> </span>mgr/prometheus/stale_cache_strategy<span class="w"> </span><span class="k">return</span></span>
+</pre></div></div><p>To configure the module to respond with “service unavailable”, set it to <code class="docutils literal notranslate"><span class="pre">fail</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ceph<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>mgr<span class="w"> </span>mgr/prometheus/stale_cache_strategy<span class="w"> </span>fail</span>
+</pre></div></div><p>If you are confident that you don’t require the cache, you can disable it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt2:before {
+  content: "$ ";
+}
+</style><span class="prompt2">ceph<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>mgr<span class="w"> </span>mgr/prometheus/cache<span class="w"> </span><span class="nb">false</span></span>
+</pre></div></div><p>If you are using the <code class="docutils literal notranslate"><span class="pre">prometheus</span></code> module behind a reverse proxy or
+load balancer, you can simplify discovery of the active instance by switching
+to <code class="docutils literal notranslate"><span class="pre">error</span></code>-mode:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ceph<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>mgr<span class="w"> </span>mgr/prometheus/standby_behaviour<span class="w"> </span>error</span>
+</pre></div></div><p>If set, the <code class="docutils literal notranslate"><span class="pre">prometheus</span></code> module will respond with a HTTP error when requesting <code class="docutils literal notranslate"><span class="pre">/</span></code>
+from the standby instance. The default error code is 500, but you can configure
+the HTTP response code with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ceph<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>mgr<span class="w"> </span>mgr/prometheus/standby_error_status_code<span class="w"> </span><span class="m">503</span></span>
+</pre></div></div><p>Valid error codes are between 400-599.</p>
+<p>To switch back to the default behaviour, simply set the config key to <code class="docutils literal notranslate"><span class="pre">default</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ceph<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>mgr<span class="w"> </span>mgr/prometheus/standby_behaviour<span class="w"> </span>default</span>
+</pre></div></div></section>
+<section id="ceph-health-checks">
+<span id="prometheus-rbd-io-statistics"></span><h3>Ceph Health Checks<a class="headerlink" href="#ceph-health-checks" title="Permalink to this heading"></a></h3>
+<p>The Manager <code class="docutils literal notranslate"><span class="pre">prometheus</span></code> module tracks and maintains a history of Ceph health checks,
+exposing them to the Prometheus server as discrete metrics. This allows Alertmanager
+rules to be configured for specific health check events.</p>
+<p>The metrics take the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># HELP ceph_health_detail healthcheck status by type (0=inactive, 1=active)</span>
+<span class="c1"># TYPE ceph_health_detail gauge</span>
+<span class="n">ceph_health_detail</span><span class="p">{</span><span class="n">name</span><span class="o">=</span><span class="s2">"OSDMAP_FLAGS"</span><span class="p">,</span><span class="n">severity</span><span class="o">=</span><span class="s2">"HEALTH_WARN"</span><span class="p">}</span> <span class="mf">0.0</span>
+<span class="n">ceph_health_detail</span><span class="p">{</span><span class="n">name</span><span class="o">=</span><span class="s2">"OSD_DOWN"</span><span class="p">,</span><span class="n">severity</span><span class="o">=</span><span class="s2">"HEALTH_WARN"</span><span class="p">}</span> <span class="mf">1.0</span>
+<span class="n">ceph_health_detail</span><span class="p">{</span><span class="n">name</span><span class="o">=</span><span class="s2">"PG_DEGRADED"</span><span class="p">,</span><span class="n">severity</span><span class="o">=</span><span class="s2">"HEALTH_WARN"</span><span class="p">}</span> <span class="mf">1.0</span>
+</pre></div>
+</div>
+<p>The module also maintains an in-memory history of health-check states.
+By default the history retains a maximum of 1000 entries. This limit is configurable via the following runtime option:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">mgr/prometheus/healthcheck_history_max_entries</span></code> - the maximum number of unique health check entries to track in memory (default: 1000).</p>
+</div></blockquote>
+<p>This setting helps avoid unbounded memory growth in large or long-lived clusters.</p>
+<p>The health check history may be retrieved and cleared by running the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ceph<span class="w"> </span>healthcheck<span class="w"> </span><span class="nb">history</span><span class="w"> </span>ls<span class="w"> </span><span class="o">[</span>--format<span class="w"> </span><span class="o">{</span>plain<span class="p">|</span>json<span class="p">|</span>json-pretty<span class="o">}]</span></span>
+<span class="prompt1">ceph<span class="w"> </span>healthcheck<span class="w"> </span><span class="nb">history</span><span class="w"> </span>clear</span>
+</pre></div></div><p>The <code class="docutils literal notranslate"><span class="pre">ceph</span> <span class="pre">healthcheck</span> <span class="pre">ls</span></code> command provides an overview of the health checks that the cluster has
+encountered since the last <code class="docutils literal notranslate"><span class="pre">clear</span></code> command was issued:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ceph<span class="w"> </span>healthcheck<span class="w"> </span><span class="nb">history</span><span class="w"> </span>ls</span>
+</pre></div></div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Healthcheck</span> <span class="n">Name</span>          <span class="n">First</span> <span class="n">Seen</span> <span class="p">(</span><span class="n">UTC</span><span class="p">)</span>      <span class="n">Last</span> <span class="n">seen</span> <span class="p">(</span><span class="n">UTC</span><span class="p">)</span>       <span class="n">Count</span>  <span class="n">Active</span>
+<span class="n">OSDMAP_FLAGS</span>              <span class="mi">2021</span><span class="o">/</span><span class="mi">09</span><span class="o">/</span><span class="mi">16</span> <span class="mi">03</span><span class="p">:</span><span class="mi">17</span><span class="p">:</span><span class="mi">47</span>   <span class="mi">2021</span><span class="o">/</span><span class="mi">09</span><span class="o">/</span><span class="mi">16</span> <span class="mi">22</span><span class="p">:</span><span class="mi">07</span><span class="p">:</span><span class="mi">40</span>       <span class="mi">2</span>    <span class="n">No</span>
+<span class="n">OSD_DOWN</span>                  <span class="mi">2021</span><span class="o">/</span><span class="mi">09</span><span class="o">/</span><span class="mi">17</span> <span class="mi">00</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">59</span>   <span class="mi">2021</span><span class="o">/</span><span class="mi">09</span><span class="o">/</span><span class="mi">17</span> <span class="mi">00</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">59</span>       <span class="mi">1</span>   <span class="n">Yes</span>
+<span class="n">PG_DEGRADED</span>               <span class="mi">2021</span><span class="o">/</span><span class="mi">09</span><span class="o">/</span><span class="mi">17</span> <span class="mi">00</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">59</span>   <span class="mi">2021</span><span class="o">/</span><span class="mi">09</span><span class="o">/</span><span class="mi">17</span> <span class="mi">00</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">59</span>       <span class="mi">1</span>   <span class="n">Yes</span>
+<span class="mi">3</span> <span class="n">health</span> <span class="n">check</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">listed</span>
+</pre></div>
+</div>
+</section>
+<section id="rbd-io-statistics">
+<h3>RBD IO statistics<a class="headerlink" href="#rbd-io-statistics" title="Permalink to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">prometheus</span></code> module can optionally collect RBD per-image IO statistics by enabling
+dynamic OSD performance counters. Statistics are gathered for all images
+in the pools that are specified by the <code class="docutils literal notranslate"><span class="pre">mgr/prometheus/rbd_stats_pools</span></code>
+configuration parameter. The parameter is a comma or space separated list
+of <code class="docutils literal notranslate"><span class="pre">pool[/namespace]</span></code> entries. If the RBD namespace is not specified,
+statistics are collected for all namespaces in the pool.</p>
+<p>To enable collection of stats for RBD pools named <code class="docutils literal notranslate"><span class="pre">pool1</span></code>, <code class="docutils literal notranslate"><span class="pre">pool2</span></code> and <code class="docutils literal notranslate"><span class="pre">poolN</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ceph<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>mgr<span class="w"> </span>mgr/prometheus/rbd_stats_pools<span class="w"> </span><span class="s2">"pool1,pool2,poolN"</span></span>
+</pre></div></div><p>A wildcard can be used to indicate all pools or namespaces:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ceph<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>mgr<span class="w"> </span>mgr/prometheus/rbd_stats_pools<span class="w"> </span><span class="s2">"*"</span></span>
+</pre></div></div><p>The module maintains a list of all available images by scanning the specified
+pools and namespaces. The refresh period is
+configurable via the <code class="docutils literal notranslate"><span class="pre">mgr/prometheus/rbd_stats_pools_refresh_interval</span></code>
+parameter, which defaults to 300 seconds (5 minutes). The module will
+force refresh earlier if it detects statistics from a previously unknown
+RBD image.</p>
+<p>To set the sync interval to 10 minutes run the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ceph<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>mgr<span class="w"> </span>mgr/prometheus/rbd_stats_pools_refresh_interval<span class="w"> </span><span class="m">600</span></span>
+</pre></div></div></section>
+<section id="ceph-daemon-performance-counters-metrics">
+<h3>Ceph daemon performance counters metrics<a class="headerlink" href="#ceph-daemon-performance-counters-metrics" title="Permalink to this heading"></a></h3>
+<p>With the introduction of the <code class="docutils literal notranslate"><span class="pre">ceph-exporter</span></code> daemon, the <code class="docutils literal notranslate"><span class="pre">prometheus</span></code> module will no longer export Ceph daemon
+perf counters as Prometheus metrics by default. However, one may re-enable exporting these metrics by setting
+the module option <code class="docutils literal notranslate"><span class="pre">exclude_perf_counters</span></code> to <code class="docutils literal notranslate"><span class="pre">false</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ceph<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>mgr<span class="w"> </span>mgr/prometheus/exclude_perf_counters<span class="w"> </span><span class="nb">false</span></span>
+</pre></div></div></section>
+</section>
+<section id="statistic-names-and-labels">
+<h2>Statistic names and labels<a class="headerlink" href="#statistic-names-and-labels" title="Permalink to this heading"></a></h2>
+<p>These Prometheus stats names are the Ceph native names with
+illegal characters <code class="docutils literal notranslate"><span class="pre">.</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code> and <code class="docutils literal notranslate"><span class="pre">::</span></code> translated to <code class="docutils literal notranslate"><span class="pre">_</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">ceph_</span></code> prepended.</p>
+<p>All daemon statistics have a <code class="docutils literal notranslate"><span class="pre">ceph_daemon</span></code> label with a value
+that identifies the type and ID of the daemon they come from,
+for example <code class="docutils literal notranslate"><span class="pre">osd.123</span></code>.
+A given metric may be reported by multiple types of daemon, so for
+example when when querying an OSD RocksDB stats, you may constrain
+the query with a pattern of the form <code class="docutils literal notranslate"><span class="pre">ceph_daemon=~'osd.*'</span></code> so that Monitor
+RocksDB metrics are excluded.</p>
+<p>Cluster statistics (i.e. those global to the Ceph cluster)
+have labels appropriate to the entity for which they are reported.  For example,
+metrics relating to pools have a <code class="docutils literal notranslate"><span class="pre">pool_id</span></code> label.</p>
+<p>Long-running averages that represent Ceph statistic histograms
+are represented by paired <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;_sum</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;_count</span></code> metrics.
+This is similar to how histograms are represented in <a class="reference external" href="https://prometheus.io/docs/concepts/metric_types/#histogram">Prometheus</a>
+and they are  treated <a class="reference external" href="https://prometheus.io/docs/practices/histograms/">similarly</a>.</p>
+<section id="pool-and-osd-metadata-series">
+<h3>Pool and OSD metadata series<a class="headerlink" href="#pool-and-osd-metadata-series" title="Permalink to this heading"></a></h3>
+<p>Series are exported to facilitate displaying and querying on
+certain metadata fields.</p>
+<p>Pools have a <code class="docutils literal notranslate"><span class="pre">ceph_pool_metadata</span></code> metric of the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ceph_pool_metadata</span><span class="p">{</span><span class="n">pool_id</span><span class="o">=</span><span class="s2">"2"</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s2">"cephfs_metadata_a"</span><span class="p">}</span> <span class="mf">1.0</span>
+</pre></div>
+</div>
+<p>OSDs have a <code class="docutils literal notranslate"><span class="pre">ceph_osd_metadata</span></code> metric of the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ceph_osd_metadata</span><span class="p">{</span><span class="n">cluster_addr</span><span class="o">=</span><span class="s2">"172.21.9.34:6802/19096"</span><span class="p">,</span><span class="n">device_class</span><span class="o">=</span><span class="s2">"ssd"</span><span class="p">,</span><span class="n">ceph_daemon</span><span class="o">=</span><span class="s2">"osd.0"</span><span class="p">,</span><span class="n">public_addr</span><span class="o">=</span><span class="s2">"172.21.9.34:6801/19096"</span><span class="p">,</span><span class="n">weight</span><span class="o">=</span><span class="s2">"1.0"</span><span class="p">}</span> <span class="mf">1.0</span>
+</pre></div>
+</div>
+</section>
+<section id="correlating-drive-statistics-with-node-exporter">
+<h3>Correlating drive statistics with node_exporter<a class="headerlink" href="#correlating-drive-statistics-with-node-exporter" title="Permalink to this heading"></a></h3>
+<p>Ceph cluster Prometheus metrics are used in conjunction
+with generic host metrics from the Prometheus <code class="docutils literal notranslate"><span class="pre">node_exporter</span></code>.</p>
+<p>To enable correlation of Ceph OSD statistics with <code class="docutils literal notranslate"><span class="pre">node_exporter</span></code>’s
+drive statistics, Ceph creates series of the below form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ceph_disk_occupation_human</span><span class="p">{</span><span class="n">ceph_daemon</span><span class="o">=</span><span class="s2">"osd.0"</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s2">"sdd"</span><span class="p">,</span> <span class="n">exported_instance</span><span class="o">=</span><span class="s2">"myhost"</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>To query drive metrics by OSD ID, use either the <code class="docutils literal notranslate"><span class="pre">and</span></code> operator or
+the <code class="docutils literal notranslate"><span class="pre">*</span></code> operator in your Prometheus query. All metadata
+metrics (like <code class="docutils literal notranslate"><span class="pre">ceph_disk_occupation_human</span></code>) have the value <code class="docutils literal notranslate"><span class="pre">1</span></code> so that they
+combine in a neutral fashion with the PromQL <code class="docutils literal notranslate"><span class="pre">*</span></code> operator. Using <code class="docutils literal notranslate"><span class="pre">*</span></code>
+allows the use of the <code class="docutils literal notranslate"><span class="pre">group_left</span></code> and <code class="docutils literal notranslate"><span class="pre">group_right</span></code> grouping modifiers
+so that the results have additional labels from one side of the query.</p>
+<p>See the <a class="reference external" href="https://prometheus.io/docs/prometheus/latest/querying/basics">prometheus documentation</a> for more information about constructing
+PromQL queries and exploring interactively via the Prometheus expression browser..</p>
+<p>For example we can run a query like the below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rate</span><span class="p">(</span><span class="n">node_disk_written_bytes_total</span><span class="p">[</span><span class="mi">30</span><span class="n">s</span><span class="p">])</span> <span class="ow">and</span>
+<span class="n">on</span> <span class="p">(</span><span class="n">device</span><span class="p">,</span><span class="n">instance</span><span class="p">)</span> <span class="n">ceph_disk_occupation_human</span><span class="p">{</span><span class="n">ceph_daemon</span><span class="o">=</span><span class="s2">"osd.0"</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Out of the box the above query will not return any metrics since the <code class="docutils literal notranslate"><span class="pre">instance</span></code> labels of
+both metrics don’t match. The <code class="docutils literal notranslate"><span class="pre">instance</span></code> label of <code class="docutils literal notranslate"><span class="pre">ceph_disk_occupation_human</span></code>
+will be the currently active Manager.</p>
+<p>The following sections outline two approaches to remedy this.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you need to group on the <code class="docutils literal notranslate"><span class="pre">ceph_daemon</span></code> label instead of <code class="docutils literal notranslate"><span class="pre">device</span></code> and
+<code class="docutils literal notranslate"><span class="pre">instance</span></code> labels, using <code class="docutils literal notranslate"><span class="pre">ceph_disk_occupation_human</span></code> may not work reliably.
+It is advised that you use <code class="docutils literal notranslate"><span class="pre">ceph_disk_occupation</span></code> instead.</p>
+<p>The difference is that <code class="docutils literal notranslate"><span class="pre">ceph_disk_occupation_human</span></code> may group several OSDs
+into the value of a single <code class="docutils literal notranslate"><span class="pre">ceph_daemon</span></code> label in cases where multiple OSDs
+share a device.</p>
+</div>
+</section>
+</section>
+<section id="use-label-replace">
+<h2>Use label_replace<a class="headerlink" href="#use-label-replace" title="Permalink to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">label_replace</span></code> function (cp.
+<a class="reference external" href="https://prometheus.io/docs/prometheus/latest/querying/functions/#label_replace">label_replace documentation</a>)
+can add a label to, or alter a label of, a metric within a query.</p>
+<p>To correlate an OSD with its drives’ write rate, a query of the following form can be used:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">label_replace</span><span class="p">(</span>
+    <span class="n">rate</span><span class="p">(</span><span class="n">node_disk_written_bytes_total</span><span class="p">[</span><span class="mi">30</span><span class="n">s</span><span class="p">]),</span>
+    <span class="s2">"exported_instance"</span><span class="p">,</span>
+    <span class="s2">"$1"</span><span class="p">,</span>
+    <span class="s2">"instance"</span><span class="p">,</span>
+    <span class="s2">"(.*):.*"</span>
+<span class="p">)</span> <span class="ow">and</span> <span class="n">on</span> <span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">exported_instance</span><span class="p">)</span> <span class="n">ceph_disk_occupation_human</span><span class="p">{</span><span class="n">ceph_daemon</span><span class="o">=</span><span class="s2">"osd.0"</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="configuring-prometheus-server">
+<h2>Configuring Prometheus server<a class="headerlink" href="#configuring-prometheus-server" title="Permalink to this heading"></a></h2>
+<section id="honor-labels">
+<h3>honor_labels<a class="headerlink" href="#honor-labels" title="Permalink to this heading"></a></h3>
+<p>To enable Ceph to output properly-labeled data relating to any host,
+use the <code class="docutils literal notranslate"><span class="pre">honor_labels</span></code> setting when adding the Manager endpoints
+to your Prometheus configuration.</p>
+<p>This instructs Ceph to export the proper <code class="docutils literal notranslate"><span class="pre">instance</span></code> labels without Prometheus
+overwriting them at ingest. Without this setting, Prometheus applies an <code class="docutils literal notranslate"><span class="pre">instance</span></code> label
+that includes the hostname and port of the endpoint from which each metric is scraped.
+Because Ceph clusters have multiple Manager daemons, this results in an
+<code class="docutils literal notranslate"><span class="pre">instance</span></code> label that changes  when the active Manager daemon
+changes.</p>
+<p>If this is undesirable, a custom <code class="docutils literal notranslate"><span class="pre">instance</span></code> label can be set in the
+Prometheus target configuration. You might wish to set it to the hostname
+of your first Manager, or something arbitrary like <code class="docutils literal notranslate"><span class="pre">ceph_cluster</span></code>.</p>
+</section>
+<section id="node-exporter-hostname-labels">
+<h3>node_exporter hostname labels<a class="headerlink" href="#node-exporter-hostname-labels" title="Permalink to this heading"></a></h3>
+<p>Set your <code class="docutils literal notranslate"><span class="pre">instance</span></code> labels to match what appears in Ceph’s OSD metadata
+in the <code class="docutils literal notranslate"><span class="pre">instance</span></code> field.  This is generally the short hostname of the node.</p>
+<p>This is only necessary if you want to correlate Ceph stats with host stats,
+but you may find it useful to do so to facilitate correlation of
+historical data in the future.</p>
+</section>
+<section id="example-configuration">
+<h3>Example configuration<a class="headerlink" href="#example-configuration" title="Permalink to this heading"></a></h3>
+<p>This example shows a deployment with a Manager and <code class="docutils literal notranslate"><span class="pre">node_exporter</span></code> placed
+on a server named <code class="docutils literal notranslate"><span class="pre">senta04</span></code>. Note that this requires one
+to add an appropriate and unique <code class="docutils literal notranslate"><span class="pre">instance</span></code> label to each <code class="docutils literal notranslate"><span class="pre">node_exporter</span></code> target.</p>
+<p>This is just an example: there are other ways to configure Prometheus
+scrape targets and label rewrite rules.</p>
+<section id="prometheus-yml">
+<h4>prometheus.yml<a class="headerlink" href="#prometheus-yml" title="Permalink to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">global</span><span class="p">:</span>
+  <span class="n">scrape_interval</span><span class="p">:</span>     <span class="mi">15</span><span class="n">s</span>
+  <span class="n">evaluation_interval</span><span class="p">:</span> <span class="mi">15</span><span class="n">s</span>
+
+<span class="n">scrape_configs</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">job_name</span><span class="p">:</span> <span class="s1">'node'</span>
+    <span class="n">file_sd_configs</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">files</span><span class="p">:</span>
+        <span class="o">-</span> <span class="n">node_targets</span><span class="o">.</span><span class="n">yml</span>
+  <span class="o">-</span> <span class="n">job_name</span><span class="p">:</span> <span class="s1">'ceph'</span>
+    <span class="n">honor_labels</span><span class="p">:</span> <span class="n">true</span>
+    <span class="n">file_sd_configs</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">files</span><span class="p">:</span>
+        <span class="o">-</span> <span class="n">ceph_targets</span><span class="o">.</span><span class="n">yml</span>
+</pre></div>
+</div>
+</section>
+<section id="ceph-targets-yml">
+<h4>ceph_targets.yml<a class="headerlink" href="#ceph-targets-yml" title="Permalink to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">"targets"</span><span class="p">:</span> <span class="p">[</span> <span class="s2">"senta04.mydomain.com:9283"</span> <span class="p">],</span>
+        <span class="s2">"labels"</span><span class="p">:</span> <span class="p">{}</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="node-targets-yml">
+<h4>node_targets.yml<a class="headerlink" href="#node-targets-yml" title="Permalink to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">"targets"</span><span class="p">:</span> <span class="p">[</span> <span class="s2">"senta04.mydomain.com:9100"</span> <span class="p">],</span>
+        <span class="s2">"labels"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"instance"</span><span class="p">:</span> <span class="s2">"senta04"</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
+<p>Counters and gauges are exported. Histograms and long-running
+averages are currently not exported.  It is possible that Ceph’s 2-D histograms
+could be reduced to two separate 1-D histograms, and that long-running averages
+could be exported as metrics of Prometheus’ <code class="docutils literal notranslate"><span class="pre">Summary</span></code> type.</p>
+<p>Timestamps, as with many exporters, are set by Prometheus at ingest to
+the Prometheus server’s scrape time. Prometheus expects that it is polling the
+actual counter process synchronously.  It is possible to supply a
+timestamp along with the stat report, but the Prometheus team strongly
+advises against this.  This would mean that timestamps would be delayed by
+an unpredictable amount. It is not clear if this would be problematic,
+but it is worth knowing about.</p>
+</section>
+</section>
+
+
+
+<div id="support-the-ceph-foundation" class="admonition note">
+  <p class="first admonition-title">Brought to you by the Ceph Foundation</p>
+  <p class="last">The Ceph Documentation is a community resource funded and hosted by the non-profit <a href="https://ceph.io/en/foundation/">Ceph Foundation</a>. If you would like to support this and our other efforts, please consider <a href="https://ceph.io/en/foundation/join/">joining now</a>.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../zabbix/" class="btn btn-neutral float-left" title="Zabbix Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../influx/" class="btn btn-neutral float-right" title="Influx Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2016, Ceph authors and contributors. Licensed under Creative Commons Attribution Share Alike 3.0 (CC-BY-SA-3.0).</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+   
+
+</body>
+</html>

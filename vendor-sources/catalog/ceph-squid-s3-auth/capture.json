@@ -1,0 +1,27 @@
+{
+  "source_id": "ceph-squid-s3-auth",
+  "catalog_url": "https://docs.ceph.com/en/squid/radosgw/s3/authentication/",
+  "catalog_title": "Ceph Squid S3 authentication and ACLs",
+  "catalog_product": "Ceph",
+  "catalog_versions": [
+    "squid"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:07.155076+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.ceph.com/en/squid/radosgw/s3/authentication/",
+  "requested_url": "https://docs.ceph.com/en/squid/radosgw/s3/authentication/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "7db5d21319914395288dc2b90aac8dd4e3c1d6e3c8854242ec4c42c3e4c96c1a",
+  "raw_bytes": 36894,
+  "extracted_sha256": "4aa752c37c0789f9e0738033022a382816b34366b9d4a210932520583782bb92",
+  "extracted_bytes": 6862,
+  "words": 741,
+  "document_title": "Authentication and ACLs\uf0c1",
+  "extracted_links": 13,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:07.927100+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

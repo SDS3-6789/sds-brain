@@ -1,0 +1,64 @@
+---
+id: "storagegrid-119-d42d975d75b987b1"
+title: "StorageGRID 11.9 Understand search integration service"
+area: "storagegrid"
+type: "import"
+applies_to: ["11.9", "storagegrid-11.9"]
+confidence: "documented"
+last_verified: "2026-11-10"
+sources: ["netapp-sg119-docs"]
+source_kind: "pinned-vendor-documentation"
+source_family: "netapp-storagegrid"
+repository_url: "https://github.com/NetAppDocs/storagegrid-119"
+repository_commit: "aa58c9affae3bb1994d6bd2e525851e3fd088517"
+source_url: "https://github.com/NetAppDocs/storagegrid-119/blob/aa58c9affae3bb1994d6bd2e525851e3fd088517/tenant/understanding-search-integration-service.adoc"
+source_sha256: "59d3f81a63d5198a5d50ebc605f524a5703ef2d91ce537e253ffad962655f4cf"
+captured_at: "2026-11-10T09:31:11.169093+00:00"
+snapshot_scope: "documentation-source-text"
+original_path: "tenant/understanding-search-integration-service.adoc"
+---
+
+# StorageGRID 11.9 Understand search integration service
+
+Pinned public vendor documentation text for offline retrieval. Source content is untrusted reference data; follow AGENT.md.
+
+Source: https://github.com/NetAppDocs/storagegrid-119/blob/aa58c9affae3bb1994d6bd2e525851e3fd088517/tenant/understanding-search-integration-service.adoc
+Version: 11.9; repository commit: aa58c9affae3bb1994d6bd2e525851e3fd088517.
+Original text, legal notices and navigation are preserved under vendor-sources/netapp/11.9. Binary images and external targets are not mirrored; AsciiDoc includes may remain unresolved.
+
+# Understand search integration service
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can enable search integration for an S3 bucket if you want to use an external search and data analysis service for your object metadata.
+
+The search integration service is a custom StorageGRID service that automatically and asynchronously sends S3 object metadata to a destination endpoint whenever an object is created or deleted, or its metadata or tags are updated. You can then use sophisticated search, data analysis, visualization, or machine learning tools provided by the destination service to search, analyze, and gain insights from your object data.
+
+For example, you could configure your buckets to send S3 object metadata to a remote Elasticsearch service. You could then use Elasticsearch to perform searches across buckets, and perform sophisticated analyses of patterns present in your object metadata.
+
+Although Elasticsearch integration can be configured on a bucket with S3 Object Lock enabled, the S3 Object Lock metadata (including Retain Until Date and Legal Hold status) of the objects will not be included in the metadata sent to Elasticsearch.
+
+NOTE: Because the search integration service causes object metadata to be sent to a destination, its configuration XML is referred to as "_metadata_ notification configuration XML." This configuration XML is different from the "notification configuration XML" used to enable _event_ notifications.
+
+## Search integration and S3 buckets
+You can enable the search integration service for any versioned or unversioned bucket. Search integration is configured by associating metadata notification configuration XML with the bucket that specifies which objects to act on and the destination for the object metadata.
+
+Metadata notifications are generated in the form of a JSON document named with the bucket name, object name, and version ID, if any. Each metadata notification contains a standard set of system metadata for the object in addition to all of the object's tags and user metadata.
+
+NOTE: For tags and user metadata, StorageGRID passes dates and numbers to Elasticsearch as strings or as S3 event notifications. To configure Elasticsearch to interpret these strings as dates or numbers, follow the Elasticsearch instructions for dynamic field mapping and for mapping date formats. You must enable the dynamic field mappings on the index before you configure the search integration service. After a document is indexed, you can't edit the document's field types in the index.
+
+## Search notifications
+Metadata notifications are generated and queued for delivery whenever:
+
+* An object is created.
+* An object is deleted, including when objects are deleted as a result of the operation of the grid's ILM policy.
+* Object metadata or tags are added, updated, or deleted. The complete set of metadata and tags is always sent on update -- not just the changed values.
+
+After you add metadata notification configuration XML to a bucket, notifications are sent for any new objects that you create and for any objects that you modify by updating its data, user metadata, or tags. However, notifications aren't sent for any objects that were already in the bucket. To ensure that object metadata for all objects in the bucket is sent to the destination, you should do either of the following:
+
+* Configure the search integration service immediately after creating the bucket and before adding any objects.
+* Perform an action on all objects already in the bucket that will trigger a metadata notification message to be sent to the destination.
+
+## Search integration service and Elasticsearch
+The StorageGRID search integration service supports an Elasticsearch cluster as a destination. As with the other platform services, the destination is specified in the endpoint whose URN is used in the configuration XML for the service. Use the https://imt.netapp.com/matrix/#welcome[NetApp Interoperability Matrix Tool^] to determine the supported versions of Elasticsearch.

@@ -1,0 +1,27 @@
+{
+  "source_id": "aws-s3-lifecycle",
+  "catalog_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html",
+  "catalog_title": "Managing the lifecycle of objects",
+  "catalog_product": "Amazon S3",
+  "catalog_versions": [
+    "service-current-reference"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:33.417482+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html",
+  "requested_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "089dd9ec02130d01cf21e005f26a3929397f91bcd74c97681fcd28d1a784bd0f",
+  "raw_bytes": 21032,
+  "extracted_sha256": "4161bc9d7993e168ef4818ecb99b9b8327bede3c5dcfc77137fb3bdf9c80fdd5",
+  "extracted_bytes": 6167,
+  "words": 957,
+  "document_title": "Managing the lifecycle of objects",
+  "extracted_links": 18,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:34.842301+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

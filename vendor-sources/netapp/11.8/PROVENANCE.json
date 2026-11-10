@@ -1,0 +1,45 @@
+{
+  "repo": "NetAppDocs/storagegrid-118",
+  "version": "11.8",
+  "defaultBranch": "main",
+  "commit": "9066339be246ef04b60100d49a31f887c58e7ae0",
+  "commitDate": "2026-07-24T10:09:44Z",
+  "knownFiles": [
+    {
+      "path": "README.md",
+      "blobSHA": "dbc234f031b5a055e938c29a619c73682a8f015a"
+    },
+    {
+      "path": "legal-notices.adoc",
+      "blobSHA": "9770f07ed5f868fe4713f678c24323298554efba"
+    },
+    {
+      "path": "project.yml",
+      "blobSHA": "12f2f999d2545f7f697d56eea2d56db31333ec03"
+    }
+  ],
+  "versionEvidence": "project.yml settings.versions first entry and sidebar title match 11.8",
+  "licenseStatus": "No standalone LICENSE file present in the repository root. Original legal-notices.adoc and its two shared legal notice includes are preserved; no open-source license is inferred for the documentation.",
+  "retrievedUTC": "2026-11-10T09:35:30.981068+00:00",
+  "retrievalMethod": "Git partial fetch blob:none plus documentation-only sparse checkout of exact commit; full codeload archive refused above 40 MiB",
+  "gitObjectCacheBytes": 7977910,
+  "selectedBytes": 3493970,
+  "documentationFiles": 879,
+  "selectedFiles": 906,
+  "retainedTypes": [
+    ".adoc",
+    ".md",
+    ".rst",
+    ".txt",
+    ".yaml",
+    ".yml"
+  ],
+  "excluded": [
+    "binary media/images",
+    ".github workflows",
+    "non-documentation executable/source artifacts"
+  ],
+  "legalIncludesCommit": "765e4e6f04510cf67ad12035f00af23692aee2d1",
+  "scope": "All matching documentation text and navigation sources in this exact product-version repository snapshot. Binary images and external document/include targets are not mirrored. This is documentation source, not an executed or fully rendered website.",
+  "status": "downloaded_not_imported"
+}

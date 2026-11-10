@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg120-whats-new",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-120/release-notes/whats-new.html",
+  "catalog_title": "What is new in StorageGRID 12.0",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "12.0"
+  ],
+  "declared_access": "mixed",
+  "started_at": "2026-11-10T09:27:19.594275+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-120/release-notes/whats-new.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-120/release-notes/whats-new.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "2fc1e1b269e5ae39b899f5ae625bfe0677587c7fe6e39273e1429509d52a5693",
+  "raw_bytes": 59194,
+  "extracted_sha256": "a33cc724beb86b063e86c85a8e5b7908db5b359a874a3b4e30798edccc026237",
+  "extracted_bytes": 4972,
+  "words": 753,
+  "document_title": "What's new in StorageGRID 12.0",
+  "extracted_links": 23,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:21.051403+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Performance guidelines for Amazon S3 - Amazon Simple Storage Service</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="optimizing-performance-guidelines" /><meta name="default_state" content="optimizing-performance-guidelines" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/optimizing-performance-guidelines.html" /><link rel="alternate" type="text/markdown" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/optimizing-performance-guidelines.md" title="Markdown version" /><meta name="description" content="Describes Amazon S3 performance guidelines." /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Simple Storage Service" /><meta name="guide" content="User Guide" /><meta name="abstract" content="Learn how to use Amazon Simple Storage Service (Amazon S3) to store and retrieve any amount of data from anywhere. This guide explains Amazon S3 concepts, such as buckets, objects, and related configurations, and includes code examples for common operations." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/optimizing-performance-guidelines.html" /><link rel="alternate" href="https://docs.aws.amazon.com/id_id/AmazonS3/latest/userguide/optimizing-performance-guidelines.html" hreflang="id-id" /><link rel="alternate" href="https://docs.aws.amazon.com/id_id/AmazonS3/latest/userguide/optimizing-performance-guidelines.html" hreflang="id" /><link rel="alternate" href="https://docs.aws.amazon.com/de_de/AmazonS3/latest/userguide/optimizing-performance-guidelines.html" hreflang="de-de" /><link rel="alternate" href="https://docs.aws.amazon.com/de_de/AmazonS3/latest/userguide/optimizing-performance-guidelines.html" hreflang="de" /><link rel="alternate" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/optimizing-performance-guidelines.html" hreflang="en-us" /><link rel="alternate" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/optimizing-performance-guidelines.html" hreflang="en" /><link rel="alternate" href="https://docs.aws.amazon.com/es_es/AmazonS3/latest/userguide/optimizing-performance-guidelines.html" hreflang="es-es" /><link rel="alternate" href="https://docs.aws.amazon.com/es_es/AmazonS3/latest/userguide/optimizing-performance-guidelines.html" hreflang="es" /><link rel="alternate" href="https://docs.aws.amazon.com/fr_fr/AmazonS3/latest/userguide/optimizing-performance-guidelines.html" hreflang="fr-fr" /><link rel="alternate" href="https://docs.aws.amazon.com/fr_fr/AmazonS3/latest/userguide/optimizing-performance-guidelines.html" hreflang="fr" /><link rel="alternate" href="https://docs.aws.amazon.com/it_it/AmazonS3/latest/userguide/optimizing-performance-guidelines.html" hreflang="it-it" /><link rel="alternate" href="https://docs.aws.amazon.com/it_it/AmazonS3/latest/userguide/optimizing-performance-guidelines.html" hreflang="it" /><link rel="alternate" href="https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/optimizing-performance-guidelines.html" hreflang="ja-jp" /><link rel="alternate" href="https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/optimizing-performance-guidelines.html" hreflang="ja" /><link rel="alternate" href="https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/optimizing-performance-guidelines.html" hreflang="ko-kr" /><link rel="alternate" href="https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/optimizing-performance-guidelines.html" hreflang="ko" /><link rel="alternate" href="https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/optimizing-performance-guidelines.html" hreflang="pt-br" /><link rel="alternate" href="https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/optimizing-performance-guidelines.html" hreflang="pt" /><link rel="alternate" href="https://docs.aws.amazon.com/zh_cn/AmazonS3/latest/userguide/optimizing-performance-guidelines.html" hreflang="zh-cn" /><link rel="alternate" href="https://docs.aws.amazon.com/zh_tw/AmazonS3/latest/userguide/optimizing-performance-guidelines.html" hreflang="zh-tw" /><link rel="alternate" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/optimizing-performance-guidelines.html" hreflang="x-default" /><meta name="feedback-item" content="S3" /><meta name="this_doc_product" content="Amazon Simple Storage Service" /><meta name="this_doc_guide" content="User Guide" /><head xmlns="http://www.w3.org/1999/xhtml"> <script defer="" src="/assets/r/awsdocs-doc-page.2.0.0.js"></script><link href="/assets/r/awsdocs-doc-page.2.0.0.css" rel="stylesheet"/></head>
+<script defer="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'s3'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="Performance guidelines for Amazon S3" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><p><a href="optimizing-performance-guidelines.md">View a markdown version of this page</a></p><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Performance guidelines for Amazon S3 - Amazon Simple Storage Service</title><meta name="pdf" content="/pdfs/AmazonS3/latest/userguide/s3-userguide.pdf#optimizing-performance-guidelines" /><meta name="rss" content="s3-userguide-rss-updates.rss" /><meta name="forums" content="https://repost.aws/tags/TADSTjraA0Q4-a1dxk6eUYaw" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=S3&amp;topic_url=https://docs.aws.amazon.com/en_us/AmazonS3/latest/userguide/optimizing-performance-guidelines.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=https://docs.aws.amazon.com/en_us/AmazonS3/latest/userguide/optimizing-performance-guidelines.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=https://docs.aws.amazon.com/en_us/AmazonS3/latest/userguide/optimizing-performance-guidelines.html" /><meta name="keywords" content="S3,Amazon S3,S3 User Guide,Amazon S3 User Guide,Amazon User Guide,s3 bucket,s3 object,cloud storage,data storage,Amazon S3best practices,optimizing performance using Amazon S3,design patterns for Amazon S3,Amazon S3 performance guidelines,measuring performance,monitoring status error codes" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Simple Storage Service (S3)",
+        "item" : "https://docs.aws.amazon.com/s3/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/AmazonS3/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Best practices design patterns: optimizing Amazon S3 performance",
+        "item" : "https://docs.aws.amazon.com/AmazonS3/latest/userguide/optimizing-performance.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "Performance guidelines for Amazon S3",
+        "item" : "https://docs.aws.amazon.com/AmazonS3/latest/userguide/optimizing-performance.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/AmazonS3/latest/userguide/s3-userguide.pdf#optimizing-performance-guidelines" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="/index.html">Documentation</a><a href="/s3/index.html">Amazon Simple Storage Service (S3)</a><a href="Welcome.html">User Guide</a></div><div id="page-toc-src"><a href="#optimizing-performance-guidelines-measure">Measure
+          performance</a><a href="#optimizing-performance-guidelines-scale">Scale
+          horizontally</a><a href="#optimizing-performance-guidelines-get-range">Use byte-range
+          fetches</a><a href="#optimizing-performance-guidelines-retry">Retry
+          requests</a><a href="#optimizing-performance-guidelines-combine">Combine Amazon S3 and
+          Amazon EC2 in the same Region</a><a href="#optimizing-performance-guidelines-acceleration">Use Transfer
+          Acceleration to minimize latency</a><a href="#optimizing-performance-guidelines-sdk">Use the latest AWS
+          SDKs</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="optimizing-performance-guidelines">Performance guidelines for Amazon S3</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><p>When building applications that upload and retrieve objects from Amazon S3, follow our best
+      practices guidelines to optimize performance. We also offer more detailed <a href="./optimizing-performance-design-patterns.html">Performance design
+        patterns for Amazon S3 </a>. </p><p>To obtain the best performance for your application on Amazon S3, we recommend the following
+      guidelines.</p><div class="highlights" id="inline-topiclist"><h6>Topics</h6><ul><li><p><a href="#optimizing-performance-guidelines-measure">Measure performance</a></p></li><li><p><a href="#optimizing-performance-guidelines-scale">Scale storage connections horizontally</a></p></li><li><p><a href="#optimizing-performance-guidelines-get-range">Use byte-range fetches</a></p></li><li><p><a href="#optimizing-performance-guidelines-retry">Retry requests for latency-sensitive applications</a></p></li><li><p><a href="#optimizing-performance-guidelines-combine">Combine Amazon S3 (Storage) and Amazon EC2 (compute) in the same AWS Region</a></p></li><li><p><a href="#optimizing-performance-guidelines-acceleration">Use Amazon S3 Transfer Acceleration to minimize latency caused by distance</a></p></li><li><p><a href="#optimizing-performance-guidelines-sdk">Use the latest version of the AWS SDKs</a></p></li></ul></div>
+      <h2 id="optimizing-performance-guidelines-measure">Measure performance</h2>
+      <p>When optimizing performance, look at network throughput, CPU, and DRAM requirements.
+        Depending on the mix of demands for these different resources, it might be worth evaluating
+        different <a href="https://docs.aws.amazon.com/ec2/index.html">Amazon EC2</a> instance types. For more
+        information about instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the <em>Amazon EC2 User Guide</em>. </p>
+      <p>It’s also helpful to look at DNS lookup time, latency, and data transfer speed using
+        HTTP analysis tools when measuring performance.</p>
+      <p>
+        To understand the performance requirements and optimize the performance of your application, you can also monitor the 503 error responses that you receive. 
+        Monitoring certain performance metrics may incur additional expenses. For more information, see <a href="https://aws.amazon.com/s3/pricing/" rel="noopener noreferrer" target="_blank"><span>Amazon S3 pricing</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.
+      </p>
+       
+        <h3 id="optimizing-performance-guidelines-measure-503">Monitor the number of 503 (Slow Down) status error responses</h3>
+        <p>
+          To monitor the number of 503 status error responses that you get, you can use one of the following options:</p>
+        <div class="itemizedlist">
+           
+           
+           
+        <ul class="itemizedlist"><li class="listitem"><p>Use Amazon CloudWatch request metrics for Amazon S3. The CloudWatch request metrics include a metric for 5xx status responses. For more information about 
+            CloudWatch request metrics, see <a href="./cloudwatch-monitoring.html">Monitoring metrics with Amazon CloudWatch</a>.</p></li><li class="listitem"><p>Use the 503 (Service Unavailable) error count available in the advanced metrics section of Amazon S3 Storage Lens. 
+            For more information, see <a href="./storage-lens-detailed-status-code.html">Using S3 Storage Lens metrics to improve performance</a>.</p></li><li class="listitem"><p>Use Amazon S3 server access logging. With server access logging, you can filter and review all requests that receive 503 (Internal Error) responses. You can also use Amazon Athena to parse logs. 
+            For more information about server access logging, see <a href="./ServerLogs.html">Logging requests with server access logging</a>.</p></li></ul></div>
+        <p>
+          By monitoring the number of HTTP 503 status error code, you can often gain valuable insights into which prefixes, keys, or buckets are getting the most throttling requests. 
+        </p>        
+        
+       
+
+     
+      <h2 id="optimizing-performance-guidelines-scale">Scale storage connections horizontally</h2>
+      <p>Spreading requests across many connections is a common design pattern to horizontally
+        scale performance. When you build high performance applications, think of Amazon S3 as a very
+        large distributed system, not as a single network endpoint like a traditional storage
+        server. You can achieve the best performance by issuing multiple concurrent requests to
+        Amazon S3. Spread these requests over separate connections to maximize the accessible bandwidth
+        from Amazon S3. Amazon S3 doesn't have any limits for the number of connections made to your bucket.
+      </p>
+     
+      <h2 id="optimizing-performance-guidelines-get-range">Use byte-range fetches</h2>
+      <p>Using the <code class="code">Range</code> HTTP header in a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GET Object</a> request, you can fetch a
+        byte-range from an object, transferring only the specified portion. You can use concurrent
+        connections to Amazon S3 to fetch different byte ranges from within the same object. This helps
+        you achieve higher aggregate throughput versus a single whole-object request. Fetching
+        smaller ranges of a large object also allows your application to improve retry times when
+        requests are interrupted. For more information, see <a href="./download-objects.html">Downloading objects</a>.</p>
+      <p>If objects are PUT using a multipart upload, it’s a good practice to GET them in the
+        same part sizes (or at least aligned to part boundaries) for best performance. GET requests
+        can directly address individual parts; for example, <code class="code">GET ?partNumber=N.</code></p>
+     
+      <h2 id="optimizing-performance-guidelines-retry">Retry requests for latency-sensitive applications</h2>
+      <p>Aggressive timeouts and retries help drive consistent latency. Given the large scale of
+        Amazon S3, if the first request is slow, a retried request is likely to take a different path and
+        quickly succeed. The AWS SDKs have configurable timeout and retry values that you can tune
+        to the tolerances of your specific application.</p>
+     
+      <h2 id="optimizing-performance-guidelines-combine">Combine Amazon S3 (Storage) and Amazon EC2 (compute) in the same AWS Region</h2>
+      <p>Although S3 bucket names are globally unique, each bucket is stored in a Region that you
+        select when you create the bucket. To learn more about bucket naming guidelines, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingBucket.html">Buckets
+          overview</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket naming rules</a>. To
+        optimize performance, we recommend that you access the bucket from Amazon EC2 instances in the
+        same AWS Region when possible. This helps reduce network latency and data transfer
+        costs.</p>
+      <p>For more information about data transfer costs, see <a href="https://aws.amazon.com/s3/pricing/" rel="noopener noreferrer" target="_blank"><span>Amazon S3 Pricing</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</p>
+     
+      <h2 id="optimizing-performance-guidelines-acceleration">Use Amazon S3 Transfer Acceleration to minimize latency caused by distance</h2>
+      <p><a href="./transfer-acceleration.html">Configuring fast, secure file transfers using Amazon S3 Transfer Acceleration</a> manages
+        fast, easy, and secure transfers of files over long geographic distances between the client
+        and an S3 bucket. Transfer Acceleration takes advantage of the globally distributed edge
+        locations in <a href="https://docs.aws.amazon.com/cloudfront/index.html">Amazon CloudFront</a>. As the
+        data arrives at an edge location, it is routed to Amazon S3 over an optimized network path.
+        Transfer Acceleration is ideal for transferring gigabytes to terabytes of data regularly
+        across continents. It's also useful for clients that upload to a centralized bucket from all
+        over the world.</p>
+      <p>You can use the <a href="https://s3-accelerate-speedtest.s3-accelerate.amazonaws.com/en/accelerate-speed-comparsion.html" rel="noopener noreferrer" target="_blank"><span>Amazon S3 Transfer Acceleration Speed comparison tool</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a> to compare accelerated and
+        non-accelerated upload speeds across Amazon S3 Regions. The Speed Comparison tool uses multipart
+        uploads to transfer a file from your browser to various Amazon S3 Regions with and without using
+        Amazon S3 Transfer Acceleration.</p>
+     
+      <h2 id="optimizing-performance-guidelines-sdk">Use the latest version of the AWS SDKs</h2>
+      <p>The AWS SDKs provide built-in support for many of the recommended guidelines for
+        optimizing Amazon S3 performance. The SDKs provide a simpler API for taking advantage of Amazon S3
+        from within an application and are regularly updated to follow the latest best practices.
+        For example, the SDKs include logic to automatically retry requests on HTTP 503 errors and
+        are investing in code to respond and adapt to slow connections. </p>
+      <p>The SDKs also provide the <a href="https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/transfer-manager.html">Transfer Manager</a>, which automates horizontally scaling connections to achieve
+        thousands of requests per second, using byte-range requests where appropriate. It’s
+        important to use the latest version of the AWS SDKs to obtain the latest performance
+        optimization features.</p>
+      <p>You can also optimize performance when you are using HTTP REST API requests. When using
+        the REST API, you should follow the same best practices that are part of the SDKs. Allow for
+        timeouts and retries on slow requests, and multiple connections to allow fetching of object
+        data in parallel. For information about using the REST API, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/">Amazon Simple Storage Service API Reference</a>.</p>
+    <awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./optimizing-performance.html">Optimizing performance</div><div id="next" class="next-link" accesskey="n" href="./optimizing-performance-design-patterns.html">Performance design
+        patterns for Amazon S3 </div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=S3&amp;topic_url=https://docs.aws.amazon.com/en_us/AmazonS3/latest/userguide/optimizing-performance-guidelines.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=S3&amp;topic_url=https://docs.aws.amazon.com/en_us/AmazonS3/latest/userguide/optimizing-performance-guidelines.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

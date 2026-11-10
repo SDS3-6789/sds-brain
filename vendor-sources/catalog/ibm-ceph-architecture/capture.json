@@ -1,0 +1,28 @@
+{
+  "source_id": "ibm-ceph-architecture",
+  "catalog_url": "https://www.redbooks.ibm.com/redpapers/pdfs/redp5721.pdf",
+  "catalog_title": "IBM Storage Ceph Concepts and Architecture Guide REDP-5721",
+  "catalog_product": "IBM Storage Ceph",
+  "catalog_versions": [
+    "7"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:26:55.726095+00:00",
+  "attempts": [],
+  "pdf_pages": 174,
+  "status": "captured",
+  "fetched_url": "https://www.redbooks.ibm.com/redpapers/pdfs/redp5721.pdf",
+  "requested_url": "https://www.redbooks.ibm.com/redpapers/pdfs/redp5721.pdf",
+  "content_type": "application/pdf",
+  "raw_file": "original.pdf",
+  "raw_sha256": "b7e489fbc2c7810bf2dbf165b39ab09e7f8ac0b4627f15a0488d2dbb1ac9f2f1",
+  "raw_bytes": 7815236,
+  "extracted_sha256": "7a7377cfc2247f876dc31353d9c9ba5ab7d5f7cbce733957319f15622a33c613",
+  "extracted_bytes": 278133,
+  "words": 42437,
+  "document_title": "IBM Storage Ceph Concepts and Architecture Guide REDP-5721",
+  "extracted_links": 0,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:03.338742+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

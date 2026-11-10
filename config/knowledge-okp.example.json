@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "sds-knowledge": {
+      "type": "stdio",
+      "command": "python3",
+      "args": ["${SDS_BRAIN_DIR}/mcp/knowledge/server.py", "--root", "${SDS_BRAIN_DIR}"]
+    },
+    "sds-okp": {
+      "type": "http",
+      "url": "http://127.0.0.1:8000/mcp"
+    }
+  }
+}

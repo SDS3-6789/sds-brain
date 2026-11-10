@@ -1,0 +1,27 @@
+{
+  "source_id": "prometheus-exporters",
+  "catalog_url": "https://prometheus.io/docs/instrumenting/writing_exporters/",
+  "catalog_title": "Writing Prometheus exporters",
+  "catalog_product": "Prometheus",
+  "catalog_versions": [
+    "exporter version unknown"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:12.596204+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://prometheus.io/docs/instrumenting/writing_exporters/",
+  "requested_url": "https://prometheus.io/docs/instrumenting/writing_exporters/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "1d6288ed2cb5c47e2d4438437442bb9f366dcdd389618a483741253c3b011c4d",
+  "raw_bytes": 274217,
+  "extracted_sha256": "d17342626c055797b6df007d8269197f7a186e058f617e632a0da9b8d3d488cd",
+  "extracted_bytes": 22340,
+  "words": 3618,
+  "document_title": "Writing exporters",
+  "extracted_links": 56,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:14.462350+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

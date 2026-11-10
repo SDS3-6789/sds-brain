@@ -1,0 +1,662 @@
+[
+  {
+    "id": "claude-memory",
+    "title": "Claude Code project instructions and memory",
+    "url": "https://code.claude.com/docs/en/memory",
+    "vendor": "Anthropic",
+    "product": "Claude Code",
+    "versions": [
+      "installed version unknown"
+    ],
+    "topics": [
+      "instructions",
+      "CLAUDE.md",
+      "AGENTS.md"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Use CLAUDE.md to import AGENT.md; verify loaded instructions locally."
+  },
+  {
+    "id": "claude-mcp",
+    "title": "Claude Code MCP configuration",
+    "url": "https://code.claude.com/docs/en/mcp",
+    "vendor": "Anthropic",
+    "product": "Claude Code",
+    "versions": [
+      "installed version unknown"
+    ],
+    "topics": [
+      "MCP",
+      "stdio",
+      "configuration"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Reference for project/local configuration; actual client has not been tested here."
+  },
+  {
+    "id": "mcp-lifecycle-2025",
+    "title": "MCP lifecycle, revision 2025-11-25",
+    "url": "https://modelcontextprotocol.io/specification/2025-11-25/basic/lifecycle",
+    "vendor": "Model Context Protocol",
+    "product": "MCP",
+    "versions": [
+      "2025-11-25"
+    ],
+    "topics": [
+      "protocol",
+      "initialize"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Implementation targets the documented legacy handshake, not the newer stateless protocol."
+  },
+  {
+    "id": "mcp-tools-2025",
+    "title": "MCP tools, revision 2025-11-25",
+    "url": "https://modelcontextprotocol.io/specification/2025-11-25/server/tools",
+    "vendor": "Model Context Protocol",
+    "product": "MCP",
+    "versions": [
+      "2025-11-25"
+    ],
+    "topics": [
+      "tools",
+      "schemas",
+      "errors"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Tool annotations describe intent; server checks and backend permissions enforce access."
+  },
+  {
+    "id": "mcp-stdio-2025",
+    "title": "MCP transports, revision 2025-11-25",
+    "url": "https://modelcontextprotocol.io/specification/2025-11-25/basic/transports",
+    "vendor": "Model Context Protocol",
+    "product": "MCP",
+    "versions": [
+      "2025-11-25"
+    ],
+    "topics": [
+      "stdio",
+      "JSON-RPC"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Local newline-delimited JSON-RPC transport; no inbound network listener in this repository."
+  },
+  {
+    "id": "grafana-mcp",
+    "title": "Official Grafana MCP v2.2.0",
+    "url": "https://github.com/grafana/mcp-grafana/blob/v2.2.0/README.md",
+    "vendor": "Grafana Labs",
+    "product": "mcp-grafana",
+    "versions": [
+      "v2.2.0"
+    ],
+    "topics": [
+      "MCP",
+      "observability",
+      "elasticsearch",
+      "prometheus"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Four verified official release archives are bundled for offline launch. Fixed read-only stdio profile includes Elasticsearch; backend authorization and installed Grafana/plugin compatibility still require internal acceptance."
+  },
+  {
+    "id": "grafana-elasticsearch",
+    "title": "Grafana Elasticsearch data source",
+    "url": "https://grafana.com/docs/grafana/latest/datasources/elasticsearch/",
+    "vendor": "Grafana Labs",
+    "product": "Grafana",
+    "versions": [
+      "installed version unknown"
+    ],
+    "topics": [
+      "elasticsearch",
+      "datasource"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Latest reference only; confirm installed Grafana and Elasticsearch/plugin versions."
+  },
+  {
+    "id": "grafana-es-query",
+    "title": "Grafana Elasticsearch query editor",
+    "url": "https://grafana.com/docs/grafana/latest/datasources/elasticsearch/query-editor/",
+    "vendor": "Grafana Labs",
+    "product": "Grafana",
+    "versions": [
+      "installed version unknown"
+    ],
+    "topics": [
+      "logs",
+      "queries",
+      "time-range"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Map existing panels and actual field names before constructing queries."
+  },
+  {
+    "id": "grafana-prometheus",
+    "title": "Grafana Prometheus data source",
+    "url": "https://grafana.com/docs/grafana/latest/datasources/prometheus/",
+    "vendor": "Grafana Labs",
+    "product": "Grafana",
+    "versions": [
+      "installed version unknown"
+    ],
+    "topics": [
+      "prometheus",
+      "datasource"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Prometheus usage in this environment remains unconfirmed."
+  },
+  {
+    "id": "grafana-service-accounts",
+    "title": "Grafana service accounts",
+    "url": "https://grafana.com/docs/grafana/latest/administration/service-accounts/",
+    "vendor": "Grafana Labs",
+    "product": "Grafana",
+    "versions": [
+      "installed version unknown"
+    ],
+    "topics": [
+      "permissions",
+      "service-account"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Use backend-enforced customer scope and minimum permissions."
+  },
+  {
+    "id": "grafana-dashboard-export",
+    "title": "Grafana dashboard sharing and export",
+    "url": "https://grafana.com/docs/grafana/latest/visualizations/dashboards/share-dashboards-panels/",
+    "vendor": "Grafana Labs",
+    "product": "Grafana",
+    "versions": [
+      "installed version unknown"
+    ],
+    "topics": [
+      "dashboards",
+      "export"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Provide reviewed dashboard JSON privately; do not create public snapshots."
+  },
+  {
+    "id": "prometheus-exporters",
+    "title": "Writing Prometheus exporters",
+    "url": "https://prometheus.io/docs/instrumenting/writing_exporters/",
+    "vendor": "Prometheus",
+    "product": "Prometheus",
+    "versions": [
+      "exporter version unknown"
+    ],
+    "topics": [
+      "custom-exporter",
+      "metrics",
+      "instrumentation"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Conditional on confirmed Prometheus-compatible exporter format."
+  },
+  {
+    "id": "prometheus-api",
+    "title": "Prometheus HTTP API",
+    "url": "https://prometheus.io/docs/prometheus/latest/querying/api/",
+    "vendor": "Prometheus",
+    "product": "Prometheus",
+    "versions": [
+      "installed version unknown"
+    ],
+    "topics": [
+      "API",
+      "metadata",
+      "query-range"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Bound query windows and series; validate backend version."
+  },
+  {
+    "id": "prometheus-functions",
+    "title": "PromQL query functions",
+    "url": "https://prometheus.io/docs/prometheus/latest/querying/functions/",
+    "vendor": "Prometheus",
+    "product": "Prometheus",
+    "versions": [
+      "installed version unknown"
+    ],
+    "topics": [
+      "rate",
+      "histograms",
+      "queries"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Use only after metric type, labels and units have been established."
+  },
+  {
+    "id": "prometheus-naming",
+    "title": "Prometheus metric and label naming",
+    "url": "https://prometheus.io/docs/practices/naming/",
+    "vendor": "Prometheus",
+    "product": "Prometheus",
+    "versions": [
+      "general"
+    ],
+    "topics": [
+      "units",
+      "labels",
+      "cardinality"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "A design reference, not evidence of custom exporter field names."
+  },
+  {
+    "id": "prometheus-histograms",
+    "title": "Prometheus histograms and summaries",
+    "url": "https://prometheus.io/docs/practices/histograms/",
+    "vendor": "Prometheus",
+    "product": "Prometheus",
+    "versions": [
+      "general"
+    ],
+    "topics": [
+      "percentiles",
+      "histograms",
+      "summaries"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Check actual histogram format and aggregation semantics."
+  },
+  {
+    "id": "prometheus-exposition",
+    "title": "Prometheus exposition formats",
+    "url": "https://prometheus.io/docs/instrumenting/exposition_formats/",
+    "vendor": "Prometheus",
+    "product": "Prometheus",
+    "versions": [
+      "general"
+    ],
+    "topics": [
+      "HELP",
+      "TYPE",
+      "exporter"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Capture a reviewed metric schema sample, not arbitrary full metric dumps."
+  },
+  {
+    "id": "elastic-search-api",
+    "title": "Elasticsearch Search API",
+    "url": "https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-search",
+    "vendor": "Elastic",
+    "product": "Elasticsearch",
+    "versions": [
+      "installed version unknown"
+    ],
+    "topics": [
+      "search",
+      "permissions",
+      "logs"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Current API reference; bind index and fields to the active customer."
+  },
+  {
+    "id": "elastic-health-api",
+    "title": "Elasticsearch cluster health API",
+    "url": "https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-cluster-health",
+    "vendor": "Elastic",
+    "product": "Elasticsearch",
+    "versions": [
+      "installed version unknown"
+    ],
+    "topics": [
+      "health",
+      "shards",
+      "monitoring"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Cluster monitoring privilege is distinct from index read access."
+  },
+  {
+    "id": "confluence-cloud-pages",
+    "title": "Confluence Cloud REST API v2 pages",
+    "url": "https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-page/",
+    "vendor": "Atlassian",
+    "product": "Confluence Cloud",
+    "versions": [
+      "Cloud"
+    ],
+    "topics": [
+      "knowledge",
+      "export",
+      "API"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Deployment type is unknown; do not apply Cloud routes to Data Center."
+  },
+  {
+    "id": "confluence-dc-content",
+    "title": "Confluence Data Center page content API",
+    "url": "https://support.atlassian.com/confluence/kb/how-to-get-page-content-or-child-list-via-rest-api/",
+    "vendor": "Atlassian",
+    "product": "Confluence Data Center",
+    "versions": [
+      "match installed release"
+    ],
+    "topics": [
+      "knowledge",
+      "export",
+      "API"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Documented Data Center route; export each allowed space with its access scope."
+  },
+  {
+    "id": "hpe-xl420-apollo",
+    "title": "HPE Apollo 4200 Gen10 Plus QuickSpecs",
+    "url": "https://www.hpe.com/int/en/collaterals/collateral.a50002573enw.html",
+    "vendor": "HPE",
+    "product": "Apollo 4200 / XL420",
+    "versions": [
+      "Gen10 Plus candidate"
+    ],
+    "topics": [
+      "hardware",
+      "model",
+      "inventory"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Candidate interpretation of 'exel420'; generation and product identity need confirmation."
+  },
+  {
+    "id": "hpe-xl170r",
+    "title": "HPE ProLiant XL170r Gen10 product information",
+    "url": "https://support.hpe.com/hpesc/public/docDisplay?docId=a00027628en_us",
+    "vendor": "HPE",
+    "product": "XL170r",
+    "versions": [
+      "Gen10 candidate"
+    ],
+    "topics": [
+      "hardware",
+      "controller",
+      "support"
+    ],
+    "access": "public",
+    "verification": "search-verified",
+    "checked_on": "2026-11-09",
+    "notes": "Official indexed page; direct reader yielded no body. Match actual generation."
+  },
+  {
+    "id": "hpe-xl190r",
+    "title": "HPE ProLiant XL190r Gen10 manuals",
+    "url": "https://support.hpe.com/connect/s/product?kmpmoid=1010192754&language=en_CA&tab=manuals",
+    "vendor": "HPE",
+    "product": "XL190r",
+    "versions": [
+      "Gen10 candidate"
+    ],
+    "topics": [
+      "hardware",
+      "manuals"
+    ],
+    "access": "public",
+    "verification": "search-verified",
+    "checked_on": "2026-11-09",
+    "notes": "Official manuals index; candidate interpretation of 'exel190'."
+  },
+  {
+    "id": "hpe-dl385",
+    "title": "HPE ProLiant DL385 Gen11 User Guide",
+    "url": "https://support.hpe.com/hpesc/public/docDisplay?docId=sd00002188en_us&docLocale=en_US",
+    "vendor": "HPE",
+    "product": "DL385",
+    "versions": [
+      "Gen11 candidate"
+    ],
+    "topics": [
+      "hardware",
+      "manual",
+      "maintenance"
+    ],
+    "access": "public",
+    "verification": "search-verified",
+    "checked_on": "2026-11-09",
+    "notes": "DL385 family reported; Gen11 is a candidate reference, not confirmed inventory."
+  },
+  {
+    "id": "hpe-apollo-utilities",
+    "title": "HPE Apollo 4200 Gen10 software and configuration utilities",
+    "url": "https://support.hpe.com/hpesc/public/docDisplay?docId=a00066162en_us&docLocale=en_US",
+    "vendor": "HPE",
+    "product": "Apollo 4200",
+    "versions": [
+      "Gen10 candidate"
+    ],
+    "topics": [
+      "iLO",
+      "SSA",
+      "AHS",
+      "firmware"
+    ],
+    "access": "public",
+    "verification": "search-verified",
+    "checked_on": "2026-11-09",
+    "notes": "Use model-specific tools and review diagnostic output before sharing."
+  },
+  {
+    "id": "hpe-ilorest",
+    "title": "HPE iLOrest overview",
+    "url": "https://servermanagementportal.ext.hpe.com/docs/redfishclients/ilorest-userguide",
+    "vendor": "HPE",
+    "product": "iLOrest",
+    "versions": [
+      "match iLO and server generation"
+    ],
+    "topics": [
+      "iLO",
+      "Redfish",
+      "CLI"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Choose tool/API documentation for the actual iLO generation and firmware."
+  },
+  {
+    "id": "hpe-ilorest-usage",
+    "title": "HPE iLOrest usage",
+    "url": "https://servermanagementportal.ext.hpe.com/docs/redfishclients/ilorest-userguide/usage",
+    "vendor": "HPE",
+    "product": "iLOrest",
+    "versions": [
+      "match installed release"
+    ],
+    "topics": [
+      "inventory",
+      "Redfish"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Use reviewed read-only inventory operations; management actions remain excluded."
+  },
+  {
+    "id": "hpe-redfish-concepts",
+    "title": "HPE Redfish concepts",
+    "url": "https://servermanagementportal.ext.hpe.com/docs/concepts",
+    "vendor": "HPE",
+    "product": "Redfish",
+    "versions": [
+      "match service schema"
+    ],
+    "topics": [
+      "resource-discovery",
+      "API"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Discover resource links from the service root; do not assume numeric system IDs."
+  },
+  {
+    "id": "hpe-redfish-services",
+    "title": "HPE Redfish service references",
+    "url": "https://servermanagementportal.ext.hpe.com/docs/redfishservices",
+    "vendor": "HPE",
+    "product": "iLO Redfish",
+    "versions": [
+      "iLO version unknown"
+    ],
+    "topics": [
+      "API",
+      "schemas",
+      "hardware"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Select the service generation matching inventory before interpreting fields."
+  },
+  {
+    "id": "linux-upstream-admin",
+    "title": "Linux kernel administration guide",
+    "url": "https://docs.kernel.org/admin-guide/index.html",
+    "vendor": "Linux kernel project",
+    "product": "Linux",
+    "versions": [
+      "upstream; not RHEL support policy"
+    ],
+    "topics": [
+      "kernel",
+      "diagnostics"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Upstream behavior requires checking RHEL backports and vendor support."
+  },
+  {
+    "id": "claude-code-cli-reference",
+    "title": "Claude Code CLI reference",
+    "url": "https://code.claude.com/docs/en/cli-reference",
+    "vendor": "Anthropic",
+    "product": "Claude Code",
+    "versions": [
+      "installed version unknown"
+    ],
+    "topics": [
+      "CLI",
+      "MCP",
+      "configuration",
+      "strict-mcp-config"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Official CLI reference supports explicit --mcp-config and --strict-mcp-config for a deliberately selected server configuration. Actual installed client still requires internal acceptance."
+  },
+  {
+    "id": "confluence-storage-format",
+    "title": "Confluence storage format",
+    "url": "https://confluence.atlassian.com/doc/confluence-storage-format-790796544.html",
+    "vendor": "Atlassian",
+    "product": "Confluence Data Center",
+    "versions": [
+      "storage format; match installed release"
+    ],
+    "topics": [
+      "import",
+      "XML",
+      "CDATA",
+      "code macros"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Official XML/XHTML storage-format reference used to review preservation of code blocks and table text in approved local exports. It does not imply complete rendering of all macros."
+  },
+  {
+    "id": "mcp-basic-2025",
+    "title": "MCP base protocol, revision 2025-11-25",
+    "url": "https://modelcontextprotocol.io/specification/2025-11-25/basic",
+    "vendor": "Model Context Protocol",
+    "product": "MCP",
+    "versions": [
+      "2025-11-25"
+    ],
+    "topics": [
+      "JSON-RPC",
+      "metadata",
+      "requests",
+      "errors"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Primary base-protocol reference for request metadata and framing review. Native client acceptance is still required."
+  },
+  {
+    "id": "mcp-schema-2025",
+    "title": "MCP schema reference, revision 2025-11-25",
+    "url": "https://modelcontextprotocol.io/specification/2025-11-25/schema",
+    "vendor": "Model Context Protocol",
+    "product": "MCP",
+    "versions": [
+      "2025-11-25"
+    ],
+    "topics": [
+      "schema",
+      "tools/list",
+      "request metadata"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Authoritative message schema used to audit optional request metadata. This package implements a limited stdio subset."
+  }
+]

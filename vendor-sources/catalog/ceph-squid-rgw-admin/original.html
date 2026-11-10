@@ -1,0 +1,978 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Admin Guide &mdash; Ceph Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/ceph.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/ceph.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/rtd_sphinx_search.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/js/rtd_search_config.js"></script>
+        <script src="../../_static/js/rtd_sphinx_search.min.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="User Accounts" href="../account/" />
+    <link rel="prev" title="Ceph Object Gateway Config Reference" href="../config-ref/" /> 
+<script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="ceph" /><meta name="readthedocs-version-slug" content="squid" /><meta name="readthedocs-resolver-filename" content="/radosgw/admin/" /><meta name="readthedocs-http-status" content="200" /></head>
+
+<body class="wy-body-for-nav">
+
+   
+  <header class="top-bar">
+    <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">Ceph Object Gateway</a></li>
+      <li class="breadcrumb-item active">Admin Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/radosgw/admin.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+  </header>
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #eee" >
+          
+
+          
+            <a href="../../" class="icon icon-home"> Ceph
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../start/">Intro to Ceph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">Installing Ceph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cephadm/">Cephadm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rados/">Ceph Storage Cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cephfs/">Ceph File System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rbd/">Ceph Block Device</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">Ceph Object Gateway</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../frontends/">HTTP Frontends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multisite/">Multisite Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zone-features/">Zone Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../placement/">Pool Placement and Storage Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multisite-sync-policy/">Multisite Sync Policy Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pools/">Configuring Pools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../config-ref/">Config Reference</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Admin Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#user-management">User Management</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#create-a-user">Create a User</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-a-subuser">Create a Subuser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-user-info">Get User Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modify-user-info">Modify User Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#user-suspend">User Suspend</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#user-enable">User Enable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bucket-suspend">Bucket Suspend</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remove-a-user">Remove a User</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remove-a-subuser">Remove a Subuser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-or-remove-a-key">Add or Remove a Key</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-or-remove-admin-capabilities">Add or Remove Admin Capabilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#admin-and-system-users">Admin and System Users</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#quota-management">Quota Management</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#set-user-quota">Set User Quota</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enabling-and-disabling-user-quota">Enabling and Disabling User Quota</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-bucket-quota">Set Bucket Quota</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enable-and-disabling-bucket-quota">Enable and Disabling Bucket Quota</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-quota-settings">Get Quota Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#update-quota-stats">Update Quota Stats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-user-usage-stats">Get User Usage Stats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#default-quotas">Default Quotas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#quota-cache">Quota Cache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reading-writing-global-quotas">Reading / Writing Global Quotas</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#rate-limit-management">Rate Limit Management</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#read-requests-and-write-requests">Read Requests and Write Requests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-metrics-work">How Metrics Work</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-user-rate-limit">Set User Rate Limit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-user-rate-limit">Get User Rate Limit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enable-and-disable-user-rate-limit">Enable and Disable User Rate Limit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-bucket-rate-limit">Set Bucket Rate Limit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-bucket-rate-limit">Get Bucket Rate Limit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enable-and-disable-bucket-rate-limit">Enable and Disable Bucket Rate Limit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reading-and-writing-global-rate-limit-configuration">Reading and Writing Global Rate Limit Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#show-usage">Show Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#trim-usage">Trim Usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../account/">User Accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../s3/">S3 API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../iam/">IAM API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rgw-cache/">Data caching and CDN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../swift/">Swift API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adminops/">Admin Ops API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/">Python binding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nfs/">Export over NFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../keystone/">OpenStack Keystone Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barbican/">OpenStack Barbican Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vault/">HashiCorp Vault Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kmip/">KMIP Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../opa/">Open Policy Agent Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multitenancy/">Multi-tenancy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compression/">Compression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ldap-auth/">LDAP Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../encryption/">Server-Side Encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bucketpolicy/">Bucket Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dynamicresharding/">Dynamic bucket index resharding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mfa/">Multi factor authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sync-modules/">Sync Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notifications/">Bucket Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../layout/">Data Layout in RADOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../STS/">STS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../STSLite/">STS Lite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../keycloak/">Keycloak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../session-tags/">Session Tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../role/">Role</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../orphans/">Orphan List and Associated Tooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oidc/">OpenID Connect Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/8/radosgw/">Manpage radosgw</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/8/radosgw-admin/">Manpage radosgw-admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qat-accel/">QAT Acceleration for Encryption and Compression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../s3select/">S3-select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lua-scripting/">Lua Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../d3n_datacache/">D3N Data Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-transition/">Cloud Transition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics/">Metrics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../mgr/">Ceph Manager Daemon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mgr/dashboard/">Ceph Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../monitoring/">Monitoring overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../architecture/">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/developer_guide/">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/internals/">Ceph Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../governance/">Governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../foundation/">Ceph Foundation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ceph-volume/">ceph-volume</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.ceph.com/en/latest/releases/general/">Ceph Releases (general)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.ceph.com/en/latest/releases/">Ceph Releases (index)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware-monitoring/">Hardware monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jaegertracing/">Tracing</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">Ceph</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div id="docubetter" align="right" style="padding: 5px; font-weight: bold;">
+    <a href="https://pad.ceph.com/p/Report_Documentation_Bugs">Report a Documentation Bug</a>
+  </div>
+
+  
+  <section id="admin-guide">
+<h1>Admin Guide<a class="headerlink" href="#admin-guide" title="Permalink to this heading"></a></h1>
+<p>After the Ceph Object Storage service is up and running, it can be administered
+with user management, access controls, quotas, and usage tracking.</p>
+<section id="user-management">
+<span id="radosgw-user-management"></span><h2>User Management<a class="headerlink" href="#user-management" title="Permalink to this heading"></a></h2>
+<p>Ceph Object Storage user management refers only to users of the Ceph Object
+Storage service and not to the Ceph Object Gateway as a user of the Ceph
+Storage Cluster. Create a user, access key, and secret key to enable end users
+to interact with Ceph Object Gateway services. Optionally, the users can belong
+to <a class="reference external" href="../account/">Accounts</a> for ease of management.</p>
+<p>There are two types of user:</p>
+<ul class="simple">
+<li><p><strong>User:</strong> The term “user” refers to user of the S3 interface.</p></li>
+<li><p><strong>Subuser:</strong> The term “subuser” refers to a user of the Swift interface. A
+subuser is associated with a user.</p></li>
+</ul>
+<p class="ditaa">
+<img src="../../_images/ditaa-c53bfea9691fe2ca72fcc59c3115c43803fb2883.png"/>
+</p>
+<p>Users and subusers can be created, modified, viewed, suspended and removed.
+you may add a Display names and an email addresses can be added to user
+profiles. Keys and secrets can either be specified or generated automatically.
+When generating or specifying keys, remember that user IDs correspond to S3 key
+types and subuser IDs correspond to Swift key types.</p>
+<p>Swift keys have access levels of <code class="docutils literal notranslate"><span class="pre">read</span></code>, <code class="docutils literal notranslate"><span class="pre">write</span></code>, <code class="docutils literal notranslate"><span class="pre">readwrite</span></code> and
+<code class="docutils literal notranslate"><span class="pre">full</span></code>.</p>
+<section id="create-a-user">
+<h3>Create a User<a class="headerlink" href="#create-a-user" title="Permalink to this heading"></a></h3>
+<p>To create a user (S3 interface), run a command of the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "# ";
+}
+</style><span class="prompt1">radosgw-admin<span class="w"> </span>user<span class="w"> </span>create<span class="w"> </span>--uid<span class="o">={</span>username<span class="o">}</span><span class="w"> </span>--display-name<span class="o">=</span><span class="s2">"{display-name}"</span><span class="w"> </span><span class="o">[</span>--email<span class="o">={</span>email<span class="o">}]</span></span>
+</pre></div></div><p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>user<span class="w"> </span>create<span class="w"> </span>--uid<span class="o">=</span>johndoe<span class="w"> </span>--display-name<span class="o">=</span><span class="s2">"John Doe"</span><span class="w"> </span>--email<span class="o">=</span>john@example.com</span>
+</pre></div></div><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="s2">"user_id"</span><span class="o">:</span><span class="w"> </span><span class="s2">"johndoe"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"display_name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"email"</span><span class="o">:</span><span class="w"> </span><span class="s2">"john@example.com"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"suspended"</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"max_buckets"</span><span class="o">:</span><span class="w"> </span><span class="mf">1000</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"subusers"</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">  </span><span class="s2">"keys"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="s2">"user"</span><span class="o">:</span><span class="w"> </span><span class="s2">"johndoe"</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">"access_key"</span><span class="o">:</span><span class="w"> </span><span class="s2">"11BS02LGFB6AL6H1ADMW"</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">"secret_key"</span><span class="o">:</span><span class="w"> </span><span class="s2">"vzCEkuryfn060dfee4fgQPqFrncKEIkh3ZcdOANY"</span><span class="p">}],</span>
+<span class="w">  </span><span class="s2">"swift_keys"</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">  </span><span class="s2">"caps"</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">  </span><span class="s2">"op_mask"</span><span class="o">:</span><span class="w"> </span><span class="s2">"read, write, delete"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"default_placement"</span><span class="o">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"placement_tags"</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">  </span><span class="s2">"bucket_quota"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"enabled"</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">"max_size_kb"</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">"max_objects"</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">},</span>
+<span class="w">  </span><span class="s2">"user_quota"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"enabled"</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">"max_size_kb"</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">"max_objects"</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">},</span>
+<span class="w">  </span><span class="s2">"temp_url_keys"</span><span class="o">:</span><span class="w"> </span><span class="p">[]}</span>
+</pre></div>
+</div>
+<p>The creation of a user entails the creation of an <code class="docutils literal notranslate"><span class="pre">access_key</span></code> and a
+<code class="docutils literal notranslate"><span class="pre">secret_key</span></code> entry, which can be used with any S3 API-compatible client.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Check the key output. Sometimes <code class="docutils literal notranslate"><span class="pre">radosgw-admin</span></code> generates a
+JSON escape (<code class="docutils literal notranslate"><span class="pre">\</span></code>) character, and some clients do not know how to handle
+JSON escape characters. Remedies include removing the JSON escape character
+(<code class="docutils literal notranslate"><span class="pre">\</span></code>), encapsulating the string in quotes, regenerating the key and
+ensuring that it does not have a JSON escape character, or specifying the
+key and secret manually.</p>
+</div>
+</section>
+<section id="create-a-subuser">
+<h3>Create a Subuser<a class="headerlink" href="#create-a-subuser" title="Permalink to this heading"></a></h3>
+<p>To create a subuser (a user of the Swift interface) for the user, specify the
+user ID (<code class="docutils literal notranslate"><span class="pre">--uid={username}</span></code>), a subuser ID, and the subuser’s access level:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>subuser<span class="w"> </span>create<span class="w"> </span>--uid<span class="o">={</span>uid<span class="o">}</span><span class="w"> </span>--subuser<span class="o">={</span>uid<span class="o">}</span><span class="w"> </span>--access<span class="o">=[</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>write<span class="w"> </span><span class="p">|</span><span class="w"> </span>readwrite<span class="w"> </span><span class="p">|</span><span class="w"> </span>full<span class="w"> </span><span class="o">]</span></span>
+</pre></div></div><p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>subuser<span class="w"> </span>create<span class="w"> </span>--uid<span class="o">=</span>johndoe<span class="w"> </span>--subuser<span class="o">=</span>johndoe:swift<span class="w"> </span>--access<span class="o">=</span>full</span>
+</pre></div></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">full</span></code> is not the same as <code class="docutils literal notranslate"><span class="pre">readwrite</span></code>. The <code class="docutils literal notranslate"><span class="pre">full</span></code> access level
+includes <code class="docutils literal notranslate"><span class="pre">read</span></code> and <code class="docutils literal notranslate"><span class="pre">write</span></code>, but it also includes the access control
+policy.</p>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="s2">"user_id"</span><span class="o">:</span><span class="w"> </span><span class="s2">"johndoe"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"display_name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"email"</span><span class="o">:</span><span class="w"> </span><span class="s2">"john@example.com"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"suspended"</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"max_buckets"</span><span class="o">:</span><span class="w"> </span><span class="mf">1000</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"subusers"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="o">:</span><span class="w"> </span><span class="s2">"johndoe:swift"</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">"permissions"</span><span class="o">:</span><span class="w"> </span><span class="s2">"full-control"</span><span class="p">}],</span>
+<span class="w">  </span><span class="s2">"keys"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="s2">"user"</span><span class="o">:</span><span class="w"> </span><span class="s2">"johndoe"</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">"access_key"</span><span class="o">:</span><span class="w"> </span><span class="s2">"11BS02LGFB6AL6H1ADMW"</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">"secret_key"</span><span class="o">:</span><span class="w"> </span><span class="s2">"vzCEkuryfn060dfee4fgQPqFrncKEIkh3ZcdOANY"</span><span class="p">}],</span>
+<span class="w">  </span><span class="s2">"swift_keys"</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">  </span><span class="s2">"caps"</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">  </span><span class="s2">"op_mask"</span><span class="o">:</span><span class="w"> </span><span class="s2">"read, write, delete"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"default_placement"</span><span class="o">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"placement_tags"</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">  </span><span class="s2">"bucket_quota"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"enabled"</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">"max_size_kb"</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">"max_objects"</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">},</span>
+<span class="w">  </span><span class="s2">"user_quota"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"enabled"</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">"max_size_kb"</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">"max_objects"</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">},</span>
+<span class="w">  </span><span class="s2">"temp_url_keys"</span><span class="o">:</span><span class="w"> </span><span class="p">[]}</span>
+</pre></div>
+</div>
+</section>
+<section id="get-user-info">
+<h3>Get User Info<a class="headerlink" href="#get-user-info" title="Permalink to this heading"></a></h3>
+<p>To get information about a user, specify <code class="docutils literal notranslate"><span class="pre">user</span> <span class="pre">info</span></code> and the user ID
+(<code class="docutils literal notranslate"><span class="pre">--uid={username}</span></code>). Use a command of the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>user<span class="w"> </span>info<span class="w"> </span>--uid<span class="o">=</span>johndoe</span>
+</pre></div></div></section>
+<section id="modify-user-info">
+<h3>Modify User Info<a class="headerlink" href="#modify-user-info" title="Permalink to this heading"></a></h3>
+<p>To modify information about a user, specify the user ID (<code class="docutils literal notranslate"><span class="pre">--uid={username}</span></code>)
+and the attributes that you want to modify. Typical modifications are made to
+keys and secrets, email addresses, display names, and access levels. Use a
+command of the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>user<span class="w"> </span>modify<span class="w"> </span>--uid<span class="o">=</span>johndoe<span class="w"> </span>--display-name<span class="o">=</span><span class="s2">"John E. Doe"</span></span>
+</pre></div></div><p>To modify subuser values, specify <code class="docutils literal notranslate"><span class="pre">subuser</span> <span class="pre">modify</span></code>, user ID and the subuser
+ID. Use a command of the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>subuser<span class="w"> </span>modify<span class="w"> </span>--uid<span class="o">=</span>johndoe<span class="w"> </span>--subuser<span class="o">=</span>johndoe:swift<span class="w"> </span>--access<span class="o">=</span>full</span>
+</pre></div></div></section>
+<section id="user-suspend">
+<h3>User Suspend<a class="headerlink" href="#user-suspend" title="Permalink to this heading"></a></h3>
+<p>When a user is created, the user is enabled by default. However, it is possible
+to suspend user privileges and to re-enable them at a later time. To suspend a
+user, specify <code class="docutils literal notranslate"><span class="pre">user</span> <span class="pre">suspend</span></code> and the user ID in a command of the following
+form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>user<span class="w"> </span><span class="nb">suspend</span><span class="w"> </span>--uid<span class="o">=</span>johndoe</span>
+</pre></div></div></section>
+<section id="user-enable">
+<h3>User Enable<a class="headerlink" href="#user-enable" title="Permalink to this heading"></a></h3>
+<p>To re-enable a suspended user, provide <code class="docutils literal notranslate"><span class="pre">user</span> <span class="pre">enable</span></code> and specify the user ID
+in a command of the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>user<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--uid<span class="o">=</span>johndoe</span>
+</pre></div></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Disabling the user also disables any subusers.</p>
+</div>
+</section>
+<section id="bucket-suspend">
+<h3>Bucket Suspend<a class="headerlink" href="#bucket-suspend" title="Permalink to this heading"></a></h3>
+<p>It is possible to suspend an individual bucket without suspending its owner.
+When a bucket is suspended, S3 requests against that bucket fail with
+<code class="docutils literal notranslate"><span class="pre">403</span> <span class="pre">BucketSuspended</span></code>. This is independent of S3 bucket versioning; the
+<code class="docutils literal notranslate"><span class="pre">versioning</span></code> field in <code class="docutils literal notranslate"><span class="pre">bucket</span> <span class="pre">stats</span></code> refers to object versioning only.</p>
+<p>To suspend a bucket:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>bucket<span class="w"> </span><span class="nb">suspend</span><span class="w"> </span>--bucket<span class="o">=</span>mybucket</span>
+</pre></div></div><p>To unsuspend a bucket:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>bucket<span class="w"> </span>unsuspend<span class="w"> </span>--bucket<span class="o">=</span>mybucket</span>
+</pre></div></div><p>Use <code class="docutils literal notranslate"><span class="pre">bucket</span> <span class="pre">stats</span></code> to verify the <code class="docutils literal notranslate"><span class="pre">suspended</span></code> field, or <code class="docutils literal notranslate"><span class="pre">metadata</span> <span class="pre">get</span></code> to
+inspect the bucket <code class="docutils literal notranslate"><span class="pre">flags</span></code> value (<code class="docutils literal notranslate"><span class="pre">1</span></code> means <code class="docutils literal notranslate"><span class="pre">BUCKET_SUSPENDED</span></code>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Suspending a user still suspends all of that user’s buckets and
+blocks all requests for that user, regardless of per-bucket state.</p>
+</div>
+</section>
+<section id="remove-a-user">
+<h3>Remove a User<a class="headerlink" href="#remove-a-user" title="Permalink to this heading"></a></h3>
+<p>When you remove a user, you also remove any subusers associated with the user.</p>
+<p>It is possible to remove a subuser without removing its associated user. This
+is covered in the section called <a class="reference internal" href="#radosgw-admin-remove-a-subuser"><span class="std std-ref">Remove a Subuser</span></a>.</p>
+<p>To remove a user and any subusers associated with it, use the <code class="docutils literal notranslate"><span class="pre">user</span> <span class="pre">rm</span></code>
+command and provide the user ID of the user to be removed. Use a command of the
+following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>user<span class="w"> </span>rm<span class="w"> </span>--uid<span class="o">=</span>johndoe</span>
+</pre></div></div><p>Options include:</p>
+<ul class="simple">
+<li><p><strong>Purge Data:</strong> The <code class="docutils literal notranslate"><span class="pre">--purge-data</span></code> option purges all data associated
+with the UID.</p></li>
+<li><p><strong>Purge Keys:</strong> The <code class="docutils literal notranslate"><span class="pre">--purge-keys</span></code> option purges all keys associated
+with the UID.</p></li>
+</ul>
+</section>
+<section id="remove-a-subuser">
+<span id="radosgw-admin-remove-a-subuser"></span><h3>Remove a Subuser<a class="headerlink" href="#remove-a-subuser" title="Permalink to this heading"></a></h3>
+<p>Removing a subuser removes access to the Swift interface or to S3. The user
+associated with the removed subuser remains in the system after the subuser’s
+removal.</p>
+<p>To remove the subuser, use the command <code class="docutils literal notranslate"><span class="pre">subuser</span> <span class="pre">rm</span></code> and provide the subuser
+ID of the subuser to be removed. Use a command of the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>subuser<span class="w"> </span>rm<span class="w"> </span>--subuser<span class="o">=</span>johndoe:swift</span>
+</pre></div></div><p>Options include:</p>
+<ul class="simple">
+<li><p><strong>Purge Keys:</strong> The <code class="docutils literal notranslate"><span class="pre">--purge-keys</span></code> option purges all keys associated
+with the UID.</p></li>
+</ul>
+</section>
+<section id="add-or-remove-a-key">
+<h3>Add or Remove a Key<a class="headerlink" href="#add-or-remove-a-key" title="Permalink to this heading"></a></h3>
+<p>Both users and subusers require a key to access the S3 or Swift interface. To
+use S3, the user needs a key pair which is composed of an access key and a
+secret key. To use Swift, the user needs a secret key (password), which is used
+together with its associated user ID. You can create a key and either specify
+or generate the access key or secret key. You can also remove a key. Options
+include:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--key-type=&lt;type&gt;</span></code> specifies the key type. The options are: <code class="docutils literal notranslate"><span class="pre">s3</span></code>, <code class="docutils literal notranslate"><span class="pre">swift</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--access-key=&lt;key&gt;</span></code> manually specifies an S3 access key.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--secret-key=&lt;key&gt;</span></code> manually specifies a S3 secret key or a Swift secret key.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--gen-access-key</span></code> automatically generates a random S3 access key.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--gen-secret</span></code> automatically generates a random S3 secret key or a random Swift secret key.</p></li>
+</ul>
+<section id="adding-s3-keys">
+<h4>Adding S3 keys<a class="headerlink" href="#adding-s3-keys" title="Permalink to this heading"></a></h4>
+<p>To add a specific S3 key pair for a user, run a command of the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>key<span class="w"> </span>create<span class="w"> </span>--uid<span class="o">=</span>foo<span class="w"> </span>--key-type<span class="o">=</span>s3<span class="w"> </span>--access-key<span class="w"> </span>fooAccessKey<span class="w"> </span>--secret-key<span class="w"> </span>fooSecretKey</span>
+</pre></div></div><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="s2">"user_id"</span><span class="o">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"rados_uid"</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"display_name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"email"</span><span class="o">:</span><span class="w"> </span><span class="s2">"foo@example.com"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"suspended"</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"keys"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s2">"user"</span><span class="o">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">"access_key"</span><span class="o">:</span><span class="w"> </span><span class="s2">"fooAccessKey"</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">"secret_key"</span><span class="o">:</span><span class="w"> </span><span class="s2">"fooSecretKey"</span><span class="p">}],</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can create multiple S3 key pairs for a user.</p>
+</div>
+</section>
+<section id="adding-swift-secret-keys">
+<h4>Adding Swift secret keys<a class="headerlink" href="#adding-swift-secret-keys" title="Permalink to this heading"></a></h4>
+<p>To attach a specific Swift secret key for a subuser, run a command of the
+following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>key<span class="w"> </span>create<span class="w"> </span>--subuser<span class="o">=</span>foo:bar<span class="w"> </span>--key-type<span class="o">=</span>swift<span class="w"> </span>--secret-key<span class="w"> </span>barSecret</span>
+</pre></div></div><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="s2">"user_id"</span><span class="o">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"rados_uid"</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"display_name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"email"</span><span class="o">:</span><span class="w"> </span><span class="s2">"foo@example.com"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"suspended"</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"subusers"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">     </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="o">:</span><span class="w"> </span><span class="s2">"foo:bar"</span><span class="p">,</span>
+<span class="w">       </span><span class="s2">"permissions"</span><span class="o">:</span><span class="w"> </span><span class="s2">"full-control"</span><span class="p">}],</span>
+<span class="w">  </span><span class="s2">"swift_keys"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s2">"user"</span><span class="o">:</span><span class="w"> </span><span class="s2">"foo:bar"</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">"secret_key"</span><span class="o">:</span><span class="w"> </span><span class="s2">"asfghjghghmgm"</span><span class="p">}]}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A subuser can have only one Swift secret key.</p>
+</div>
+</section>
+<section id="associating-subusers-with-s3-key-pairs">
+<h4>Associating Subusers With S3 Key Pairs<a class="headerlink" href="#associating-subusers-with-s3-key-pairs" title="Permalink to this heading"></a></h4>
+<p>Subusers can also be used with S3 APIs if the subuser is associated with a S3
+key pair. To associate a subuser with an S3 key pair, run a command of the
+following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>key<span class="w"> </span>create<span class="w"> </span>--subuser<span class="o">=</span>foo:bar<span class="w"> </span>--key-type<span class="o">=</span>s3<span class="w"> </span>--access-key<span class="w"> </span>barAccessKey<span class="w"> </span>--secret-key<span class="w"> </span>barSecretKey</span>
+</pre></div></div><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="s2">"user_id"</span><span class="o">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"rados_uid"</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"display_name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"email"</span><span class="o">:</span><span class="w"> </span><span class="s2">"foo@example.com"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"suspended"</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"subusers"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">     </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="o">:</span><span class="w"> </span><span class="s2">"foo:bar"</span><span class="p">,</span>
+<span class="w">       </span><span class="s2">"permissions"</span><span class="o">:</span><span class="w"> </span><span class="s2">"full-control"</span><span class="p">}],</span>
+<span class="w">  </span><span class="s2">"keys"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s2">"user"</span><span class="o">:</span><span class="w"> </span><span class="s2">"foo:bar"</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">"access_key"</span><span class="o">:</span><span class="w"> </span><span class="s2">"barAccessKey"</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">"secret_key"</span><span class="o">:</span><span class="w"> </span><span class="s2">"barSecretKey"</span><span class="p">}],</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="removing-s3-key-pairs">
+<h4>Removing S3 Key Pairs<a class="headerlink" href="#removing-s3-key-pairs" title="Permalink to this heading"></a></h4>
+<p>To remove a S3 key pair, specify the access key to be removed. Run a command of the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>key<span class="w"> </span>rm<span class="w"> </span>--uid<span class="o">=</span>foo<span class="w"> </span>--key-type<span class="o">=</span>s3<span class="w"> </span>--access-key<span class="o">=</span>fooAccessKey</span>
+</pre></div></div></section>
+<section id="removing-swift-secret-keys">
+<h4>Removing Swift Secret Keys<a class="headerlink" href="#removing-swift-secret-keys" title="Permalink to this heading"></a></h4>
+<p>To remove a Swift secret key, run a command of the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>key<span class="w"> </span>rm<span class="w"> </span>--subuser<span class="o">=</span>foo:bar<span class="w"> </span>--key-type<span class="o">=</span>swift</span>
+</pre></div></div></section>
+</section>
+<section id="add-or-remove-admin-capabilities">
+<h3>Add or Remove Admin Capabilities<a class="headerlink" href="#add-or-remove-admin-capabilities" title="Permalink to this heading"></a></h3>
+<p>The Ceph Storage Cluster provides an <a class="reference external" href="../adminops/">Admin Ops API</a> that enables users to
+execute administrative functions via the REST API. By default, users do NOT
+have access to this API. To enable a user to exercise administrative
+functionality, provide the user with administrative capabilities.</p>
+<p>To add administrative capabilities to a user, run a command of the following
+form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>caps<span class="w"> </span>add<span class="w"> </span>--uid<span class="o">={</span>uid<span class="o">}</span><span class="w"> </span>--caps<span class="o">={</span>caps<span class="o">}</span></span>
+</pre></div></div><p>You can add read, write or all capabilities to users, buckets, metadata and
+usage (utilization). To do this, use a command-line option of the following
+form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">caps</span><span class="o">=</span><span class="s2">"[users|buckets|metadata|usage|zone|amz-cache|info|bilog|mdlog|datalog|user-policy|oidc-provider|roles|ratelimit|user-info-without-keys|accounts]=[\*|read|write|read, write]"</span>
+</pre></div>
+</div>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>caps<span class="w"> </span>add<span class="w"> </span>--uid<span class="o">=</span>johndoe<span class="w"> </span>--caps<span class="o">=</span><span class="s2">"users=*;buckets=*"</span></span>
+</pre></div></div><p>To remove administrative capabilities from a user, run a command of the
+following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>caps<span class="w"> </span>rm<span class="w"> </span>--uid<span class="o">=</span>johndoe<span class="w"> </span>--caps<span class="o">={</span>caps<span class="o">}</span></span>
+</pre></div></div></section>
+<section id="admin-and-system-users">
+<h3>Admin and System Users<a class="headerlink" href="#admin-and-system-users" title="Permalink to this heading"></a></h3>
+<p>Users with the <code class="docutils literal notranslate"><span class="pre">--admin</span></code> or <code class="docutils literal notranslate"><span class="pre">--system</span></code> flag have global read and write
+permissions. These permissions apply to all APIs including S3 and Swift,
+unlike Admin Capabilities, and cannot be denied by IAM policy.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">--system</span></code> flag should only be used as documented in <a class="reference external" href="../multisite/">Multisite Configuration</a>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">--admin</span></code> flag can be useful for troubleshooting and recovery. For
+example, if a user accidentally removes their permissions to a bucket or
+object, the admin user’s credentials can be used to issue the S3/Swift API
+requests necessary to restore them.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When not in use, consider deleting the admin user or disabling
+its access keys. Do not give admin permissions to untrusted users.</p>
+</div>
+<p>To create an admin user:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt2:before {
+  content: "$ ";
+}
+</style><span class="prompt2">radosgw-admin<span class="w"> </span>user<span class="w"> </span>create<span class="w"> </span>--uid<span class="o">={</span>username<span class="o">}</span><span class="w"> </span>--display-name<span class="o">=</span><span class="s2">"{display-name}"</span><span class="w"> </span>--admin</span>
+</pre></div></div><p>To add the admin flag to an existing user:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">radosgw-admin<span class="w"> </span>user<span class="w"> </span>modify<span class="w"> </span>--uid<span class="o">={</span>username<span class="o">}</span><span class="w"> </span>--admin</span>
+</pre></div></div><p>To remove the admin flag from an existing user:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">radosgw-admin<span class="w"> </span>user<span class="w"> </span>modify<span class="w"> </span>--uid<span class="o">={</span>username<span class="o">}</span><span class="w"> </span>--admin<span class="o">=</span><span class="m">0</span></span>
+</pre></div></div></section>
+</section>
+<section id="quota-management">
+<h2>Quota Management<a class="headerlink" href="#quota-management" title="Permalink to this heading"></a></h2>
+<p>The Ceph Object Gateway makes it possible for you to set quotas on users and
+buckets owned by users. Quotas include the maximum number of objects in a
+bucket and the maximum storage size a bucket can hold.</p>
+<ul class="simple">
+<li><p><strong>Maximum Objects:</strong> The <code class="docutils literal notranslate"><span class="pre">--max-objects</span></code> setting allows you to specify
+the maximum number of objects. A negative value disables this setting.</p></li>
+<li><p><strong>Maximum Size:</strong> The <code class="docutils literal notranslate"><span class="pre">--max-size</span></code> option allows you to specify a quota
+size in B/K/M/G/T, where B is the default. A negative value disables this
+setting.</p></li>
+<li><p><strong>Quota Scope:</strong> The <code class="docutils literal notranslate"><span class="pre">--quota-scope</span></code> option sets the scope for the quota.
+The options are <code class="docutils literal notranslate"><span class="pre">bucket</span></code> and <code class="docutils literal notranslate"><span class="pre">user</span></code>.</p></li>
+</ul>
+<section id="set-user-quota">
+<h3>Set User Quota<a class="headerlink" href="#set-user-quota" title="Permalink to this heading"></a></h3>
+<p>User Quotas are summed across all buckets owned by the user.</p>
+<p>Before you enable a quota, you must first set the quota parameters.
+To set quota parameters, run a command of the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>quota<span class="w"> </span><span class="nb">set</span><span class="w"> </span>--quota-scope<span class="o">=</span>user<span class="w"> </span>--uid<span class="o">=</span>&lt;uid&gt;<span class="w"> </span><span class="o">[</span>--max-objects<span class="o">=</span>&lt;num<span class="w"> </span>objects&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>--max-size<span class="o">=</span>&lt;max<span class="w"> </span>size&gt;<span class="o">]</span></span>
+</pre></div></div><p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>quota<span class="w"> </span><span class="nb">set</span><span class="w"> </span>--quota-scope<span class="o">=</span>user<span class="w"> </span>--uid<span class="o">=</span>johndoe<span class="w"> </span>--max-objects<span class="o">=</span><span class="m">1024</span><span class="w"> </span>--max-size<span class="o">=</span>1024B</span>
+</pre></div></div><p>Passing a negative value as an argument of <code class="docutils literal notranslate"><span class="pre">--max-objects</span></code> or <code class="docutils literal notranslate"><span class="pre">--max-size</span></code>
+disables the given quota attribute.</p>
+</section>
+<section id="enabling-and-disabling-user-quota">
+<h3>Enabling and Disabling User Quota<a class="headerlink" href="#enabling-and-disabling-user-quota" title="Permalink to this heading"></a></h3>
+<p>After a user quota is set, it must be enabled in order to take effect. To enable a user quota, run a command of the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>quota<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--quota-scope<span class="o">=</span>user<span class="w"> </span>--uid<span class="o">=</span>&lt;uid&gt;</span>
+</pre></div></div><p>To disable an enabled user quota, run a command of the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>quota<span class="w"> </span>disable<span class="w"> </span>--quota-scope<span class="o">=</span>user<span class="w"> </span>--uid<span class="o">=</span>&lt;uid&gt;</span>
+</pre></div></div></section>
+<section id="set-bucket-quota">
+<h3>Set Bucket Quota<a class="headerlink" href="#set-bucket-quota" title="Permalink to this heading"></a></h3>
+<p>If the <code class="docutils literal notranslate"><span class="pre">--bucket</span></code> option is specified, the bucket quota applies to a single bucket with the specified name.
+Else, if the <code class="docutils literal notranslate"><span class="pre">--uid</span></code> option is specified, the bucket quota applies to all buckets owned by the user with the specified UID.</p>
+<p>To set a bucket quota, run a command of the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>quota<span class="w"> </span><span class="nb">set</span><span class="w"> </span>--quota-scope<span class="o">=</span>bucket<span class="w"> </span><span class="o">{</span>--bucket<span class="o">=</span>&lt;bucket<span class="w"> </span>name&gt;<span class="w"> </span><span class="p">|</span><span class="w"> </span>--uid<span class="o">=</span>&lt;uid&gt;<span class="o">}</span><span class="w"> </span><span class="o">[</span>--max-objects<span class="o">=</span>&lt;num<span class="w"> </span>objects&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>--max-size<span class="o">=</span>&lt;max<span class="w"> </span>size&gt;<span class="o">]</span></span>
+</pre></div></div><p>A negative value for <code class="docutils literal notranslate"><span class="pre">--max-objects</span></code> or <code class="docutils literal notranslate"><span class="pre">--max-size</span></code> means that the
+specific quota attribute is disabled.</p>
+</section>
+<section id="enable-and-disabling-bucket-quota">
+<h3>Enable and Disabling Bucket Quota<a class="headerlink" href="#enable-and-disabling-bucket-quota" title="Permalink to this heading"></a></h3>
+<p>After a bucket quota has been set, it must be enabled in order to take effect.
+To enable a bucket quota, run a command of the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>quota<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--quota-scope<span class="o">=</span>bucket<span class="w"> </span>--uid<span class="o">=</span>&lt;uid&gt;</span>
+</pre></div></div><p>To disable an enabled bucket quota, run a command of the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>quota<span class="w"> </span>disable<span class="w"> </span>--quota-scope<span class="o">=</span>bucket<span class="w"> </span>--uid<span class="o">=</span>&lt;uid&gt;</span>
+</pre></div></div></section>
+<section id="get-quota-settings">
+<h3>Get Quota Settings<a class="headerlink" href="#get-quota-settings" title="Permalink to this heading"></a></h3>
+<p>You can access each user’s quota settings via the user information
+API. To read user quota setting information with the CLI interface,
+run a command of the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>user<span class="w"> </span>info<span class="w"> </span>--uid<span class="o">=</span>&lt;uid&gt;</span>
+</pre></div></div></section>
+<section id="update-quota-stats">
+<h3>Update Quota Stats<a class="headerlink" href="#update-quota-stats" title="Permalink to this heading"></a></h3>
+<p>Quota stats are updated asynchronously. You can update quota statistics for all
+users and all buckets manually to force an update of the latest quota stats. To
+update quota statistics for all users and all buckets in order to retrieve the
+latest quota statistics, run a command of the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>user<span class="w"> </span>stats<span class="w"> </span>--uid<span class="o">=</span>&lt;uid&gt;<span class="w"> </span>--sync-stats</span>
+</pre></div></div></section>
+<section id="get-user-usage-stats">
+<span id="rgw-user-usage-stats"></span><h3>Get User Usage Stats<a class="headerlink" href="#get-user-usage-stats" title="Permalink to this heading"></a></h3>
+<p>To see how much of a quota a user has consumed, run a command of the following
+form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>user<span class="w"> </span>stats<span class="w"> </span>--uid<span class="o">=</span>&lt;uid&gt;</span>
+</pre></div></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Run <code class="docutils literal notranslate"><span class="pre">radosgw-admin</span> <span class="pre">user</span> <span class="pre">stats</span></code> with the <code class="docutils literal notranslate"><span class="pre">--sync-stats</span></code> option to
+receive the latest data.</p>
+</div>
+</section>
+<section id="default-quotas">
+<h3>Default Quotas<a class="headerlink" href="#default-quotas" title="Permalink to this heading"></a></h3>
+<p>You can set default quotas in the Ceph Object Gateway config. <strong>These defaults
+will be used only when creating new users and will have no effect on existing
+users.</strong> If a default quota is set in the Ceph Object Gateway Config, then that
+quota is set for all subsequently-created users, and that quota is enabled. See
+<code class="docutils literal notranslate"><span class="pre">rgw_bucket_default_quota_max_objects</span></code>,
+<code class="docutils literal notranslate"><span class="pre">rgw_bucket_default_quota_max_size</span></code>, <code class="docutils literal notranslate"><span class="pre">rgw_user_default_quota_max_objects</span></code>,
+<code class="docutils literal notranslate"><span class="pre">rgw_user_default_quota_max_size</span></code>, <code class="docutils literal notranslate"><span class="pre">rgw_account_default_quota_max_objects</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">rgw_account_default_quota_max_size</span></code> in <a class="reference external" href="../config-ref/">Ceph Object Gateway Config
+Reference</a>.</p>
+</section>
+<section id="quota-cache">
+<h3>Quota Cache<a class="headerlink" href="#quota-cache" title="Permalink to this heading"></a></h3>
+<p>Quota statistics are cached by each RGW instance. If multiple RGW instances are
+deployed, then this cache may prevent quotas from being perfectly enforced,
+because each instance may have a different set of quota settings.</p>
+<p>Here are the options that control this behavior:</p>
+<p><a class="reference internal" href="../config-ref/#confval-rgw_bucket_quota_ttl"><code class="xref std std-confval docutils literal notranslate"><span class="pre">rgw_bucket_quota_ttl</span></code></a>
+<a class="reference internal" href="../config-ref/#confval-rgw_user_quota_bucket_sync_interval"><code class="xref std std-confval docutils literal notranslate"><span class="pre">rgw_user_quota_bucket_sync_interval</span></code></a>
+<a class="reference internal" href="../config-ref/#confval-rgw_user_quota_sync_interval"><code class="xref std std-confval docutils literal notranslate"><span class="pre">rgw_user_quota_sync_interval</span></code></a></p>
+<p>Increasing these values will make quota operations more efficient at the cost
+of increasing the likelihood that the multiple RGW instances may not
+consistently have the latest quota settings. Decreasing these values brings
+the multiple RGW instances closer to perfect quota synchronization.</p>
+<p>If all three values are set to <code class="docutils literal notranslate"><span class="pre">0</span></code> , then quota caching is effectively
+disabled, and multiple instances will have perfect quota enforcement.  See
+<a class="reference external" href="../config-ref/">Ceph Object Gateway Config Reference</a>.</p>
+</section>
+<section id="reading-writing-global-quotas">
+<h3>Reading / Writing Global Quotas<a class="headerlink" href="#reading-writing-global-quotas" title="Permalink to this heading"></a></h3>
+<p>You can read and write global quota settings in the period configuration. To
+view the global quota settings, run the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>global<span class="w"> </span>quota<span class="w"> </span>get</span>
+</pre></div></div><p>Global quota settings can be manipulated with the <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">quota</span></code>
+counterparts of the <code class="docutils literal notranslate"><span class="pre">quota</span> <span class="pre">set</span></code>, <code class="docutils literal notranslate"><span class="pre">quota</span> <span class="pre">enable</span></code>, and <code class="docutils literal notranslate"><span class="pre">quota</span> <span class="pre">disable</span></code>
+commands, as in the following examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>global<span class="w"> </span>quota<span class="w"> </span><span class="nb">set</span><span class="w"> </span>--quota-scope<span class="w"> </span>bucket<span class="w"> </span>--max-objects<span class="w"> </span><span class="m">1024</span></span>
+<span class="prompt1">radosgw-admin<span class="w"> </span>global<span class="w"> </span>quota<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--quota-scope<span class="w"> </span>bucket</span>
+</pre></div></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In a multisite configuration where there is a realm and period
+present, changes to the global quotas must be committed using <code class="docutils literal notranslate"><span class="pre">period</span>
+<span class="pre">update</span> <span class="pre">--commit</span></code>. If no period is present, the RGW instances must
+be restarted for the changes to take effect.</p>
+</div>
+</section>
+</section>
+<section id="rate-limit-management">
+<h2>Rate Limit Management<a class="headerlink" href="#rate-limit-management" title="Permalink to this heading"></a></h2>
+<p>Quotas can be set for The Ceph Object Gateway on users and buckets. The “rate
+limit” includes the maximum number of read operations (read ops) and write
+operations (write ops) per minute as well as the number of bytes per minute
+that can be written or read per user or per bucket.</p>
+<section id="read-requests-and-write-requests">
+<h3>Read Requests and Write Requests<a class="headerlink" href="#read-requests-and-write-requests" title="Permalink to this heading"></a></h3>
+<p>Operations that use the <code class="docutils literal notranslate"><span class="pre">GET</span></code> method or the <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> method in their REST
+requests are “read requests”. All other requests are “write requests”.</p>
+</section>
+<section id="how-metrics-work">
+<h3>How Metrics Work<a class="headerlink" href="#how-metrics-work" title="Permalink to this heading"></a></h3>
+<p>Each object gateway tracks per-user metrics separately from bucket metrics.
+These metrics are not shared with other gateways. The configured limits should
+be divided by the number of active object gateways. For example, if “user A” is
+to be be limited to 10 ops per minute and there are two object gateways in the
+cluster, then the limit on “user A” should be <code class="docutils literal notranslate"><span class="pre">5</span></code> (10 ops per minute / 2
+RGWs). If the requests are <strong>not</strong> balanced between RGWs, the rate limit might
+be underutilized. For example: if the ops limit is <code class="docutils literal notranslate"><span class="pre">5</span></code> and there are two
+RGWs, <strong>but</strong> the Load Balancer sends load to only one of those RGWs, the
+effective limit is 5 ops, because this limit is enforced per RGW. If the rate
+limit that has been set for the bucket has been reached but the rate limit that
+has been set for the user has not been reached, then the request is cancelled.
+The contrary holds as well: if the rate limit that has been set for the user
+has been reached but the rate limit that has been set for the bucket has not
+been reached, then the request is cancelled.</p>
+<p>The accounting of bandwidth happens only after a request has been accepted.
+This means that requests will proceed even if the bucket rate limit or user
+rate limit is reached during the execution of the request. The RGW keeps track
+of a “debt” consisting of bytes used in excess of the configured value; users
+or buckets that incur this kind of debt are prevented from sending more
+requests until the “debt” has been repaid. The maximum size of the “debt” is
+twice the max-read/write-bytes per minute. If “user A” is subject to a 1-byte
+read limit per minute and they attempt to <code class="docutils literal notranslate"><span class="pre">GET</span></code> an object that is 1 GB in size,
+then the <code class="docutils literal notranslate"><span class="pre">GET</span></code> action will fail. After “user A” has completed this 1 GB
+operation, RGW blocks the user’s requests for up to two minutes. After this
+time has elapsed, “user A” will be able to send <code class="docutils literal notranslate"><span class="pre">GET</span></code> requests again.</p>
+<ul class="simple">
+<li><p><strong>Bucket:</strong> The <code class="docutils literal notranslate"><span class="pre">--bucket</span></code> option allows you to specify a rate limit for a
+bucket.</p></li>
+<li><p><strong>User:</strong> The <code class="docutils literal notranslate"><span class="pre">--uid</span></code> option allows you to specify a rate limit for a
+user.</p></li>
+<li><p><strong>Maximum Read Ops:</strong> The <code class="docutils literal notranslate"><span class="pre">--max-read-ops</span></code> setting allows you to limit read
+bytes per minute per RGW instance. A <code class="docutils literal notranslate"><span class="pre">0</span></code> value disables throttling.</p></li>
+<li><p><strong>Maximum Read Bytes:</strong> The <code class="docutils literal notranslate"><span class="pre">--max-read-bytes</span></code> setting allows you to limit
+read bytes per minute per RGW instance. A <code class="docutils literal notranslate"><span class="pre">0</span></code> value disables throttling.</p></li>
+<li><p><strong>Maximum Write Ops:</strong> The <code class="docutils literal notranslate"><span class="pre">--max-write-ops</span></code> setting allows you to specify
+the maximum number of write ops per minute per RGW instance. A <code class="docutils literal notranslate"><span class="pre">0</span></code> value
+disables throttling.</p></li>
+<li><p><strong>Maximum Write Bytes:</strong> The <code class="docutils literal notranslate"><span class="pre">--max-write-bytes</span></code> setting allows you to
+specify the maximum number of write bytes per minute per RGW instance. A
+<code class="docutils literal notranslate"><span class="pre">0</span></code> value disables throttling.</p></li>
+<li><p><strong>Rate Limit Scope:</strong> The <code class="docutils literal notranslate"><span class="pre">--ratelimit-scope</span></code> option sets the scope for the
+rate limit.  The options are <code class="docutils literal notranslate"><span class="pre">bucket</span></code> , <code class="docutils literal notranslate"><span class="pre">user</span></code> and <code class="docutils literal notranslate"><span class="pre">anonymous</span></code>. Bucket
+rate limit apply to buckets.  The user rate limit applies to a user.  The
+<code class="docutils literal notranslate"><span class="pre">anonymous</span></code> option applies to an unauthenticated user. Anonymous scope is
+available only for global rate limit.</p></li>
+</ul>
+</section>
+<section id="set-user-rate-limit">
+<h3>Set User Rate Limit<a class="headerlink" href="#set-user-rate-limit" title="Permalink to this heading"></a></h3>
+<p>Before you can enable a rate limit, you must first set the rate limit
+parameters. The following is the general form of commands that set rate limit
+parameters:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>ratelimit<span class="w"> </span><span class="nb">set</span><span class="w"> </span>--ratelimit-scope<span class="o">=</span>user<span class="w"> </span>--uid<span class="o">=</span>&lt;uid&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">                              </span>&lt;<span class="o">[</span>--max-read-ops<span class="o">=</span>&lt;num<span class="w"> </span>ops&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>--max-read-bytes<span class="o">=</span>&lt;num<span class="w"> </span>bytes&gt;<span class="o">]</span><span class="w"> </span><span class="se">\</span>
+<span class="w">                              </span><span class="o">[</span>--max-write-ops<span class="o">=</span>&lt;num<span class="w"> </span>ops&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>--max-write-bytes<span class="o">=</span>&lt;num<span class="w"> </span>bytes&gt;<span class="o">]</span>&gt;</span>
+</pre></div></div><p>An example of using <code class="docutils literal notranslate"><span class="pre">radosgw-admin</span> <span class="pre">ratelimit</span> <span class="pre">set</span></code> to set a rate limit might
+look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>ratelimit<span class="w"> </span><span class="nb">set</span><span class="w"> </span>--ratelimit-scope<span class="o">=</span>user<span class="w"> </span>--uid<span class="o">=</span>johndoe<span class="w"> </span>--max-read-ops<span class="o">=</span><span class="m">1024</span><span class="w"> </span>--max-write-bytes<span class="o">=</span><span class="m">10240</span></span>
+</pre></div></div><p>A value of <code class="docutils literal notranslate"><span class="pre">0</span></code> assigned to <code class="docutils literal notranslate"><span class="pre">--max-read-ops</span></code>, <code class="docutils literal notranslate"><span class="pre">--max-read-bytes</span></code>,
+<code class="docutils literal notranslate"><span class="pre">--max-write-ops</span></code>, or <code class="docutils literal notranslate"><span class="pre">--max-write-bytes</span></code> disables the specified rate
+limit.</p>
+</section>
+<section id="get-user-rate-limit">
+<h3>Get User Rate Limit<a class="headerlink" href="#get-user-rate-limit" title="Permalink to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">radosgw-admin</span> <span class="pre">ratelimit</span> <span class="pre">get</span></code> command returns the currently configured
+rate limit parameters.</p>
+<p>The following is the general form of the command that returns the current
+configured limit parameters:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>ratelimit<span class="w"> </span>get<span class="w"> </span>--ratelimit-scope<span class="o">=</span>user<span class="w"> </span>--uid<span class="o">=</span>&lt;uid&gt;</span>
+</pre></div></div><p>An example of using <code class="docutils literal notranslate"><span class="pre">radosgw-admin</span> <span class="pre">ratelimit</span> <span class="pre">get</span></code> to return the rate limit
+parameters might look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>ratelimit<span class="w"> </span>get<span class="w"> </span>--ratelimit-scope<span class="o">=</span>user<span class="w"> </span>--uid<span class="o">=</span>johndoe</span>
+</pre></div></div><p>A value of <code class="docutils literal notranslate"><span class="pre">0</span></code> assigned to <code class="docutils literal notranslate"><span class="pre">--max-read-ops</span></code>, <code class="docutils literal notranslate"><span class="pre">--max-read-bytes</span></code>,
+<code class="docutils literal notranslate"><span class="pre">--max-write-ops</span></code>, or <code class="docutils literal notranslate"><span class="pre">--max-write-bytes</span></code> disables the specified rate
+limit.</p>
+</section>
+<section id="enable-and-disable-user-rate-limit">
+<h3>Enable and Disable User Rate Limit<a class="headerlink" href="#enable-and-disable-user-rate-limit" title="Permalink to this heading"></a></h3>
+<p>After you have set a user rate limit, you must enable it in order for it to
+take effect. Run a command of the following form to enable a user rate limit:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>ratelimit<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--ratelimit-scope<span class="o">=</span>user<span class="w"> </span>--uid<span class="o">=</span>&lt;uid&gt;</span>
+</pre></div></div><p>To disable an enabled user rate limit, run a command of the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>ratelimit<span class="w"> </span>disable<span class="w"> </span>--ratelimit-scope<span class="o">=</span>user<span class="w"> </span>--uid<span class="o">=</span>johndoe</span>
+</pre></div></div></section>
+<section id="set-bucket-rate-limit">
+<h3>Set Bucket Rate Limit<a class="headerlink" href="#set-bucket-rate-limit" title="Permalink to this heading"></a></h3>
+<p>Before you enable a rate limit, you must first set the rate limit parameters.
+The following is the general form of commands that set rate limit parameters:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>ratelimit<span class="w"> </span><span class="nb">set</span><span class="w"> </span>--ratelimit-scope<span class="o">=</span>bucket<span class="w"> </span>--bucket<span class="o">=</span>&lt;bucket&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">                             </span>&lt;<span class="o">[</span>--max-read-ops<span class="o">=</span>&lt;num<span class="w"> </span>ops&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>--max-read-bytes<span class="o">=</span>&lt;num<span class="w"> </span>bytes&gt;<span class="o">]</span><span class="w"> </span><span class="se">\</span>
+<span class="w">                             </span><span class="o">[</span>--max-write-ops<span class="o">=</span>&lt;num<span class="w"> </span>ops&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>--max-write-bytes<span class="o">=</span>&lt;num<span class="w"> </span>bytes&gt;<span class="o">]</span>&gt;</span>
+</pre></div></div><p>An example of using <code class="docutils literal notranslate"><span class="pre">radosgw-admin</span> <span class="pre">ratelimit</span> <span class="pre">set</span></code> to set a rate limit for a
+bucket might look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>ratelimit<span class="w"> </span><span class="nb">set</span><span class="w"> </span>--ratelimit-scope<span class="o">=</span>bucket<span class="w"> </span>--bucket<span class="o">=</span>mybucket<span class="w"> </span>--max-read-ops<span class="o">=</span><span class="m">1024</span><span class="w"> </span>--max-write-bytes<span class="o">=</span><span class="m">10240</span></span>
+</pre></div></div><p>A value of <code class="docutils literal notranslate"><span class="pre">0</span></code> assigned to <code class="docutils literal notranslate"><span class="pre">--max-read-ops</span></code>, <code class="docutils literal notranslate"><span class="pre">--max-read-bytes</span></code>,
+<code class="docutils literal notranslate"><span class="pre">--max-write-ops</span></code>, or <code class="docutils literal notranslate"><span class="pre">-max-write-bytes</span></code> disables the specified bucket rate
+limit.</p>
+</section>
+<section id="get-bucket-rate-limit">
+<h3>Get Bucket Rate Limit<a class="headerlink" href="#get-bucket-rate-limit" title="Permalink to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">radosgw-admin</span> <span class="pre">ratelimit</span> <span class="pre">get</span></code> command returns the current configured rate
+limit parameters.</p>
+<p>The following is the general form of the command that returns the current
+configured limit parameters:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>ratelimit<span class="w"> </span>get<span class="w"> </span>--ratelimit-scope<span class="o">=</span>bucket<span class="w"> </span>--bucket<span class="o">=</span>&lt;bucket&gt;</span>
+</pre></div></div><p>An example of using <code class="docutils literal notranslate"><span class="pre">radosgw-admin</span> <span class="pre">ratelimit</span> <span class="pre">get</span></code> to return the rate limit
+parameters for a bucket might look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>ratelimit<span class="w"> </span>get<span class="w"> </span>--ratelimit-scope<span class="o">=</span>bucket<span class="w"> </span>--bucket<span class="o">=</span>mybucket</span>
+</pre></div></div><p>A value of <code class="docutils literal notranslate"><span class="pre">0</span></code> assigned to <code class="docutils literal notranslate"><span class="pre">--max-read-ops</span></code>, <code class="docutils literal notranslate"><span class="pre">--max-read-bytes</span></code>,
+<code class="docutils literal notranslate"><span class="pre">--max-write-ops</span></code>, or <code class="docutils literal notranslate"><span class="pre">--max-write-bytes</span></code> disables the specified rate
+limit.</p>
+</section>
+<section id="enable-and-disable-bucket-rate-limit">
+<h3>Enable and Disable Bucket Rate Limit<a class="headerlink" href="#enable-and-disable-bucket-rate-limit" title="Permalink to this heading"></a></h3>
+<p>After you set a bucket rate limit, you can enable it. The following is the
+general form of the <code class="docutils literal notranslate"><span class="pre">radosgw-admin</span> <span class="pre">ratelimit</span> <span class="pre">enable</span></code> command that enables
+bucket rate limits:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>ratelimit<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--ratelimit-scope<span class="o">=</span>bucket<span class="w"> </span>--bucket<span class="o">=</span>&lt;bucket&gt;</span>
+</pre></div></div><p>An enabled bucket rate limit can be disabled by running a command of the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>ratelimit<span class="w"> </span>disable<span class="w"> </span>--ratelimit-scope<span class="o">=</span>bucket<span class="w"> </span>--uid<span class="o">=</span>mybucket</span>
+</pre></div></div></section>
+<section id="reading-and-writing-global-rate-limit-configuration">
+<h3>Reading and Writing Global Rate Limit Configuration<a class="headerlink" href="#reading-and-writing-global-rate-limit-configuration" title="Permalink to this heading"></a></h3>
+<p>You can read and write global rate limit settings in the period’s configuration.
+To view the global rate limit settings, run the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>global<span class="w"> </span>ratelimit<span class="w"> </span>get</span>
+</pre></div></div><p>The global rate limit settings can be manipulated with the <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">ratelimit</span></code>
+counterparts of the <code class="docutils literal notranslate"><span class="pre">ratelimit</span> <span class="pre">set</span></code>, <code class="docutils literal notranslate"><span class="pre">ratelimit</span> <span class="pre">enable</span></code>, and <code class="docutils literal notranslate"><span class="pre">ratelimit</span>
+<span class="pre">disable</span></code> commands. Per-user and per-bucket ratelimit configurations override
+the global configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>global<span class="w"> </span>ratelimit<span class="w"> </span><span class="nb">set</span><span class="w"> </span>--ratelimit-scope<span class="w"> </span>bucket<span class="w"> </span>--max-read-ops<span class="o">=</span><span class="m">1024</span></span>
+<span class="prompt1">radosgw-admin<span class="w"> </span>global<span class="w"> </span>ratelimit<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--ratelimit-scope<span class="w"> </span>bucket</span>
+</pre></div></div><p>The global rate limit can be used to configure the scope of the rate limit for
+all authenticated users:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>global<span class="w"> </span>ratelimit<span class="w"> </span><span class="nb">set</span><span class="w"> </span>--ratelimit-scope<span class="w"> </span>user<span class="w"> </span>--max-read-ops<span class="o">=</span><span class="m">1024</span></span>
+<span class="prompt1">radosgw-admin<span class="w"> </span>global<span class="w"> </span>ratelimit<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--ratelimit-scope<span class="w"> </span>user</span>
+</pre></div></div><p>The global rate limit can be used to configure the scope of the rate limit for
+all unauthenticated users:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>global<span class="w"> </span>ratelimit<span class="w"> </span><span class="nb">set</span><span class="w"> </span>--ratelimit-scope<span class="o">=</span>anonymous<span class="w"> </span>--max-read-ops<span class="o">=</span><span class="m">1024</span></span>
+<span class="prompt1">radosgw-admin<span class="w"> </span>global<span class="w"> </span>ratelimit<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--ratelimit-scope<span class="o">=</span>anonymous</span>
+</pre></div></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In a multisite configuration where a realm and a period are present,
+any changes to the global rate limit must be committed using <code class="docutils literal notranslate"><span class="pre">period</span> <span class="pre">update</span>
+<span class="pre">--commit</span></code>. If no period is present, the rados gateway(s) must be restarted
+for the changes to take effect.</p>
+</div>
+</section>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<p>The Ceph Object Gateway logs the usage of each user. You can track the usage of
+each user within a specified date range.</p>
+<ul>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">rgw_enable_usage_log</span> <span class="pre">=</span> <span class="pre">true</span></code> in the <code class="docutils literal notranslate"><span class="pre">[client.rgw]</span></code> section of
+<code class="docutils literal notranslate"><span class="pre">ceph.conf</span></code> and restart the <code class="docutils literal notranslate"><span class="pre">radosgw</span></code> service.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Until Ceph has a linkable macro that handles all the many ways that options can be set, we advise that you set <code class="docutils literal notranslate"><span class="pre">rgw_enable_usage_log</span> <span class="pre">=</span> <span class="pre">true</span></code> in central config or in <code class="docutils literal notranslate"><span class="pre">ceph.conf</span></code> and restart all RGWs.</p>
+</div>
+</li>
+</ul>
+<p>Options include:</p>
+<ul class="simple">
+<li><p><strong>Start Date:</strong> The <code class="docutils literal notranslate"><span class="pre">--start-date</span></code> option allows you to filter usage
+stats from a specified start date and an optional start time
+(<strong>format:</strong> <code class="docutils literal notranslate"><span class="pre">yyyy-mm-dd</span> <span class="pre">[HH:MM:SS]</span></code>).</p></li>
+<li><p><strong>End Date:</strong> The <code class="docutils literal notranslate"><span class="pre">--end-date</span></code> option allows you to filter usage up
+to a particular end date and an optional end time
+(<strong>format:</strong> <code class="docutils literal notranslate"><span class="pre">yyyy-mm-dd</span> <span class="pre">[HH:MM:SS]</span></code>).</p></li>
+<li><p><strong>Log Entries:</strong> The <code class="docutils literal notranslate"><span class="pre">--show-log-entries</span></code> option allows you to specify
+whether to include log entries with the usage stats
+(options: <code class="docutils literal notranslate"><span class="pre">true</span></code> | <code class="docutils literal notranslate"><span class="pre">false</span></code>).</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can specify time to a precision of minutes and seconds, but the
+specified time is stored only with a one-hour resolution.</p>
+</div>
+<section id="show-usage">
+<h3>Show Usage<a class="headerlink" href="#show-usage" title="Permalink to this heading"></a></h3>
+<p>To show usage statistics, use the <code class="docutils literal notranslate"><span class="pre">radosgw-admin</span> <span class="pre">usage</span> <span class="pre">show</span></code> command. To show
+usage for a particular user, you must specify a user ID. You can also specify a
+start date, end date, and whether to show log entries. The following is an example
+of such a command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>usage<span class="w"> </span>show<span class="w"> </span>--uid<span class="o">=</span>johndoe<span class="w"> </span>--start-date<span class="o">=</span><span class="m">2012</span>-03-01<span class="w"> </span>--end-date<span class="o">=</span><span class="m">2012</span>-04-01</span>
+</pre></div></div><p>You can show a summary of usage information for all users by omitting the user
+ID, as in the following example command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>usage<span class="w"> </span>show<span class="w"> </span>--show-log-entries<span class="o">=</span><span class="nb">false</span></span>
+</pre></div></div></section>
+<section id="trim-usage">
+<span id="rgw-trim-usage"></span><h3>Trim Usage<a class="headerlink" href="#trim-usage" title="Permalink to this heading"></a></h3>
+<p>Usage logs can consume significant storage space, especially over time and with
+heavy use. You can trim the usage logs for all users and for specific users.
+You can also specify date ranges for trim operations, as in the following
+example commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>usage<span class="w"> </span>trim<span class="w"> </span>--start-date<span class="o">=</span><span class="m">2010</span>-01-01<span class="w"> </span>--end-date<span class="o">=</span><span class="m">2010</span>-12-31</span>
+<span class="prompt1">radosgw-admin<span class="w"> </span>usage<span class="w"> </span>trim<span class="w"> </span>--uid<span class="o">=</span>johndoe</span>
+<span class="prompt1">radosgw-admin<span class="w"> </span>usage<span class="w"> </span>trim<span class="w"> </span>--uid<span class="o">=</span>johndoe<span class="w"> </span>--end-date<span class="o">=</span><span class="m">2013</span>-12-31</span>
+</pre></div></div></section>
+</section>
+</section>
+
+
+
+<div id="support-the-ceph-foundation" class="admonition note">
+  <p class="first admonition-title">Brought to you by the Ceph Foundation</p>
+  <p class="last">The Ceph Documentation is a community resource funded and hosted by the non-profit <a href="https://ceph.io/en/foundation/">Ceph Foundation</a>. If you would like to support this and our other efforts, please consider <a href="https://ceph.io/en/foundation/join/">joining now</a>.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../config-ref/" class="btn btn-neutral float-left" title="Ceph Object Gateway Config Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../account/" class="btn btn-neutral float-right" title="User Accounts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2016, Ceph authors and contributors. Licensed under Creative Commons Attribution Share Alike 3.0 (CC-BY-SA-3.0).</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+   
+
+</body>
+</html>

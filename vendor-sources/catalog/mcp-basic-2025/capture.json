@@ -1,0 +1,27 @@
+{
+  "source_id": "mcp-basic-2025",
+  "catalog_url": "https://modelcontextprotocol.io/specification/2025-11-25/basic",
+  "catalog_title": "MCP base protocol, revision 2025-11-25",
+  "catalog_product": "MCP",
+  "catalog_versions": [
+    "2025-11-25"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:18.433673+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://modelcontextprotocol.io/specification/2025-11-25/basic",
+  "requested_url": "https://modelcontextprotocol.io/specification/2025-11-25/basic",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "1566a2626732435438d4ab96b11dc2d99d033ee1d293359223a0d2cca45de6ba",
+  "raw_bytes": 241991,
+  "extracted_sha256": "4bc9524800626189673dc97bbc22408d4f23c49e03f54242c618cc45dc7111c4",
+  "extracted_bytes": 9830,
+  "words": 1474,
+  "document_title": "Overview - Model Context Protocol",
+  "extracted_links": 31,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:19.253687+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

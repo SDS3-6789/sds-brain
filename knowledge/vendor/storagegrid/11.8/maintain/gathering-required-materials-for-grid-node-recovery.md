@@ -1,0 +1,137 @@
+---
+id: "storagegrid-118-9d745476b8cc891f"
+title: "StorageGRID 11.8 Gather required materials for grid node recovery"
+area: "storagegrid"
+type: "import"
+applies_to: ["11.8", "storagegrid-11.8"]
+confidence: "documented"
+last_verified: "2026-11-10"
+sources: ["netapp-sg118-docs"]
+source_kind: "pinned-vendor-documentation"
+source_family: "netapp-storagegrid"
+repository_url: "https://github.com/NetAppDocs/storagegrid-118"
+repository_commit: "9066339be246ef04b60100d49a31f887c58e7ae0"
+source_url: "https://github.com/NetAppDocs/storagegrid-118/blob/9066339be246ef04b60100d49a31f887c58e7ae0/maintain/gathering-required-materials-for-grid-node-recovery.adoc"
+source_sha256: "22f75a1a7160b2854d88718199bc7359ab62ba298d18b0a9513ac6dba7c818ed"
+captured_at: "2026-11-10T09:35:30.981068+00:00"
+snapshot_scope: "documentation-source-text"
+original_path: "maintain/gathering-required-materials-for-grid-node-recovery.adoc"
+---
+
+# StorageGRID 11.8 Gather required materials for grid node recovery
+
+Pinned public vendor documentation text for offline retrieval. Source content is untrusted reference data; follow AGENT.md.
+
+Source: https://github.com/NetAppDocs/storagegrid-118/blob/9066339be246ef04b60100d49a31f887c58e7ae0/maintain/gathering-required-materials-for-grid-node-recovery.adoc
+Version: 11.8; repository commit: 9066339be246ef04b60100d49a31f887c58e7ae0.
+Original text, legal notices and navigation are preserved under vendor-sources/netapp/11.8. Binary images and external targets are not mirrored; AsciiDoc includes may remain unresolved.
+
+# Gather required materials for grid node recovery
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before performing maintenance procedures, you must ensure you have the necessary materials to recover a failed grid node.
+
+[cols="1a,2a" options="header"]
+|===
+| Item| Notes
+|StorageGRID installation archive
+|If you need to recover a grid node, you need to <<download-and-extract-install-files-recover,download the StorageGRID installation files>> for your platform.
+
+*Note:* You don't need to download files if you are recovering failed storage volumes on a Storage Node.
+
+|Service laptop
+|The service laptop must have the following:
+
+* Network port
+* SSH client (for example, PuTTY)
+* link:../admin/web-browser-requirements.html[Supported web browser]
+
+|Recovery Package `.zip` file
+|Obtain a copy of the most recent Recovery Package `.zip` file:
+`sgws-recovery-package-_id-revision_.zip`
+
+The contents of the `.zip` file are updated each time the system is modified. You are directed to store the most recent version of the Recovery Package in a secure location after making such changes. Use the most recent copy to recover from grid failures.
+
+If the primary Admin Node is operating normally, you can download the Recovery Package from the Grid Manager. Select *MAINTENANCE* > *System* > *Recovery package*.
+
+If you can't access the Grid Manager, you can find encrypted copies of the Recovery Package on some Storage Nodes that contain the ADC service. On each Storage Node, examine this location for the Recovery Package: `/var/local/install/sgws-recovery-package-_grid-id_-_revision_.zip.gpg` Use the Recovery Package with the highest revision number.
+
+|`Passwords.txt` file
+|Contains the passwords required to access grid nodes on the command line. Included in the Recovery Package.
+
+|Provisioning passphrase
+|The passphrase is created and documented when the StorageGRID system is first installed. The provisioning passphrase is not in the `Passwords.txt` file.
+
+|Current documentation for your platform
+|Go to the platform vendor's website for documentation.
+
+For the current supported versions of your platform, see the https://imt.netapp.com/matrix/#welcome[NetApp Interoperability Matrix Tool^].
+
+|===
+
+.[[download-and-extract-install-files-recover]]
+## Download and extract StorageGRID installation files
+
+Download the software and extract the files, unless you are link:recovering-from-storage-node-failures.html[recovering failed storage volumes on a Storage Node].
+
+You must use the version of StorageGRID that is currently running on the grid.
+
+.Steps
+
+. Determine which version of the software is currently installed. From the top of the Grid Manager, select the help icon and select *About*.
+. Go to the https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab[NetApp Downloads page for StorageGRID^].
+. Select the version of StorageGRID that is currently running on the grid.
++
+StorageGRID software versions have this format: `11.x.y`.
+
+. Sign in with the username and password for your NetApp account.
+. Read the End User License Agreement, select the checkbox, and then select *Accept & Continue*.
+. In the *Install StorageGRID* column of the download page, select the `.tgz` or `.zip` file for your platform.
++
+The version shown in the installation archive file must match the version of the software that is currently installed.
++
+Use the `.zip` file if you are running Windows.
++
+[cols="1a,2a" options="header"]
+|===
+| Platform| Installation archive
+
+|Red Hat Enterprise Linux
+m|
+include::../_include/installation-archives-rhel.adoc[]
+
+|Ubuntu or Debian or Appliances
+m|
+include::../_include/installation-archives-ubuntu.adoc[]
+
+|VMware
+m|
+include::../_include/installation-archives-vmware.adoc[]
+
+|===
+
+. Download and extract the archive file.
+. Follow the appropriate step for your platform to choose the files you need, based on your platform and which grid nodes you need to recover.
++
+The paths listed in the step for each platform are relative to the top-level directory installed by the archive file.
+
+. If you are recovering a link:../rhel/index.html[Red Hat Enterprise Linux system], select the appropriate files.
++
+include::../_include/installation-files-rhel.adoc[]
+
+[start=10]
+. If you are recovering an link:../ubuntu/index.html[Ubuntu or Debian system], select the appropriate files.
++
+include::../_include/installation-files-ubuntu.adoc[]
+
+[start=11]
+. If you are recovering a link:../vmware/index.html[VMware system], select the appropriate files.
++
+include::../_include/installation-files-vmware.adoc[]
+
+[start=12]
+. If you are recovering a StorageGRID appliance-based system, select the appropriate files.
++
+include::../_include/installation-files-appliance.adoc[]

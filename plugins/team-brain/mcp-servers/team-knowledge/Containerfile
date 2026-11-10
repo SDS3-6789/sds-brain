@@ -1,0 +1,12 @@
+# Build from the SDS repository root using an approved, preloaded Python image.
+# No package manager, internet fetch or model download is performed.
+ARG SDS_PYTHON_IMAGE
+FROM ${SDS_PYTHON_IMAGE}
+WORKDIR /opt/sds-brain
+COPY AGENT.md AGENT.md
+COPY lib/ lib/
+COPY mcp/knowledge/ mcp/knowledge/
+COPY plugins/team-brain/mcp-servers/team-knowledge/ /opt/team-knowledge/
+ENV SDS_BRAIN_DIR=/data/brain PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
+USER 65532:65532
+ENTRYPOINT ["python3", "/opt/team-knowledge/server.py"]

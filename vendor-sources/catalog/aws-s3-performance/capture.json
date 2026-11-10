@@ -1,0 +1,27 @@
+{
+  "source_id": "aws-s3-performance",
+  "catalog_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/optimizing-performance-guidelines.html",
+  "catalog_title": "Performance guidelines for Amazon S3",
+  "catalog_product": "Amazon S3",
+  "catalog_versions": [
+    "service-current-reference"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:34.028733+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/optimizing-performance-guidelines.html",
+  "requested_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/optimizing-performance-guidelines.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "e09b950c31342ba840ee8aa5e4cd1ca34924ca0f1a0a91ec7d3afe449bc8ab24",
+  "raw_bytes": 23331,
+  "extracted_sha256": "f1eaff6f60065427da95766c71b3d1a5a255ee526396d7b3ecc27329df7585dc",
+  "extracted_bytes": 7284,
+  "words": 1125,
+  "document_title": "Performance guidelines for Amazon S3",
+  "extracted_links": 25,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:35.838795+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

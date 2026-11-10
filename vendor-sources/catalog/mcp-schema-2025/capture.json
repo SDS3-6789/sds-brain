@@ -1,0 +1,27 @@
+{
+  "source_id": "mcp-schema-2025",
+  "catalog_url": "https://modelcontextprotocol.io/specification/2025-11-25/schema",
+  "catalog_title": "MCP schema reference, revision 2025-11-25",
+  "catalog_product": "MCP",
+  "catalog_versions": [
+    "2025-11-25"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:19.106905+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://modelcontextprotocol.io/specification/2025-11-25/schema",
+  "requested_url": "https://modelcontextprotocol.io/specification/2025-11-25/schema",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "dda713ae9c860f5d9a9fe8fb8a5820560f36c97ae80282caa34c119621e57170",
+  "raw_bytes": 1375431,
+  "extracted_sha256": "21145bef2a96a8d56cbe9fa8221f86c1789d608e416f2040fe8451eee75aa7af",
+  "extracted_bytes": 88232,
+  "words": 11395,
+  "document_title": "Schema Reference - Model Context Protocol",
+  "extracted_links": 1439,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:20.320259+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

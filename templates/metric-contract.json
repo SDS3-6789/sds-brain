@@ -1,0 +1,28 @@
+{
+  "customer": "customer-a",
+  "cluster": "cluster-a",
+  "exporter_name": null,
+  "exporter_version": null,
+  "collection_backend": null,
+  "datasource_uid": null,
+  "dashboard_uid": null,
+  "schema_reviewed_by": null,
+  "schema_reviewed_on": null,
+  "metrics": [
+    {
+      "name": "REPLACE_WITH_VERIFIED_NAME",
+      "meaning": null,
+      "type": null,
+      "unit": null,
+      "labels": [],
+      "customer_label": null,
+      "cluster_label": null,
+      "collection_interval_seconds": null,
+      "expected_cardinality": null,
+      "counter_reset_behavior": null,
+      "missing_value_behavior": null,
+      "approved_query": null,
+      "known_example_reference": null
+    }
+  ]
+}

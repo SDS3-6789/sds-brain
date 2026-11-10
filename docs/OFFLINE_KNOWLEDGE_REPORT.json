@@ -1,0 +1,2525 @@
+{
+  "created_on": "2026-11-10",
+  "catalog_entries": 148,
+  "sources": [
+    {
+      "source_id": "aws-iam-policy-evaluation",
+      "catalog_url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/aws-iam-policy-evaluation.md"
+    },
+    {
+      "source_id": "aws-s3-access-denied",
+      "catalog_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/troubleshoot-403-errors.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-access-denied.md"
+    },
+    {
+      "source_id": "aws-s3-consistency",
+      "catalog_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-consistency.md"
+    },
+    {
+      "source_id": "aws-s3-errors",
+      "catalog_url": "https://docs.aws.amazon.com/AmazonS3/latest/developerguide/ErrorResponses.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-errors.md"
+    },
+    {
+      "source_id": "aws-s3-head-bucket",
+      "catalog_url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-head-bucket.md"
+    },
+    {
+      "source_id": "aws-s3-head-object",
+      "catalog_url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-head-object.md"
+    },
+    {
+      "source_id": "aws-s3-kms",
+      "catalog_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-kms.md"
+    },
+    {
+      "source_id": "aws-s3-lifecycle",
+      "catalog_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-lifecycle.md"
+    },
+    {
+      "source_id": "aws-s3-list-multipart",
+      "catalog_url": "https://docs.aws.amazon.com/cli/latest/reference/s3api/list-multipart-uploads.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-list-multipart.md"
+    },
+    {
+      "source_id": "aws-s3-multipart",
+      "catalog_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-multipart.md"
+    },
+    {
+      "source_id": "aws-s3-object-lock",
+      "catalog_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-object-lock.md"
+    },
+    {
+      "source_id": "aws-s3-performance",
+      "catalog_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/optimizing-performance-guidelines.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-performance.md"
+    },
+    {
+      "source_id": "aws-s3-presigned",
+      "catalog_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-presigned.md"
+    },
+    {
+      "source_id": "aws-s3-sigv4",
+      "catalog_url": "https://docs.aws.amazon.com/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-sigv4.md"
+    },
+    {
+      "source_id": "aws-s3-versioning",
+      "catalog_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-versioning.md"
+    },
+    {
+      "source_id": "ceph-reef-health",
+      "catalog_url": "https://docs.ceph.com/en/reef/rados/operations/health-checks/",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/ceph-reef-health.md"
+    },
+    {
+      "source_id": "ceph-reef-pg-json",
+      "catalog_url": "https://github.com/ceph/ceph/blob/reef/qa/tasks/ceph_manager.py",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/ceph-reef-pg-json.md"
+    },
+    {
+      "source_id": "ceph-squid-cephadm",
+      "catalog_url": "https://docs.ceph.com/en/squid/cephadm/troubleshooting/",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-cephadm.md"
+    },
+    {
+      "source_id": "ceph-squid-configuration",
+      "catalog_url": "https://docs.ceph.com/en/squid/rados/configuration/ceph-conf/",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-configuration.md"
+    },
+    {
+      "source_id": "ceph-squid-health",
+      "catalog_url": "https://docs.ceph.com/en/squid/rados/operations/health-checks/",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-health.md"
+    },
+    {
+      "source_id": "ceph-squid-mclock",
+      "catalog_url": "https://docs.ceph.com/en/squid/rados/configuration/mclock-config-ref/",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-mclock.md"
+    },
+    {
+      "source_id": "ceph-squid-monitoring",
+      "catalog_url": "https://docs.ceph.com/en/squid/rados/operations/monitoring/",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-monitoring.md"
+    },
+    {
+      "source_id": "ceph-squid-multisite",
+      "catalog_url": "https://docs.ceph.com/en/squid/radosgw/multisite/",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-multisite.md"
+    },
+    {
+      "source_id": "ceph-squid-multitenancy",
+      "catalog_url": "https://docs.ceph.com/en/squid/radosgw/multitenancy/",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-multitenancy.md"
+    },
+    {
+      "source_id": "ceph-squid-pg-json",
+      "catalog_url": "https://github.com/ceph/ceph/blob/squid/qa/tasks/ceph_manager.py",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-pg-json.md"
+    },
+    {
+      "source_id": "ceph-squid-prometheus",
+      "catalog_url": "https://docs.ceph.com/en/squid/mgr/prometheus/",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-prometheus.md"
+    },
+    {
+      "source_id": "ceph-squid-rgw-admin",
+      "catalog_url": "https://docs.ceph.com/en/squid/radosgw/admin/",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-rgw-admin.md"
+    },
+    {
+      "source_id": "ceph-squid-rgw-metrics",
+      "catalog_url": "https://docs.ceph.com/en/squid/radosgw/metrics/",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-rgw-metrics.md"
+    },
+    {
+      "source_id": "ceph-squid-rgw-service",
+      "catalog_url": "https://docs.ceph.com/en/squid/cephadm/services/rgw/",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-rgw-service.md"
+    },
+    {
+      "source_id": "ceph-squid-s3",
+      "catalog_url": "https://docs.ceph.com/en/squid/radosgw/s3/",
+      "status": "index_available",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-s3.md"
+    },
+    {
+      "source_id": "ceph-squid-s3-auth",
+      "catalog_url": "https://docs.ceph.com/en/squid/radosgw/s3/authentication/",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-s3-auth.md"
+    },
+    {
+      "source_id": "claude-code-cli-reference",
+      "catalog_url": "https://code.claude.com/docs/en/cli-reference",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/claude-code-cli-reference.md"
+    },
+    {
+      "source_id": "claude-mcp",
+      "catalog_url": "https://code.claude.com/docs/en/mcp",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/claude-mcp.md"
+    },
+    {
+      "source_id": "claude-memory",
+      "catalog_url": "https://code.claude.com/docs/en/memory",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/claude-memory.md"
+    },
+    {
+      "source_id": "confluence-cloud-pages",
+      "catalog_url": "https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-page/",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/confluence-cloud-pages.md"
+    },
+    {
+      "source_id": "confluence-dc-content",
+      "catalog_url": "https://support.atlassian.com/confluence/kb/how-to-get-page-content-or-child-list-via-rest-api/",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/confluence-dc-content.md"
+    },
+    {
+      "source_id": "confluence-storage-format",
+      "catalog_url": "https://confluence.atlassian.com/doc/confluence-storage-format-790796544.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/confluence-storage-format.md"
+    },
+    {
+      "source_id": "elastic-health-api",
+      "catalog_url": "https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-cluster-health",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/elastic-health-api.md"
+    },
+    {
+      "source_id": "elastic-search-api",
+      "catalog_url": "https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-search",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/elastic-search-api.md"
+    },
+    {
+      "source_id": "grafana-dashboard-export",
+      "catalog_url": "https://grafana.com/docs/grafana/latest/visualizations/dashboards/share-dashboards-panels/",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/grafana-dashboard-export.md"
+    },
+    {
+      "source_id": "grafana-elasticsearch",
+      "catalog_url": "https://grafana.com/docs/grafana/latest/datasources/elasticsearch/",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/grafana-elasticsearch.md"
+    },
+    {
+      "source_id": "grafana-es-query",
+      "catalog_url": "https://grafana.com/docs/grafana/latest/datasources/elasticsearch/query-editor/",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/grafana-es-query.md"
+    },
+    {
+      "source_id": "grafana-mcp",
+      "catalog_url": "https://github.com/grafana/mcp-grafana/blob/v2.2.0/README.md",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/grafana-mcp.md"
+    },
+    {
+      "source_id": "grafana-prometheus",
+      "catalog_url": "https://grafana.com/docs/grafana/latest/datasources/prometheus/",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/grafana-prometheus.md"
+    },
+    {
+      "source_id": "grafana-service-accounts",
+      "catalog_url": "https://grafana.com/docs/grafana/latest/administration/service-accounts/",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/grafana-service-accounts.md"
+    },
+    {
+      "source_id": "hpe-apollo-utilities",
+      "catalog_url": "https://support.hpe.com/hpesc/public/docDisplay?docId=a00066162en_us&docLocale=en_US",
+      "status": "needs_export",
+      "reason": "Response has too little readable content; browser/authorized export required",
+      "attempts": [
+        {
+          "url": "https://support.hpe.com/hpesc/public/docDisplay?docId=a00066162en_us&docLocale=en_US",
+          "error": "Response has too little readable content; browser/authorized export required"
+        }
+      ]
+    },
+    {
+      "source_id": "hpe-dl385",
+      "catalog_url": "https://support.hpe.com/hpesc/public/docDisplay?docId=sd00002188en_us&docLocale=en_US",
+      "status": "needs_export",
+      "reason": "Response has too little readable content; browser/authorized export required",
+      "attempts": [
+        {
+          "url": "https://support.hpe.com/hpesc/public/docDisplay?docId=sd00002188en_us&docLocale=en_US",
+          "error": "Response has too little readable content; browser/authorized export required"
+        }
+      ]
+    },
+    {
+      "source_id": "hpe-ilorest",
+      "catalog_url": "https://servermanagementportal.ext.hpe.com/docs/redfishclients/ilorest-userguide",
+      "status": "index_available",
+      "indexed_file": "knowledge/vendor/catalog/hpe-ilorest.md"
+    },
+    {
+      "source_id": "hpe-ilorest-usage",
+      "catalog_url": "https://servermanagementportal.ext.hpe.com/docs/redfishclients/ilorest-userguide/usage",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/hpe-ilorest-usage.md"
+    },
+    {
+      "source_id": "hpe-redfish-concepts",
+      "catalog_url": "https://servermanagementportal.ext.hpe.com/docs/concepts",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/hpe-redfish-concepts.md"
+    },
+    {
+      "source_id": "hpe-redfish-services",
+      "catalog_url": "https://servermanagementportal.ext.hpe.com/docs/redfishservices",
+      "status": "index_available",
+      "indexed_file": "knowledge/vendor/catalog/hpe-redfish-services.md"
+    },
+    {
+      "source_id": "hpe-xl170r",
+      "catalog_url": "https://support.hpe.com/hpesc/public/docDisplay?docId=a00027628en_us",
+      "status": "needs_export",
+      "reason": "Response has too little readable content; browser/authorized export required",
+      "attempts": [
+        {
+          "url": "https://support.hpe.com/hpesc/public/docDisplay?docId=a00027628en_us",
+          "error": "Response has too little readable content; browser/authorized export required"
+        }
+      ]
+    },
+    {
+      "source_id": "hpe-xl190r",
+      "catalog_url": "https://support.hpe.com/connect/s/product?kmpmoid=1010192754&language=en_CA&tab=manuals",
+      "status": "needs_export",
+      "reason": "Response has too little readable content; browser/authorized export required",
+      "attempts": [
+        {
+          "url": "https://support.hpe.com/connect/s/product?kmpmoid=1010192754&language=en_CA&tab=manuals",
+          "error": "Response has too little readable content; browser/authorized export required"
+        }
+      ]
+    },
+    {
+      "source_id": "hpe-xl420-apollo",
+      "catalog_url": "https://www.hpe.com/int/en/collaterals/collateral.a50002573enw.html",
+      "status": "download_error",
+      "reason": "The read operation timed out",
+      "attempts": [
+        {
+          "url": "https://www.hpe.com/int/en/collaterals/collateral.a50002573enw.html",
+          "error": "The read operation timed out"
+        }
+      ]
+    },
+    {
+      "source_id": "ibm-ceph-architecture",
+      "catalog_url": "https://www.redbooks.ibm.com/redpapers/pdfs/redp5721.pdf",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/ibm-ceph-architecture.md"
+    },
+    {
+      "source_id": "ibm-ceph-deployment",
+      "catalog_url": "https://www.ibm.com/docs/en/storage-ceph/8.1.0?topic=gateway-deployment-guidelines",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://www.ibm.com/docs/en/storage-ceph/8.1.0?topic=gateway-deployment-guidelines",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "ibm-ceph-low-level",
+      "catalog_url": "https://www.ibm.com/docs/en/storage-ceph/8.0.0?topic=cluster-low-level-monitoring",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://www.ibm.com/docs/en/storage-ceph/8.0.0?topic=cluster-low-level-monitoring",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "ibm-ceph-master-reference",
+      "catalog_url": "https://www.ibm.com/support/pages/node/7239015",
+      "status": "index_available",
+      "indexed_file": "knowledge/vendor/catalog/ibm-ceph-master-reference.md"
+    },
+    {
+      "source_id": "ibm-ceph-multisite",
+      "catalog_url": "https://www.ibm.com/docs/en/storage-ceph/8.1.0?topic=gateway-multi-site-considerations",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://www.ibm.com/docs/en/storage-ceph/8.1.0?topic=gateway-multi-site-considerations",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "ibm-ceph-recovery",
+      "catalog_url": "https://www.ibm.com/support/pages/node/7176025",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/ibm-ceph-recovery.md"
+    },
+    {
+      "source_id": "ibm-ceph-supported",
+      "catalog_url": "https://www.ibm.com/support/pages/node/7236061",
+      "status": "access_restricted",
+      "reason": "Public abstract only; document body requires authorized access",
+      "attempts": []
+    },
+    {
+      "source_id": "ibm-ceph-throttling",
+      "catalog_url": "https://www.ibm.com/support/pages/node/6963280",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/ibm-ceph-throttling.md"
+    },
+    {
+      "source_id": "ibm-ceph-version-matrix",
+      "catalog_url": "https://www.ibm.com/support/pages/what-are-red-hat-and-ibm-storage-ceph-releases-and-corresponding-ceph-package-versions",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/ibm-ceph-version-matrix.md"
+    },
+    {
+      "source_id": "linux-upstream-admin",
+      "catalog_url": "https://docs.kernel.org/admin-guide/index.html",
+      "status": "index_available",
+      "indexed_file": "knowledge/vendor/catalog/linux-upstream-admin.md"
+    },
+    {
+      "source_id": "mcp-basic-2025",
+      "catalog_url": "https://modelcontextprotocol.io/specification/2025-11-25/basic",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/mcp-basic-2025.md"
+    },
+    {
+      "source_id": "mcp-lifecycle-2025",
+      "catalog_url": "https://modelcontextprotocol.io/specification/2025-11-25/basic/lifecycle",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/mcp-lifecycle-2025.md"
+    },
+    {
+      "source_id": "mcp-schema-2025",
+      "catalog_url": "https://modelcontextprotocol.io/specification/2025-11-25/schema",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/mcp-schema-2025.md"
+    },
+    {
+      "source_id": "mcp-stdio-2025",
+      "catalog_url": "https://modelcontextprotocol.io/specification/2025-11-25/basic/transports",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/mcp-stdio-2025.md"
+    },
+    {
+      "source_id": "mcp-tools-2025",
+      "catalog_url": "https://modelcontextprotocol.io/specification/2025-11-25/server/tools",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/mcp-tools-2025.md"
+    },
+    {
+      "source_id": "netapp-imt",
+      "catalog_url": "https://imt.netapp.com/matrix/",
+      "status": "authorized_export_required",
+      "reason": "Catalog marks this source subscription-only; no authentication attempted",
+      "attempts": []
+    },
+    {
+      "source_id": "netapp-sg118-consistency",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-118/s3/consistency-controls.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg118-consistency.md"
+    },
+    {
+      "source_id": "netapp-sg118-docs",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-118/",
+      "status": "index_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg118-docs.md"
+    },
+    {
+      "source_id": "netapp-sg118-ilm",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-118/ilm/index.html",
+      "status": "index_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg118-ilm.md"
+    },
+    {
+      "source_id": "netapp-sg118-s3",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-118/s3/index.html",
+      "status": "index_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg118-s3.md"
+    },
+    {
+      "source_id": "netapp-sg119-bucket-operations",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/s3/operations-on-buckets.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-bucket-operations.md"
+    },
+    {
+      "source_id": "netapp-sg119-capacity",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/monitoring-storage-capacity.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-capacity.md"
+    },
+    {
+      "source_id": "netapp-sg119-client-connections",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/admin/configuring-client-connections.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-client-connections.md"
+    },
+    {
+      "source_id": "netapp-sg119-client-ports",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/admin/summary-ip-addresses-and-ports-for-client-connections.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-client-ports.md"
+    },
+    {
+      "source_id": "netapp-sg119-consistency",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/s3/consistency-controls.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-consistency.md"
+    },
+    {
+      "source_id": "netapp-sg119-docs",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/",
+      "status": "index_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-docs.md"
+    },
+    {
+      "source_id": "netapp-sg119-errors",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/s3/error-responses.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-errors.md"
+    },
+    {
+      "source_id": "netapp-sg119-grid-api",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/admin/using-grid-management-api.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-grid-api.md"
+    },
+    {
+      "source_id": "netapp-sg119-ilm",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/ilm/index.html",
+      "status": "index_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-ilm.md"
+    },
+    {
+      "source_id": "netapp-sg119-ilm-lifecycle",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/ilm/how-ilm-operates-throughout-objects-life.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-ilm-lifecycle.md"
+    },
+    {
+      "source_id": "netapp-sg119-ilm-monitor",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/monitoring-information-lifecycle-management.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-ilm-monitor.md"
+    },
+    {
+      "source_id": "netapp-sg119-ilm-policies",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/ilm/ilm-policy-overview.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-ilm-policies.md"
+    },
+    {
+      "source_id": "netapp-sg119-lb-endpoints",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/admin/configuring-load-balancer-endpoints.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-lb-endpoints.md"
+    },
+    {
+      "source_id": "netapp-sg119-lb-monitor",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/monitoring-load-balancing-operations.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-lb-monitor.md"
+    },
+    {
+      "source_id": "netapp-sg119-logs",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/logs-files-reference.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-logs.md"
+    },
+    {
+      "source_id": "netapp-sg119-metadata",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/troubleshoot/troubleshooting-metadata-issues.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-metadata.md"
+    },
+    {
+      "source_id": "netapp-sg119-monitor",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/index.html",
+      "status": "index_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-monitor.md"
+    },
+    {
+      "source_id": "netapp-sg119-network",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/network/index.html",
+      "status": "index_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-network.md"
+    },
+    {
+      "source_id": "netapp-sg119-notifications",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/understanding-notifications-for-buckets.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-notifications.md"
+    },
+    {
+      "source_id": "netapp-sg119-object-lock",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/ilm/managing-objects-with-s3-object-lock.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-object-lock.md"
+    },
+    {
+      "source_id": "netapp-sg119-object-operations",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/s3/operations-on-objects.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-object-operations.md"
+    },
+    {
+      "source_id": "netapp-sg119-release-notes",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/release-notes/index.html",
+      "status": "index_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-release-notes.md"
+    },
+    {
+      "source_id": "netapp-sg119-s3",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/s3/index.html",
+      "status": "index_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-s3.md"
+    },
+    {
+      "source_id": "netapp-sg119-s3-quick-reference",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/s3/quick-reference-support-for-aws-apis.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-s3-quick-reference.md"
+    },
+    {
+      "source_id": "netapp-sg119-search-integration",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/understanding-search-integration-service.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-search-integration.md"
+    },
+    {
+      "source_id": "netapp-sg119-tenant",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/index.html",
+      "status": "index_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-tenant.md"
+    },
+    {
+      "source_id": "netapp-sg119-tenant-api",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/understanding-tenant-management-api.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-tenant-api.md"
+    },
+    {
+      "source_id": "netapp-sg119-tenant-dashboard",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/understanding-tenant-manager-dashboard.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-tenant-dashboard.md"
+    },
+    {
+      "source_id": "netapp-sg119-troubleshoot",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/troubleshoot/index.html",
+      "status": "index_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-troubleshoot.md"
+    },
+    {
+      "source_id": "netapp-sg119-upgrade",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/upgrade/index.html",
+      "status": "index_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-upgrade.md"
+    },
+    {
+      "source_id": "netapp-sg120-docs",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-120/",
+      "status": "index_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg120-docs.md"
+    },
+    {
+      "source_id": "netapp-sg120-s3",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-120/s3/index.html",
+      "status": "index_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg120-s3.md"
+    },
+    {
+      "source_id": "netapp-sg120-upgrade",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-120/upgrade/index.html",
+      "status": "index_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg120-upgrade.md"
+    },
+    {
+      "source_id": "netapp-sg120-whats-new",
+      "catalog_url": "https://docs.netapp.com/us-en/storagegrid-120/release-notes/whats-new.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg120-whats-new.md"
+    },
+    {
+      "source_id": "podman-container-inspect",
+      "catalog_url": "https://docs.podman.io/en/latest/markdown/podman-container-inspect.1.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/podman-container-inspect.md"
+    },
+    {
+      "source_id": "podman-quadlet",
+      "catalog_url": "https://docs.podman.io/en/v4.6.1/markdown/podman-systemd.unit.5.html",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/podman-quadlet.md"
+    },
+    {
+      "source_id": "prometheus-api",
+      "catalog_url": "https://prometheus.io/docs/prometheus/latest/querying/api/",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/prometheus-api.md"
+    },
+    {
+      "source_id": "prometheus-exporters",
+      "catalog_url": "https://prometheus.io/docs/instrumenting/writing_exporters/",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/prometheus-exporters.md"
+    },
+    {
+      "source_id": "prometheus-exposition",
+      "catalog_url": "https://prometheus.io/docs/instrumenting/exposition_formats/",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/prometheus-exposition.md"
+    },
+    {
+      "source_id": "prometheus-functions",
+      "catalog_url": "https://prometheus.io/docs/prometheus/latest/querying/functions/",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/prometheus-functions.md"
+    },
+    {
+      "source_id": "prometheus-histograms",
+      "catalog_url": "https://prometheus.io/docs/practices/histograms/",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/prometheus-histograms.md"
+    },
+    {
+      "source_id": "prometheus-naming",
+      "catalog_url": "https://prometheus.io/docs/practices/naming/",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/prometheus-naming.md"
+    },
+    {
+      "source_id": "redhat-okp-mcp",
+      "catalog_url": "https://github.com/rhel-lightspeed/okp-mcp/blob/a4469e1365789d1619a9d2276fa0ed2e80ee18b3/README.md",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/redhat-okp-mcp.md"
+    },
+    {
+      "source_id": "redhat-okp-mcp-config",
+      "catalog_url": "https://github.com/rhel-lightspeed/okp-mcp/blob/a4469e1365789d1619a9d2276fa0ed2e80ee18b3/src/okp_mcp/config.py",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/redhat-okp-mcp-config.md"
+    },
+    {
+      "source_id": "redhat-okp-mcp-formatting",
+      "catalog_url": "https://github.com/rhel-lightspeed/okp-mcp/blob/a4469e1365789d1619a9d2276fa0ed2e80ee18b3/src/okp_mcp/formatting.py",
+      "status": "body_available",
+      "indexed_file": "knowledge/vendor/catalog/redhat-okp-mcp-formatting.md"
+    },
+    {
+      "source_id": "rhcs-7-compat",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/7/html/compatibility_guide/index",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/7/html-single/compatibility_guide/index",
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/7/html/compatibility_guide/index",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhcs-7-release",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/7/html-single/7.1_release_notes/index",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/7/html-single/7.1_release_notes/index",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhcs-7-rgw",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/7/html/object_gateway_guide/index",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/7/html-single/object_gateway_guide/index",
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/7/html/object_gateway_guide/index",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhcs-7-troubleshooting",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/7/html/troubleshooting_guide/index",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/7/html-single/troubleshooting_guide/index",
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/7/html/troubleshooting_guide/index",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhcs-8-administration",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/administration_guide/index",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html-single/administration_guide/index",
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/administration_guide/index",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhcs-8-compat",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/compatibility_guide/compatibility-matrix-for-red-hat-ceph-storage-8.1",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/compatibility_guide/compatibility-matrix-for-red-hat-ceph-storage-8.1",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhcs-8-configuration",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/configuration_guide/index",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html-single/configuration_guide/index",
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/configuration_guide/index",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhcs-8-hardening",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/data_security_and_hardening_guide/index",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html-single/data_security_and_hardening_guide/index",
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/data_security_and_hardening_guide/index",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhcs-8-hardware",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/hardware_guide/index",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html-single/hardware_guide/index",
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/hardware_guide/index",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhcs-8-installation",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/installation_guide/index",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html-single/installation_guide/index",
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/installation_guide/index",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhcs-8-multisite",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/object_gateway_guide/multisite-configuration-and-administration",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/object_gateway_guide/multisite-configuration-and-administration",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhcs-8-operations",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/operations_guide/index",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html-single/operations_guide/index",
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/operations_guide/index",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhcs-8-osd-troubleshooting",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/troubleshooting_guide/troubleshooting-ceph-osds",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/troubleshooting_guide/troubleshooting-ceph-osds",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhcs-8-pg-troubleshooting",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/troubleshooting_guide/troubleshooting-ceph-placement-groups",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/troubleshooting_guide/troubleshooting-ceph-placement-groups",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhcs-8-release",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html-single/8.1_release_notes/8.1_release_notes",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html-single/8.1_release_notes/8.1_release_notes",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhcs-8-rgw",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/object_gateway_guide/index",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html-single/object_gateway_guide/index",
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/object_gateway_guide/index",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhcs-8-troubleshooting",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/troubleshooting_guide/index",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html-single/troubleshooting_guide/index",
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/troubleshooting_guide/index",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhcs-8-upgrade",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/upgrade_guide/index",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html-single/upgrade_guide/index",
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/upgrade_guide/index",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhel-9-containers",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/building_running_and_managing_containers/index",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html-single/building_running_and_managing_containers/index",
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/building_running_and_managing_containers/index",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhel-9-kernel",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/managing_monitoring_and_updating_the_kernel/index",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html-single/managing_monitoring_and_updating_the_kernel/index",
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/managing_monitoring_and_updating_the_kernel/index",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhel-9-networking",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/configuring_and_managing_networking/index",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html-single/configuring_and_managing_networking/index",
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/configuring_and_managing_networking/index",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhel-9-performance",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/monitoring_and_managing_system_status_and_performance/index",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html-single/monitoring_and_managing_system_status_and_performance/index",
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/monitoring_and_managing_system_status_and_performance/index",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhel-9-performance-overview",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/monitoring_and_managing_system_status_and_performance/overview-of-performance-monitoring-options",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/monitoring_and_managing_system_status_and_performance/overview-of-performance-monitoring-options",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhel-9-selinux",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/using_selinux/index",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html-single/using_selinux/index",
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/using_selinux/index",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhel-9-selinux-troubleshooting",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/using_selinux/troubleshooting-problems-related-to-selinux_using-selinux",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/using_selinux/troubleshooting-problems-related-to-selinux_using-selinux",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhel-9-storage",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/managing_storage_devices/index",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html-single/managing_storage_devices/index",
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/managing_storage_devices/index",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhel-9-tls",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/securing_networks/index",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html-single/securing_networks/index",
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/securing_networks/index",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhel-96-release",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html-single/9.6_release_notes/index",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html-single/9.6_release_notes/index",
+          "error": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "rhel-98-release",
+      "catalog_url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html-single/9.8_release_notes/index",
+      "status": "access_restricted",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html-single/9.8_release_notes/index",
+          "error": "HTTP 403"
+        }
+      ]
+    }
+  ],
+  "documents": [
+    {
+      "source_id": "aws-iam-policy-evaluation",
+      "indexed_file": "knowledge/vendor/catalog/aws-iam-policy-evaluation.md",
+      "indexed_sha256": "e7cc0733eb69895804c966acbb71e1f0432045ff3c1bd866ce2ae9420d39e2ca",
+      "indexed_bytes": 4663,
+      "raw_file": "vendor-sources/catalog/aws-iam-policy-evaluation/original.html",
+      "raw_sha256": "e14e7f9015beadc33105468ceb68e4ce16f35b138ba4c35824d1f85f0e3aa969",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:37.122551+00:00",
+      "source_url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html"
+    },
+    {
+      "source_id": "aws-s3-access-denied",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-access-denied.md",
+      "indexed_sha256": "9abe00832080af301db4eb64988342c63324fe5a35acafa7490e35427af52918",
+      "indexed_bytes": 50552,
+      "raw_file": "vendor-sources/catalog/aws-s3-access-denied/original.html",
+      "raw_sha256": "ee60a4e0eff04aa1ec29db1b9b94a84e1e3793e0e87fb37c8143437aba4c37c3",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:33.471850+00:00",
+      "source_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/troubleshoot-403-errors.html"
+    },
+    {
+      "source_id": "aws-s3-consistency",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-consistency.md",
+      "indexed_sha256": "c86b5a8495eefa629954d390f56b376f1d0bd9047e7c74b00f55325a91b2fa5a",
+      "indexed_bytes": 35947,
+      "raw_file": "vendor-sources/catalog/aws-s3-consistency/original.html",
+      "raw_sha256": "44cb9f3ece31a6f871ef55a1ed5566421822a13f76cc868182d2afb86cfb578d",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:36.598782+00:00",
+      "source_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+    },
+    {
+      "source_id": "aws-s3-errors",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-errors.md",
+      "indexed_sha256": "ae00721fced894ccfec11c4274197f8d62e37db62e33e3c3af6d5bf3bed4fc26",
+      "indexed_bytes": 66620,
+      "raw_file": "vendor-sources/catalog/aws-s3-errors/original.html",
+      "raw_sha256": "6753ef344af483d918d912a99f6802aebc820c5a9aa6a45e44dc22b6082bb49d",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:32.856882+00:00",
+      "source_url": "https://docs.aws.amazon.com/AmazonS3/latest/developerguide/ErrorResponses.html"
+    },
+    {
+      "source_id": "aws-s3-head-bucket",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-head-bucket.md",
+      "indexed_sha256": "3a7ce55e11de7fc12cabbcdb68416890b772337d14ecb9186ccdfaabc0ee1aa3",
+      "indexed_bytes": 11159,
+      "raw_file": "vendor-sources/catalog/aws-s3-head-bucket/original.html",
+      "raw_sha256": "f7e401d1dafdd5f9d020e0b6018896fc1fa89b8528e18199902f4c252a80ed0c",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:34.027568+00:00",
+      "source_url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html"
+    },
+    {
+      "source_id": "aws-s3-head-object",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-head-object.md",
+      "indexed_sha256": "7868404da26b1ca81b542350f5e6b78a072e69122173483197949aa20421372c",
+      "indexed_bytes": 38680,
+      "raw_file": "vendor-sources/catalog/aws-s3-head-object/original.html",
+      "raw_sha256": "e61c2f87bb93d7164d550c6285a2489ecf5aade45e502c37e1d65fa83b357369",
+      "capture_scope": "catalog-target-page",
+      "transformations": {
+        "credential_example_strings_redacted": 3
+      },
+      "captured_at": "2026-11-10T09:27:33.451843+00:00",
+      "source_url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html"
+    },
+    {
+      "source_id": "aws-s3-kms",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-kms.md",
+      "indexed_sha256": "d0a33cf257d0efb3797a2784d8bc206856ee6fbaae64fc3792e6219c97667e71",
+      "indexed_bytes": 17202,
+      "raw_file": "vendor-sources/catalog/aws-s3-kms/original.html",
+      "raw_sha256": "289d0c0d98acfb20cc820adb44bae9c76da2eed3228a3d355fad11f79c8ba217",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:35.596476+00:00",
+      "source_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html"
+    },
+    {
+      "source_id": "aws-s3-lifecycle",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-lifecycle.md",
+      "indexed_sha256": "4a5bfd18e18fa5a35f34ed6b2ce9367646b11ae448c471a74d4e73d8a651c15b",
+      "indexed_bytes": 7187,
+      "raw_file": "vendor-sources/catalog/aws-s3-lifecycle/original.html",
+      "raw_sha256": "089dd9ec02130d01cf21e005f26a3929397f91bcd74c97681fcd28d1a784bd0f",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:34.842301+00:00",
+      "source_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html"
+    },
+    {
+      "source_id": "aws-s3-list-multipart",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-list-multipart.md",
+      "indexed_sha256": "a0926f615336810ef17d33f840f38c7e3740f2fd8726e027ca92e678b2a67bec",
+      "indexed_bytes": 24589,
+      "raw_file": "vendor-sources/catalog/aws-s3-list-multipart/original.html",
+      "raw_sha256": "9acf2bb2adb382ab3ed237332ce8cd6c32918a6d30157d1362d3c56fb6e9abe9",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:36.949732+00:00",
+      "source_url": "https://docs.aws.amazon.com/cli/latest/reference/s3api/list-multipart-uploads.html"
+    },
+    {
+      "source_id": "aws-s3-multipart",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-multipart.md",
+      "indexed_sha256": "ef142556bcbaa9e0da82e5f0af7420eece2adbf872c2e376821bec4b34db0785",
+      "indexed_bytes": 24421,
+      "raw_file": "vendor-sources/catalog/aws-s3-multipart/original.html",
+      "raw_sha256": "9a93ae3eeeaa4d681c6872b1b74a185d00b5851928f2b89746036487a6ae7292",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:34.152969+00:00",
+      "source_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html"
+    },
+    {
+      "source_id": "aws-s3-object-lock",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-object-lock.md",
+      "indexed_sha256": "04479caf5cd6dfbbfe7b9401311a2b7eeb144e3941c2011f20fd734d31c2a0ed",
+      "indexed_bytes": 16234,
+      "raw_file": "vendor-sources/catalog/aws-s3-object-lock/original.html",
+      "raw_sha256": "1973b7edbd23283658f7b910fff34715a93faf98d39bdc66cdca50e3000d8731",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:35.217991+00:00",
+      "source_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html"
+    },
+    {
+      "source_id": "aws-s3-performance",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-performance.md",
+      "indexed_sha256": "5a55c394e3b982a0b879f4960fc4810a1031605b32dbf45688a55832fc9673dc",
+      "indexed_bytes": 8350,
+      "raw_file": "vendor-sources/catalog/aws-s3-performance/original.html",
+      "raw_sha256": "e09b950c31342ba840ee8aa5e4cd1ca34924ca0f1a0a91ec7d3afe449bc8ab24",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:35.838795+00:00",
+      "source_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/optimizing-performance-guidelines.html"
+    },
+    {
+      "source_id": "aws-s3-presigned",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-presigned.md",
+      "indexed_sha256": "57ce9313098ad027f6924ebf7af099d9f2ea56f35949e2fe355fd0adb79d0a69",
+      "indexed_bytes": 11776,
+      "raw_file": "vendor-sources/catalog/aws-s3-presigned/original.html",
+      "raw_sha256": "5800e808dcad91debf5c4193823665907a0d713d0e5d331a6270bbc2d2cd6249",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:36.168339+00:00",
+      "source_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html"
+    },
+    {
+      "source_id": "aws-s3-sigv4",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-sigv4.md",
+      "indexed_sha256": "33eab6d5a40b3824f14e82ef34d7923b273168cd5080cc90f001443610e028d3",
+      "indexed_bytes": 8267,
+      "raw_file": "vendor-sources/catalog/aws-s3-sigv4/original.html",
+      "raw_sha256": "fddf477fa0097aeec5d21841b3a1cd3c0dbca11126059214a4c11c752ea681be",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:32.606850+00:00",
+      "source_url": "https://docs.aws.amazon.com/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html"
+    },
+    {
+      "source_id": "aws-s3-versioning",
+      "indexed_file": "knowledge/vendor/catalog/aws-s3-versioning.md",
+      "indexed_sha256": "26123fc83d5f2eb693ff419e3f1c87c54605f9336c2a51b80796b0b950df6d7a",
+      "indexed_bytes": 5620,
+      "raw_file": "vendor-sources/catalog/aws-s3-versioning/original.html",
+      "raw_sha256": "f93127f6232c52defa47253f1222034c35de361b3fcabc91ff5b89ff752f6292",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:34.638316+00:00",
+      "source_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html"
+    },
+    {
+      "source_id": "ceph-reef-health",
+      "indexed_file": "knowledge/vendor/catalog/ceph-reef-health.md",
+      "indexed_sha256": "d6ab54e37fe31325a0fc445cb07da63eb7ed6941d62027a24f9ae7064a32eb86",
+      "indexed_bytes": 64996,
+      "raw_file": "vendor-sources/catalog/ceph-reef-health/original.html",
+      "raw_sha256": "7e4c792ca805b2aa30261a1bef8daa97e338ce4974017e19340da4e00029c9ef",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:04.159131+00:00",
+      "source_url": "https://docs.ceph.com/en/reef/rados/operations/health-checks/"
+    },
+    {
+      "source_id": "ceph-squid-cephadm",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-cephadm.md",
+      "indexed_sha256": "d3b80cdc6563c853d7ec8bdd7369f7e62a81f154aebae57465c3023bb8becb96",
+      "indexed_bytes": 16306,
+      "raw_file": "vendor-sources/catalog/ceph-squid-cephadm/original.html",
+      "raw_sha256": "c98d0a383fa7c2f930d27e0573aadec3b4b9be1c95054a7c609a7b3a42e89ad3",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:05.616984+00:00",
+      "source_url": "https://docs.ceph.com/en/squid/cephadm/troubleshooting/"
+    },
+    {
+      "source_id": "ceph-squid-configuration",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-configuration.md",
+      "indexed_sha256": "a3753d111864915d769befa7d8263feb05dfd9e20b9686d0b80c6b13f308400f",
+      "indexed_bytes": 29529,
+      "raw_file": "vendor-sources/catalog/ceph-squid-configuration/original.html",
+      "raw_sha256": "0e0aeb996d3574b648bdceb3b5ccd6b3e8884deace2b7f98de5cfaba19d2868c",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:10.169139+00:00",
+      "source_url": "https://docs.ceph.com/en/squid/rados/configuration/ceph-conf/"
+    },
+    {
+      "source_id": "ceph-squid-health",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-health.md",
+      "indexed_sha256": "0eb85a9ee5a7091ee059aebd98f35daf45adb6f977eeb21fb1d45ac02359d54b",
+      "indexed_bytes": 78534,
+      "raw_file": "vendor-sources/catalog/ceph-squid-health/original.html",
+      "raw_sha256": "14ef27b69848899d13c78ce7e2a5a00a57a4e44a6f9f85d5d879889a4c4a7730",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:04.723127+00:00",
+      "source_url": "https://docs.ceph.com/en/squid/rados/operations/health-checks/"
+    },
+    {
+      "source_id": "ceph-squid-mclock",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-mclock.md",
+      "indexed_sha256": "72406beaae30bca46dc39b0ab084751326d7cbe56d9e7feb1e8faa5de98be565",
+      "indexed_bytes": 35600,
+      "raw_file": "vendor-sources/catalog/ceph-squid-mclock/original.html",
+      "raw_sha256": "54ce4c46a8e6cac3077a472832b693d8703f159c7f33bcc3f853fb2326c25276",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:08.561139+00:00",
+      "source_url": "https://docs.ceph.com/en/squid/rados/configuration/mclock-config-ref/"
+    },
+    {
+      "source_id": "ceph-squid-monitoring",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-monitoring.md",
+      "indexed_sha256": "0d4dfec9545f1f1aca86a739cf192dcf3c16cd4718642794c4cc0ea84a4b1afc",
+      "indexed_bytes": 24672,
+      "raw_file": "vendor-sources/catalog/ceph-squid-monitoring/original.html",
+      "raw_sha256": "f9c156b5d34a4b2ccac22b939ea774d91589e000781e2c70cf93a63add754607",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:05.209093+00:00",
+      "source_url": "https://docs.ceph.com/en/squid/rados/operations/monitoring/"
+    },
+    {
+      "source_id": "ceph-squid-multisite",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-multisite.md",
+      "indexed_sha256": "28039b0c72ae3c81cb364c0a077956c4de25ed57e316aa44992c3e1c5ec1535e",
+      "indexed_bytes": 49720,
+      "raw_file": "vendor-sources/catalog/ceph-squid-multisite/original.html",
+      "raw_sha256": "e7a235ee038f1cd086fe129b8fa26c5469f2425ab6a088e8955526b980d08474",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:07.185877+00:00",
+      "source_url": "https://docs.ceph.com/en/squid/radosgw/multisite/"
+    },
+    {
+      "source_id": "ceph-squid-multitenancy",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-multitenancy.md",
+      "indexed_sha256": "b6adf51b1df1e04ae758691c0a26193c6614a69f52bd53d14cc678a07fc8bdcd",
+      "indexed_bytes": 8072,
+      "raw_file": "vendor-sources/catalog/ceph-squid-multitenancy/original.html",
+      "raw_sha256": "7797c10e7c7b03e6a063affef5c294b08a5d8beabb6219e65ccaa7c9e6e5dfbe",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:10.580828+00:00",
+      "source_url": "https://docs.ceph.com/en/squid/radosgw/multitenancy/"
+    },
+    {
+      "source_id": "ceph-squid-prometheus",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-prometheus.md",
+      "indexed_sha256": "c90c9cd3a6d4814d1ae13cc78e120b449b115c9ab7a069663e52e75d1702cc7d",
+      "indexed_bytes": 16062,
+      "raw_file": "vendor-sources/catalog/ceph-squid-prometheus/original.html",
+      "raw_sha256": "37b1012508576efdd6a4564061fa030c3bb717b73a73200890b8096e6dd7bb2e",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:07.152153+00:00",
+      "source_url": "https://docs.ceph.com/en/squid/mgr/prometheus/"
+    },
+    {
+      "source_id": "ceph-squid-rgw-admin",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-rgw-admin.md",
+      "indexed_sha256": "9956abeafa3f21f5ae1bd957b8403dee1c592e461c0e82c07cd34a277ed14a17",
+      "indexed_bytes": 29515,
+      "raw_file": "vendor-sources/catalog/ceph-squid-rgw-admin/original.html",
+      "raw_sha256": "10500825e638edd77825cd1c7e8f6759173adfbbed78e647ba2549e5a8a09bd6",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:06.353402+00:00",
+      "source_url": "https://docs.ceph.com/en/squid/radosgw/admin/"
+    },
+    {
+      "source_id": "ceph-squid-rgw-metrics",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-rgw-metrics.md",
+      "indexed_sha256": "2e15dcbf4fbae531a661d35d87a2a858bb40e7c72de182f2d50667dc897b9c06",
+      "indexed_bytes": 9108,
+      "raw_file": "vendor-sources/catalog/ceph-squid-rgw-metrics/original.html",
+      "raw_sha256": "e414b2af83802959cf3b19a43b40d89283bd98d8663144d5e96802f85858cd62",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:07.930549+00:00",
+      "source_url": "https://docs.ceph.com/en/squid/radosgw/metrics/"
+    },
+    {
+      "source_id": "ceph-squid-rgw-service",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-rgw-service.md",
+      "indexed_sha256": "b8b12a496940d7cd00ce43a7f4b899a8dbb552b2cce14851a7453208f0ccec53",
+      "indexed_bytes": 16852,
+      "raw_file": "vendor-sources/catalog/ceph-squid-rgw-service/original.html",
+      "raw_sha256": "4a6bcbffee9e500b9e34f8ed1d6fdeec7519cdf57465dc5678123cd01e7f5116",
+      "capture_scope": "catalog-target-page",
+      "transformations": {
+        "private_key_example_blocks_redacted": 3
+      },
+      "captured_at": "2026-11-10T09:27:11.045601+00:00",
+      "source_url": "https://docs.ceph.com/en/squid/cephadm/services/rgw/"
+    },
+    {
+      "source_id": "ceph-squid-s3",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-s3.md",
+      "indexed_sha256": "5472dc6b2df24684068ca5c1a2c38aacc1f58fe523f03f137a3a2eb92c6ccbf3",
+      "indexed_bytes": 2840,
+      "raw_file": "vendor-sources/catalog/ceph-squid-s3/original.html",
+      "raw_sha256": "e48b4d877b49a9f80582c7a85d2e0f09e44e553cb4b67caada1b73e03cd4557f",
+      "capture_scope": "index-only",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:06.260062+00:00",
+      "source_url": "https://docs.ceph.com/en/squid/radosgw/s3/"
+    },
+    {
+      "source_id": "ceph-squid-s3-auth",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-s3-auth.md",
+      "indexed_sha256": "c2faa8ca0e264c78a48eb90053000b05a49dcf633680a3565ae930995d4b9e22",
+      "indexed_bytes": 7788,
+      "raw_file": "vendor-sources/catalog/ceph-squid-s3-auth/original.html",
+      "raw_sha256": "7db5d21319914395288dc2b90aac8dd4e3c1d6e3c8854242ec4c42c3e4c96c1a",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:07.927100+00:00",
+      "source_url": "https://docs.ceph.com/en/squid/radosgw/s3/authentication/"
+    },
+    {
+      "source_id": "claude-code-cli-reference",
+      "indexed_file": "knowledge/vendor/catalog/claude-code-cli-reference.md",
+      "indexed_sha256": "8b65159ea5f524f83283da5f636efc78015739bdee5136171021ee3e10c7b4fc",
+      "indexed_bytes": 40331,
+      "raw_file": "vendor-sources/catalog/claude-code-cli-reference/original.html",
+      "raw_sha256": "d56a5c2f152e558d5b17e776376588f7339c6187ea6fccf3c3866a3d8cf577eb",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:19.298789+00:00",
+      "source_url": "https://code.claude.com/docs/en/cli-reference"
+    },
+    {
+      "source_id": "claude-mcp",
+      "indexed_file": "knowledge/vendor/catalog/claude-mcp.md",
+      "indexed_sha256": "64c0e310b4da78cc30e257732b3efb8951ea2869b995d4ed22e1bc1df2be87f2",
+      "indexed_bytes": 136204,
+      "raw_file": "vendor-sources/catalog/claude-mcp/original.html",
+      "raw_sha256": "aa86801dd4c2f354ef3f7e988d04d25a0a8d3cf52c742bde53084df624af40e7",
+      "capture_scope": "catalog-target-page",
+      "transformations": {
+        "credential_example_strings_redacted": 1
+      },
+      "captured_at": "2026-11-10T09:27:12.594687+00:00",
+      "source_url": "https://code.claude.com/docs/en/mcp"
+    },
+    {
+      "source_id": "claude-memory",
+      "indexed_file": "knowledge/vendor/catalog/claude-memory.md",
+      "indexed_sha256": "be2e204590a3cbeb515cf1e83d9304f4a33e67eedb7b88a8a50128946fabd575",
+      "indexed_bytes": 48901,
+      "raw_file": "vendor-sources/catalog/claude-memory/original.html",
+      "raw_sha256": "f15a210334503c43a08690f1e9444a19b14679180a9f45bccdcce1379fb83bc7",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:11.897450+00:00",
+      "source_url": "https://code.claude.com/docs/en/memory"
+    },
+    {
+      "source_id": "confluence-cloud-pages",
+      "indexed_file": "knowledge/vendor/catalog/confluence-cloud-pages.md",
+      "indexed_sha256": "b7a8cebeb475cd4ea77ea2761ad19a33580acd077b2935244a031064e09424dc",
+      "indexed_bytes": 22687,
+      "raw_file": "vendor-sources/catalog/confluence-cloud-pages/original.html",
+      "raw_sha256": "8f80f8ea2e1c0fd62377897be1a95c0acaa3c6f20ccefcd8480765bbba2fe8e5",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:16.712437+00:00",
+      "source_url": "https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-page/"
+    },
+    {
+      "source_id": "confluence-dc-content",
+      "indexed_file": "knowledge/vendor/catalog/confluence-dc-content.md",
+      "indexed_sha256": "e48f9367f860666e8eca3c83451169090df52cfffe754cf059bb0b00ca8255a6",
+      "indexed_bytes": 6684,
+      "raw_file": "vendor-sources/catalog/confluence-dc-content/original.html",
+      "raw_sha256": "9f8c5609fefbf4e89911ebf5dd6d3cdfba886082ffb599e661da599063650532",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:16.927280+00:00",
+      "source_url": "https://support.atlassian.com/confluence/kb/how-to-get-page-content-or-child-list-via-rest-api/"
+    },
+    {
+      "source_id": "confluence-storage-format",
+      "indexed_file": "knowledge/vendor/catalog/confluence-storage-format.md",
+      "indexed_sha256": "07c2a64c50f11c5e37ce21782bf40c3dc7b4c9e8f75ee1987b6ffcbc4f1b52d4",
+      "indexed_bytes": 16594,
+      "raw_file": "vendor-sources/catalog/confluence-storage-format/original.html",
+      "raw_sha256": "dc0540150b437dee2f944eec909f46e19903ed55081e8e2f0d4e3fcba14f49b7",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:19.799348+00:00",
+      "source_url": "https://confluence.atlassian.com/doc/confluence-storage-format-790796544.html"
+    },
+    {
+      "source_id": "elastic-health-api",
+      "indexed_file": "knowledge/vendor/catalog/elastic-health-api.md",
+      "indexed_sha256": "ef1b18c538676c7fe72378a6a40ecc90f483dfc2a7ae5d61c8d9254f4677c28e",
+      "indexed_bytes": 15430,
+      "raw_file": "vendor-sources/catalog/elastic-health-api/original.html",
+      "raw_sha256": "971b881706f4a50d160ac404ce99f4aa57416c2c4b42f5bbce6f72bcd084a250",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:16.236098+00:00",
+      "source_url": "https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-cluster-health"
+    },
+    {
+      "source_id": "elastic-search-api",
+      "indexed_file": "knowledge/vendor/catalog/elastic-search-api.md",
+      "indexed_sha256": "e7f1c4b3cbddd6f4d41bf00c8a9667fdddee5eb26e9c0b40493e9366267ab50c",
+      "indexed_bytes": 55272,
+      "raw_file": "vendor-sources/catalog/elastic-search-api/original.html",
+      "raw_sha256": "4d03a23437e086f546859c9b839093c9df70803b64f1893207c7b8e33c71f5a5",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:16.501543+00:00",
+      "source_url": "https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-search"
+    },
+    {
+      "source_id": "grafana-dashboard-export",
+      "indexed_file": "knowledge/vendor/catalog/grafana-dashboard-export.md",
+      "indexed_sha256": "df55c86b8e578deeecfc4ca53bfbf39f05f0bef78e8332994d54afac29a5f5b8",
+      "indexed_bytes": 18256,
+      "raw_file": "vendor-sources/catalog/grafana-dashboard-export/original.html",
+      "raw_sha256": "eb9789397c9349832ed8397be546352c6954fbcdd718df3cac716bff1d4a452d",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:15.050594+00:00",
+      "source_url": "https://grafana.com/docs/grafana/latest/visualizations/dashboards/share-dashboards-panels/"
+    },
+    {
+      "source_id": "grafana-elasticsearch",
+      "indexed_file": "knowledge/vendor/catalog/grafana-elasticsearch.md",
+      "indexed_sha256": "37855ee1b31781d674f5595d0bdce85f2566d358289e31b01e7802a9c0e31375",
+      "indexed_bytes": 7398,
+      "raw_file": "vendor-sources/catalog/grafana-elasticsearch/original.html",
+      "raw_sha256": "9902abd43b5ed6dc3cef66d4ad462d3b01812017d2149c2f9a99ce72204e5daa",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:13.179985+00:00",
+      "source_url": "https://grafana.com/docs/grafana/latest/datasources/elasticsearch/"
+    },
+    {
+      "source_id": "grafana-es-query",
+      "indexed_file": "knowledge/vendor/catalog/grafana-es-query.md",
+      "indexed_sha256": "b41d85c4ac3199d193def076b8291933bc8ef28d3ccdcbce93df59d11940b227",
+      "indexed_bytes": 14617,
+      "raw_file": "vendor-sources/catalog/grafana-es-query/original.html",
+      "raw_sha256": "3cc07145c81795d1174263dac25aab3b85f6d26d3fce22af69b13002a7d97608",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:13.180974+00:00",
+      "source_url": "https://grafana.com/docs/grafana/latest/datasources/elasticsearch/query-editor/"
+    },
+    {
+      "source_id": "grafana-prometheus",
+      "indexed_file": "knowledge/vendor/catalog/grafana-prometheus.md",
+      "indexed_sha256": "60d3c1da61e3ce3e22fe5e8dcd14c0845e1db410057c328dd3a76a3b2fd3d854",
+      "indexed_bytes": 7598,
+      "raw_file": "vendor-sources/catalog/grafana-prometheus/original.html",
+      "raw_sha256": "61f1024e44a1c91defbbfa72a27da79a46c6dbcd297514eb1c070cb01f295460",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:14.252028+00:00",
+      "source_url": "https://grafana.com/docs/grafana/latest/datasources/prometheus/"
+    },
+    {
+      "source_id": "grafana-service-accounts",
+      "indexed_file": "knowledge/vendor/catalog/grafana-service-accounts.md",
+      "indexed_sha256": "6fec09611f7667aaa4a730327b93a2dba0134e29877bc33e5ef9d7a94b51fa4b",
+      "indexed_bytes": 13354,
+      "raw_file": "vendor-sources/catalog/grafana-service-accounts/original.html",
+      "raw_sha256": "d0a45ccf903b40796329774092121eea9d19e17304ddc81db2b89c206152364d",
+      "capture_scope": "catalog-target-page",
+      "transformations": {
+        "credential_example_strings_redacted": 2
+      },
+      "captured_at": "2026-11-10T09:27:14.252028+00:00",
+      "source_url": "https://grafana.com/docs/grafana/latest/administration/service-accounts/"
+    },
+    {
+      "source_id": "hpe-ilorest",
+      "indexed_file": "knowledge/vendor/catalog/hpe-ilorest.md",
+      "indexed_sha256": "c7e4d5b750f35e13b0e16a62612a7146d3641ac2cc1700d447e0a330f322b713",
+      "indexed_bytes": 2158,
+      "raw_file": "vendor-sources/catalog/hpe-ilorest/original.html",
+      "raw_sha256": "c0978ae310dce01da13a331856a461dfadfe255fa0e1ca4b0f078872672c016d",
+      "capture_scope": "index-only",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:18.432662+00:00",
+      "source_url": "https://servermanagementportal.ext.hpe.com/docs/redfishclients/ilorest-userguide"
+    },
+    {
+      "source_id": "hpe-ilorest-usage",
+      "indexed_file": "knowledge/vendor/catalog/hpe-ilorest-usage.md",
+      "indexed_sha256": "5918bdbe2fe7c3c249860d83cd97b8c165efdbaccdf869e956fe33cbd23b462c",
+      "indexed_bytes": 41659,
+      "raw_file": "vendor-sources/catalog/hpe-ilorest-usage/original.html",
+      "raw_sha256": "6d4b721011449a54077151c3e79c6c6c99b5ad8a1b26ba7cd8a2f9c693bf3529",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:19.105928+00:00",
+      "source_url": "https://servermanagementportal.ext.hpe.com/docs/redfishclients/ilorest-userguide/usage"
+    },
+    {
+      "source_id": "hpe-redfish-concepts",
+      "indexed_file": "knowledge/vendor/catalog/hpe-redfish-concepts.md",
+      "indexed_sha256": "9687e15c2537516f5c7362b8687e029c9726a0d6c2fe28e43efa54ee286ca6f1",
+      "indexed_bytes": 2905,
+      "raw_file": "vendor-sources/catalog/hpe-redfish-concepts/original.html",
+      "raw_sha256": "b9d1bbf95dfc9c980e46d9fcdfbf50fa7eda5e9d7e427aae070322620a806989",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:19.592325+00:00",
+      "source_url": "https://servermanagementportal.ext.hpe.com/docs/concepts"
+    },
+    {
+      "source_id": "hpe-redfish-services",
+      "indexed_file": "knowledge/vendor/catalog/hpe-redfish-services.md",
+      "indexed_sha256": "6e015a02707da3addccce4cf2fe5c22d2be4e32748d7131ec0b284fa3a3aed17",
+      "indexed_bytes": 1391,
+      "raw_file": "vendor-sources/catalog/hpe-redfish-services/original.html",
+      "raw_sha256": "787f1f0b0ef94964714069bf5e1731fe684d48ba4d6a9d158abb485c2e046f26",
+      "capture_scope": "index-only",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:20.265347+00:00",
+      "source_url": "https://servermanagementportal.ext.hpe.com/docs/redfishservices"
+    },
+    {
+      "source_id": "ibm-ceph-architecture",
+      "indexed_file": "knowledge/vendor/catalog/ibm-ceph-architecture.md",
+      "indexed_sha256": "69fd3a4f5411c9743800152b2f87fbdc3d6dd4c12a61df43a659cc29b37078c8",
+      "indexed_bytes": 279250,
+      "raw_file": "vendor-sources/catalog/ibm-ceph-architecture/original.pdf",
+      "raw_sha256": "b7e489fbc2c7810bf2dbf165b39ab09e7f8ac0b4627f15a0488d2dbb1ac9f2f1",
+      "capture_scope": "pdf-book",
+      "transformations": {
+        "private_key_example_blocks_redacted": 1,
+        "pdf_font_bullet_artifacts_normalized": 4
+      },
+      "captured_at": "2026-11-10T09:27:03.338742+00:00",
+      "source_url": "https://www.redbooks.ibm.com/redpapers/pdfs/redp5721.pdf"
+    },
+    {
+      "source_id": "ibm-ceph-master-reference",
+      "indexed_file": "knowledge/vendor/catalog/ibm-ceph-master-reference.md",
+      "indexed_sha256": "9f1288961e2de9dc752f0949ecc13b9c32420fee2555979110342ad06e001d57",
+      "indexed_bytes": 6314,
+      "raw_file": "vendor-sources/catalog/ibm-ceph-master-reference/original.html",
+      "raw_sha256": "1d9ef8d30bc76884552c6426b686e2180d71a9787b569e126a33b0b3e9b99a9d",
+      "capture_scope": "index-only",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:17.866812+00:00",
+      "source_url": "https://www.ibm.com/support/pages/node/7239015"
+    },
+    {
+      "source_id": "ibm-ceph-recovery",
+      "indexed_file": "knowledge/vendor/catalog/ibm-ceph-recovery.md",
+      "indexed_sha256": "0507ceb44601c2112a8db5659e4fa773dc0bb05fd9ef25dc112b2bcde757604d",
+      "indexed_bytes": 7049,
+      "raw_file": "vendor-sources/catalog/ibm-ceph-recovery/original.html",
+      "raw_sha256": "a48b28d177a238d7ba49f154f8ab55406dd1e0e25283ebcb87b335c88b8cb40a",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:05.907966+00:00",
+      "source_url": "https://www.ibm.com/support/pages/node/7176025"
+    },
+    {
+      "source_id": "ibm-ceph-throttling",
+      "indexed_file": "knowledge/vendor/catalog/ibm-ceph-throttling.md",
+      "indexed_sha256": "f1cbc259f906250acfb8a6c42b38cbd1c2a9834e01d58cc5cc7cf32a053f45fa",
+      "indexed_bytes": 7411,
+      "raw_file": "vendor-sources/catalog/ibm-ceph-throttling/original.html",
+      "raw_sha256": "4d5cad303ab082c858b6e1bebd227dad89e8b27d6a9ddecbd4db0b8374085bb5",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:08.110169+00:00",
+      "source_url": "https://www.ibm.com/support/pages/node/6963280"
+    },
+    {
+      "source_id": "ibm-ceph-version-matrix",
+      "indexed_file": "knowledge/vendor/catalog/ibm-ceph-version-matrix.md",
+      "indexed_sha256": "b25c835b0c1aa107cc2b0b0463226a952f131943bc0bf75834960e113929d683",
+      "indexed_bytes": 25402,
+      "raw_file": "vendor-sources/catalog/ibm-ceph-version-matrix/original.html",
+      "raw_sha256": "67c3486a264cbd79b153ba3ef3a247d322be82d46c5ae71b620d6477c595ad01",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:26:56.297375+00:00",
+      "source_url": "https://www.ibm.com/support/pages/what-are-red-hat-and-ibm-storage-ceph-releases-and-corresponding-ceph-package-versions"
+    },
+    {
+      "source_id": "linux-upstream-admin",
+      "indexed_file": "knowledge/vendor/catalog/linux-upstream-admin.md",
+      "indexed_sha256": "d02530c053ebe7934ceee0c24c30089f9d797c0122f20dfd41d3c0bde95aac0b",
+      "indexed_bytes": 5502,
+      "raw_file": "vendor-sources/catalog/linux-upstream-admin/original.html",
+      "raw_sha256": "41e4c726c092f6099c12ce85d392c00c712c7467ebaa764f3c0fb435b64df82f",
+      "capture_scope": "index-only",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:19.588413+00:00",
+      "source_url": "https://docs.kernel.org/admin-guide/index.html"
+    },
+    {
+      "source_id": "mcp-basic-2025",
+      "indexed_file": "knowledge/vendor/catalog/mcp-basic-2025.md",
+      "indexed_sha256": "b68fa6a6ea638bb70e55faa5ff285f5521f421294b0b157ed92f6cefef01d20e",
+      "indexed_bytes": 10779,
+      "raw_file": "vendor-sources/catalog/mcp-basic-2025/original.html",
+      "raw_sha256": "1566a2626732435438d4ab96b11dc2d99d033ee1d293359223a0d2cca45de6ba",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:19.253687+00:00",
+      "source_url": "https://modelcontextprotocol.io/specification/2025-11-25/basic"
+    },
+    {
+      "source_id": "mcp-lifecycle-2025",
+      "indexed_file": "knowledge/vendor/catalog/mcp-lifecycle-2025.md",
+      "indexed_sha256": "0dc2a7c38fd0230e197f4fc3c49c300dcd0a208dcb67518507df95e062cfb281",
+      "indexed_bytes": 8235,
+      "raw_file": "vendor-sources/catalog/mcp-lifecycle-2025/original.html",
+      "raw_sha256": "504467ce60eea1fbb50c52452e0c08ec9006e7abbc2b90e3c0975ef4a7ae0dcc",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:11.846092+00:00",
+      "source_url": "https://modelcontextprotocol.io/specification/2025-11-25/basic/lifecycle"
+    },
+    {
+      "source_id": "mcp-schema-2025",
+      "indexed_file": "knowledge/vendor/catalog/mcp-schema-2025.md",
+      "indexed_sha256": "0a43df47c200cae28d0124ea33dd70ef12a0d60c93813ecea88602e4ccfe2bc1",
+      "indexed_bytes": 89202,
+      "raw_file": "vendor-sources/catalog/mcp-schema-2025/original.html",
+      "raw_sha256": "dda713ae9c860f5d9a9fe8fb8a5820560f36c97ae80282caa34c119621e57170",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:20.320259+00:00",
+      "source_url": "https://modelcontextprotocol.io/specification/2025-11-25/schema"
+    },
+    {
+      "source_id": "mcp-stdio-2025",
+      "indexed_file": "knowledge/vendor/catalog/mcp-stdio-2025.md",
+      "indexed_sha256": "50a48acd726485755346b1d0cf0af6b0cd608396c93cba96b56c7c5de56b785c",
+      "indexed_bytes": 13644,
+      "raw_file": "vendor-sources/catalog/mcp-stdio-2025/original.html",
+      "raw_sha256": "31b47cde4f2a1cd8e223cc0a494365b066eb2ac297fe580469886fbbce4a800b",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:12.798003+00:00",
+      "source_url": "https://modelcontextprotocol.io/specification/2025-11-25/basic/transports"
+    },
+    {
+      "source_id": "mcp-tools-2025",
+      "indexed_file": "knowledge/vendor/catalog/mcp-tools-2025.md",
+      "indexed_sha256": "c2ea2081f8e7496e7279fc4e86b1adc7f1cd796d7ff51ad9a9cb0b23f6d1159f",
+      "indexed_bytes": 13039,
+      "raw_file": "vendor-sources/catalog/mcp-tools-2025/original.html",
+      "raw_sha256": "e8caa37281ce113106080a6ae918711442ecc34c6bfd3258f701d6e8e68752d6",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:11.913100+00:00",
+      "source_url": "https://modelcontextprotocol.io/specification/2025-11-25/server/tools"
+    },
+    {
+      "source_id": "netapp-sg118-consistency",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg118-consistency.md",
+      "indexed_sha256": "c5987e9a09196f2740c09e9a17aeb44f3a317d77be962db6b5a6e0657330a546",
+      "indexed_bytes": 8631,
+      "raw_file": "vendor-sources/catalog/netapp-sg118-consistency/original.html",
+      "raw_sha256": "fbf616b67a3dbba9c4fb3177081881654c3514587327fa3df56d08e9f645c69e",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:29.440049+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-118/s3/consistency-controls.html"
+    },
+    {
+      "source_id": "netapp-sg118-docs",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg118-docs.md",
+      "indexed_sha256": "65816b89bcd55306716fd4801bb05c1288d529666157646bd7585f1afd86c3bd",
+      "indexed_bytes": 2661,
+      "raw_file": "vendor-sources/catalog/netapp-sg118-docs/original.html",
+      "raw_sha256": "919cf2a92d46d488a136f70d1c1ff013111e017f13eb27591db7cfa75aefe695",
+      "capture_scope": "index-only",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:20.234622+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-118/"
+    },
+    {
+      "source_id": "netapp-sg118-ilm",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg118-ilm.md",
+      "indexed_sha256": "bb88c53f0ab88f40725c1dd5142a04041c4f75ebcc6282dad5673fb57efc9140",
+      "indexed_bytes": 2409,
+      "raw_file": "vendor-sources/catalog/netapp-sg118-ilm/original.html",
+      "raw_sha256": "4e937a85f15da4053d29d7056d40a21bdc8e4cb934c3963fb05e18bbfc7569e2",
+      "capture_scope": "index-only",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:24.374799+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-118/ilm/index.html"
+    },
+    {
+      "source_id": "netapp-sg118-s3",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg118-s3.md",
+      "indexed_sha256": "2650e316dc185ed92f175d8ea256a1fb5fad83b09a4eb4f22cb1d7dae3935c6b",
+      "indexed_bytes": 5827,
+      "raw_file": "vendor-sources/catalog/netapp-sg118-s3/original.html",
+      "raw_sha256": "3a98f7eb75fa5091135ae0d565fb125b9ed81084f5fb8a546630f6f3d0973b62",
+      "capture_scope": "index-only",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:21.821534+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-118/s3/index.html"
+    },
+    {
+      "source_id": "netapp-sg119-bucket-operations",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-bucket-operations.md",
+      "indexed_sha256": "f3a5b2e1a92710d258de5f377b0537016df1a61c60cfe135630c3cfe4f61b137",
+      "indexed_bytes": 14631,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-bucket-operations/original.html",
+      "raw_sha256": "deaad6511bc957c6541e6d2533dd34d5a33bae6ffde1a413f06377cbcee13a30",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:29.376049+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/s3/operations-on-buckets.html"
+    },
+    {
+      "source_id": "netapp-sg119-capacity",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-capacity.md",
+      "indexed_sha256": "fa2481468fabdda913bf7cf48c413f0c5e675f6cbe9de39e0a3594c71b9b97d2",
+      "indexed_bytes": 9754,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-capacity/original.html",
+      "raw_sha256": "0d5d1839426b3eb956b48ebc371d3b064cb929ace383e7d0a418cf7c14e59a49",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:26.005849+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/monitoring-storage-capacity.html"
+    },
+    {
+      "source_id": "netapp-sg119-client-connections",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-client-connections.md",
+      "indexed_sha256": "420e8caf4cda626082170df28571d3076656e6f5fe49bce96d688bc7358e7613",
+      "indexed_bytes": 5617,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-client-connections/original.html",
+      "raw_sha256": "282ea80f59fda383c70600320e125c62ceedddaf4100fe05ad805812e492371a",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:33.415451+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/admin/configuring-client-connections.html"
+    },
+    {
+      "source_id": "netapp-sg119-client-ports",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-client-ports.md",
+      "indexed_sha256": "6cbe4576d3e2002d7a402e6a72da6b78356ad3997450fa76126eb1d3aae41eeb",
+      "indexed_bytes": 4725,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-client-ports/original.html",
+      "raw_sha256": "abc3858b55fa7f22d9f09ba6bafc8d71996461a523913fd3241eac623aa74387",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:33.411013+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/admin/summary-ip-addresses-and-ports-for-client-connections.html"
+    },
+    {
+      "source_id": "netapp-sg119-consistency",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-consistency.md",
+      "indexed_sha256": "e44663341a452c097ddd95366ddbdeaaa651e8d3fe05833252da49c59bccdc7c",
+      "indexed_bytes": 8617,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-consistency/original.html",
+      "raw_sha256": "b9f03c582e0f5be3dd18c0b8e0c028b424bed1e6aa66d0309a0eff8cce2868e8",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:30.012444+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/s3/consistency-controls.html"
+    },
+    {
+      "source_id": "netapp-sg119-docs",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-docs.md",
+      "indexed_sha256": "8f723cf684f2fe437591dc05f05d507f97ab93d06a0d162a5a293796bd23b010",
+      "indexed_bytes": 2625,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-docs/original.html",
+      "raw_sha256": "277aa173af2fff558aa558b8bd0c456a75e43e09ac915d0bb973339cee1271c6",
+      "capture_scope": "index-only",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:20.235596+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/"
+    },
+    {
+      "source_id": "netapp-sg119-errors",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-errors.md",
+      "indexed_sha256": "8891fd6461ca2e7d13e5bca5e1a7cb745b9dbae8866eef51604bf3e6c4215d1b",
+      "indexed_bytes": 3755,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-errors/original.html",
+      "raw_sha256": "3eb1c77932c75a54eab6b2250fea4238f6f5e734050b15998a0ea6a8043ccbb8",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:30.802091+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/s3/error-responses.html"
+    },
+    {
+      "source_id": "netapp-sg119-grid-api",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-grid-api.md",
+      "indexed_sha256": "bbac12706588a862e8cca418b9f88d19f46c62448a0862c2f9eb40f67eddbdb1",
+      "indexed_bytes": 3859,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-grid-api/original.html",
+      "raw_sha256": "eba3c61ed28d42a696ae326e86c9178f286962a6283613b2b747c9ec50a5f5f9",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:25.218720+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/admin/using-grid-management-api.html"
+    },
+    {
+      "source_id": "netapp-sg119-ilm",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-ilm.md",
+      "indexed_sha256": "462181b1acc8f908ddd390ab161269abf25ff9c10d1f94fd0742a956553e7dc7",
+      "indexed_bytes": 2315,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-ilm/original.html",
+      "raw_sha256": "84f26d06e96e1bf7e9bc7c055186d12b9f6c48993c92961dc65b56da3aa0539e",
+      "capture_scope": "index-only",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:24.375782+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/ilm/index.html"
+    },
+    {
+      "source_id": "netapp-sg119-ilm-lifecycle",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-ilm-lifecycle.md",
+      "indexed_sha256": "a08f75218a8a2375ad4971eb5850f7af43a54751f880aa2d2bd0b9ef8489313f",
+      "indexed_bytes": 3178,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-ilm-lifecycle/original.html",
+      "raw_sha256": "562d804ab485c3c239e2739616a47a272ababd438c084855c17232d27ed44bee",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:28.668518+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/ilm/how-ilm-operates-throughout-objects-life.html"
+    },
+    {
+      "source_id": "netapp-sg119-ilm-monitor",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-ilm-monitor.md",
+      "indexed_sha256": "a097efa4faccaf2aebbff1caac77a274a22ba9a92d33745cc3e63344f611da05",
+      "indexed_bytes": 4430,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-ilm-monitor/original.html",
+      "raw_sha256": "341c8369c2bfb49858332617fe551a642297b09b4e9f29f283e95db999e11bc0",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:26.001904+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/monitoring-information-lifecycle-management.html"
+    },
+    {
+      "source_id": "netapp-sg119-ilm-policies",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-ilm-policies.md",
+      "indexed_sha256": "f59b9355f09cc34a1e19f1c41bc3a3d4716f0288c8e35bf861ca9d17d7f9e50b",
+      "indexed_bytes": 8728,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-ilm-policies/original.html",
+      "raw_sha256": "df7850e94f9b4f63f92debe23ba9ebd1b58b533b63bf072bf68e9b65a818bb25",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:35.897355+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/ilm/ilm-policy-overview.html"
+    },
+    {
+      "source_id": "netapp-sg119-lb-endpoints",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-lb-endpoints.md",
+      "indexed_sha256": "92451b2ec41aad3c39dd81f963728cc02af08adae5e796bbec4226a30289a78b",
+      "indexed_bytes": 17202,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-lb-endpoints/original.html",
+      "raw_sha256": "bffcafb47427c55ee788a73a8627729a42108a4c233eaa713935df442932117a",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:30.779547+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/admin/configuring-load-balancer-endpoints.html"
+    },
+    {
+      "source_id": "netapp-sg119-lb-monitor",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-lb-monitor.md",
+      "indexed_sha256": "532e42fa111c3886771d17f0aa6cd224f2ca0f5ba4915564b30fc50d298194f5",
+      "indexed_bytes": 3651,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-lb-monitor/original.html",
+      "raw_sha256": "99be6e1a7f3dae4c5a90364ea2ead761814004f09a7ff20906aa0b1ec838a04c",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:26.833483+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/monitoring-load-balancing-operations.html"
+    },
+    {
+      "source_id": "netapp-sg119-logs",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-logs.md",
+      "indexed_sha256": "2fffbee8525268b98ad972d0637ee2692efafab518a0d5ba8c00d2597793732d",
+      "indexed_bytes": 6216,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-logs/original.html",
+      "raw_sha256": "d84ce4b5da031185eafedf718b76a34115beb832d3e2e955a170c05544b43bdf",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:26.833483+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/logs-files-reference.html"
+    },
+    {
+      "source_id": "netapp-sg119-metadata",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-metadata.md",
+      "indexed_sha256": "c5f3060fe7cfe44c2db0c6c46fbbfd8905a93096ddd5414a8ba1d20986ed1bef",
+      "indexed_bytes": 4522,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-metadata/original.html",
+      "raw_sha256": "cf9357765cecb10d05cbc5045bfb4e16816af335ac4ca5e33dad099fe72aceed",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:30.160047+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/troubleshoot/troubleshooting-metadata-issues.html"
+    },
+    {
+      "source_id": "netapp-sg119-monitor",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-monitor.md",
+      "indexed_sha256": "fec006cba3b18188aac48d5a5c1659f4c3fbc01b5c282730593a8417081ac2e1",
+      "indexed_bytes": 2184,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-monitor/original.html",
+      "raw_sha256": "f45948e97f0bcb7edc093db92b619531e9e59a7435b81bbd8c6b859df6085599",
+      "capture_scope": "index-only",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:23.658633+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/index.html"
+    },
+    {
+      "source_id": "netapp-sg119-network",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-network.md",
+      "indexed_sha256": "b2e7fadeea488dbb5c89691b91e9a40ae89685c86f2e64f1f657a32aa129745a",
+      "indexed_bytes": 3043,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-network/original.html",
+      "raw_sha256": "6644ccf71bf160c150e3bc5d1ed4a29cc1d80d68dcbbaaaac5e0bb12e7c52e46",
+      "capture_scope": "index-only",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:28.048882+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/network/index.html"
+    },
+    {
+      "source_id": "netapp-sg119-notifications",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-notifications.md",
+      "indexed_sha256": "216fda6ca13b32a14074748bc89a2ef2c5dbedb1c38af4d536755ed0cf7a3c12",
+      "indexed_bytes": 3155,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-notifications/original.html",
+      "raw_sha256": "f6f6398b50fe11ce9f04d619770173200ebbdcc7ff483ef3ca9b85b77dbb8a48",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:31.665754+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/understanding-notifications-for-buckets.html"
+    },
+    {
+      "source_id": "netapp-sg119-object-lock",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-object-lock.md",
+      "indexed_sha256": "4accb0aa7d7e040a56c36732ff1927e00fc5b949b830a3cac63c832998ec9c73",
+      "indexed_bytes": 7793,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-object-lock/original.html",
+      "raw_sha256": "3e36e3ea02a127572d68023b5298045d96b57ada1f556345b274ef70ca60b3ca",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:28.086304+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/ilm/managing-objects-with-s3-object-lock.html"
+    },
+    {
+      "source_id": "netapp-sg119-object-operations",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-object-operations.md",
+      "indexed_sha256": "28ef3d738cace4c7431184530dbb0bdee71872185f148c62cdd6f69f5c58be86",
+      "indexed_bytes": 7449,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-object-operations/original.html",
+      "raw_sha256": "2d9450b2b30372dcc11b979b5eb3e029d143b0e75469cf297da8ffa273bacd32",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:28.803055+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/s3/operations-on-objects.html"
+    },
+    {
+      "source_id": "netapp-sg119-release-notes",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-release-notes.md",
+      "indexed_sha256": "3de5e6efd5094ac1d9930f09c8acd901a95e3451cf352f1516f146e690cb8fe2",
+      "indexed_bytes": 1379,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-release-notes/original.html",
+      "raw_sha256": "379f0df41ee8c71e79bead558500f187b9ec500d85f4279b5ea0ec0177504932",
+      "capture_scope": "index-only",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:21.817627+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/release-notes/index.html"
+    },
+    {
+      "source_id": "netapp-sg119-s3",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-s3.md",
+      "indexed_sha256": "bfea50cf5fbe47379a1d46a8a9f995f27b85260ba7706f022262357af32619de",
+      "indexed_bytes": 6881,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-s3/original.html",
+      "raw_sha256": "f9cff43922be6f93eac33753e83122a420b981c7c8b5b2ca63d4112d8d87fb45",
+      "capture_scope": "index-only",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:22.864438+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/s3/index.html"
+    },
+    {
+      "source_id": "netapp-sg119-s3-quick-reference",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-s3-quick-reference.md",
+      "indexed_sha256": "1242857f9280ebb43c7ae1a1a55838ddcae0512dabdac9e3f5b336ef1a667a62",
+      "indexed_bytes": 20199,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-s3-quick-reference/original.html",
+      "raw_sha256": "f1288c77cf1965d7f1c8b1a296fac3aa40832c6f9289ed40c66a4cef7dea3f9d",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:34.219178+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/s3/quick-reference-support-for-aws-apis.html"
+    },
+    {
+      "source_id": "netapp-sg119-search-integration",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-search-integration.md",
+      "indexed_sha256": "bad348284d01975851117c2d8e99cc7e09e418cf27eec42dbc1e4d64477dc6f5",
+      "indexed_bytes": 5167,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-search-integration/original.html",
+      "raw_sha256": "b7d21e5f842b9249b509a5a383ea6be89d45ce4c2225d07fe2168323bbd97853",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:32.772924+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/understanding-search-integration-service.html"
+    },
+    {
+      "source_id": "netapp-sg119-tenant",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-tenant.md",
+      "indexed_sha256": "fcbd9ef949026d66d7001f7759b9c8d9db150395a45e27679f47d9348981cc00",
+      "indexed_bytes": 4039,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-tenant/original.html",
+      "raw_sha256": "7c10bfcbdf511ed7095343f0e80c1b00e9231bc2b33f4ef9aedd7735625a8cc1",
+      "capture_scope": "index-only",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:31.665754+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/index.html"
+    },
+    {
+      "source_id": "netapp-sg119-tenant-api",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-tenant-api.md",
+      "indexed_sha256": "afa2fc8dea2cbe35557dec64004d006d1fe2c091cedbf13327c93bf3456c1963",
+      "indexed_bytes": 5248,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-tenant-api/original.html",
+      "raw_sha256": "5a6bd0dbc81bdcbebab1da77d5f242ede30cf5925bbd759e94d0f9b8d9f0f2fd",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:25.222035+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/understanding-tenant-management-api.html"
+    },
+    {
+      "source_id": "netapp-sg119-tenant-dashboard",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-tenant-dashboard.md",
+      "indexed_sha256": "fe0f8cef2f67763aab520f3f323fc818b6f95b2401b240a90c5b7c0740d1b7e4",
+      "indexed_bytes": 5229,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-tenant-dashboard/original.html",
+      "raw_sha256": "f2802cb6244f55ba30d50fb3c645bd7695400c993c5bb3d585827e98a966f44f",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:32.774153+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/understanding-tenant-manager-dashboard.html"
+    },
+    {
+      "source_id": "netapp-sg119-troubleshoot",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-troubleshoot.md",
+      "indexed_sha256": "edd934ff99335c6825c122e34f6b946a0a4b91527239c122d199941f201c9053",
+      "indexed_bytes": 13404,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-troubleshoot/original.html",
+      "raw_sha256": "922ee3409372cf86d700c1b0619c008d1c046f688d1752779cf4982953e223ca",
+      "capture_scope": "index-only",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:23.719961+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/troubleshoot/index.html"
+    },
+    {
+      "source_id": "netapp-sg119-upgrade",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg119-upgrade.md",
+      "indexed_sha256": "6d39eb04bf71013abcb2031983c6d71f8c0100e268f994bff991fd663c3a3937",
+      "indexed_bytes": 1733,
+      "raw_file": "vendor-sources/catalog/netapp-sg119-upgrade/original.html",
+      "raw_sha256": "7441714a95d9b1a3a15702d6cdb22a056b103819bc7e4001a8776313d1b24a3f",
+      "capture_scope": "index-only",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:27.434239+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-119/upgrade/index.html"
+    },
+    {
+      "source_id": "netapp-sg120-docs",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg120-docs.md",
+      "indexed_sha256": "289b8bc464d178b25936d5949b3e9522b4508060b9ed1973a56b964db993c25a",
+      "indexed_bytes": 2502,
+      "raw_file": "vendor-sources/catalog/netapp-sg120-docs/original.html",
+      "raw_sha256": "ea108ad4787c085377024fe1fbec0882edf1ac4eb1796df25780ee7c713c6831",
+      "capture_scope": "index-only",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:21.053358+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-120/"
+    },
+    {
+      "source_id": "netapp-sg120-s3",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg120-s3.md",
+      "indexed_sha256": "30f0c004a042b7e762a02f0a5c1a20267d6eab76b852e1906c323ff2aba77194",
+      "indexed_bytes": 7400,
+      "raw_file": "vendor-sources/catalog/netapp-sg120-s3/original.html",
+      "raw_sha256": "aff55888746bb3c7d7b8f2deed7cd995aae00dfffb8c8637769874756b52b573",
+      "capture_scope": "index-only",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:22.926684+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-120/s3/index.html"
+    },
+    {
+      "source_id": "netapp-sg120-upgrade",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg120-upgrade.md",
+      "indexed_sha256": "a2a9986805fd4752654d0ebba1baf800fb72aefa78c3f2c1a4df884ad267500c",
+      "indexed_bytes": 2017,
+      "raw_file": "vendor-sources/catalog/netapp-sg120-upgrade/original.html",
+      "raw_sha256": "f4aac4da67873ba2e0febe777617edc9ce2a488a6d4e5bae0c0a93302244eb5f",
+      "capture_scope": "index-only",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:27.453817+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-120/upgrade/index.html"
+    },
+    {
+      "source_id": "netapp-sg120-whats-new",
+      "indexed_file": "knowledge/vendor/catalog/netapp-sg120-whats-new.md",
+      "indexed_sha256": "5dbe74e699f56d788809f92a138aa301cddcd8a721ea637c70df76053091b5cd",
+      "indexed_bytes": 5968,
+      "raw_file": "vendor-sources/catalog/netapp-sg120-whats-new/original.html",
+      "raw_sha256": "2fc1e1b269e5ae39b899f5ae625bfe0677587c7fe6e39273e1429509d52a5693",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:21.051403+00:00",
+      "source_url": "https://docs.netapp.com/us-en/storagegrid-120/release-notes/whats-new.html"
+    },
+    {
+      "source_id": "podman-container-inspect",
+      "indexed_file": "knowledge/vendor/catalog/podman-container-inspect.md",
+      "indexed_sha256": "84e1ef4d72af26d0b1c14d58def12efcb35ff631befc5ddb3a98b02a20c6f243",
+      "indexed_bytes": 13710,
+      "raw_file": "vendor-sources/catalog/podman-container-inspect/original.html",
+      "raw_sha256": "e4351696e4b8c98d875eab888ff97765ebae320508a2171382621f31f78769f6",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:11.598789+00:00",
+      "source_url": "https://docs.podman.io/en/latest/markdown/podman-container-inspect.1.html"
+    },
+    {
+      "source_id": "podman-quadlet",
+      "indexed_file": "knowledge/vendor/catalog/podman-quadlet.md",
+      "indexed_sha256": "99d4f43b039c7f0bbf348eda4ac600e56f78d8d8e72a8b9f223ab2231d9b51ba",
+      "indexed_bytes": 32166,
+      "raw_file": "vendor-sources/catalog/podman-quadlet/original.html",
+      "raw_sha256": "8897d4ed7b6479bec402973d4d07f1048045a5579c464619aad5d9e73225b634",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:11.819097+00:00",
+      "source_url": "https://docs.podman.io/en/v4.6.1/markdown/podman-systemd.unit.5.html"
+    },
+    {
+      "source_id": "prometheus-api",
+      "indexed_file": "knowledge/vendor/catalog/prometheus-api.md",
+      "indexed_sha256": "b416c8f12456e291f95fcf363c1c9a3c4e2c3b9be631ee033f0740cae9525a24",
+      "indexed_bytes": 76106,
+      "raw_file": "vendor-sources/catalog/prometheus-api/original.html",
+      "raw_sha256": "e33555727cc62dfee3b0ec6c7c505ec22a1e2b605d7694ed0ed24b29f595cebe",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:14.618893+00:00",
+      "source_url": "https://prometheus.io/docs/prometheus/latest/querying/api/"
+    },
+    {
+      "source_id": "prometheus-exporters",
+      "indexed_file": "knowledge/vendor/catalog/prometheus-exporters.md",
+      "indexed_sha256": "fd11dd7d45ef982155032614d19b821d1db0b0d11a04ec74e0be8298e924d7e4",
+      "indexed_bytes": 23283,
+      "raw_file": "vendor-sources/catalog/prometheus-exporters/original.html",
+      "raw_sha256": "1d6288ed2cb5c47e2d4438437442bb9f366dcdd389618a483741253c3b011c4d",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:14.462350+00:00",
+      "source_url": "https://prometheus.io/docs/instrumenting/writing_exporters/"
+    },
+    {
+      "source_id": "prometheus-exposition",
+      "indexed_file": "knowledge/vendor/catalog/prometheus-exposition.md",
+      "indexed_sha256": "42a8ccdaf471f94a51436a015e2f86cf1950113186fc907a9470e9b798e539e4",
+      "indexed_bytes": 14604,
+      "raw_file": "vendor-sources/catalog/prometheus-exposition/original.html",
+      "raw_sha256": "f27c828e1877fa323d6c46a2a8bdb0b284c22af55d5f609b3ec472b77d1d9a7a",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:17.160093+00:00",
+      "source_url": "https://prometheus.io/docs/instrumenting/exposition_formats/"
+    },
+    {
+      "source_id": "prometheus-functions",
+      "indexed_file": "knowledge/vendor/catalog/prometheus-functions.md",
+      "indexed_sha256": "d26f81d652c880df9f86b52fcb258a51716094d4c5146bf844ff22c2db912c23",
+      "indexed_bytes": 47306,
+      "raw_file": "vendor-sources/catalog/prometheus-functions/original.html",
+      "raw_sha256": "dd74f6a6ed9c9421ec4763eb34949da970bc78c379561a488b34b1489e441112",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:15.746546+00:00",
+      "source_url": "https://prometheus.io/docs/prometheus/latest/querying/functions/"
+    },
+    {
+      "source_id": "prometheus-histograms",
+      "indexed_file": "knowledge/vendor/catalog/prometheus-histograms.md",
+      "indexed_sha256": "724ff298eaf5f6797fc41ac9f44273d322961f2b373a105d5653405a89a8223c",
+      "indexed_bytes": 31534,
+      "raw_file": "vendor-sources/catalog/prometheus-histograms/original.html",
+      "raw_sha256": "40170269c0519b47a027697be7c3c80c88353f84606066acb9bcf2ea4097e5d3",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:16.417508+00:00",
+      "source_url": "https://prometheus.io/docs/practices/histograms/"
+    },
+    {
+      "source_id": "prometheus-naming",
+      "indexed_file": "knowledge/vendor/catalog/prometheus-naming.md",
+      "indexed_sha256": "93d08fbc2a2faa0cfa357dca5d934681cf111d6c8343901302eebd3be470ca49",
+      "indexed_bytes": 7802,
+      "raw_file": "vendor-sources/catalog/prometheus-naming/original.html",
+      "raw_sha256": "9087c5e09167c79031dc153a03e933a86b82cc9d5f3b685a520b4f22bbdac33b",
+      "capture_scope": "catalog-target-page",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:27:15.527459+00:00",
+      "source_url": "https://prometheus.io/docs/practices/naming/"
+    },
+    {
+      "source_id": "ceph-reef-pg-json",
+      "indexed_file": "knowledge/vendor/catalog/ceph-reef-pg-json.md",
+      "indexed_sha256": "90d1e63f24e96aa5e8b3338e6f61d1a486da3362d4047265fa57690f1c352e3d",
+      "indexed_bytes": 129606,
+      "raw_file": "vendor-sources/catalog/ceph-reef-pg-json/original.txt",
+      "raw_sha256": "752b4a8363b8bb34eade7de47735ef521faccb62baef742533591b8c98538bd4",
+      "capture_scope": "pinned-upstream-file",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:25:19Z",
+      "source_url": "https://github.com/ceph/ceph/blob/reef/qa/tasks/ceph_manager.py"
+    },
+    {
+      "source_id": "ceph-squid-pg-json",
+      "indexed_file": "knowledge/vendor/catalog/ceph-squid-pg-json.md",
+      "indexed_sha256": "82441753e3973382206bc82862f457d62dea31f9b1bb2287387d64dcf2c7d9a7",
+      "indexed_bytes": 131801,
+      "raw_file": "vendor-sources/catalog/ceph-squid-pg-json/original.txt",
+      "raw_sha256": "3c00522687f831d6abd250a06683fadf448aab66b3d9f53a004cea37f1b67cbe",
+      "capture_scope": "pinned-upstream-file",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:25:19Z",
+      "source_url": "https://github.com/ceph/ceph/blob/squid/qa/tasks/ceph_manager.py"
+    },
+    {
+      "source_id": "grafana-mcp",
+      "indexed_file": "knowledge/vendor/catalog/grafana-mcp.md",
+      "indexed_sha256": "34732a78e23676fca0b4945683796b6ca3dc977a948aa4b733c0b2da718f8ce2",
+      "indexed_bytes": 160708,
+      "raw_file": "vendor-sources/catalog/grafana-mcp/original.txt",
+      "raw_sha256": "c057cc249131a709a9f379aeeabd2f9f07f90f7c980d6ec82b3585564b21ef37",
+      "capture_scope": "pinned-upstream-file",
+      "transformations": {
+        "relative_markdown_links_made_absolute": 6
+      },
+      "captured_at": "2026-11-10T09:25:19Z",
+      "source_url": "https://github.com/grafana/mcp-grafana/blob/v2.2.0/README.md"
+    },
+    {
+      "source_id": "redhat-okp-mcp-config",
+      "indexed_file": "knowledge/vendor/catalog/redhat-okp-mcp-config.md",
+      "indexed_sha256": "2495cf4b9a007709bf055fddfa81cebf688ae8ad14a3d87f9b34c18376c76c50",
+      "indexed_bytes": 8177,
+      "raw_file": "vendor-sources/catalog/redhat-okp-mcp-config/original.txt",
+      "raw_sha256": "f1dc76b015bc15dcd3e940184c0424375132e96374db46b3c3f7054e9feea8a9",
+      "capture_scope": "pinned-upstream-file",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:25:19Z",
+      "source_url": "https://github.com/rhel-lightspeed/okp-mcp/blob/a4469e1365789d1619a9d2276fa0ed2e80ee18b3/src/okp_mcp/config.py"
+    },
+    {
+      "source_id": "redhat-okp-mcp-formatting",
+      "indexed_file": "knowledge/vendor/catalog/redhat-okp-mcp-formatting.md",
+      "indexed_sha256": "0baeaa0bbdbaeef821172370fa83ff66d05a945cf8e9f02c804e1dd9ca488e34",
+      "indexed_bytes": 6362,
+      "raw_file": "vendor-sources/catalog/redhat-okp-mcp-formatting/original.txt",
+      "raw_sha256": "dcb4f0338daabd8c1a90a5ecfab4d801f638988911e34aaa952dd58cfdef8911",
+      "capture_scope": "pinned-upstream-file",
+      "transformations": {},
+      "captured_at": "2026-11-10T09:25:19Z",
+      "source_url": "https://github.com/rhel-lightspeed/okp-mcp/blob/a4469e1365789d1619a9d2276fa0ed2e80ee18b3/src/okp_mcp/formatting.py"
+    },
+    {
+      "source_id": "redhat-okp-mcp",
+      "indexed_file": "knowledge/vendor/catalog/redhat-okp-mcp.md",
+      "indexed_sha256": "4b8f1e3df8c7757a973dfc2901e59e3373aab2a8c01cfaac331d4353225f59ae",
+      "indexed_bytes": 6793,
+      "raw_file": "vendor-sources/catalog/redhat-okp-mcp/original.txt",
+      "raw_sha256": "c23b0a1698843388952246c56b883d898ebfd6c3549cc912cd3c02f2d163ce85",
+      "capture_scope": "pinned-upstream-file",
+      "transformations": {
+        "relative_markdown_links_made_absolute": 2
+      },
+      "captured_at": "2026-11-10T09:25:19Z",
+      "source_url": "https://github.com/rhel-lightspeed/okp-mcp/blob/a4469e1365789d1619a9d2276fa0ed2e80ee18b3/README.md"
+    }
+  ],
+  "notice": "Actual captured page bodies and upstream text are included. Source/index snapshots do not imply all linked manuals or images were saved. No login or access-control bypass was used.",
+  "indexed_catalog_documents": 109,
+  "indexed_bytes": 2556228,
+  "body_source_count": 89,
+  "index_only_count": 20,
+  "unavailable_count": 39
+}

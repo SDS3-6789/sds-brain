@@ -1,0 +1,31 @@
+{
+  "release": "0.2.0",
+  "checked_on": "2026-11-09",
+  "platform_executed": "Linux_x86_64",
+  "official_binary_version": "2.2.0",
+  "selected_archive_and_binary_hashes_verified": true,
+  "launcher_initialize_tools_list_ping_passed": true,
+  "protocol_version": "2025-11-25",
+  "read_only_tools": [
+    "check_datasources_health",
+    "get_dashboard_by_uid",
+    "get_dashboard_panel_queries",
+    "get_dashboard_property",
+    "get_dashboard_summary",
+    "get_datasource",
+    "list_dashboard_versions",
+    "list_datasources",
+    "query_elasticsearch",
+    "search_dashboards",
+    "search_folders"
+  ],
+  "read_only_tools_count": 11,
+  "unexpected_tools": [],
+  "tool_calls_sent": 0,
+  "customer_endpoint_used": false,
+  "endpoint_fixture": "loopback address only",
+  "native_claude_client_tested": false,
+  "other_platforms": "archive and executable bytes verified; not executed",
+  "upstream_instruction_banner": "Generic dashboard text mentions creation/update; those tools are absent from the fixed read-only tool list.",
+  "ambient_grafana_credentials_not_used": true
+}

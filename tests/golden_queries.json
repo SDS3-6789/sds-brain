@@ -1,0 +1,9 @@
+[
+  {"query": "Ceph slow operations recovery backfill", "expected": "runbooks/ceph/slow-ops-and-recovery.md", "top": 3},
+  {"query": "S3 SignatureDoesNotMatch", "expected": "runbooks/s3/signature-and-tls.md", "top": 3},
+  {"query": "StorageGRID physical capacity metadata", "expected": "runbooks/storagegrid/capacity-and-metadata.md", "top": 3},
+  {"query": "Objectify read only API scope", "expected": "docs/objectify-integration.md", "top": 3},
+  {"query": "custom exporter metrics schema", "expected": "knowledge/observability/custom-exporter-contract.md", "top": 3},
+  {"query": "SELinux AVC denial", "expected": "runbooks/linux/selinux-denial.md", "top": 3},
+  {"query": "okp-mcp RHOKP Ceph applicability", "expected": "knowledge/meta/redhat-offline-portal.md", "top": 3}
+]

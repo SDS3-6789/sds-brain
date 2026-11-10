@@ -1,0 +1,27 @@
+{
+  "source_id": "ibm-ceph-throttling",
+  "catalog_url": "https://www.ibm.com/support/pages/node/6963280",
+  "catalog_title": "Managing backfill, recovery and rebalancing throttles",
+  "catalog_product": "IBM Storage Ceph",
+  "catalog_versions": [
+    "5.x+"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:26:55.959978+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://www.ibm.com/support/pages/node/6963280",
+  "requested_url": "https://www.ibm.com/support/pages/node/6963280",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "4d5cad303ab082c858b6e1bebd227dad89e8b27d6a9ddecbd4db0b8374085bb5",
+  "raw_bytes": 52042,
+  "extracted_sha256": "5e6431d3646ed6115c67ad236b324bb8f74f02b5091152df550af0d88f8e179d",
+  "extracted_bytes": 6452,
+  "words": 930,
+  "document_title": "Ceph: Managing backfill, recovery, and rebalancing throttles",
+  "extracted_links": 4,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:08.110169+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

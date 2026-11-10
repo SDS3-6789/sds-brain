@@ -1,0 +1,27 @@
+{
+  "source_id": "ceph-squid-multisite",
+  "catalog_url": "https://docs.ceph.com/en/squid/radosgw/multisite/",
+  "catalog_title": "Ceph Squid RGW multi-site",
+  "catalog_product": "Ceph",
+  "catalog_versions": [
+    "squid"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:05.908949+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.ceph.com/en/squid/radosgw/multisite/",
+  "requested_url": "https://docs.ceph.com/en/squid/radosgw/multisite/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "e7a235ee038f1cd086fe129b8fa26c5469f2425ab6a088e8955526b980d08474",
+  "raw_bytes": 144098,
+  "extracted_sha256": "ad82bc3a9f917dcc4b5e4605703bca2a1dc537b070436b76b2fb7bbc9ee2d144",
+  "extracted_bytes": 48840,
+  "words": 6582,
+  "document_title": "Multi-Site\uf0c1",
+  "extracted_links": 76,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:07.185877+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

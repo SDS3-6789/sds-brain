@@ -1,0 +1,28 @@
+{
+  "source_id": "linux-upstream-admin",
+  "catalog_url": "https://docs.kernel.org/admin-guide/index.html",
+  "catalog_title": "Linux kernel administration guide",
+  "catalog_product": "Linux",
+  "catalog_versions": [
+    "upstream; not RHEL support policy"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:17.868763+00:00",
+  "attempts": [],
+  "status": "index_only",
+  "fetched_url": "https://docs.kernel.org/admin-guide/index.html",
+  "requested_url": "https://docs.kernel.org/admin-guide/index.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "41e4c726c092f6099c12ce85d392c00c712c7467ebaa764f3c0fb435b64df82f",
+  "raw_bytes": 32450,
+  "extracted_sha256": "f7c446469f46ba08baea759ba0d7ab970931d959b1f10f99836ca347bb110d1b",
+  "extracted_bytes": 4419,
+  "words": 677,
+  "document_title": "The Linux kernel user\u2019s and administrator\u2019s guide\u00b6",
+  "extracted_links": 98,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:19.588413+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data",
+  "reason": "Landing page or table of contents; linked documents were not captured by this target"
+}

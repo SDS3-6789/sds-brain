@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg119-release-notes",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/release-notes/index.html",
+  "catalog_title": "StorageGRID 11.9 release notes access",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "11.9"
+  ],
+  "declared_access": "mixed",
+  "started_at": "2026-11-10T09:27:19.800311+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-119/release-notes/index.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-119/release-notes/index.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "379f0df41ee8c71e79bead558500f187b9ec500d85f4279b5ea0ec0177504932",
+  "raw_bytes": 50998,
+  "extracted_sha256": "0d14c3fba02cba458dd10446e7b74fd97bcd24998cda6a040618fafb5a5db441",
+  "extracted_bytes": 329,
+  "words": 54,
+  "document_title": "Release notes",
+  "extracted_links": 3,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:21.817627+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

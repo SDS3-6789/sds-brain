@@ -1,0 +1,17 @@
+{
+  "component": "okp-mcp",
+  "repository": "https://github.com/rhel-lightspeed/okp-mcp",
+  "reviewed_commit": "a4469e1365789d1619a9d2276fa0ed2e80ee18b3",
+  "source_version": "1.0.2",
+  "checked_on": "2026-11-10",
+  "license": "Apache-2.0",
+  "upstream_image_repository": "quay.io/redhat-user-workloads/rhel-lightspeed-tenant/rhel-knowledge-bridge",
+  "portal_image_repository": "registry.redhat.io/offline-knowledge-portal/rhokp-rhel9",
+  "reference_repository": "https://github.com/team-redbull/redbull-brain",
+  "reference_commit": "cd866d4ee510b299c415f92a90b7f525d30cf04c",
+  "reference_files": ["mcp/servers/okp-mcp.md", "mcp/clients/okp-mcp.mcp.json", "deploy/openshift/okp-mcp.yaml"],
+  "runtime_artifacts_bundled": false,
+  "container_image_digest_verified": false,
+  "live_integration_tested": false,
+  "notes": "Source review is pinned; it does not identify the code in a published image. Select and verify approved architecture-specific image artifacts on a connected host, then transfer them. No RHOKP content, access key, upstream source copy or container image is redistributed here."
+}

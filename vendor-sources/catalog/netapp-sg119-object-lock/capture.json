@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg119-object-lock",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/ilm/managing-objects-with-s3-object-lock.html",
+  "catalog_title": "Manage objects with S3 Object Lock",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "11.9"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:26.005849+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-119/ilm/managing-objects-with-s3-object-lock.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-119/ilm/managing-objects-with-s3-object-lock.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "3e36e3ea02a127572d68023b5298045d96b57ada1f556345b274ef70ca60b3ca",
+  "raw_bytes": 63354,
+  "extracted_sha256": "ac4e019af63e0ae240f7474689058fac84808562ed957ed1e637087368c612f1",
+  "extracted_bytes": 6734,
+  "words": 1086,
+  "document_title": "Manage objects with S3 Object Lock",
+  "extracted_links": 6,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:28.086304+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

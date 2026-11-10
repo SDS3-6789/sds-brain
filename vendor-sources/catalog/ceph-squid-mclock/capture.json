@@ -1,0 +1,27 @@
+{
+  "source_id": "ceph-squid-mclock",
+  "catalog_url": "https://docs.ceph.com/en/squid/rados/configuration/mclock-config-ref/",
+  "catalog_title": "Ceph Squid mClock configuration reference",
+  "catalog_product": "Ceph",
+  "catalog_versions": [
+    "squid"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:07.186854+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.ceph.com/en/squid/rados/configuration/mclock-config-ref/",
+  "requested_url": "https://docs.ceph.com/en/squid/rados/configuration/mclock-config-ref/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "54ce4c46a8e6cac3077a472832b693d8703f159c7f33bcc3f853fb2326c25276",
+  "raw_bytes": 100066,
+  "extracted_sha256": "249ea802f461267669e7f2b5012b2ca435d77ba7c06a7377f2e1129efc7192b3",
+  "extracted_bytes": 34640,
+  "words": 4995,
+  "document_title": "mClock Config Reference\uf0c1",
+  "extracted_links": 138,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:08.561139+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

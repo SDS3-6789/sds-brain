@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg120-s3",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-120/s3/index.html",
+  "catalog_title": "StorageGRID 12.0 S3 API versions and updates",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "12.0"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:20.267295+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-120/s3/index.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-120/s3/index.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "aff55888746bb3c7d7b8f2deed7cd995aae00dfffb8c8637769874756b52b573",
+  "raw_bytes": 64352,
+  "extracted_sha256": "f81564de45d09efd81d3fbd024549ee1c33a975892f34c30af5f0870fc8d22bb",
+  "extracted_bytes": 6323,
+  "words": 927,
+  "document_title": "StorageGRID S3 REST API supported versions and updates",
+  "extracted_links": 10,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:22.926684+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

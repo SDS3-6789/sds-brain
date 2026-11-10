@@ -1,0 +1,27 @@
+{
+  "source_id": "ceph-squid-rgw-admin",
+  "catalog_url": "https://docs.ceph.com/en/squid/radosgw/admin/",
+  "catalog_title": "Ceph Squid RGW administration",
+  "catalog_product": "Ceph",
+  "catalog_versions": [
+    "squid"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:05.211624+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.ceph.com/en/squid/radosgw/admin/",
+  "requested_url": "https://docs.ceph.com/en/squid/radosgw/admin/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "10500825e638edd77825cd1c7e8f6759173adfbbed78e647ba2549e5a8a09bd6",
+  "raw_bytes": 97788,
+  "extracted_sha256": "e4ea3731eb562d93f50b7ac44c3e041ce2772011a127d8521102cc01dca99474",
+  "extracted_bytes": 28645,
+  "words": 4212,
+  "document_title": "Admin Guide\uf0c1",
+  "extracted_links": 55,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:06.353402+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

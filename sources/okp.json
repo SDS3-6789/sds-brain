@@ -1,0 +1,54 @@
+[
+  {
+    "id": "redhat-okp-mcp",
+    "title": "Red Hat OKP MCP — upstream setup and RHOKP prerequisites",
+    "url": "https://github.com/rhel-lightspeed/okp-mcp/blob/a4469e1365789d1619a9d2276fa0ed2e80ee18b3/README.md",
+    "vendor": "Red Hat",
+    "product": "Offline Knowledge Portal MCP",
+    "versions": ["source-1.0.2", "a4469e1365789d1619a9d2276fa0ed2e80ee18b3"],
+    "topics": ["okp-mcp", "rhokp", "solr", "podman", "offline"],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-10",
+    "notes": "Upstream setup read at the pinned commit. Requires a separately prepared RHOKP index; container images and entitled portal content are not bundled. Source pin does not verify published image identity."
+  },
+  {
+    "id": "redhat-okp-mcp-config",
+    "title": "Red Hat OKP MCP — actual runtime configuration",
+    "url": "https://github.com/rhel-lightspeed/okp-mcp/blob/a4469e1365789d1619a9d2276fa0ed2e80ee18b3/src/okp_mcp/config.py",
+    "vendor": "Red Hat",
+    "product": "Offline Knowledge Portal MCP",
+    "versions": ["source-1.0.2", "a4469e1365789d1619a9d2276fa0ed2e80ee18b3"],
+    "topics": ["okp-mcp", "configuration", "solr", "http", "telemetry"],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-10",
+    "notes": "Reviewed MCP_ settings, base Solr URL, HTML lookup and response-character limits. Actual transport default is streamable-http; README contains a conflicting stdio-default sentence. Image behavior requires acceptance."
+  },
+  {
+    "id": "redhat-okp-mcp-formatting",
+    "title": "Red Hat OKP MCP — result product-applicability annotations",
+    "url": "https://github.com/rhel-lightspeed/okp-mcp/blob/a4469e1365789d1619a9d2276fa0ed2e80ee18b3/src/okp_mcp/formatting.py",
+    "vendor": "Red Hat",
+    "product": "Offline Knowledge Portal MCP",
+    "versions": ["source-1.0.2", "a4469e1365789d1619a9d2276fa0ed2e80ee18b3"],
+    "topics": ["okp-mcp", "rhel", "ceph", "rhcs", "applicability"],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-10",
+    "notes": "Non-EOL results can receive a generic RHEL applicability label. Verify actual product/version and known RHCS content before relying on results for Ceph. Portal corpus coverage is not established by source review."
+  },
+  {
+    "id": "podman-quadlet",
+    "title": "Podman 4.6.1 — Quadlet systemd container, network and volume units",
+    "url": "https://docs.podman.io/en/v4.6.1/markdown/podman-systemd.unit.5.html",
+    "vendor": "Podman",
+    "product": "Podman Quadlet",
+    "versions": ["4.6.1"],
+    "topics": ["podman", "quadlet", "systemd", "offline", "containers"],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-10",
+    "notes": "Primary reference for Pull=never, loopback PublishPort, EnvironmentFile, generated service dependencies and network/volume units. Target host generator validation remains required."
+  }
+]

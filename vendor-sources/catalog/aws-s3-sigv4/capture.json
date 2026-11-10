@@ -1,0 +1,27 @@
+{
+  "source_id": "aws-s3-sigv4",
+  "catalog_url": "https://docs.aws.amazon.com/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html",
+  "catalog_title": "Authenticating requests with AWS Signature Version 4",
+  "catalog_product": "Amazon S3",
+  "catalog_versions": [
+    "service-current-reference"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:31.667716+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.aws.amazon.com/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html",
+  "requested_url": "https://docs.aws.amazon.com/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "fddf477fa0097aeec5d21841b3a1cd3c0dbca11126059214a4c11c752ea681be",
+  "raw_bytes": 22461,
+  "extracted_sha256": "e34004ac0f128b2a913b20b1d6fe8b1a9738807a2ef7fd2b63ffd12ad09e4f4d",
+  "extracted_bytes": 7181,
+  "words": 1122,
+  "document_title": "Authenticating Requests (AWS Signature Version 4)",
+  "extracted_links": 21,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:32.606850+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

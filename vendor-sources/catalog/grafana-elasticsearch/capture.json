@@ -1,0 +1,27 @@
+{
+  "source_id": "grafana-elasticsearch",
+  "catalog_url": "https://grafana.com/docs/grafana/latest/datasources/elasticsearch/",
+  "catalog_title": "Grafana Elasticsearch data source",
+  "catalog_product": "Grafana",
+  "catalog_versions": [
+    "installed version unknown"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:11.600740+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://grafana.com/docs/grafana/latest/datasources/elasticsearch/",
+  "requested_url": "https://grafana.com/docs/grafana/latest/datasources/elasticsearch/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "9902abd43b5ed6dc3cef66d4ad462d3b01812017d2149c2f9a99ce72204e5daa",
+  "raw_bytes": 336124,
+  "extracted_sha256": "49f10b581efcf38991b6a184dbe275522b36a5aee4e2df83460224910e4423b3",
+  "extracted_bytes": 6415,
+  "words": 938,
+  "document_title": "Elasticsearch data source",
+  "extracted_links": 31,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:13.179985+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

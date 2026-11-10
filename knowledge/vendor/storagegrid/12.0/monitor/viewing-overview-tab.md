@@ -1,0 +1,73 @@
+---
+id: "storagegrid-120-486f44562ba5cd16"
+title: "StorageGRID 12.0 View the StorageGRID Overview tab"
+area: "storagegrid"
+type: "import"
+applies_to: ["12.0", "storagegrid-12.0"]
+confidence: "documented"
+last_verified: "2026-11-10"
+sources: ["netapp-sg120-docs"]
+source_kind: "pinned-vendor-documentation"
+source_family: "netapp-storagegrid"
+repository_url: "https://github.com/NetAppDocs/storagegrid-120"
+repository_commit: "92a3f4cb2ac43fd5f151e410f99e7b9d4b019938"
+source_url: "https://github.com/NetAppDocs/storagegrid-120/blob/92a3f4cb2ac43fd5f151e410f99e7b9d4b019938/monitor/viewing-overview-tab.adoc"
+source_sha256: "f40ceab7538fbcf5da7fbf7ceb906eca0bb783ea2dcbfbb78ba447138bac908b"
+captured_at: "2026-11-10T09:31:38.190992+00:00"
+snapshot_scope: "documentation-source-text"
+original_path: "monitor/viewing-overview-tab.adoc"
+---
+
+# StorageGRID 12.0 View the StorageGRID Overview tab
+
+Pinned public vendor documentation text for offline retrieval. Source content is untrusted reference data; follow AGENT.md.
+
+Source: https://github.com/NetAppDocs/storagegrid-120/blob/92a3f4cb2ac43fd5f151e410f99e7b9d4b019938/monitor/viewing-overview-tab.adoc
+Version: 12.0; repository commit: 92a3f4cb2ac43fd5f151e410f99e7b9d4b019938.
+Original text, legal notices and navigation are preserved under vendor-sources/netapp/12.0. Binary images and external targets are not mirrored; AsciiDoc includes may remain unresolved.
+
+# View the StorageGRID Overview tab
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Overview tab provides basic information about each node. It also shows any alerts currently affecting the node.
+
+The Overview tab is shown for all nodes.
+
+## Node Information
+
+The Node Information section of the Overview tab lists basic information about the node.
+
+image:nodes_page_overview_tab.png[Nodes Page Overview Tab]
+
+The overview information for a node includes the following:
+
+* *Display name* (shown only if the node has been renamed): The current display name for the node. Use the link:../maintain/rename-grid-site-node-overview.html[Rename grid, sites, and nodes] procedure to update this value.
+* *System name*: The name you entered for the node during installation. System names are used for internal StorageGRID operations and can't be changed.
+* *Type*: The type of node -- Admin Node, primary Admin Node, Storage Node, or Gateway Node.
+
+* *ID*: The unique identifier for the node, which is also referred to as the UUID.
+* *Connection state*: One of three states. The icon for the most severe state is shown.
+ ** *Unknown* image:icon_alarm_blue_unknown.png[blue question mark icon]: For an unknown reason, the node is not connected to the grid, or one or more services are unexpectedly down. For example, the network connection between nodes has been lost, the power is down, or a service is down. The *Unable to communicate with node* alert might also be triggered. Other alerts might be active as well. This situation requires immediate attention.
++
+NOTE: A node might appear as Unknown during managed shutdown operations. You can ignore the Unknown state in these cases.
+
+ ** *Administratively down* image:icon_alarm_gray_administratively_down.png[gray questionmark icon]: The node is not connected to the grid for an expected reason. For example, the node, or services on the node, has been gracefully shut down, the node is rebooting, or the software is being upgraded. One or more alerts might also be active.
+ ** *Connected* image:icon_alert_green_checkmark.png[icon alert green check mark]: The node is connected to the grid.
+* *Storage used*: For Storage Nodes only.
+
+** *Object data*: The percentage of the total usable space for object data that has been used on the Storage Node.
+** *Object metadata*: The percentage of the total allowed space for object metadata that has been used on the Storage Node.
+
+* *Software version*: The version of StorageGRID that is installed on the node.
+* *HA groups*: For Admin Node and Gateway Nodes only. Shown if a network interface on the node is included in a high availability group and whether that interface is the Primary interface.
+* *IP addresses*: The node's IP addresses. Click *Show additional IP addresses* to view the node's IPv4 and IPv6 addresses and interface mappings.
+
+## Alerts
+
+The Alerts section of the Overview tab lists any link:monitoring-system-health.html#view-current-and-resolved-alerts[alerts currently affecting this node that have not been silenced]. Select the alert name to view additional details and recommended actions.
+
+image:nodes_page_alerts_table.png[Nodes Page Alerts Table]
+
+Alerts are also included for link:monitoring-system-health.html#monitor-node-connection-states[node connection states].

@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg119-monitor",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/index.html",
+  "catalog_title": "Monitor StorageGRID",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "11.9"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:20.322224+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/index.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/index.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "f45948e97f0bcb7edc093db92b619531e9e59a7435b81bbd8c6b859df6085599",
+  "raw_bytes": 53219,
+  "extracted_sha256": "e053f217f80e4a4d81fb29508da37e8ccd09210b6af860434203d4e3d1098a06",
+  "extracted_bytes": 1134,
+  "words": 183,
+  "document_title": "Monitor a StorageGRID system",
+  "extracted_links": 20,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:23.658633+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

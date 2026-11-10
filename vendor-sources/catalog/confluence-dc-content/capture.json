@@ -1,0 +1,27 @@
+{
+  "source_id": "confluence-dc-content",
+  "catalog_url": "https://support.atlassian.com/confluence/kb/how-to-get-page-content-or-child-list-via-rest-api/",
+  "catalog_title": "Confluence Data Center page content API",
+  "catalog_product": "Confluence Data Center",
+  "catalog_versions": [
+    "match installed release"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:15.528438+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://support.atlassian.com/confluence/kb/how-to-get-page-content-or-child-list-via-rest-api/",
+  "requested_url": "https://support.atlassian.com/confluence/kb/how-to-get-page-content-or-child-list-via-rest-api/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "9f8c5609fefbf4e89911ebf5dd6d3cdfba886082ffb599e661da599063650532",
+  "raw_bytes": 102877,
+  "extracted_sha256": "3ddc1bc7c5edc68d19f3c3e527b538e893dd30719f45d9ecadd3e6ef15f5adf2",
+  "extracted_bytes": 5575,
+  "words": 562,
+  "document_title": "How to get page content or child list via REST API",
+  "extracted_links": 11,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:16.927280+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

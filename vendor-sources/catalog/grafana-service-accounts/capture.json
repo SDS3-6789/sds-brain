@@ -1,0 +1,27 @@
+{
+  "source_id": "grafana-service-accounts",
+  "catalog_url": "https://grafana.com/docs/grafana/latest/administration/service-accounts/",
+  "catalog_title": "Grafana service accounts",
+  "catalog_product": "Grafana",
+  "catalog_versions": [
+    "installed version unknown"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:11.898433+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://grafana.com/docs/grafana/latest/administration/service-accounts/",
+  "requested_url": "https://grafana.com/docs/grafana/latest/administration/service-accounts/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "d0a45ccf903b40796329774092121eea9d19e17304ddc81db2b89c206152364d",
+  "raw_bytes": 347196,
+  "extracted_sha256": "2b9146e6566e80da3ef5ac6970637a9c133eeafbd09f8be8053f3bc62225383c",
+  "extracted_bytes": 12213,
+  "words": 1900,
+  "document_title": "Service accounts",
+  "extracted_links": 31,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:14.252028+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

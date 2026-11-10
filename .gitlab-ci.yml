@@ -1,0 +1,17 @@
+# Choose a vetted internal image containing Python 3.9+ and git.
+# Set SDS_CI_IMAGE in your internal GitLab project before enabling this pipeline.
+image: $SDS_CI_IMAGE
+
+stages:
+  - validate
+
+validate:
+  stage: validate
+  script:
+    - python3 scripts/brain.py validate
+    - python3 scripts/brain.py index --check
+    - python3 scripts/check_repository.py --manifest
+    - python3 -m unittest discover -s tests
+    - python3 scripts/acceptance.py
+    - python3 scripts/verify_offline_knowledge.py
+    - python3 scripts/vendor_grafana.py --check

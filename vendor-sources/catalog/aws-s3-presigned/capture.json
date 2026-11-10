@@ -1,0 +1,27 @@
+{
+  "source_id": "aws-s3-presigned",
+  "catalog_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html",
+  "catalog_title": "Download and upload using presigned URLs",
+  "catalog_product": "Amazon S3",
+  "catalog_versions": [
+    "service-current-reference"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:34.154505+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html",
+  "requested_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "5800e808dcad91debf5c4193823665907a0d713d0e5d331a6270bbc2d2cd6249",
+  "raw_bytes": 28379,
+  "extracted_sha256": "67df343bc7b3029709b8d9d044a52d1600f6664a09795decde0a5f3f7c40f51f",
+  "extracted_bytes": 10734,
+  "words": 1664,
+  "document_title": "Download and upload objects with presigned URLs",
+  "extracted_links": 11,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:36.168339+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

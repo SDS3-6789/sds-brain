@@ -1,0 +1,27 @@
+{
+  "source_id": "aws-iam-policy-evaluation",
+  "catalog_url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html",
+  "catalog_title": "IAM policy evaluation logic",
+  "catalog_product": "IAM",
+  "catalog_versions": [
+    "service-current-reference"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:34.843916+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html",
+  "requested_url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "e14e7f9015beadc33105468ceb68e4ce16f35b138ba4c35824d1f85f0e3aa969",
+  "raw_bytes": 17642,
+  "extracted_sha256": "69180dac9a445ed6eafa441491a90db89de46c94d83517ea13de49796d1f8660",
+  "extracted_bytes": 3618,
+  "words": 560,
+  "document_title": "Policy evaluation logic",
+  "extracted_links": 5,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:37.122551+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

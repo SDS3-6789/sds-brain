@@ -1,0 +1,737 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>RGW Service &mdash; Ceph Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/ceph.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/ceph.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/rtd_sphinx_search.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/js/rtd_search_config.js"></script>
+        <script src="../../../_static/js/rtd_sphinx_search.min.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex/" />
+    <link rel="search" title="Search" href="../../../search/" />
+    <link rel="next" title="MDS Service" href="../mds/" />
+    <link rel="prev" title="OSD Service" href="../osd/" /> 
+<script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="ceph" /><meta name="readthedocs-version-slug" content="squid" /><meta name="readthedocs-resolver-filename" content="/cephadm/services/rgw/" /><meta name="readthedocs-http-status" content="200" /></head>
+
+<body class="wy-body-for-nav">
+
+   
+  <header class="top-bar">
+    <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../">Cephadm</a></li>
+          <li class="breadcrumb-item"><a href="../">Service Management</a></li>
+      <li class="breadcrumb-item active">RGW Service</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/cephadm/services/rgw.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+  </header>
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #eee" >
+          
+
+          
+            <a href="../../../" class="icon icon-home"> Ceph
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../start/">Intro to Ceph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install/">Installing Ceph</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../">Cephadm</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../compatibility/">Compatibility and Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../install/">Using cephadm to Deploy a New Ceph Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../adoption/">Converting an existing cluster to cephadm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../host-management/">Host Management</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../">Service Management</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../mon/">MON Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mgr/">MGR Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../osd/">OSD Service</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">RGW Service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#deploy-rgws">Deploy RGWs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#high-availability-service-for-rgw">High availability service for RGW</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#further-reading">Further Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../mds/">MDS Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nfs/">NFS Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../iscsi/">iSCSI Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../custom-container/">Custom Container Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../monitoring/">Monitoring Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snmp-gateway/">SNMP Gateway Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tracing/">Tracing Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smb/">SMB Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../#service-status">Service Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../#daemon-status">Daemon Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../#service-specification">Service Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../#daemon-placement">Daemon Placement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../#extra-container-arguments">Extra Container Arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../#extra-entrypoint-arguments">Extra Entrypoint Arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../#custom-config-files">Custom Config Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../#removing-a-service">Removing a Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../#disabling-automatic-deployment-of-daemons">Disabling automatic deployment of daemons</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../upgrade/">Upgrading Ceph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../operations/">Cephadm operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../client-setup/">Client Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev/cephadm/">Cephadm Feature Planning</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rados/">Ceph Storage Cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cephfs/">Ceph File System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rbd/">Ceph Block Device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../radosgw/">Ceph Object Gateway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mgr/">Ceph Manager Daemon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mgr/dashboard/">Ceph Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../monitoring/">Monitoring overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../architecture/">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/developer_guide/">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/internals/">Ceph Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../governance/">Governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../foundation/">Ceph Foundation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ceph-volume/">ceph-volume</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.ceph.com/en/latest/releases/general/">Ceph Releases (general)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.ceph.com/en/latest/releases/">Ceph Releases (index)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware-monitoring/">Hardware monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jaegertracing/">Tracing</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../">Ceph</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div id="docubetter" align="right" style="padding: 5px; font-weight: bold;">
+    <a href="https://pad.ceph.com/p/Report_Documentation_Bugs">Report a Documentation Bug</a>
+  </div>
+
+  
+  <section id="rgw-service">
+<h1>RGW Service<a class="headerlink" href="#rgw-service" title="Permalink to this heading"></a></h1>
+<section id="deploy-rgws">
+<span id="cephadm-deploy-rgw"></span><h2>Deploy RGWs<a class="headerlink" href="#deploy-rgws" title="Permalink to this heading"></a></h2>
+<p>Cephadm deploys the Object Gateway (RGW) as a collection of daemons that manage a
+single-cluster deployment or a particular <em>realm</em> and <em>zone</em> in a
+multisite deployment.  (For more information about realms and zones,
+see <a class="reference internal" href="../../../radosgw/multisite/#multisite"><span class="std std-ref">Multi-Site</span></a>.)</p>
+<p>Note that with <code class="docutils literal notranslate"><span class="pre">cephadm</span></code>, <code class="docutils literal notranslate"><span class="pre">radosgw</span></code> daemons are configured via the monitor
+configuration database instead of via a <cite>ceph.conf</cite> or the command line.  If
+that configuration isn’t already in place (usually in the
+<code class="docutils literal notranslate"><span class="pre">client.rgw.&lt;something&gt;</span></code> section), then the <code class="docutils literal notranslate"><span class="pre">radosgw</span></code>
+daemons will start up with default settings (e.g., binding to port
+80).</p>
+<p>To deploy a set of <code class="docutils literal notranslate"><span class="pre">radosgw</span></code> daemons, with an arbitrary service name
+<em>name</em>, run the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "# ";
+}
+</style><span class="prompt1">ceph<span class="w"> </span>orch<span class="w"> </span>apply<span class="w"> </span>rgw<span class="w"> </span>*&lt;name&gt;*<span class="w"> </span><span class="o">[</span>--realm<span class="o">=</span>*&lt;realm-name&gt;*<span class="o">]</span><span class="w"> </span><span class="o">[</span>--zone<span class="o">=</span>*&lt;zone-name&gt;*<span class="o">]</span><span class="w"> </span>--placement<span class="o">=</span><span class="s2">"*&lt;num-daemons&gt;* [*&lt;host1&gt;* ...]"</span></span>
+</pre></div></div><section id="trivial-setup">
+<h3>Trivial setup<a class="headerlink" href="#trivial-setup" title="Permalink to this heading"></a></h3>
+<p>For example, to deploy two daemons (the default) for a single-cluster RGW deployment
+with the arbitrary service id <code class="docutils literal notranslate"><span class="pre">foo</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ceph<span class="w"> </span>orch<span class="w"> </span>apply<span class="w"> </span>rgw<span class="w"> </span>foo</span>
+</pre></div></div></section>
+<section id="designated-gateways">
+<span id="cephadm-rgw-designated-gateways"></span><h3>Designated gateways<a class="headerlink" href="#designated-gateways" title="Permalink to this heading"></a></h3>
+<p>A common scenario is to have a labeled set of hosts that will act
+as gateways, with multiple instances of radosgw running on consecutive
+ports 8000 and 8001:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ceph<span class="w"> </span>orch<span class="w"> </span>host<span class="w"> </span>label<span class="w"> </span>add<span class="w"> </span>gwhost1<span class="w"> </span>rgw<span class="w">  </span><span class="c1"># the 'rgw' label can be anything</span></span>
+<span class="prompt1">ceph<span class="w"> </span>orch<span class="w"> </span>host<span class="w"> </span>label<span class="w"> </span>add<span class="w"> </span>gwhost2<span class="w"> </span>rgw</span>
+<span class="prompt1">ceph<span class="w"> </span>orch<span class="w"> </span>apply<span class="w"> </span>rgw<span class="w"> </span>foo<span class="w"> </span><span class="s1">'--placement=label:rgw count-per-host:2'</span><span class="w"> </span>--port<span class="o">=</span><span class="m">8000</span></span>
+</pre></div></div><p>See also: <a class="reference internal" href="../#cephadm-co-location"><span class="std std-ref">Co-location of daemons</span></a>.</p>
+</section>
+<section id="specifying-networks">
+<span id="cephadm-rgw-networks"></span><h3>Specifying Networks<a class="headerlink" href="#specifying-networks" title="Permalink to this heading"></a></h3>
+<p>The RGW service can have the network they bind to configured with a YAML service specification.</p>
+<p>example spec file:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">service_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rgw</span>
+<span class="nt">service_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">foo</span>
+<span class="nt">placement</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rgw</span>
+<span class="w">  </span><span class="nt">count_per_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="nt">networks</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.169.142.0/24</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">rgw_frontend_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span>
+</pre></div>
+</div>
+</section>
+<section id="passing-frontend-extra-arguments">
+<h3>Passing Frontend Extra Arguments<a class="headerlink" href="#passing-frontend-extra-arguments" title="Permalink to this heading"></a></h3>
+<p>The RGW service specification can be used to pass extra arguments to the frontend by using
+the <code class="docutils literal notranslate"><span class="pre">rgw_frontend_extra_args</span></code> arguments list.</p>
+<p>example spec file:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">service_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rgw</span>
+<span class="nt">service_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">foo</span>
+<span class="nt">placement</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rgw</span>
+<span class="w">  </span><span class="nt">count_per_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">rgw_realm</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myrealm</span>
+<span class="w">  </span><span class="nt">rgw_zone</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myzone</span>
+<span class="w">  </span><span class="nt">rgw_frontend_type</span><span class="p">:</span><span class="w"> </span><span class="s">"beast"</span>
+<span class="w">  </span><span class="nt">rgw_frontend_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5000</span>
+<span class="w">  </span><span class="nt">rgw_frontend_extra_args</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"tcp_nodelay=1"</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"max_header_size=65536"</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">cephadm</span></code> combines the arguments from the <code class="docutils literal notranslate"><span class="pre">spec</span></code> section with those from
+<code class="docutils literal notranslate"><span class="pre">rgw_frontend_extra_args</span></code> into a single space-separated arguments list
+which is used to set the value of the <code class="docutils literal notranslate"><span class="pre">rgw_frontends</span></code> configuration parameter.</p>
+</div>
+</section>
+<section id="multisite-zones">
+<h3>Multisite zones<a class="headerlink" href="#multisite-zones" title="Permalink to this heading"></a></h3>
+<p>To deploy RGWs serving the multisite <code class="docutils literal notranslate"><span class="pre">myorg</span></code> realm and the <code class="docutils literal notranslate"><span class="pre">us-east-1</span></code> zone on
+<code class="docutils literal notranslate"><span class="pre">myhost1</span></code> and <code class="docutils literal notranslate"><span class="pre">myhost2</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ceph<span class="w"> </span>orch<span class="w"> </span>apply<span class="w"> </span>rgw<span class="w"> </span>east<span class="w"> </span>--realm<span class="o">=</span>myorg<span class="w"> </span>--zonegroup<span class="o">=</span>us-east-zg-1<span class="w"> </span>--zone<span class="o">=</span>us-east-1<span class="w"> </span>--placement<span class="o">=</span><span class="s2">"2 myhost1 myhost2"</span></span>
+</pre></div></div><p>Note that in a multisite situation, <code class="docutils literal notranslate"><span class="pre">cephadm</span></code> only deploys the daemons.  It does not create
+or update the realm or zone configurations.  To create a new realm, zone, and zonegroup
+use <a class="reference internal" href="../../../mgr/rgw/#mgr-rgw-module"><span class="std std-ref">RGW Module</span></a> or issue commands of the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>realm<span class="w"> </span>create<span class="w"> </span>--rgw-realm<span class="o">=</span>&lt;realm-name&gt;</span>
+</pre></div></div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>zonegroup<span class="w"> </span>create<span class="w"> </span>--rgw-zonegroup<span class="o">=</span>&lt;zonegroup-name&gt;<span class="w">  </span>--master</span>
+</pre></div></div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>zone<span class="w"> </span>create<span class="w"> </span>--rgw-zonegroup<span class="o">=</span>&lt;zonegroup-name&gt;<span class="w"> </span>--rgw-zone<span class="o">=</span>&lt;zone-name&gt;<span class="w"> </span>--master</span>
+</pre></div></div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">radosgw-admin<span class="w"> </span>period<span class="w"> </span>update<span class="w"> </span>--rgw-realm<span class="o">=</span>&lt;realm-name&gt;<span class="w"> </span>--commit</span>
+</pre></div></div><p>See <a class="reference internal" href="../#orchestrator-cli-placement-spec"><span class="std std-ref">Daemon Placement</span></a> for details of the placement
+specification.  See <a class="reference internal" href="../../../radosgw/multisite/#multisite"><span class="std std-ref">Multi-Site</span></a> for more information of setting up multisite RGW.</p>
+<p>See also <a class="reference internal" href="../../../radosgw/multisite/#multisite"><span class="std std-ref">Multi-Site</span></a>.</p>
+</section>
+<section id="setting-up-https">
+<h3>Setting up HTTPS<a class="headerlink" href="#setting-up-https" title="Permalink to this heading"></a></h3>
+<p>In order to enable HTTPS for RGW services, apply a spec file following this scheme:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">service_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rgw</span>
+<span class="nt">service_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myrgw</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">rgw_frontend_ssl_certificate</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">    </span><span class="no">-----BEGIN PRIVATE KEY-----</span>
+<span class="w">    </span><span class="no">V2VyIGRhcyBsaWVzdCBpc3QgZG9vZi4gTG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFt</span>
+<span class="w">    </span><span class="no">ZXQsIGNvbnNldGV0dXIgc2FkaXBzY2luZyBlbGl0ciwgc2VkIGRpYW0gbm9udW15</span>
+<span class="w">    </span><span class="no">IGVpcm1vZCB0ZW1wb3IgaW52aWR1bnQgdXQgbGFib3JlIGV0IGRvbG9yZSBtYWdu</span>
+<span class="w">    </span><span class="no">YSBhbGlxdXlhbSBlcmF0LCBzZWQgZGlhbSB2b2x1cHR1YS4gQXQgdmVybyBlb3Mg</span>
+<span class="w">    </span><span class="no">ZXQgYWNjdXNhbSBldCBqdXN0byBkdW8=</span>
+<span class="w">    </span><span class="no">-----END PRIVATE KEY-----</span>
+<span class="w">    </span><span class="no">-----BEGIN CERTIFICATE-----</span>
+<span class="w">    </span><span class="no">V2VyIGRhcyBsaWVzdCBpc3QgZG9vZi4gTG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFt</span>
+<span class="w">    </span><span class="no">ZXQsIGNvbnNldGV0dXIgc2FkaXBzY2luZyBlbGl0ciwgc2VkIGRpYW0gbm9udW15</span>
+<span class="w">    </span><span class="no">IGVpcm1vZCB0ZW1wb3IgaW52aWR1bnQgdXQgbGFib3JlIGV0IGRvbG9yZSBtYWdu</span>
+<span class="w">    </span><span class="no">YSBhbGlxdXlhbSBlcmF0LCBzZWQgZGlhbSB2b2x1cHR1YS4gQXQgdmVybyBlb3Mg</span>
+<span class="w">    </span><span class="no">ZXQgYWNjdXNhbSBldCBqdXN0byBkdW8=</span>
+<span class="w">    </span><span class="no">-----END CERTIFICATE-----</span>
+<span class="w">  </span><span class="nt">ssl</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+<p>Then apply this yaml document:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ceph<span class="w"> </span>orch<span class="w"> </span>apply<span class="w"> </span>-i<span class="w"> </span>myrgw.yaml</span>
+</pre></div></div><p>Note the value of <code class="docutils literal notranslate"><span class="pre">rgw_frontend_ssl_certificate</span></code> is a literal string as
+indicated by a <code class="docutils literal notranslate"><span class="pre">|</span></code> character preserving newline characters.</p>
+</section>
+<section id="disabling-multisite-sync-traffic">
+<h3>Disabling multisite sync traffic<a class="headerlink" href="#disabling-multisite-sync-traffic" title="Permalink to this heading"></a></h3>
+<p>There is an RGW config option called <code class="docutils literal notranslate"><span class="pre">rgw_run_sync_thread</span></code> that tells the
+RGW daemon to not transmit multisite replication data. This is useful if you want
+that RGW daemon to be dedicated to I/O rather than multisite sync operations.
+The RGW spec file includes a setting <code class="docutils literal notranslate"><span class="pre">disable_multisite_sync_traffic</span></code> that when
+set to “True” will tell cephadm to set <code class="docutils literal notranslate"><span class="pre">rgw_run_sync_thread</span></code> to false for all
+RGW daemons deployed for that RGW service. For example</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">service_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rgw</span>
+<span class="nt">service_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">foo</span>
+<span class="nt">placement</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rgw</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">rgw_realm</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myrealm</span>
+<span class="w">  </span><span class="nt">rgw_zone</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myzone</span>
+<span class="w">  </span><span class="nt">rgw_zonegroup</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myzg</span>
+<span class="w">  </span><span class="nt">disable_multisite_sync_traffic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This will only stop the RGW daemon(s) from sending replication data.
+The daemon can still receive replication data unless it has been removed
+from the zonegroup and zone replication endpoints.</p>
+</div>
+</section>
+<section id="service-specification">
+<h3>Service specification<a class="headerlink" href="#service-specification" title="Permalink to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="ceph.deployment.service_spec.RGWSpec">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ceph.deployment.service_spec.</span></span><span class="sig-name descname"><span class="pre">RGWSpec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">service_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rgw'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">service_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">placement</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgw_realm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgw_zonegroup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgw_zone</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgw_frontend_port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgw_frontend_ssl_certificate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgw_frontend_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgw_frontend_extra_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unmanaged</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preview_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">networks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subcluster</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_container_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_entrypoint_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_configs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgw_realm_token</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_endpoints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zone_endpoints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zonegroup_hostnames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgw_user_counters_cache</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgw_user_counters_cache_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgw_bucket_counters_cache</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgw_bucket_counters_cache_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disable_multisite_sync_traffic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ceph.deployment.service_spec.RGWSpec" title="Permalink to this definition"></a></dt>
+<dd><p>Settings to configure a (multisite) Ceph RGW</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">service_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rgw</span>
+<span class="nt">service_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myrealm.myzone</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">rgw_realm</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myrealm</span>
+<span class="w">    </span><span class="nt">rgw_zonegroup</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myzonegroup</span>
+<span class="w">    </span><span class="nt">rgw_zone</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myzone</span>
+<span class="w">    </span><span class="nt">ssl</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">rgw_frontend_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1234</span>
+<span class="w">    </span><span class="nt">rgw_frontend_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">beast</span>
+<span class="w">    </span><span class="nt">rgw_frontend_ssl_certificate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</pre></div>
+</div>
+<p>See also: <a class="reference internal" href="../#orchestrator-cli-service-spec"><span class="std std-ref">Service Specification</span></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ceph.deployment.service_spec.RGWSpec.disable_multisite_sync_traffic">
+<span class="sig-name descname"><span class="pre">disable_multisite_sync_traffic</span></span><a class="headerlink" href="#ceph.deployment.service_spec.RGWSpec.disable_multisite_sync_traffic" title="Permalink to this definition"></a></dt>
+<dd><p>Used to make RGW not do multisite replication so it can dedicate to IO</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ceph.deployment.service_spec.RGWSpec.networks">
+<span class="sig-name descname"><span class="pre">networks</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ceph.deployment.service_spec.RGWSpec.networks" title="Permalink to this definition"></a></dt>
+<dd><p>A list of network identities instructing the daemons to only bind
+on the particular networks in that list. In case the cluster is distributed
+across multiple networks, you can add multiple networks. See
+<a class="reference internal" href="../monitoring/#cephadm-monitoring-networks-ports"><span class="std std-ref">Networks and Ports</span></a>,
+<a class="reference internal" href="#cephadm-rgw-networks"><span class="std std-ref">Specifying Networks</span></a> and <a class="reference internal" href="../mgr/#cephadm-mgr-networks"><span class="std std-ref">Specifying Networks</span></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ceph.deployment.service_spec.RGWSpec.placement">
+<span class="sig-name descname"><span class="pre">placement</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../../../mgr/orchestrator_modules/#ceph.deployment.service_spec.PlacementSpec" title="ceph.deployment.service_spec.PlacementSpec"><span class="pre">PlacementSpec</span></a></em><a class="headerlink" href="#ceph.deployment.service_spec.RGWSpec.placement" title="Permalink to this definition"></a></dt>
+<dd><p>See <a class="reference internal" href="../#orchestrator-cli-placement-spec"><span class="std std-ref">Daemon Placement</span></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ceph.deployment.service_spec.RGWSpec.rgw_bucket_counters_cache">
+<span class="sig-name descname"><span class="pre">rgw_bucket_counters_cache</span></span><a class="headerlink" href="#ceph.deployment.service_spec.RGWSpec.rgw_bucket_counters_cache" title="Permalink to this definition"></a></dt>
+<dd><p>To track op metrics by bucket config value rgw_bucket_counters_cache must be set to true</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ceph.deployment.service_spec.RGWSpec.rgw_bucket_counters_cache_size">
+<span class="sig-name descname"><span class="pre">rgw_bucket_counters_cache_size</span></span><a class="headerlink" href="#ceph.deployment.service_spec.RGWSpec.rgw_bucket_counters_cache_size" title="Permalink to this definition"></a></dt>
+<dd><p>Used to set number of entries in each cache of bucket counters</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ceph.deployment.service_spec.RGWSpec.rgw_frontend_extra_args">
+<span class="sig-name descname"><span class="pre">rgw_frontend_extra_args</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ceph.deployment.service_spec.RGWSpec.rgw_frontend_extra_args" title="Permalink to this definition"></a></dt>
+<dd><p>List of extra arguments for rgw_frontend in the form opt=value. See <a class="reference internal" href="../../../radosgw/frontends/#rgw-frontends"><span class="std std-ref">HTTP Frontends</span></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ceph.deployment.service_spec.RGWSpec.rgw_frontend_port">
+<span class="sig-name descname"><span class="pre">rgw_frontend_port</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ceph.deployment.service_spec.RGWSpec.rgw_frontend_port" title="Permalink to this definition"></a></dt>
+<dd><p>Port of the RGW daemons</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ceph.deployment.service_spec.RGWSpec.rgw_frontend_ssl_certificate">
+<span class="sig-name descname"><span class="pre">rgw_frontend_ssl_certificate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ceph.deployment.service_spec.RGWSpec.rgw_frontend_ssl_certificate" title="Permalink to this definition"></a></dt>
+<dd><p>List of SSL certificates</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ceph.deployment.service_spec.RGWSpec.rgw_frontend_type">
+<span class="sig-name descname"><span class="pre">rgw_frontend_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ceph.deployment.service_spec.RGWSpec.rgw_frontend_type" title="Permalink to this definition"></a></dt>
+<dd><p>civetweb or beast (default: beast). See <a class="reference internal" href="../../../radosgw/frontends/#rgw-frontends"><span class="std std-ref">HTTP Frontends</span></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ceph.deployment.service_spec.RGWSpec.rgw_realm">
+<span class="sig-name descname"><span class="pre">rgw_realm</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ceph.deployment.service_spec.RGWSpec.rgw_realm" title="Permalink to this definition"></a></dt>
+<dd><p>The RGW realm associated with this service. Needs to be manually created
+if the spec is being applied directly to cephdam. In case of rgw module
+the realm is created automatically.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ceph.deployment.service_spec.RGWSpec.rgw_user_counters_cache">
+<span class="sig-name descname"><span class="pre">rgw_user_counters_cache</span></span><a class="headerlink" href="#ceph.deployment.service_spec.RGWSpec.rgw_user_counters_cache" title="Permalink to this definition"></a></dt>
+<dd><p>To track op metrics by user config value rgw_user_counters_cache must be set to true</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ceph.deployment.service_spec.RGWSpec.rgw_user_counters_cache_size">
+<span class="sig-name descname"><span class="pre">rgw_user_counters_cache_size</span></span><a class="headerlink" href="#ceph.deployment.service_spec.RGWSpec.rgw_user_counters_cache_size" title="Permalink to this definition"></a></dt>
+<dd><p>Used to set number of entries in each cache of user counters</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ceph.deployment.service_spec.RGWSpec.rgw_zone">
+<span class="sig-name descname"><span class="pre">rgw_zone</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ceph.deployment.service_spec.RGWSpec.rgw_zone" title="Permalink to this definition"></a></dt>
+<dd><p>The RGW zone associated with this service. Needs to be manually created
+if the spec is being applied directly to cephdam. In case of rgw module
+the zone is created automatically.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ceph.deployment.service_spec.RGWSpec.rgw_zonegroup">
+<span class="sig-name descname"><span class="pre">rgw_zonegroup</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ceph.deployment.service_spec.RGWSpec.rgw_zonegroup" title="Permalink to this definition"></a></dt>
+<dd><p>The RGW zonegroup associated with this service. Needs to be manually created
+if the spec is being applied directly to cephdam. In case of rgw module
+the zonegroup is created automatically.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ceph.deployment.service_spec.RGWSpec.ssl">
+<span class="sig-name descname"><span class="pre">ssl</span></span><a class="headerlink" href="#ceph.deployment.service_spec.RGWSpec.ssl" title="Permalink to this definition"></a></dt>
+<dd><p>enable SSL</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+<section id="high-availability-service-for-rgw">
+<span id="orchestrator-haproxy-service-spec"></span><h2>High availability service for RGW<a class="headerlink" href="#high-availability-service-for-rgw" title="Permalink to this heading"></a></h2>
+<p>The <em>ingress</em> service allows you to create a high availability endpoint
+for RGW with a minimum set of configuration options.  The orchestrator will
+deploy and manage a combination of haproxy and keepalived to provide load
+balancing on a floating virtual IP.</p>
+<p>If the RGW service is configured with SSL enabled, then the ingress service
+will use the <cite>ssl</cite> and <cite>verify none</cite> options in the backend configuration.
+Trust verification is disabled because the backends are accessed by IP
+address instead of FQDN.</p>
+<img alt="../../../_images/HAProxy_for_RGW.svg" src="../../../_images/HAProxy_for_RGW.svg" /><p>There are N hosts where the ingress service is deployed.  Each host
+has a haproxy daemon and a keepalived daemon.  A virtual IP is
+automatically configured on only one of these hosts at a time.</p>
+<p>Each keepalived daemon checks every few seconds whether the haproxy
+daemon on the same host is responding.  Keepalived will also check
+that the master keepalived daemon is running without problems.  If the
+“master” keepalived daemon or the active haproxy is not responding,
+one of the remaining keepalived daemons running in backup mode will be
+elected as master, and the virtual IP will be moved to that node.</p>
+<p>The active haproxy acts like a load balancer, distributing all RGW requests
+between all the RGW daemons available.</p>
+<section id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>An existing RGW service.</p></li>
+</ul>
+</section>
+<section id="deploying">
+<h3>Deploying<a class="headerlink" href="#deploying" title="Permalink to this heading"></a></h3>
+<p>Use the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ceph</span> <span class="n">orch</span> <span class="n">apply</span> <span class="o">-</span><span class="n">i</span> <span class="o">&lt;</span><span class="n">ingress_spec_file</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h3>Service specification<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<p>Service specs are YAML blocks with the following properties:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">service_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ingress</span>
+<span class="nt">service_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rgw.something</span><span class="w">    </span><span class="c1"># adjust to match your existing RGW service</span>
+<span class="nt">placement</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">host1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">host2</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">host3</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">backend_service</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rgw.something</span><span class="w">            </span><span class="c1"># adjust to match your existing RGW service</span>
+<span class="w">  </span><span class="nt">virtual_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;/&lt;string&gt;</span><span class="w">             </span><span class="c1"># ex: 192.168.20.1/24</span>
+<span class="w">  </span><span class="nt">frontend_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;integer&gt;</span><span class="w">                  </span><span class="c1"># ex: 8080</span>
+<span class="w">  </span><span class="nt">monitor_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;integer&gt;</span><span class="w">                   </span><span class="c1"># ex: 1967, used by haproxy for load balancer status</span>
+<span class="w">  </span><span class="nt">virtual_interface_networks</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">...</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w">       </span><span class="c1"># optional: list of CIDR networks</span>
+<span class="w">  </span><span class="nt">use_keepalived_multicast</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w">          </span><span class="c1"># optional: Default is False.</span>
+<span class="w">  </span><span class="nt">vrrp_interface_network</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;/&lt;string&gt;</span><span class="w"> </span><span class="c1"># optional: ex: 192.168.20.0/24</span>
+<span class="w">  </span><span class="nt">health_check_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w">           </span><span class="c1"># optional: Default is 2s.</span>
+<span class="w">  </span><span class="nt">ssl_cert</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w">                               </span><span class="c1"># optional: SSL certificate and key</span>
+<span class="w">    </span><span class="no">-----BEGIN CERTIFICATE-----</span>
+<span class="w">    </span><span class="no">...</span>
+<span class="w">    </span><span class="no">-----END CERTIFICATE-----</span>
+<span class="w">    </span><span class="no">-----BEGIN PRIVATE KEY-----</span>
+<span class="w">    </span><span class="no">...</span>
+<span class="w">    </span><span class="no">-----END PRIVATE KEY-----</span>
+</pre></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">service_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ingress</span>
+<span class="nt">service_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rgw.something</span><span class="w">    </span><span class="c1"># adjust to match your existing RGW service</span>
+<span class="nt">placement</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">host1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">host2</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">host3</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">backend_service</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rgw.something</span><span class="w">      </span><span class="c1"># adjust to match your existing RGW service</span>
+<span class="w">  </span><span class="nt">virtual_ips_list</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;/&lt;string&gt;</span><span class="w">                 </span><span class="c1"># ex: 192.168.20.1/24</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;/&lt;string&gt;</span><span class="w">                 </span><span class="c1"># ex: 192.168.20.2/24</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;/&lt;string&gt;</span><span class="w">                 </span><span class="c1"># ex: 192.168.20.3/24</span>
+<span class="w">  </span><span class="nt">frontend_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;integer&gt;</span><span class="w">            </span><span class="c1"># ex: 8080</span>
+<span class="w">  </span><span class="nt">monitor_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;integer&gt;</span><span class="w">             </span><span class="c1"># ex: 1967, used by haproxy for load balancer status</span>
+<span class="w">  </span><span class="nt">virtual_interface_networks</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">...</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># optional: list of CIDR networks</span>
+<span class="w">  </span><span class="nt">first_virtual_router_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;integer&gt;</span><span class="w">  </span><span class="c1"># optional: default 50</span>
+<span class="w">  </span><span class="nt">health_check_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w">     </span><span class="c1"># optional: Default is 2s.</span>
+<span class="w">  </span><span class="nt">ssl_cert</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w">                         </span><span class="c1"># optional: SSL certificate and key</span>
+<span class="w">    </span><span class="no">-----BEGIN CERTIFICATE-----</span>
+<span class="w">    </span><span class="no">...</span>
+<span class="w">    </span><span class="no">-----END CERTIFICATE-----</span>
+<span class="w">    </span><span class="no">-----BEGIN PRIVATE KEY-----</span>
+<span class="w">    </span><span class="no">...</span>
+<span class="w">    </span><span class="no">-----END PRIVATE KEY-----</span>
+</pre></div>
+</div>
+<p>where the properties of this service specification are:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">service_type</span></code></dt><dd><p>Mandatory and set to “ingress”</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">service_id</span></code></dt><dd><p>The name of the service.  We suggest naming this after the service you are
+controlling ingress for (e.g., <code class="docutils literal notranslate"><span class="pre">rgw.foo</span></code>).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">placement</span> <span class="pre">hosts</span></code></dt><dd><p>The hosts where it is desired to run the HA daemons. An haproxy and a
+keepalived container will be deployed on these hosts.  These hosts do not need
+to match the nodes where RGW is deployed.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">virtual_ip</span></code></dt><dd><p>The virtual IP (and network) in CIDR format where the ingress service will be available.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">virtual_ips_list</span></code></dt><dd><p>The virtual IP address in CIDR format where the ingress service will be available.
+Each virtual IP address will be primary on one node running the ingress service. The number
+of virtual IP addresses must be less than or equal to the number of ingress nodes.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">virtual_interface_networks</span></code></dt><dd><p>A list of networks to identify which ethernet interface to use for the virtual IP.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">frontend_port</span></code></dt><dd><p>The port used to access the ingress service.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">ssl_cert</span></code>:</dt><dd><p>SSL certificate, if SSL is to be enabled. This must contain the both the certificate and
+private key blocks in .pem format.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">use_keepalived_multicast</span></code></dt><dd><p>Default is False. By default, cephadm will deploy keepalived config to use unicast IPs,
+using the IPs of the hosts. The IPs chosen will be the same IPs cephadm uses to connect
+to the machines. But if multicast is prefered, we can set <code class="docutils literal notranslate"><span class="pre">use_keepalived_multicast</span></code>
+to <code class="docutils literal notranslate"><span class="pre">True</span></code> and Keepalived will use multicast IP (224.0.0.18) to communicate between instances,
+using the same interfaces as where the VIPs are.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">vrrp_interface_network</span></code></dt><dd><p>By default, cephadm will configure keepalived to use the same interface where the VIPs are
+for VRRP communication. If another interface is needed, it can be set via <code class="docutils literal notranslate"><span class="pre">vrrp_interface_network</span></code>
+with a network to identify which ethernet interface to use.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">first_virtual_router_id</span></code></dt><dd><p>Default is 50. When deploying more than 1 ingress, this parameter can be used to ensure each
+keepalived will have different virtual_router_id. In the case of using <code class="docutils literal notranslate"><span class="pre">virtual_ips_list</span></code>,
+each IP will create its own virtual router. So the first one will have <code class="docutils literal notranslate"><span class="pre">first_virtual_router_id</span></code>,
+second one will have <code class="docutils literal notranslate"><span class="pre">first_virtual_router_id</span></code> + 1, etc. Valid values go from 1 to 255.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">health_check_interval</span></code></dt><dd><p>Default is 2 seconds. This parameter can be used to set the interval between health checks
+for the haproxy with the backend servers.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="selecting-network-interfaces-for-the-virtual-ip">
+<span id="ingress-virtual-ip"></span><h3>Selecting network interfaces for the virtual IP<a class="headerlink" href="#selecting-network-interfaces-for-the-virtual-ip" title="Permalink to this heading"></a></h3>
+<p>You cannot simply provide the name of the network interface on which
+to configure the virtual IP because interface names may vary
+across hosts (and/or reboots).  Instead, <code class="docutils literal notranslate"><span class="pre">cephadm</span></code> will select
+interfaces based on other existing IP addresses that are already
+configured.</p>
+<p>Normally, the virtual IP will be configured on the first network
+interface that has an existing IP in the same subnet.  For example, if
+the virtual IP is 192.168.0.80/24 and eth2 has the static IP
+192.168.0.40/24, cephadm will use eth2.</p>
+<p>In some cases, the virtual IP may not belong to the same subnet as an existing static
+IP.  In such cases, you can provide a list of subnets to match against existing IPs,
+and cephadm will put the virtual IP on the first network interface to match.  For example,
+if the virtual IP is 192.168.0.80/24 and we want it on the same interface as the machine’s
+static IP in 10.10.0.0/16, you can use a spec like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">service_type</span><span class="p">:</span> <span class="n">ingress</span>
+<span class="n">service_id</span><span class="p">:</span> <span class="n">rgw</span><span class="o">.</span><span class="n">something</span>
+<span class="n">spec</span><span class="p">:</span>
+  <span class="n">virtual_ip</span><span class="p">:</span> <span class="mf">192.168.0.80</span><span class="o">/</span><span class="mi">24</span>
+  <span class="n">virtual_interface_networks</span><span class="p">:</span>
+    <span class="o">-</span> <span class="mf">10.10.0.0</span><span class="o">/</span><span class="mi">16</span>
+  <span class="o">...</span>
+</pre></div>
+</div>
+<p>A consequence of this strategy is that you cannot currently configure the virtual IP
+on an interface that has no existing IP address.  In this situation, we suggest
+configuring a “dummy” IP address is an unroutable network on the correct interface
+and reference that dummy network in the networks list (see above).</p>
+</section>
+<section id="useful-hints-for-ingress">
+<h3>Useful hints for ingress<a class="headerlink" href="#useful-hints-for-ingress" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>It is advised to have at least three <code class="docutils literal notranslate"><span class="pre">radosgw</span></code> daemons for availability and load balancing.</p></li>
+<li><p>We recommend at least three hosts for the <code class="docutils literal notranslate"><span class="pre">ingress</span></code> service.</p></li>
+</ul>
+</section>
+</section>
+<section id="further-reading">
+<h2>Further Reading<a class="headerlink" href="#further-reading" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../radosgw/#object-gateway"><span class="std std-ref">Ceph Object Gateway</span></a></p></li>
+<li><p><a class="reference internal" href="../../../mgr/rgw/#mgr-rgw-module"><span class="std std-ref">RGW Module</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+
+<div id="support-the-ceph-foundation" class="admonition note">
+  <p class="first admonition-title">Brought to you by the Ceph Foundation</p>
+  <p class="last">The Ceph Documentation is a community resource funded and hosted by the non-profit <a href="https://ceph.io/en/foundation/">Ceph Foundation</a>. If you would like to support this and our other efforts, please consider <a href="https://ceph.io/en/foundation/join/">joining now</a>.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../osd/" class="btn btn-neutral float-left" title="OSD Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../mds/" class="btn btn-neutral float-right" title="MDS Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2016, Ceph authors and contributors. Licensed under Creative Commons Attribution Share Alike 3.0 (CC-BY-SA-3.0).</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+   
+
+</body>
+</html>

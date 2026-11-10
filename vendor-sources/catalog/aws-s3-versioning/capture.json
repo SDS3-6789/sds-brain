@@ -1,0 +1,27 @@
+{
+  "source_id": "aws-s3-versioning",
+  "catalog_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html",
+  "catalog_title": "S3 Versioning",
+  "catalog_product": "Amazon S3",
+  "catalog_versions": [
+    "service-current-reference"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:33.413944+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html",
+  "requested_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "f93127f6232c52defa47253f1222034c35de361b3fcabc91ff5b89ff752f6292",
+  "raw_bytes": 18127,
+  "extracted_sha256": "db638878550b7b4790663fe4c6f86045bec2cf8f3c798062995c5487c6e758f2",
+  "extracted_bytes": 4583,
+  "words": 710,
+  "document_title": "Retaining multiple versions of objects with S3 Versioning",
+  "extracted_links": 14,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:34.638316+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

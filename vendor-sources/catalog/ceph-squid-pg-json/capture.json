@@ -1,0 +1,11 @@
+{
+  "sourceId": "ceph-squid-pg-json",
+  "originalURL": "https://github.com/ceph/ceph/blob/squid/qa/tasks/ceph_manager.py",
+  "fetchedURL": "https://github.com/ceph/ceph/blob/squid/qa/tasks/ceph_manager.py",
+  "repo": "ceph/ceph",
+  "ref": "squid",
+  "blobSHA": "ffa7bd75506c2bb60425438a8b4a93e64c014acb",
+  "retrievedUTC": "2026-11-10T09:25:19Z",
+  "status": "retrieved",
+  "attribution": "Original upstream file content and its existing copyright/license notices are preserved. The source URL, repository, version ref and exact Git blob SHA identify the attributed source."
+}

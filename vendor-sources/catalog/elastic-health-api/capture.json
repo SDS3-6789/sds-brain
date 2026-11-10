@@ -1,0 +1,27 @@
+{
+  "source_id": "elastic-health-api",
+  "catalog_url": "https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-cluster-health",
+  "catalog_title": "Elasticsearch cluster health API",
+  "catalog_product": "Elasticsearch",
+  "catalog_versions": [
+    "installed version unknown"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:14.619902+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-cluster-health",
+  "requested_url": "https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-cluster-health",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "971b881706f4a50d160ac404ce99f4aa57416c2c4b42f5bbce6f72bcd084a250",
+  "raw_bytes": 456544,
+  "extracted_sha256": "4980930efd16873f8b57615d34890d53f09f1a155e2ca92c1c567aed80b9c766",
+  "extracted_bytes": 14323,
+  "words": 2091,
+  "document_title": "Get the cluster health status | Elasticsearch API documentation",
+  "extracted_links": 104,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:16.236098+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

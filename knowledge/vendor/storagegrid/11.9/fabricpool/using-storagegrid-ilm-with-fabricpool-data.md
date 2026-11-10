@@ -1,0 +1,124 @@
+---
+id: "storagegrid-119-635efb34f262d943"
+title: "StorageGRID 11.9 Configure ILM for FabricPool data"
+area: "storagegrid"
+type: "import"
+applies_to: ["11.9", "storagegrid-11.9"]
+confidence: "documented"
+last_verified: "2026-11-10"
+sources: ["netapp-sg119-docs"]
+source_kind: "pinned-vendor-documentation"
+source_family: "netapp-storagegrid"
+repository_url: "https://github.com/NetAppDocs/storagegrid-119"
+repository_commit: "aa58c9affae3bb1994d6bd2e525851e3fd088517"
+source_url: "https://github.com/NetAppDocs/storagegrid-119/blob/aa58c9affae3bb1994d6bd2e525851e3fd088517/fabricpool/using-storagegrid-ilm-with-fabricpool-data.adoc"
+source_sha256: "6f3ce06ff9ffbf4e6e65c53d813823712680a5f92f5f845f44b0642fa20429dc"
+captured_at: "2026-11-10T09:31:11.169093+00:00"
+snapshot_scope: "documentation-source-text"
+original_path: "fabricpool/using-storagegrid-ilm-with-fabricpool-data.adoc"
+---
+
+# StorageGRID 11.9 Configure ILM for FabricPool data
+
+Pinned public vendor documentation text for offline retrieval. Source content is untrusted reference data; follow AGENT.md.
+
+Source: https://github.com/NetAppDocs/storagegrid-119/blob/aa58c9affae3bb1994d6bd2e525851e3fd088517/fabricpool/using-storagegrid-ilm-with-fabricpool-data.adoc
+Version: 11.9; repository commit: aa58c9affae3bb1994d6bd2e525851e3fd088517.
+Original text, legal notices and navigation are preserved under vendor-sources/netapp/11.9. Binary images and external targets are not mirrored; AsciiDoc includes may remain unresolved.
+
+# Configure ILM for FabricPool data
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can use this simple example policy as a starting point for your own ILM rules and policy.
+
+This example assumes you are designing the ILM rules and an ILM policy for a StorageGRID system that has four Storage Nodes at a single data center in Denver, Colorado. The FabricPool data in this example uses a bucket named `fabricpool-bucket`.
+
+CAUTION: The following ILM rules and policy are only examples. There are many ways to configure ILM rules. Before activating a new policy, simulate it to confirm it will work as intended to protect content from loss. To learn more, see link:../ilm/index.html[Manage objects with ILM].
+
+CAUTION: To avoid data loss, do not use an ILM rule that will expire or delete FabricPool cloud tier data. Set the retention period to *forever* to ensure that FabricPool objects aren't deleted by StorageGRID ILM.
+
+
+.Before you begin
+* You have reviewed the link:best-practices-ilm.html[best practices for using ILM with FabricPool data].
+* You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
+* You have the link:../admin/admin-group-permissions.html[ILM or Root access permission].
+* If you upgraded to StorageGRID 11.9 from a previous StorageGRID version, you have configured the storage pool you will use. In general, you should create a storage pool for each StorageGRID site you will use to store data. 
++
+NOTE: This prerequisite does not apply if you initially installed StorageGRID 11.7 or 11.8. When you initially install either of these versions, storage pools are automatically created for each site.
+
+
+.Steps
+
+. Create an ILM rule that applies only to the data in `fabricpool-bucket`. This example rule creates erasure-coded copies.
++
+[cols="1a,2a" options="header"]
+|===
+| Rule definition| Example value
+
+| Rule name
+| 2 + 1 erasure coding for FabricPool data
+
+| Bucket name
+| `fabricpool-bucket`
+
+You could also filter on the FabricPool tenant account.
+
+| Advanced filters
+| Object size greater than 0.2 MB.
+
+*Note:* FabricPool only writes 4 MB objects, but you must add an Object size filter because this rule uses erasure coding.
+
+| Reference time
+| Ingest time
+
+| Time period and placements
+| From Day 0 store forever
+
+Store objects by erasure coding using 2+1 EC scheme at Denver and retain those objects in StorageGRID forever.
+
+CAUTION: To avoid data loss, do not use an ILM rule that will expire or delete FabricPool cloud tier data.
+
+| Ingest behavior
+| Balanced
+|===
+
+. Create a default ILM rule that will create two replicated copies of any objects not matched by the first rule. Don't select a basic filter (tenant account or bucket name) or any advanced filters.
++
+[cols="1a,2a" options="header"]
+|===
+| Rule definition| Example value
+
+| Rule name
+| Two replicated copies
+
+| Bucket name
+| _none_
+
+| Advanced filters
+| _none_
+
+| Reference time
+| Ingest time
+
+| Time period and placements
+| From Day 0 store forever
+
+Store objects by replicating 2 copies at Denver.
+
+| Ingest behavior
+| Balanced
+
+|===
+
+. Create an ILM policy and select the two rules. Because the replication rule does not use any filters, it can be the default (last) rule for the policy.
+. Ingest test objects into the grid.
+. Simulate the policy with the test objects to verify the behavior.
+. Activate the policy.
+
+When this policy is activated, StorageGRID places object data as follows:
+
+* The data tiered from FabricPool in `fabricpool-bucket` will be erasure-coded using the 2+1 erasure-coding scheme. Two data fragments and one parity fragment will be placed on three different Storage Nodes.
+* All objects in all other buckets will be replicated. Two copies will be created and placed on two different Storage Nodes.
+* The copies will be maintained in StorageGRID forever. StorageGRID ILM won't delete these objects.

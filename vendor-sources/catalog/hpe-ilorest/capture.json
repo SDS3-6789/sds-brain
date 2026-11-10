@@ -1,0 +1,28 @@
+{
+  "source_id": "hpe-ilorest",
+  "catalog_url": "https://servermanagementportal.ext.hpe.com/docs/redfishclients/ilorest-userguide",
+  "catalog_title": "HPE iLOrest overview",
+  "catalog_product": "iLOrest",
+  "catalog_versions": [
+    "match iLO and server generation"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:16.928256+00:00",
+  "attempts": [],
+  "status": "index_only",
+  "fetched_url": "https://servermanagementportal.ext.hpe.com/docs/redfishclients/ilorest-userguide",
+  "requested_url": "https://servermanagementportal.ext.hpe.com/docs/redfishclients/ilorest-userguide",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "c0978ae310dce01da13a331856a461dfadfe255fa0e1ca4b0f078872672c016d",
+  "raw_bytes": 307978,
+  "extracted_sha256": "4427ed8cd4a78b8dc72925605a2572de9572dbbe8d0f03cd18e0e2ecdcd8197e",
+  "extracted_bytes": 1070,
+  "words": 182,
+  "document_title": "HPE iLOrest Overview",
+  "extracted_links": 5,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:18.432662+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data",
+  "reason": "Landing page or table of contents; linked documents were not captured by this target"
+}

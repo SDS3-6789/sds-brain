@@ -1,0 +1,49 @@
+{
+  "repo": "NetAppDocs/storagegrid-119",
+  "version": "11.9",
+  "defaultBranch": "main",
+  "commit": "aa58c9affae3bb1994d6bd2e525851e3fd088517",
+  "commitDate": "2026-10-22T13:33:58Z",
+  "knownFiles": [
+    {
+      "path": "README.md",
+      "blobSHA": "9d9cd6f03a80817de1ea35b6eecb571f45d7c745"
+    },
+    {
+      "path": "legal-notices.adoc",
+      "blobSHA": "5f612d7bca331f61870061f252e09ec66df74027"
+    },
+    {
+      "path": "project.yml",
+      "blobSHA": "9728873a8e08c19a5378cecb4d5268ce8087e579"
+    }
+  ],
+  "versionEvidence": "project.yml settings.versions first entry and sidebar title match 11.9",
+  "licenseStatus": "No standalone LICENSE file present in the repository root. Original legal-notices.adoc and its two shared legal notice includes are preserved; no open-source license is inferred for the documentation.",
+  "retrievedUTC": "2026-11-10T09:31:11.169093+00:00",
+  "archiveURL": "https://codeload.github.com/NetAppDocs/storagegrid-119/tar.gz/aa58c9affae3bb1994d6bd2e525851e3fd088517",
+  "fetchedURL": "https://codeload.github.com/NetAppDocs/storagegrid-119/tar.gz/aa58c9affae3bb1994d6bd2e525851e3fd088517",
+  "upstreamArchiveBytes": 21796179,
+  "upstreamArchiveSHA256": "fd38a68cfd1d9e0e3e08a1472034c156a11f19533836d03f70f9f114670b8285",
+  "upstreamDeclaredBytes": 25656609,
+  "upstreamMembers": 1256,
+  "selectedBytes": 3231548,
+  "documentationFiles": 820,
+  "selectedFiles": 847,
+  "retainedTypes": [
+    ".adoc",
+    ".md",
+    ".rst",
+    ".txt",
+    ".yaml",
+    ".yml"
+  ],
+  "excluded": [
+    "binary media/images",
+    ".github workflows",
+    "non-documentation executable/source artifacts"
+  ],
+  "legalIncludesCommit": "765e4e6f04510cf67ad12035f00af23692aee2d1",
+  "scope": "All matching documentation text and navigation sources in this exact product-version repository snapshot. Binary images and external document/include targets are not mirrored. This is documentation source, not an executed or fully rendered website.",
+  "status": "downloaded_not_imported"
+}

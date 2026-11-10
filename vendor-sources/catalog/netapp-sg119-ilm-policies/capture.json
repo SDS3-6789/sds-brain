@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg119-ilm-policies",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/ilm/ilm-policy-overview.html",
+  "catalog_title": "StorageGRID 11.9 ILM policy selection and bucket policy tags",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "11.9"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:35.219786+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-119/ilm/ilm-policy-overview.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-119/ilm/ilm-policy-overview.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "df7850e94f9b4f63f92debe23ba9ebd1b58b533b63bf072bf68e9b65a818bb25",
+  "raw_bytes": 61548,
+  "extracted_sha256": "4fffade0d0e4c49d5692de323e5e8d387d620da158fa19a6b5575d895f52c4cd",
+  "extracted_bytes": 7754,
+  "words": 1355,
+  "document_title": "Use ILM policies",
+  "extracted_links": 4,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:35.897355+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

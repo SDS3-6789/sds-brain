@@ -1,0 +1,211 @@
+{
+  "status": {
+    "ok": true,
+    "database": "data/sds-brain.db",
+    "schema_version": 1,
+    "package_version": "0.4.0",
+    "scope": "shared",
+    "network": "none",
+    "documents": 2750,
+    "documents_by_kind": {
+      "code": 37,
+      "config": 39,
+      "document": 2674
+    },
+    "catalog_references": 148,
+    "sources_by_capture_status": {
+      "access_restricted": 33,
+      "authorized_export_required": 1,
+      "body_available": 89,
+      "download_error": 1,
+      "index_available": 20,
+      "needs_export": 4
+    },
+    "original_document_assets": 2887,
+    "asset_bytes": 38200066,
+    "input_files": 5636,
+    "corpus_fingerprint": "ea0dc58c0be83f35874de9fde6f900c7678204766ed9f7b74ba9a3df9b5b1405",
+    "built_at_utc": "2026-11-10T10:15:48.057142+00:00",
+    "database_bytes": 89640960,
+    "notice": "Public snapshot only. Private/customer data excluded. Source references are separate from document bodies. Original document assets are retained as bytes; runtime archives are excluded."
+  },
+  "verification": {
+    "ok": true,
+    "integrity_check": [
+      "ok"
+    ],
+    "documents": 2750,
+    "fts_rows": 2750,
+    "scope": "shared",
+    "fresh": true,
+    "stored_fingerprint": "ea0dc58c0be83f35874de9fde6f900c7678204766ed9f7b74ba9a3df9b5b1405",
+    "current_fingerprint": "ea0dc58c0be83f35874de9fde6f900c7678204766ed9f7b74ba9a3df9b5b1405",
+    "failures": [],
+    "network": "none"
+  },
+  "search_and_read_checks": [
+    {
+      "query": "BLUEFS_SPILLOVER",
+      "options": {},
+      "read_from_db": "docs/OFFLINE_KNOWLEDGE.md",
+      "result_paths": [
+        "docs/OFFLINE_KNOWLEDGE.md",
+        "knowledge/vendor/catalog/ceph-reef-health.md",
+        "knowledge/vendor/catalog/ceph-squid-health.md"
+      ]
+    },
+    {
+      "query": "ILM policy",
+      "options": {
+        "version": "11.9",
+        "mode": "all"
+      },
+      "read_from_db": "knowledge/vendor/storagegrid/11.9/ilm/working-with-ilm-rules-and-ilm-policies.md",
+      "result_paths": [
+        "knowledge/vendor/storagegrid/11.9/ilm/working-with-ilm-rules-and-ilm-policies.md",
+        "knowledge/vendor/storagegrid/11.9/ilm/ilm-policy-overview.md",
+        "knowledge/vendor/catalog/netapp-sg119-ilm-policies.md"
+      ]
+    },
+    {
+      "query": "SignatureDoesNotMatch",
+      "options": {},
+      "read_from_db": "knowledge/vendor/catalog/netapp-sg119-errors.md",
+      "result_paths": [
+        "knowledge/vendor/catalog/netapp-sg119-errors.md",
+        "knowledge/vendor/catalog/aws-s3-presigned.md",
+        "runbooks/s3/signature-and-tls.md"
+      ]
+    },
+    {
+      "query": "Ceph recovery",
+      "options": {
+        "area": "ceph",
+        "mode": "all"
+      },
+      "read_from_db": "knowledge/vendor/catalog/ibm-ceph-throttling.md",
+      "result_paths": [
+        "knowledge/vendor/catalog/ibm-ceph-throttling.md",
+        "runbooks/ceph/slow-ops-and-recovery.md",
+        "knowledge/vendor/catalog/ibm-ceph-recovery.md"
+      ]
+    },
+    {
+      "query": "plugin",
+      "options": {
+        "kind": "all"
+      },
+      "read_from_db": "scripts/check_plugin_layout.py",
+      "result_paths": [
+        "scripts/check_plugin_layout.py",
+        "docs/PLUGIN.md",
+        "plugins/team-brain/mcp-servers/kubernetes.toml"
+      ]
+    }
+  ],
+  "documented_sql_examples": [
+    {
+      "rows_returned": 10,
+      "columns": [
+        "document_id",
+        "title",
+        "source_url",
+        "applies_to",
+        "source_ids",
+        "score"
+      ]
+    },
+    {
+      "rows_returned": 1,
+      "columns": [
+        "document_id",
+        "text",
+        "metadata_json",
+        "sha256"
+      ]
+    },
+    {
+      "rows_returned": 50,
+      "columns": [
+        "source_id",
+        "title",
+        "url",
+        "access",
+        "capture_status",
+        "acquisition_json"
+      ]
+    },
+    {
+      "rows_returned": 1,
+      "columns": [
+        "path",
+        "media_type",
+        "size_bytes",
+        "sha256",
+        "linked_document_path",
+        "retained_bytes"
+      ]
+    }
+  ],
+  "indexed_vendor_documents": 2608,
+  "unavailable_source_records": 39,
+  "independent_review": {
+    "ok": true,
+    "previous_manifest_files": 5615,
+    "previous_files_missing": 0,
+    "plugin_files": 29,
+    "plugin_directories": 18,
+    "plugin_reference_commit": "cd866d4ee510b299c415f92a90b7f525d30cf04c",
+    "integrity_check": [
+      "ok"
+    ],
+    "documents": 2750,
+    "saved_vendor_document_bodies": 2608,
+    "documents_by_kind": {
+      "code": 37,
+      "config": 39,
+      "document": 2674
+    },
+    "fts_backing_docsize_rows": 2750,
+    "catalog_references": 148,
+    "source_capture_statuses": {
+      "access_restricted": 33,
+      "body_available": 89,
+      "index_available": 20,
+      "download_error": 1,
+      "needs_export": 4,
+      "authorized_export_required": 1
+    },
+    "unavailable_source_records": 39,
+    "original_assets": 2887,
+    "inputs": 5636,
+    "fts_smoke_queries": {
+      "\"RGW\"": 46,
+      "\"StorageGRID\"": 2583,
+      "\"ILM\"": 620,
+      "\"Ceph\"": 70
+    },
+    "write_rejected": true,
+    "database_bytes": 89640960,
+    "errors": [],
+    "database_unchanged_by_review": true
+  },
+  "database_sha256": "1df35e1f5fa181c47c377390205b1bd9f5ea58ee4c075bb6888cec2bda393e9b",
+  "package_version": "0.4.0",
+  "reference_plugin": {
+    "repository": "https://github.com/team-redbull/redbull-brain",
+    "commit": "cd866d4ee510b299c415f92a90b7f525d30cf04c",
+    "files": 29,
+    "subdirectories": 18,
+    "archives_verified": 6
+  },
+  "unit_tests": {
+    "discovered": 199,
+    "passed": 185,
+    "skipped": 14,
+    "failures": 0,
+    "errors": 0,
+    "separate_bash_test_passed": true
+  },
+  "scope": "Public local document snapshot. Existing files preserved. Original vendor document assets retained; runtime archives, private/imported/customer/staging/local material and database self-reference excluded."
+}

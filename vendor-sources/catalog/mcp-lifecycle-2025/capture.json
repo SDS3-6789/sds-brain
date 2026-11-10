@@ -1,0 +1,27 @@
+{
+  "source_id": "mcp-lifecycle-2025",
+  "catalog_url": "https://modelcontextprotocol.io/specification/2025-11-25/basic/lifecycle",
+  "catalog_title": "MCP lifecycle, revision 2025-11-25",
+  "catalog_product": "MCP",
+  "catalog_versions": [
+    "2025-11-25"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:10.583758+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://modelcontextprotocol.io/specification/2025-11-25/basic/lifecycle",
+  "requested_url": "https://modelcontextprotocol.io/specification/2025-11-25/basic/lifecycle",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "504467ce60eea1fbb50c52452e0c08ec9006e7abbc2b90e3c0975ef4a7ae0dcc",
+  "raw_bytes": 228691,
+  "extracted_sha256": "c1182455545de0deafe859ee0c62069b6a9a87441aafbf5ee0292776fc34ea91",
+  "extracted_bytes": 7246,
+  "words": 937,
+  "document_title": "Lifecycle - Model Context Protocol",
+  "extracted_links": 29,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:11.846092+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

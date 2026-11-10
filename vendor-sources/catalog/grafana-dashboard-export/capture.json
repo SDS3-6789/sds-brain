@@ -1,0 +1,27 @@
+{
+  "source_id": "grafana-dashboard-export",
+  "catalog_url": "https://grafana.com/docs/grafana/latest/visualizations/dashboards/share-dashboards-panels/",
+  "catalog_title": "Grafana dashboard sharing and export",
+  "catalog_product": "Grafana",
+  "catalog_versions": [
+    "installed version unknown"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:11.914076+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://grafana.com/docs/grafana/latest/visualizations/dashboards/share-dashboards-panels/",
+  "requested_url": "https://grafana.com/docs/grafana/latest/visualizations/dashboards/share-dashboards-panels/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "eb9789397c9349832ed8397be546352c6954fbcdd718df3cac716bff1d4a452d",
+  "raw_bytes": 353240,
+  "extracted_sha256": "91daefa696130a52a97378c94ac7dadf0b82b33d5a76739de0d5008988ba2fc6",
+  "extracted_bytes": 17191,
+  "words": 2838,
+  "document_title": "Share dashboards and panels",
+  "extracted_links": 40,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:15.050594+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

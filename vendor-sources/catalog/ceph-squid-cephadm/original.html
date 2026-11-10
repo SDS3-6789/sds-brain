@@ -1,0 +1,662 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Troubleshooting &mdash; Ceph Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/ceph.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/ceph.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/rtd_sphinx_search.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/js/rtd_search_config.js"></script>
+        <script src="../../_static/js/rtd_sphinx_search.min.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="CEPHADM Developer Documentation" href="../../dev/cephadm/" />
+    <link rel="prev" title="Basic Ceph Client Setup" href="../client-setup/" /> 
+<script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="ceph" /><meta name="readthedocs-version-slug" content="squid" /><meta name="readthedocs-resolver-filename" content="/cephadm/troubleshooting/" /><meta name="readthedocs-http-status" content="200" /></head>
+
+<body class="wy-body-for-nav">
+
+   
+  <header class="top-bar">
+    <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">Cephadm</a></li>
+      <li class="breadcrumb-item active">Troubleshooting</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/cephadm/troubleshooting.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+  </header>
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #eee" >
+          
+
+          
+            <a href="../../" class="icon icon-home"> Ceph
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../start/">Intro to Ceph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">Installing Ceph</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">Cephadm</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../compatibility/">Compatibility and Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install/">Using cephadm to Deploy a New Ceph Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adoption/">Converting an existing cluster to cephadm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../host-management/">Host Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../services/">Service Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../upgrade/">Upgrading Ceph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../operations/">Cephadm operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client-setup/">Client Setup</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pausing-or-disabling-cephadm">Pausing or Disabling cephadm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#per-service-and-per-daemon-events">Per-service and Per-daemon Events</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#listing-service-events">Listing Service Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#listing-daemon-events">Listing Daemon Events</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#checking-cephadm-logs">Checking Cephadm Logs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gathering-log-files">Gathering Log Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collecting-systemd-status">Collecting Systemd Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list-all-downloaded-container-images">List all Downloaded Container Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manually-running-containers">Manually Running Containers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ssh-errors">SSH Errors</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#verifying-that-the-public-key-is-listed-in-the-authorized-keys-file">Verifying that the Public Key is Listed in the authorized_keys file</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#failed-to-infer-cidr-network-error">Failed to Infer CIDR network error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#accessing-the-admin-socket">Accessing the Admin Socket</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-various-ceph-tools">Running Various Ceph Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#restoring-the-monitor-quorum">Restoring the Monitor Quorum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manually-deploying-a-manager-daemon">Manually Deploying a Manager Daemon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#capturing-core-dumps">Capturing Core Dumps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-the-debugger-with-cephadm">Running the Debugger with cephadm</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#running-a-single-debugging-session">Running a single debugging session</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#running-repeated-debugging-sessions">Running repeated debugging sessions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#debugging-live-processes">Debugging live processes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../dev/cephadm/">Cephadm Feature Planning</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../rados/">Ceph Storage Cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cephfs/">Ceph File System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rbd/">Ceph Block Device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../radosgw/">Ceph Object Gateway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mgr/">Ceph Manager Daemon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mgr/dashboard/">Ceph Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../monitoring/">Monitoring overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../architecture/">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/developer_guide/">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/internals/">Ceph Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../governance/">Governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../foundation/">Ceph Foundation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ceph-volume/">ceph-volume</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.ceph.com/en/latest/releases/general/">Ceph Releases (general)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.ceph.com/en/latest/releases/">Ceph Releases (index)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware-monitoring/">Hardware monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jaegertracing/">Tracing</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">Ceph</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div id="docubetter" align="right" style="padding: 5px; font-weight: bold;">
+    <a href="https://pad.ceph.com/p/Report_Documentation_Bugs">Report a Documentation Bug</a>
+  </div>
+
+  
+  <section id="troubleshooting">
+<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading"></a></h1>
+<p>This section explains how to investigate why a cephadm command failed or why a
+certain service no longer runs properly.</p>
+<p>Cephadm deploys daemons within containers. Troubleshooting containerized
+daemons requires a different process than does troubleshooting traditional
+daemons that were installed by means of packages.</p>
+<p>Here are some tools and commands to help you troubleshoot your Ceph
+environment.</p>
+<section id="pausing-or-disabling-cephadm">
+<span id="cephadm-pause"></span><h2>Pausing or Disabling cephadm<a class="headerlink" href="#pausing-or-disabling-cephadm" title="Permalink to this heading"></a></h2>
+<p>If something goes wrong and cephadm is behaving badly, pause most of the Ceph
+cluster’s background activity by running the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "# ";
+}
+</style><span class="prompt1">ceph<span class="w"> </span>orch<span class="w"> </span>pause</span>
+</pre></div></div><p>This stops all changes in the Ceph cluster, but cephadm will still periodically
+check hosts to refresh its inventory of daemons and devices. Disable cephadm
+completely by running the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ceph<span class="w"> </span>orch<span class="w"> </span><span class="nb">set</span><span class="w"> </span>backend<span class="w"> </span><span class="s1">''</span></span>
+<span class="prompt1">ceph<span class="w"> </span>mgr<span class="w"> </span>module<span class="w"> </span>disable<span class="w"> </span>cephadm</span>
+</pre></div></div><p>These commands disable all <code class="docutils literal notranslate"><span class="pre">ceph</span> <span class="pre">orch</span> <span class="pre">...</span></code> CLI commands. All
+previously deployed daemon containers continue to run and will start just as
+they were before you ran these commands.</p>
+<p>See <a class="reference internal" href="../services/#cephadm-spec-unmanaged"><span class="std std-ref">Disabling automatic deployment of daemons</span></a> for more on disabling individual services.</p>
+</section>
+<section id="per-service-and-per-daemon-events">
+<h2>Per-service and Per-daemon Events<a class="headerlink" href="#per-service-and-per-daemon-events" title="Permalink to this heading"></a></h2>
+<p>To make it easier to debug failed daemons, cephadm stores events per service
+and per daemon. These events often contain information relevant to
+the troubleshooting of your Ceph cluster.</p>
+<section id="listing-service-events">
+<h3>Listing Service Events<a class="headerlink" href="#listing-service-events" title="Permalink to this heading"></a></h3>
+<p>To see the events associated with a certain service, run a command of the
+following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ceph<span class="w"> </span>orch<span class="w"> </span>ls<span class="w"> </span>--service_name<span class="o">=</span>&lt;service-name&gt;<span class="w"> </span>--format<span class="w"> </span>yaml</span>
+</pre></div></div><p>This will return information in the following form:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">service_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alertmanager</span>
+<span class="nt">service_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alertmanager</span>
+<span class="nt">placement</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unknown_host</span>
+<span class="nt">status</span><span class="p">:</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">running</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="nt">events</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2021-02-01T08:58:02.741162 service:alertmanager [INFO] "service was created"</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'2021-02-01T12:09:25.264584</span><span class="nv"> </span><span class="s">service:alertmanager</span><span class="nv"> </span><span class="s">[ERROR]</span><span class="nv"> </span><span class="s">"Failed</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">apply:</span><span class="nv"> </span><span class="s">Cannot</span>
+<span class="w">  </span><span class="s">place</span><span class="nv"> </span><span class="s">&lt;AlertManagerSpec</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">service_name=alertmanager&gt;</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">unknown_host:</span><span class="nv"> </span><span class="s">Unknown</span><span class="nv"> </span><span class="s">hosts"'</span>
+</pre></div>
+</div>
+</section>
+<section id="listing-daemon-events">
+<h3>Listing Daemon Events<a class="headerlink" href="#listing-daemon-events" title="Permalink to this heading"></a></h3>
+<p>To see the events associated with a certain daemon, run a command of the
+following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ceph<span class="w"> </span>orch<span class="w"> </span>ps<span class="w"> </span>--service-name<span class="w"> </span>&lt;service-name&gt;<span class="w"> </span>--daemon-id<span class="w"> </span>&lt;daemon-id&gt;<span class="w"> </span>--format<span class="w"> </span>yaml</span>
+</pre></div></div><p>This will return something in the following form:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">daemon_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mds</span>
+<span class="nt">daemon_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cephfs.hostname.ppdhsz</span>
+<span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hostname</span>
+<span class="nt">status_desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">running</span>
+<span class="nn">...</span>
+<span class="nt">events</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2021-02-01T08:59:43.845866 daemon:mds.cephfs.hostname.ppdhsz [INFO] "Reconfigured</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">mds.cephfs.hostname.ppdhsz on host 'hostname'"</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="checking-cephadm-logs">
+<h2>Checking Cephadm Logs<a class="headerlink" href="#checking-cephadm-logs" title="Permalink to this heading"></a></h2>
+<p>To learn how to monitor cephadm logs as they are generated, read
+<a class="reference internal" href="../operations/#watching-cephadm-logs"><span class="std std-ref">Watching cephadm log messages</span></a>.</p>
+<p>If your Ceph cluster has been configured to log events to files, there will be
+a <code class="docutils literal notranslate"><span class="pre">ceph.cephadm.log</span></code> file on all monitor hosts. See <a class="reference internal" href="../operations/#cephadm-logs"><span class="std std-ref">Ceph daemon control</span></a> for a
+more complete explanation.</p>
+</section>
+<section id="gathering-log-files">
+<h2>Gathering Log Files<a class="headerlink" href="#gathering-log-files" title="Permalink to this heading"></a></h2>
+<p>Use <code class="docutils literal notranslate"><span class="pre">journalctl</span></code> to gather the log files of all daemons:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default cephadm now stores logs in journald. This means
+that you will no longer find daemon logs in <code class="docutils literal notranslate"><span class="pre">/var/log/ceph/</span></code>.</p>
+</div>
+<p>To read the log file of one specific daemon, run a command of the following
+form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt2:before {
+  content: "$ ";
+}
+</style><span class="prompt2">cephadm<span class="w"> </span>logs<span class="w"> </span>--name<span class="w"> </span>&lt;name-of-daemon&gt;</span>
+</pre></div></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This works only when run on the same host that is running the daemon.
+To get the logs of a daemon that is running on a different host, add the
+<code class="docutils literal notranslate"><span class="pre">--fsid</span></code> option to the command, as in the following example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">cephadm<span class="w"> </span>logs<span class="w"> </span>--fsid<span class="w"> </span>&lt;fsid&gt;<span class="w"> </span>--name<span class="w"> </span>&lt;name-of-daemon&gt;</span>
+</pre></div></div><p>In this example, <code class="docutils literal notranslate"><span class="pre">&lt;fsid&gt;</span></code> corresponds to the cluster ID returned by the
+<code class="docutils literal notranslate"><span class="pre">ceph</span> <span class="pre">status</span></code> command.</p>
+</div>
+<p>To fetch all log files of all daemons on a given host, run the following
+for-loop:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>for name in $(cephadm ls | jq -r '.[].name') ; do
+  cephadm logs --fsid &lt;fsid&gt; --name "$name" &gt; $name;
+done
+</pre></div>
+</div>
+</section>
+<section id="collecting-systemd-status">
+<h2>Collecting Systemd Status<a class="headerlink" href="#collecting-systemd-status" title="Permalink to this heading"></a></h2>
+<p>To print the state of a systemd unit, run a command of the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">systemctl<span class="w"> </span>status<span class="w"> </span><span class="s2">"ceph-</span><span class="k">$(</span>cephadm<span class="w"> </span>shell<span class="w"> </span>ceph<span class="w"> </span>fsid<span class="k">)</span><span class="s2">@&lt;service name&gt;.service"</span><span class="p">;</span></span>
+</pre></div></div><p>To fetch the state of all daemons of a given host, run the following shell
+script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>fsid="$(cephadm shell ceph fsid)"
+for name in $(cephadm ls | jq -r '.[].name') ; do
+  systemctl status "ceph-$fsid@$name.service" &gt; $name;
+done
+</pre></div>
+</div>
+</section>
+<section id="list-all-downloaded-container-images">
+<h2>List all Downloaded Container Images<a class="headerlink" href="#list-all-downloaded-container-images" title="Permalink to this heading"></a></h2>
+<p>To list all container images that are downloaded on a host, run the following
+commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">podman<span class="w"> </span>ps<span class="w"> </span>-a<span class="w"> </span>--format<span class="w"> </span>json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s1">'.[].Image'</span><span class="w"> </span><span class="s2">"docker.io/library/centos:8"</span><span class="w"> </span><span class="s2">"registry.opensuse.org/opensuse/leap:15.2"</span></span>
+</pre></div></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">Image</span></code> might also be called <code class="docutils literal notranslate"><span class="pre">ImageID</span></code>.</p>
+</div>
+</section>
+<section id="manually-running-containers">
+<h2>Manually Running Containers<a class="headerlink" href="#manually-running-containers" title="Permalink to this heading"></a></h2>
+<p>Cephadm uses small wrappers when running containers. Refer to
+<code class="docutils literal notranslate"><span class="pre">/var/lib/ceph/&lt;cluster-fsid&gt;/&lt;service-name&gt;/unit.run</span></code> for the container
+execution command.</p>
+</section>
+<section id="ssh-errors">
+<span id="cephadm-ssh-errors"></span><h2>SSH Errors<a class="headerlink" href="#ssh-errors" title="Permalink to this heading"></a></h2>
+<p>Error message:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">execnet</span><span class="o">.</span><span class="n">gateway_bootstrap</span><span class="o">.</span><span class="n">HostNotFound</span><span class="p">:</span> <span class="o">-</span><span class="n">F</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">cephadm</span><span class="o">-</span><span class="n">conf</span><span class="o">-</span><span class="mi">73</span><span class="n">z09u6g</span> <span class="o">-</span><span class="n">i</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">cephadm</span><span class="o">-</span><span class="n">identity</span><span class="o">-</span><span class="n">ky7ahp_5</span> <span class="n">root</span><span class="o">@</span><span class="mf">10.10.1.2</span>
+<span class="o">...</span>
+<span class="k">raise</span> <span class="n">OrchestratorError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+<span class="n">orchestrator</span><span class="o">.</span><span class="n">_interface</span><span class="o">.</span><span class="n">OrchestratorError</span><span class="p">:</span> <span class="n">Failed</span> <span class="n">to</span> <span class="n">connect</span> <span class="n">to</span> <span class="mf">10.10.1.2</span> <span class="p">(</span><span class="mf">10.10.1.2</span><span class="p">)</span><span class="o">.</span>
+<span class="n">Please</span> <span class="n">make</span> <span class="n">sure</span> <span class="n">that</span> <span class="n">the</span> <span class="n">host</span> <span class="ow">is</span> <span class="n">reachable</span> <span class="ow">and</span> <span class="n">accepts</span> <span class="n">connections</span> <span class="n">using</span> <span class="n">the</span> <span class="n">cephadm</span> <span class="n">SSH</span> <span class="n">key</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>If you receive the above error message, try the following things to
+troubleshoot the SSH connection between <code class="docutils literal notranslate"><span class="pre">cephadm</span></code> and the monitor:</p>
+<ol class="arabic">
+<li><p>Ensure that <code class="docutils literal notranslate"><span class="pre">cephadm</span></code> has an SSH identity key:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@mon1</span><span class="o">~</span><span class="p">]</span><span class="c1"># cephadm shell -- ceph config-key get mgr/cephadm/ssh_identity_key &gt; ~/cephadm_private_key</span>
+<span class="n">INFO</span><span class="p">:</span><span class="n">cephadm</span><span class="p">:</span><span class="n">Inferring</span> <span class="n">fsid</span> <span class="n">f8edc08a</span><span class="o">-</span><span class="mi">7</span><span class="n">f17</span><span class="o">-</span><span class="mi">11</span><span class="n">ea</span><span class="o">-</span><span class="mi">8707</span><span class="o">-</span><span class="mi">000</span><span class="n">c2915dd98</span>
+<span class="n">INFO</span><span class="p">:</span><span class="n">cephadm</span><span class="p">:</span><span class="n">Using</span> <span class="n">recent</span> <span class="n">ceph</span> <span class="n">image</span> <span class="n">docker</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">ceph</span><span class="o">/</span><span class="n">ceph</span><span class="p">:</span><span class="n">v15</span> <span class="n">obtained</span> <span class="s1">'mgr/cephadm/ssh_identity_key'</span>
+<span class="p">[</span><span class="n">root</span><span class="nd">@mon1</span> <span class="o">~</span><span class="p">]</span> <span class="c1"># chmod 0600 ~/cephadm_private_key</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><p>If this fails, cephadm doesn’t have a key. Fix this by running the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@mon1</span> <span class="o">~</span><span class="p">]</span><span class="c1"># cephadm shell -- ceph cephadm generate-ssh-key</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@mon1</span> <span class="o">~</span><span class="p">]</span><span class="c1"># cat ~/cephadm_private_key | cephadm shell -- ceph cephadm set-ssh-key -i -</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic" start="2">
+<li><p>Ensure that the SSH config is correct:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@mon1</span> <span class="o">~</span><span class="p">]</span><span class="c1"># cephadm shell -- ceph cephadm get-ssh-config &gt; config</span>
+</pre></div>
+</div>
+</li>
+<li><p>Verify that it is possible to connect to the host:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@mon1</span> <span class="o">~</span><span class="p">]</span><span class="c1"># ssh -F config -i ~/cephadm_private_key root@mon1</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<section id="verifying-that-the-public-key-is-listed-in-the-authorized-keys-file">
+<h3>Verifying that the Public Key is Listed in the authorized_keys file<a class="headerlink" href="#verifying-that-the-public-key-is-listed-in-the-authorized-keys-file" title="Permalink to this heading"></a></h3>
+<p>To verify that the public key is in the <code class="docutils literal notranslate"><span class="pre">authorized_keys</span></code> file, run the
+following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@mon1</span> <span class="o">~</span><span class="p">]</span><span class="c1"># cephadm shell -- ceph cephadm get-pub-key &gt; ~/ceph.pub</span>
+<span class="p">[</span><span class="n">root</span><span class="nd">@mon1</span> <span class="o">~</span><span class="p">]</span><span class="c1"># grep "`cat ~/ceph.pub`"  /root/.ssh/authorized_keys</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="failed-to-infer-cidr-network-error">
+<h2>Failed to Infer CIDR network error<a class="headerlink" href="#failed-to-infer-cidr-network-error" title="Permalink to this heading"></a></h2>
+<p>If you see this error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ERROR</span><span class="p">:</span> <span class="n">Failed</span> <span class="n">to</span> <span class="n">infer</span> <span class="n">CIDR</span> <span class="n">network</span> <span class="k">for</span> <span class="n">mon</span> <span class="n">ip</span> <span class="o">***</span><span class="p">;</span> <span class="k">pass</span> <span class="o">--</span><span class="n">skip</span><span class="o">-</span><span class="n">mon</span><span class="o">-</span><span class="n">network</span> <span class="n">to</span> <span class="n">configure</span> <span class="n">it</span> <span class="n">later</span>
+</pre></div>
+</div>
+<p>Or this error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Must</span> <span class="nb">set</span> <span class="n">public_network</span> <span class="n">config</span> <span class="n">option</span> <span class="ow">or</span> <span class="n">specify</span> <span class="n">a</span> <span class="n">CIDR</span> <span class="n">network</span><span class="p">,</span> <span class="n">ceph</span> <span class="n">addrvec</span><span class="p">,</span> <span class="ow">or</span> <span class="n">plain</span> <span class="n">IP</span>
+</pre></div>
+</div>
+<p>This means that you must run a command of this form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">ceph<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>mon<span class="w"> </span>public_network<span class="w"> </span>&lt;mon_network&gt;</span>
+</pre></div></div><p>For more detail on operations of this kind, see
+<a class="reference internal" href="../services/mon/#deploy-additional-monitors"><span class="std std-ref">Deploying additional monitors</span></a>.</p>
+</section>
+<section id="accessing-the-admin-socket">
+<h2>Accessing the Admin Socket<a class="headerlink" href="#accessing-the-admin-socket" title="Permalink to this heading"></a></h2>
+<p>Each Ceph daemon provides an admin socket that allows runtime option setting and statistic reading. See
+<a class="reference internal" href="../../rados/operations/monitoring/#rados-monitoring-using-admin-socket"><span class="std std-ref">Using the Admin Socket</span></a>.</p>
+<ol class="arabic">
+<li><p>To access the admin socket, enter the daemon container on the host:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@mon1</span> <span class="o">~</span><span class="p">]</span><span class="c1"># cephadm enter --name &lt;daemon-name&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Run a command of the following forms to see the admin socket’s configuration and other available actions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">ceph</span><span class="p">:</span> <span class="n">root</span><span class="nd">@mon1</span> <span class="o">/</span><span class="p">]</span><span class="c1"># ceph --admin-daemon /var/run/ceph/ceph-&lt;daemon-name&gt;.asok config show</span>
+<span class="p">[</span><span class="n">ceph</span><span class="p">:</span> <span class="n">root</span><span class="nd">@mon1</span> <span class="o">/</span><span class="p">]</span><span class="c1"># ceph --admin-daemon /var/run/ceph/ceph-&lt;daemon-name&gt;.asok help</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="running-various-ceph-tools">
+<h2>Running Various Ceph Tools<a class="headerlink" href="#running-various-ceph-tools" title="Permalink to this heading"></a></h2>
+<p>To run Ceph tools such as <code class="docutils literal notranslate"><span class="pre">ceph-objectstore-tool</span></code> or
+<code class="docutils literal notranslate"><span class="pre">ceph-monstore-tool</span></code>, invoke the cephadm CLI with
+<code class="docutils literal notranslate"><span class="pre">cephadm</span> <span class="pre">shell</span> <span class="pre">--name</span> <span class="pre">&lt;daemon-name&gt;</span></code>.  For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@myhostname</span> <span class="c1"># cephadm unit --name mon.myhostname stop</span>
+<span class="n">root</span><span class="nd">@myhostname</span> <span class="c1"># cephadm shell --name mon.myhostname</span>
+<span class="p">[</span><span class="n">ceph</span><span class="p">:</span> <span class="n">root</span><span class="nd">@myhostname</span> <span class="o">/</span><span class="p">]</span><span class="c1"># ceph-monstore-tool /var/lib/ceph/mon/ceph-myhostname get monmap &gt; monmap</span>
+<span class="p">[</span><span class="n">ceph</span><span class="p">:</span> <span class="n">root</span><span class="nd">@myhostname</span> <span class="o">/</span><span class="p">]</span><span class="c1"># monmaptool --print monmap</span>
+<span class="n">monmaptool</span><span class="p">:</span> <span class="n">monmap</span> <span class="n">file</span> <span class="n">monmap</span>
+<span class="n">epoch</span> <span class="mi">1</span>
+<span class="n">fsid</span> <span class="mi">28596</span><span class="n">f44</span><span class="o">-</span><span class="mi">3</span><span class="n">b56</span><span class="o">-</span><span class="mi">11</span><span class="n">ec</span><span class="o">-</span><span class="mi">9034</span><span class="o">-</span><span class="mi">482</span><span class="n">ae35a5fbb</span>
+<span class="n">last_changed</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">01</span><span class="n">T20</span><span class="p">:</span><span class="mi">57</span><span class="p">:</span><span class="mf">19.755111</span><span class="o">+</span><span class="mi">0000</span>
+<span class="n">created</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">01</span><span class="n">T20</span><span class="p">:</span><span class="mi">57</span><span class="p">:</span><span class="mf">19.755111</span><span class="o">+</span><span class="mi">0000</span>
+<span class="n">min_mon_release</span> <span class="mi">17</span> <span class="p">(</span><span class="n">quincy</span><span class="p">)</span>
+<span class="n">election_strategy</span><span class="p">:</span> <span class="mi">1</span>
+<span class="mi">0</span><span class="p">:</span> <span class="p">[</span><span class="n">v2</span><span class="p">:</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">3300</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="n">v1</span><span class="p">:</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">6789</span><span class="o">/</span><span class="mi">0</span><span class="p">]</span> <span class="n">mon</span><span class="o">.</span><span class="n">myhostname</span>
+</pre></div>
+</div>
+<p>The cephadm shell sets up the environment in a way that is suitable for
+extended daemon maintenance and for the interactive running of daemons.</p>
+</section>
+<section id="restoring-the-monitor-quorum">
+<span id="cephadm-restore-quorum"></span><h2>Restoring the Monitor Quorum<a class="headerlink" href="#restoring-the-monitor-quorum" title="Permalink to this heading"></a></h2>
+<p>If the Ceph Monitor daemons (mons) cannot form a quorum, <code class="docutils literal notranslate"><span class="pre">cephadm</span></code> will not
+be able to manage the cluster until quorum is restored.</p>
+<p>In order to restore the quorum, remove unhealthy monitors
+form the monmap by following these steps:</p>
+<ol class="arabic">
+<li><p>Stop all Monitors. Use <code class="docutils literal notranslate"><span class="pre">ssh</span></code> to connect to each Monitor’s host, and then
+while connected to the Monitor’s host use <code class="docutils literal notranslate"><span class="pre">cephadm</span></code> to stop the Monitor
+daemon:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">ssh<span class="w"> </span><span class="o">{</span>mon-host<span class="o">}</span></span>
+<span class="prompt2">cephadm<span class="w"> </span>unit<span class="w"> </span>--name<span class="w"> </span><span class="o">{</span>mon.hostname<span class="o">}</span><span class="w"> </span>stop</span>
+</pre></div></div></li>
+<li><p>Identify a surviving Monitor and log in to its host:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">ssh<span class="w"> </span><span class="o">{</span>mon-host<span class="o">}</span></span>
+<span class="prompt2">cephadm<span class="w"> </span>enter<span class="w"> </span>--name<span class="w"> </span><span class="o">{</span>mon.hostname<span class="o">}</span></span>
+</pre></div></div></li>
+<li><p>Follow the steps in <a class="reference internal" href="../../rados/operations/add-or-rm-mons/#rados-mon-remove-from-unhealthy"><span class="std std-ref">Removing Monitors from an Unhealthy Cluster</span></a>.</p></li>
+</ol>
+</section>
+<section id="manually-deploying-a-manager-daemon">
+<span id="cephadm-manually-deploy-mgr"></span><h2>Manually Deploying a Manager Daemon<a class="headerlink" href="#manually-deploying-a-manager-daemon" title="Permalink to this heading"></a></h2>
+<p>At least one Manager (<code class="docutils literal notranslate"><span class="pre">mgr</span></code>) daemon is required by cephadm in order to manage
+the cluster. If the last remaining Manager has been removed from the Ceph
+cluster, follow these steps in order to deploy a fresh Manager on an arbitrary
+host in your cluster. In this example, the freshly-deployed Manager daemon is
+called <code class="docutils literal notranslate"><span class="pre">mgr.hostname.smfvfd</span></code>.</p>
+<ol class="arabic">
+<li><p>Disable the cephadm scheduler, in order to prevent <code class="docutils literal notranslate"><span class="pre">cephadm</span></code> from removing
+the new Manager. See <a class="reference internal" href="../install/#cephadm-enable-cli"><span class="std std-ref">Enable Ceph CLI</span></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ceph<span class="w"> </span>config-key<span class="w"> </span><span class="nb">set</span><span class="w"> </span>mgr/cephadm/pause<span class="w"> </span><span class="nb">true</span></span>
+</pre></div></div></li>
+<li><p>Retrieve or create the “auth entry” for the new Manager:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ceph<span class="w"> </span>auth<span class="w"> </span>get-or-create<span class="w"> </span>mgr.hostname.smfvfd<span class="w"> </span>mon<span class="w"> </span><span class="s2">"profile mgr"</span><span class="w"> </span>osd<span class="w"> </span><span class="s2">"allow *"</span><span class="w"> </span>mds<span class="w"> </span><span class="s2">"allow *"</span></span>
+</pre></div></div></li>
+<li><p>Retrieve the Monitor’s configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ceph<span class="w"> </span>config<span class="w"> </span>generate-minimal-conf</span>
+</pre></div></div></li>
+<li><p>Retrieve the container image:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ceph<span class="w"> </span>config<span class="w"> </span>get<span class="w"> </span><span class="s2">"mgr.hostname.smfvfd"</span><span class="w"> </span>container_image</span>
+</pre></div></div></li>
+<li><p>Create a file called <code class="docutils literal notranslate"><span class="pre">config-json.json</span></code>, which contains the information
+necessary to deploy the daemon:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"config"</span><span class="p">:</span><span class="w"> </span><span class="s2">"# minimal ceph.conf for 8255263a-a97e-4934-822c-00bfe029b28f\n[global]\n\tfsid = 8255263a-a97e-4934-822c-00bfe029b28f\n\tmon_host = [v2:192.168.0.1:40483/0,v1:192.168.0.1:40484/0]\n"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"keyring"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[mgr.hostname.smfvfd]\n\tkey = V2VyIGRhcyBsaWVzdCBpc3QgZG9vZi4=\n"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Deploy the Manager daemon:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">cephadm<span class="w"> </span>--image<span class="w"> </span>&lt;container-image&gt;<span class="w"> </span>deploy<span class="w"> </span>--fsid<span class="w"> </span>&lt;fsid&gt;<span class="w"> </span>--name<span class="w"> </span>mgr.hostname.smfvfd<span class="w"> </span>--config-json<span class="w"> </span>config-json.json</span>
+</pre></div></div></li>
+</ol>
+</section>
+<section id="capturing-core-dumps">
+<h2>Capturing Core Dumps<a class="headerlink" href="#capturing-core-dumps" title="Permalink to this heading"></a></h2>
+<p>A Ceph cluster that uses <code class="docutils literal notranslate"><span class="pre">cephadm</span></code> can be configured to capture core dumps.
+The initial capture and processing of the coredump is performed by
+<a class="reference external" href="https://www.man7.org/linux/man-pages/man8/systemd-coredump.8.html">systemd-coredump</a>.</p>
+<p>To enable coredump handling, run the following command</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">ulimit</span><span class="w"> </span>-c<span class="w"> </span>unlimited</span>
+</pre></div></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Core dumps are not namespaced by the kernel. This means that core dumps are
+written to <code class="docutils literal notranslate"><span class="pre">/var/lib/systemd/coredump</span></code> on the container host. The <code class="docutils literal notranslate"><span class="pre">ulimit</span>
+<span class="pre">-c</span> <span class="pre">unlimited</span></code> setting  will persist  only until the system is rebooted.</p>
+</div>
+<p>Wait for the crash to happen again. To simulate the crash of a daemon, run for
+example <code class="docutils literal notranslate"><span class="pre">killall</span> <span class="pre">-3</span> <span class="pre">ceph-mon</span></code>.</p>
+</section>
+<section id="running-the-debugger-with-cephadm">
+<h2>Running the Debugger with cephadm<a class="headerlink" href="#running-the-debugger-with-cephadm" title="Permalink to this heading"></a></h2>
+<section id="running-a-single-debugging-session">
+<h3>Running a single debugging session<a class="headerlink" href="#running-a-single-debugging-session" title="Permalink to this heading"></a></h3>
+<p>Initiate a debugging session by using the <code class="docutils literal notranslate"><span class="pre">cephadm</span> <span class="pre">shell</span></code> command.
+From within the shell container we need to install the debugger and debuginfo
+packages. To debug a core file captured by systemd, run the following:</p>
+<ol class="arabic">
+<li><p>Start the shell session:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">cephadm<span class="w"> </span>shell<span class="w"> </span>--mount<span class="w"> </span>/var/lib/system/coredump</span>
+</pre></div></div></li>
+<li><p>From within the shell session, run the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">dnf<span class="w"> </span>install<span class="w"> </span>ceph-debuginfo<span class="w"> </span>gdb<span class="w"> </span>zstd</span>
+</pre></div></div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">unzstd<span class="w"> </span>/var/lib/systemd/coredump/core.ceph-*.zst</span>
+</pre></div></div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">gdb<span class="w"> </span>/usr/bin/ceph-mon<span class="w"> </span>/mnt/coredump/core.ceph-*.zst</span>
+</pre></div></div></li>
+<li><p>Run debugger commands at gdb’s prompt:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt3:before {
+  content: "(gdb) ";
+}
+</style><span class="prompt3">bt</span>
+</pre></div></div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#0  0x00007fa9117383fc in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0</span>
+<span class="c1">#1  0x00007fa910d7f8f0 in std::condition_variable::wait(std::unique_lock&lt;std::mutex&gt;&amp;) () from /lib64/libstdc++.so.6</span>
+<span class="c1">#2  0x00007fa913d3f48f in AsyncMessenger::wait() () from /usr/lib64/ceph/libceph-common.so.2</span>
+<span class="c1">#3  0x0000563085ca3d7e in main ()</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="running-repeated-debugging-sessions">
+<h3>Running repeated debugging sessions<a class="headerlink" href="#running-repeated-debugging-sessions" title="Permalink to this heading"></a></h3>
+<p>When using <code class="docutils literal notranslate"><span class="pre">cephadm</span> <span class="pre">shell</span></code>, as in the example above, any changes made to the
+container that is spawned by the shell command are ephemeral. After the shell
+session exits, the files that were downloaded and installed cease to be
+available. You can simply re-run the same commands every time <code class="docutils literal notranslate"><span class="pre">cephadm</span> <span class="pre">shell</span></code>
+is invoked, but to save time and resources you can create a new container image
+and use it for repeated debugging sessions.</p>
+<p>In the following example, we create a simple file that constructs the
+container image. The command below uses podman but it is expected to work
+correctly even if <code class="docutils literal notranslate"><span class="pre">podman</span></code> is replaced with <code class="docutils literal notranslate"><span class="pre">docker</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cat &gt;Containerfile &lt;&lt;EOF
+ARG BASE_IMG=quay.io/ceph/ceph:v18
+FROM \${BASE_IMG}
+# install ceph debuginfo packages, gdb and other potentially useful packages
+RUN dnf install --enablerepo='*debug*' -y ceph-debuginfo gdb zstd strace python3-debuginfo
+EOF
+podman build -t ceph:debugging -f Containerfile .
+# pass --build-arg=BASE_IMG=&lt;your image&gt; to customize the base image
+</pre></div>
+</div>
+<p>The above file creates a new local image named <code class="docutils literal notranslate"><span class="pre">ceph:debugging</span></code>. This image
+can be used on the same machine that built it. The image can also be pushed to
+a container repository or saved and copied to a node that is running other Ceph
+containers. See the <code class="docutils literal notranslate"><span class="pre">podman</span></code> or <code class="docutils literal notranslate"><span class="pre">docker</span></code> documentation for more
+information about the container workflow.</p>
+<p>After the image has been built, it can be used to initiate repeat debugging
+sessions. By using an image in this way, you avoid the trouble of having to
+re-install the debug tools and the debuginfo packages every time you need to
+run a debug session. To debug a core file using this image, in the same way as
+previously described, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">cephadm<span class="w"> </span>--image<span class="w"> </span>ceph:debugging<span class="w"> </span>shell<span class="w"> </span>--mount<span class="w"> </span>/var/lib/system/coredump</span>
+</pre></div></div></section>
+<section id="debugging-live-processes">
+<h3>Debugging live processes<a class="headerlink" href="#debugging-live-processes" title="Permalink to this heading"></a></h3>
+<p>The gdb debugger can attach to running processes to debug them. This can be
+achieved with a containerized process by using the debug image and attaching it
+to the same PID namespace in which the process to be debugged resides.</p>
+<p>This requires running a container command with some custom arguments. We can
+generate a script that can debug a process in a running container.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">cephadm<span class="w"> </span>--image<span class="w"> </span>ceph:debugging<span class="w"> </span>shell<span class="w"> </span>--dry-run<span class="w"> </span>&gt;<span class="w"> </span>/tmp/debug.sh</span>
+</pre></div></div><p>This creates a script that includes the container command that <code class="docutils literal notranslate"><span class="pre">cephadm</span></code>
+would use to create a shell. Modify the script by removing the <code class="docutils literal notranslate"><span class="pre">--init</span></code>
+argument and replace it with the argument that joins to the namespace used for
+a running running container. For example, assume we want to debug the Manager
+and have determnined that the Manager is running in a container named
+<code class="docutils literal notranslate"><span class="pre">ceph-bc615290-685b-11ee-84a6-525400220000-mgr-ceph0-sluwsk</span></code>. In this case,
+the argument
+<code class="docutils literal notranslate"><span class="pre">--pid=container:ceph-bc615290-685b-11ee-84a6-525400220000-mgr-ceph0-sluwsk</span></code>
+should be used.</p>
+<p>We can run our debugging container with <code class="docutils literal notranslate"><span class="pre">sh</span> <span class="pre">/tmp/debug.sh</span></code>. Within the shell,
+we can run commands such as <code class="docutils literal notranslate"><span class="pre">ps</span></code> to get the PID of the Manager process. In
+the following example this is <code class="docutils literal notranslate"><span class="pre">2</span></code>. While running gdb, we can attach to the
+running process:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt3">attach<span class="w"> </span><span class="m">2</span></span>
+<span class="prompt3">info<span class="w"> </span>threads</span>
+<span class="prompt3">bt</span>
+</pre></div></div></section>
+</section>
+</section>
+
+
+
+<div id="support-the-ceph-foundation" class="admonition note">
+  <p class="first admonition-title">Brought to you by the Ceph Foundation</p>
+  <p class="last">The Ceph Documentation is a community resource funded and hosted by the non-profit <a href="https://ceph.io/en/foundation/">Ceph Foundation</a>. If you would like to support this and our other efforts, please consider <a href="https://ceph.io/en/foundation/join/">joining now</a>.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../client-setup/" class="btn btn-neutral float-left" title="Basic Ceph Client Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../dev/cephadm/" class="btn btn-neutral float-right" title="CEPHADM Developer Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2016, Ceph authors and contributors. Licensed under Creative Commons Attribution Share Alike 3.0 (CC-BY-SA-3.0).</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+   
+
+</body>
+</html>

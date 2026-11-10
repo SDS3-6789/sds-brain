@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Troubleshoot access denied (403 Forbidden) errors in Amazon S3 - Amazon Simple Storage Service</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="troubleshoot-403-errors" /><meta name="default_state" content="troubleshoot-403-errors" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/troubleshoot-403-errors.html" /><link rel="alternate" type="text/markdown" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/troubleshoot-403-errors.md" title="Markdown version" /><meta name="description" content="Learn how to troubleshoot access denied (HTTP 403 Forbidden) errors in Amazon S3." /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Simple Storage Service" /><meta name="guide" content="User Guide" /><meta name="abstract" content="Learn how to use Amazon Simple Storage Service (Amazon S3) to store and retrieve any amount of data from anywhere. This guide explains Amazon S3 concepts, such as buckets, objects, and related configurations, and includes code examples for common operations." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/troubleshoot-403-errors.html" /><link rel="alternate" href="https://docs.aws.amazon.com/id_id/AmazonS3/latest/userguide/troubleshoot-403-errors.html" hreflang="id-id" /><link rel="alternate" href="https://docs.aws.amazon.com/id_id/AmazonS3/latest/userguide/troubleshoot-403-errors.html" hreflang="id" /><link rel="alternate" href="https://docs.aws.amazon.com/de_de/AmazonS3/latest/userguide/troubleshoot-403-errors.html" hreflang="de-de" /><link rel="alternate" href="https://docs.aws.amazon.com/de_de/AmazonS3/latest/userguide/troubleshoot-403-errors.html" hreflang="de" /><link rel="alternate" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/troubleshoot-403-errors.html" hreflang="en-us" /><link rel="alternate" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/troubleshoot-403-errors.html" hreflang="en" /><link rel="alternate" href="https://docs.aws.amazon.com/es_es/AmazonS3/latest/userguide/troubleshoot-403-errors.html" hreflang="es-es" /><link rel="alternate" href="https://docs.aws.amazon.com/es_es/AmazonS3/latest/userguide/troubleshoot-403-errors.html" hreflang="es" /><link rel="alternate" href="https://docs.aws.amazon.com/fr_fr/AmazonS3/latest/userguide/troubleshoot-403-errors.html" hreflang="fr-fr" /><link rel="alternate" href="https://docs.aws.amazon.com/fr_fr/AmazonS3/latest/userguide/troubleshoot-403-errors.html" hreflang="fr" /><link rel="alternate" href="https://docs.aws.amazon.com/it_it/AmazonS3/latest/userguide/troubleshoot-403-errors.html" hreflang="it-it" /><link rel="alternate" href="https://docs.aws.amazon.com/it_it/AmazonS3/latest/userguide/troubleshoot-403-errors.html" hreflang="it" /><link rel="alternate" href="https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/troubleshoot-403-errors.html" hreflang="ja-jp" /><link rel="alternate" href="https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/troubleshoot-403-errors.html" hreflang="ja" /><link rel="alternate" href="https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/troubleshoot-403-errors.html" hreflang="ko-kr" /><link rel="alternate" href="https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/troubleshoot-403-errors.html" hreflang="ko" /><link rel="alternate" href="https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/troubleshoot-403-errors.html" hreflang="pt-br" /><link rel="alternate" href="https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/troubleshoot-403-errors.html" hreflang="pt" /><link rel="alternate" href="https://docs.aws.amazon.com/zh_cn/AmazonS3/latest/userguide/troubleshoot-403-errors.html" hreflang="zh-cn" /><link rel="alternate" href="https://docs.aws.amazon.com/zh_tw/AmazonS3/latest/userguide/troubleshoot-403-errors.html" hreflang="zh-tw" /><link rel="alternate" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/troubleshoot-403-errors.html" hreflang="x-default" /><meta name="feedback-item" content="S3" /><meta name="this_doc_product" content="Amazon Simple Storage Service" /><meta name="this_doc_guide" content="User Guide" /><head xmlns="http://www.w3.org/1999/xhtml"> <script defer="" src="/assets/r/awsdocs-doc-page.2.0.0.js"></script><link href="/assets/r/awsdocs-doc-page.2.0.0.css" rel="stylesheet"/></head>
+<script defer="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'s3'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="Troubleshoot access denied (403 Forbidden) errors in Amazon S3" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><p><a href="troubleshoot-403-errors.md">View a markdown version of this page</a></p><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Troubleshoot access denied (403 Forbidden) errors in Amazon S3 - Amazon Simple Storage Service</title><meta name="pdf" content="/pdfs/AmazonS3/latest/userguide/s3-userguide.pdf#troubleshoot-403-errors" /><meta name="rss" content="s3-userguide-rss-updates.rss" /><meta name="forums" content="https://repost.aws/tags/TADSTjraA0Q4-a1dxk6eUYaw" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=S3&amp;topic_url=https://docs.aws.amazon.com/en_us/AmazonS3/latest/userguide/troubleshoot-403-errors.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=https://docs.aws.amazon.com/en_us/AmazonS3/latest/userguide/troubleshoot-403-errors.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=https://docs.aws.amazon.com/en_us/AmazonS3/latest/userguide/troubleshoot-403-errors.html" /><meta name="keywords" content="S3,Amazon S3,S3 User Guide,Amazon S3 User Guide,Amazon User Guide,s3 bucket,s3 object,cloud storage,data storage,S3 authentication,IAM in S3" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Simple Storage Service (S3)",
+        "item" : "https://docs.aws.amazon.com/s3/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/AmazonS3/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Access control in Amazon S3",
+        "item" : "https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-management.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "Identity and Access Management for Amazon S3",
+        "item" : "https://docs.aws.amazon.com/AmazonS3/latest/userguide/security-iam.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 6,
+        "name" : "Troubleshooting Amazon S3 identity and access",
+        "item" : "https://docs.aws.amazon.com/AmazonS3/latest/userguide/security_iam_troubleshoot.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 7,
+        "name" : "Troubleshoot access denied (403 Forbidden) errors in Amazon S3",
+        "item" : "https://docs.aws.amazon.com/AmazonS3/latest/userguide/security_iam_troubleshoot.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/AmazonS3/latest/userguide/s3-userguide.pdf#troubleshoot-403-errors" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="/index.html">Documentation</a><a href="/s3/index.html">Amazon Simple Storage Service (S3)</a><a href="Welcome.html">User Guide</a></div><div id="page-toc-src"><a href="#access-denied-message-examples">Access denied message examples and how to troubleshoot them</a><a href="#access-denied-requester-pays">Access denied due to Requester Pays settings</a><a href="#bucket-iam-policies">Bucket policies and IAM policies</a><a href="#troubleshoot-403-acl-settings">Amazon S3 ACL settings</a><a href="#troubleshoot-403-bpa">S3 Block Public Access settings</a><a href="#troubleshoot-403-encryption">Amazon S3 encryption settings</a><a href="#troubleshoot-403-object-lock">S3 Object Lock settings</a><a href="#troubleshoot-403-vpc">VPC endpoint policies</a><a href="#troubleshoot-403-orgs">AWS Organizations policies</a><a href="#troubleshoot-403-cloudfront">CloudFront distribution access</a><a href="#troubleshoot-403-access-points">Access point settings</a><a href="#troubleshoot-403-additional-resources">Additional resources</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="troubleshoot-403-errors">Troubleshoot access denied (403 Forbidden) errors in Amazon S3</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><p>Access denied (HTTP <code class="code">403 Forbidden</code>) errors appear when AWS explicitly or
+        implicitly denies an authorization request. </p><div class="itemizedlist">
+         
+         
+    <ul class="itemizedlist"><li class="listitem">
+            <p>An <em>explicit denial</em> occurs when a policy
+                contains a <code class="code">Deny</code> statement for the specific AWS action. </p>
+        </li><li class="listitem">
+            <p>An <em>implicit denial</em> occurs when there is no
+                applicable <code class="code">Deny</code> statement and also no applicable <code class="code">Allow</code>
+                statement. </p>
+        </li></ul></div><p>Because an AWS Identity and Access Management (IAM) policy implicitly denies an IAM principal by default, the
+        policy must explicitly allow the principal to perform an action. Otherwise, the policy
+        implicitly denies access. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic_AccessPolicyLanguage_Interplay.html">The difference between explicit and implicit denies</a> in the <em>IAM User Guide</em>. For information about the policy evaluation
+        logic that determines whether an access request is allowed or denied, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">Policy evaluation logic</a> in the <em>IAM User Guide</em>. </p><p>For more information about the permissions to S3 API operations by S3 resource types, see <a href="./using-with-s3-policy-actions.html">Required permissions for Amazon S3 API operations</a>.</p><p>The following topics cover the most common causes of access denied errors in Amazon S3.</p><div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>For access denied (HTTP <code class="code">403 Forbidden</code>) errors, Amazon S3 doesn't charge the
+            bucket owner when the request is initiated outside of the bucket owner's individual
+            AWS account or the bucket owner's AWS organization.</p></div></div><div class="highlights" id="inline-topiclist"><h6>Topics</h6><ul><li><p><a href="#access-denied-message-examples">Access denied message examples and how to troubleshoot them</a></p></li><li><p><a href="#access-denied-requester-pays">Access denied due to Requester Pays settings</a></p></li><li><p><a href="#bucket-iam-policies">Bucket policies and IAM policies</a></p></li><li><p><a href="#troubleshoot-403-acl-settings">Amazon S3 ACL settings</a></p></li><li><p><a href="#troubleshoot-403-bpa">S3 Block Public Access settings</a></p></li><li><p><a href="#troubleshoot-403-encryption">Amazon S3 encryption settings</a></p></li><li><p><a href="#troubleshoot-403-object-lock">S3 Object Lock settings</a></p></li><li><p><a href="#troubleshoot-403-vpc">VPC endpoint policies</a></p></li><li><p><a href="#troubleshoot-403-orgs">AWS Organizations policies</a></p></li><li><p><a href="#troubleshoot-403-cloudfront">CloudFront distribution access</a></p></li><li><p><a href="#troubleshoot-403-access-points">Access point settings</a></p></li><li><p><a href="#troubleshoot-403-additional-resources">Additional resources</a></p></li></ul></div><div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>If you're trying to troubleshoot a permissions issue, start with the <a href="#access-denied-message-examples">Access denied message examples and how to troubleshoot them</a> section, then go to the <a href="#bucket-iam-policies">Bucket policies and IAM policies</a> section. Also be sure to follow the guidance in
+                <a href="#troubleshoot-403-tips">Tips for checking permissions</a>.</p></div></div>
+        <h2 id="access-denied-message-examples">Access denied message examples and how to troubleshoot them</h2>
+        <p>Amazon S3 now includes additional context in access denied (HTTP <code class="code">403 Forbidden</code>) errors
+      for requests made to resources within the same AWS account or same organization in AWS Organizations. This
+      context includes the type of policy that denied access, the reason for denial, and information about the
+      IAM user or role that requested access to the resource. </p>
+        <p>With this additional context, you can troubleshoot access issues, identify the root cause of
+      access denied errors, and fix incorrect access controls by updating the relevant policies. This
+      additional context is also available in AWS CloudTrail logs. Enhanced access denied error messages for
+      same-account or same-organization requests are available in all AWS Regions, including the
+      AWS GovCloud (US) Regions and the China Regions. </p>
+        <p>For explicit deny cases, the error message also includes the Amazon Resource Name (ARN) of
+      the specific policy that denied the request. With this policy ARN, you can quickly identify the exact
+      policy responsible for the denial and navigate directly to it to make the necessary
+      changes. The error message includes the policy ARN for Service Control Policies (SCPs), resource control
+      policies (RCPs), identity-based policies, session policies, and permissions boundaries.</p>
+        
+        <p>Most access denied error messages appear in the format <code class="code">User
+                    <code class="replaceable">user-arn</code> is not authorized to perform
+                    <code class="replaceable">action</code> on "<code class="replaceable">resource-arn</code>"
+                because <code class="replaceable">context</code></code>. In this example,
+                    <code class="replaceable"><code class="code">user-arn</code></code> is the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">Amazon Resource Name
+                (ARN)</a> of the user that doesn't receive access,
+                    <code class="replaceable"><code class="code">action</code></code> is the service action that the
+            policy denies, and <code class="replaceable"><code class="code">resource-arn</code></code> is the ARN of
+            the resource on which the policy acts. The
+                <code class="replaceable"><code class="code">context</code></code> field represents additional context
+            about the policy type that explains why the policy denied access.</p>
+        <p>When a policy explicitly denies access because the policy contains a <code class="code">Deny</code>
+            statement, then the access denied error message includes the phrase <code class="code">with an
+                explicit deny in a <code class="replaceable">type</code> policy</code>, along with
+            the ARN of the specific policy that denied the request. When the policy
+            implicitly denies access, then the access denied error message includes the phrase
+                <code class="code">because no <code class="replaceable">type</code> policy allows the
+                    <code class="replaceable">action</code> action</code>.</p>
+        <div class="awsdocs-note awsdocs-important"><div class="awsdocs-note-title"><awsui-icon name="status-warning" variant="error"></awsui-icon><h6>Important</h6></div><div class="awsdocs-note-text"><div class="itemizedlist">
+                 
+         
+                 
+                 
+                 
+                 
+                 
+            <ul class="itemizedlist"><li class="listitem">
+                    <p>Enhanced access denied messages are returned only for same-account requests or for
+            requests within the same organization in AWS Organizations. Cross-account requests outside of the same
+            organization return a generic <code class="code">Access Denied</code> message. </p>
+                    <p>For information about the policy evaluation logic that determines whether
+                        a cross-account access request is allowed or denied, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic-cross-account.html"> Cross-account policy evaluation logic</a> in the <em>IAM User Guide</em>. For a walkthrough that shows
+                        how to grant cross-account access, see <a href="./example-walkthroughs-managing-access-example2.html">Example 2: Bucket owner granting cross-account bucket permissions</a>. </p>
+                </li><li class="listitem">
+          <p>For requests within the same organization in AWS Organizations:</p>
+          <div class="itemizedlist">
+             
+             
+          <ul class="itemizedlist"><li class="listitem">
+              <p>Enhanced access denied messages aren't returned if a denial occurs because of a virtual
+                private cloud (VPC) endpoint policy.</p>
+            </li><li class="listitem">
+              <p>Enhanced access denied messages are provided whenever both the bucket owner and the caller
+                account belong to the same organization in AWS Organizations. Although buckets configured with the
+                S3 Object Ownership <b>Bucket owner preferred</b> or <b>Object
+                  writer</b> settings might contain objects owned by different accounts, object
+                ownership doesn't affect enhanced access denied messages. Enhanced access denied messages are
+                returned for all object requests as long as the bucket owner and caller are in the same
+                organization, regardless of who owns the specific object. For information about
+                Object Ownership settings and configurations, see <a href="./about-object-ownership.html">Controlling ownership of objects and disabling ACLs for your bucket</a>.</p>
+            </li></ul></div>
+        </li><li class="listitem">
+                    <p>Enhanced access denied error messages aren't returned for requests made to
+                        directory buckets. Directory bucket requests return a generic <code class="code">Access
+                            Denied</code> message.</p>
+                </li><li class="listitem">
+                    <p>If multiple policies of the same policy type deny an authorization
+                        request, the access denied error message doesn't specify the number of
+                        policies.</p>
+                </li><li class="listitem">
+                    <p>For explicit deny cases, the error message includes the ARN of the specific
+                        policy that denied the request. This applies to Service Control Policies (SCPs),
+                        resource control policies (RCPs), identity-based policies, session policies, and
+                        permissions boundaries.</p>
+                </li><li class="listitem">
+                    <p>If multiple policy types deny an authorization request, the error message
+                        includes only one of those policy types.</p>
+                </li><li class="listitem">
+                    <p>If an access request is denied due to multiple reasons, the error message
+                        includes only one of the reasons for denial. </p>
+                </li></ul></div></div></div>
+        <p>The following examples show the format for different types of access denied error
+            messages and how to troubleshoot each type of message.</p>
+        
+         
+            <h3 id="access-denied-due-to-blocked-encryption-type">Access denied due to Blocked Encryption Type</h3>
+            <p>To limit the server-side encryption types you can use in your general purpose buckets, you can
+                choose to block SSE-C write requests by updating your default encryption configuration for your
+                buckets. This bucket-level configuration blocks requests to upload objects that specify SSE-C. When SSE-C is blocked for a bucket, any <code class="code">PutObject</code>,
+                <code class="code">CopyObject</code>, <code class="code">PostObject</code>, or Multipart Upload or replication
+                requests that specify SSE-C encryption will be rejected with an HTTP 403
+                <code class="code">AccessDenied</code> error.</p>
+            <p>This setting is a parameter on the
+                <code class="code">PutBucketEncryption</code> API and can also be updated using the S3 Console, AWS CLI, and AWS SDKs, if you have the <code class="code">s3:PutEncryptionConfiguration</code> permission. Valid values are <code class="code">SSE-C</code>, which blocks SSE-C encryption for the general purpose
+                bucket, and <code class="code">NONE</code>, which allows the use SSE-C for writes to the bucket.</p>
+            <p>For
+                example, when access is denied for a <code class="code">PutObject</code> request because the <code class="code">BlockedEncryptionTypes</code> setting blocks write requests specifying SSE-C, you receive the following
+                message:</p>
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (none)--><code class="nohighlight">An error occurred (AccessDenied) when calling the PutObject operation:   
+User: arn:aws:iam::123456789012:user/MaryMajor  is not   
+authorized to perform: s3:PutObject on resource:   
+"arn:aws:s3:::amzn-s3-demo-bucket1/object-name" because this   
+bucket has blocked upload requests that specify   
+Server Side Encryption with Customer provided keys (SSE-C).   
+Please specify a different server-side encryption type
+</code></pre>
+            <p>For more information about this setting, see <a href="./blocking-unblocking-s3-c-encryption-gpb.html">Blocking or unblocking SSE-C for a general purpose bucket</a>.</p>
+         
+        
+        
+         
+            <h3 id="access-denied-rcp-examples-explicit">Access denied due to a resource control policy – explicit denial</h3>
+            <div class="orderedlist">
+                 
+                 
+            <ol><li>
+                    <p>Check for an explicit <code class="code">Deny</code> statement for the action in your resource
+                        control policies (RCPs). The error message includes the policy ARN, which
+                        you can use to identify and navigate directly to the policy that denied the
+                        request. For the following example, the action is
+                            <code class="code">s3:GetObject</code>.</p>
+                </li><li>
+                    <p>Update your RCP by removing the <code class="code">Deny</code> statement. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_policies_update.html#update_policy-rcp">Update a resource control policy (RCP)</a> in the
+                            <em>AWS Organizations User Guide</em>. </p>
+                </li></ol></div>
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (none)--><code class="nohighlight">An error occurred (AccessDenied) when calling the GetObject operation: 
+User: arn:aws:iam::<code class="replaceable">777788889999</code>:user/<code class="replaceable">MaryMajor</code> is not authorized to perform: 
+s3:GetObject on resource: "arn:aws:s3:::<code class="replaceable">amzn-s3-demo-bucket1</code>/<code class="replaceable">object-name</code>" 
+with an explicit deny in a resource control policy, with policy ARN: 
+arn:aws:organizations::<code class="replaceable">777788889999</code>:policy/<code class="replaceable">o-exampleorgid</code>/resource_control_policy/<code class="replaceable">p-examplepolicyid</code></code></pre>
+         
+         
+            <h3 id="access-denied-scp-examples-implicit">Access denied due to a Service Control Policy – implicit denial</h3>
+            <div class="orderedlist">
+                 
+                 
+            <ol><li>
+                    <p>Check for a missing <code class="code">Allow</code> statement for the action in your
+                        service control policies (SCPs). For the following example, the action is
+                            <code class="code">s3:GetObject</code>.</p>
+                </li><li>
+                    <p>Update your SCP by adding the <code class="code">Allow</code> statement. For more
+                        information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_policies_update.html#update_policy">Updating an SCP</a> in the
+                        <em>AWS Organizations User Guide</em>.</p>
+                </li></ol></div>
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (none)--><code class="nohighlight">User: arn:aws:iam::<code class="replaceable">777788889999</code>:user/<code class="replaceable">MaryMajor</code> is not authorized to perform:
+s3:GetObject because no service control policy allows the s3:GetObject action</code></pre>
+         
+         
+            <h3 id="access-denied-scp-examples-explicit">Access denied due to a Service Control Policy – explicit denial</h3>
+            <div class="orderedlist">
+                 
+                 
+            <ol><li>
+                    <p>Check for an explicit <code class="code">Deny</code> statement for the action in your Service
+                        Control Policies (SCPs). The error message includes the policy ARN, which
+                        you can use to identify and navigate directly to the policy that denied the
+                        request. For the following example, the action is
+                            <code class="code">s3:GetObject</code>.</p>
+                </li><li>
+                    <p>Update your SCP by changing the <code class="code">Deny</code> statement to allow the
+                        user the necessary access. For an example of how you can do this, see <a href="https://github.com/aws-samples/service-control-policy-examples" rel="noopener noreferrer" target="_blank"><span>Service control policy examples</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a> on GitHub. For more information about
+                        updating your SCP, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_policies_update.html#update_policy">Updating an SCP</a> in the
+                        <em>AWS Organizations User Guide</em>.</p>
+                </li></ol></div>
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (none)--><code class="nohighlight">User: arn:aws:iam::<code class="replaceable">777788889999</code>:user/<code class="replaceable">MaryMajor</code> is not authorized to perform: 
+s3:GetObject with an explicit deny in a service control policy, with policy ARN: 
+arn:aws:organizations::<code class="replaceable">777788889999</code>:policy/<code class="replaceable">o-exampleorgid</code>/service_control_policy/<code class="replaceable">p-examplepolicyid</code></code></pre>
+         
+         
+            <h3 id="access-denied-vpc-endpoint-examples-implicit">Access denied due to a VPC endpoint policy – implicit denial</h3>
+            <div class="orderedlist">
+                 
+                 
+            <ol><li>
+                    <p>Check for a missing <code class="code">Allow</code> statement for the action in your
+                        virtual private cloud (VPC) endpoint policies. For the following example,
+                        the action is <code class="code">s3:GetObject</code>.</p>
+                </li><li>
+                    <p>Update your VPC endpoint policy by adding the <code class="code">Allow</code>
+                        statement. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-access.html#update-vpc-endpoint-policy">Update a VPC endpoint policy</a> in the
+                            <em>AWS PrivateLink Guide</em>.</p>
+                </li></ol></div>
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (none)--><code class="nohighlight">User: arn:aws:iam::<code class="replaceable">123456789012</code>:user/<code class="replaceable">MaryMajor</code> is not authorized to perform: 
+s3:GetObject because no VPC endpoint policy allows the s3:GetObject action</code></pre>
+         
+         
+            <h3 id="access-denied-vpc-endpoint-examples-explicit">Access denied due to a VPC endpoint policy – explicit denial</h3>
+            <div class="orderedlist">
+                 
+                 
+            <ol><li>
+                    <p>Check for an explicit <code class="code">Deny</code> statement for the action in your
+                        virtual private cloud (VPC) endpoint policies. For the following example,
+                        the action is <code class="code">s3:GetObject</code>.</p>
+                </li><li>
+                    <p>Update your VPC endpoint policy by changing the <code class="code">Deny</code>
+                        statement to allow the user the necessary access. For example, you can
+                        update your <code class="code">Deny</code> statement to use the
+                            <code class="code">aws:PrincipalAccount</code> condition key with the
+                            <code class="code">StringNotEquals</code> condition operator to allow the specific
+                        principal access, as shown in <a href="./amazon-s3-policy-keys.html#example-exclude-principal-from-deny-statement">Example 7: Excluding certain principals from a Deny statement</a>. For more
+                        information about updating your VPC endpoint policy, see <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-access.html#update-vpc-endpoint-policy">Update a VPC endpoint policy</a> in the
+                            <em>AWS PrivateLink Guide</em>.</p>
+                </li></ol></div>
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (none)--><code class="nohighlight">User: arn:aws:iam::<code class="replaceable">123456789012</code>:user/<code class="replaceable">MaryMajor</code> is not authorized to perform: 
+s3:GetObject on resource: "arn:aws:s3:::<code class="replaceable">amzn-s3-demo-bucket1</code>/<code class="replaceable">object-name</code>" with 
+an explicit deny in a VPC endpoint policy</code></pre>
+         
+         
+            <h3 id="access-denied-permissions-boundary-examples-implicit">Access denied due to a permissions boundary – implicit denial</h3>
+            <div class="orderedlist">
+                 
+                 
+            <ol><li>
+                    <p>Check for a missing <code class="code">Allow</code> statement for the action in your
+                        permissions boundary. For the following example, the action is
+                            <code class="code">s3:GetObject</code>.</p>
+                </li><li>
+                    <p>Update your permissions boundary by adding the <code class="code">Allow</code>
+                        statement to your IAM policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+                            boundaries for IAM entities</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html">Editing
+                            IAM policies</a> in the <em>IAM User Guide</em>.</p>
+                </li></ol></div>
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (none)--><code class="nohighlight">User: arn:aws:iam::<code class="replaceable">123456789012</code>:user/<code class="replaceable">MaryMajor</code> is not authorized to perform: 
+s3:GetObject on resource: "arn:aws:s3:::<code class="replaceable">amzn-s3-demo-bucket1</code>/<code class="replaceable">object-name</code>" 
+because no permissions boundary allows the s3:GetObject action</code></pre>
+         
+         
+            <h3 id="access-denied-permissions-boundary-examples-explicit">Access denied due to a permissions boundary – explicit denial</h3>
+            <div class="orderedlist">
+                 
+                 
+            <ol><li>
+                    <p>Check for an explicit <code class="code">Deny</code> statement for the action in your
+                        permissions boundary. The error message includes the policy ARN, which
+                        you can use to identify and navigate directly to the policy that denied the
+                        request. For the following example, the action is
+                            <code class="code">s3:GetObject</code>.</p>
+                </li><li>
+                    <p>Update your permissions boundary by changing the <code class="code">Deny</code>
+                        statement in your IAM policy to allow the user the necessary access. For
+                        example, you can update your <code class="code">Deny</code> statement to use the
+                            <code class="code">aws:PrincipalAccount</code> condition key with the
+                            <code class="code">StringNotEquals</code> condition operator to allow the specific
+                        principal access, as shown in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-principalaccount">aws:PrincipalAccount</a> in the <em>IAM User Guide</em>. For more information, see
+                            <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+                            boundaries for IAM entities</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html">Editing
+                            IAM policies</a> in the <em>IAM User Guide</em>.</p>
+                </li></ol></div>
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (none)--><code class="nohighlight">User: arn:aws:iam::<code class="replaceable">777788889999</code>:user/<code class="replaceable">MaryMajor</code> is not authorized to perform: 
+s3:GetObject with an explicit deny in a permissions boundary, with policy ARN: 
+arn:aws:iam::<code class="replaceable">777788889999</code>:policy/<code class="replaceable">ExamplePermissionsBoundaryPolicy</code></code></pre>
+         
+         
+            <h3 id="access-denied-session-policy-examples-implicit">Access denied due to session policies – implicit denial</h3>
+            <div class="orderedlist">
+                 
+                 
+            <ol><li>
+                    <p>Check for a missing <code class="code">Allow</code> statement for the action in your
+                        session policies. For the following example, the action is
+                            <code class="code">s3:GetObject</code>.</p>
+                </li><li>
+                    <p>Update your session policy by adding the <code class="code">Allow</code> statement. For
+                        more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+                            policies</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html">Editing
+                            IAM policies</a> in the <em>IAM User Guide</em>.</p>
+                </li></ol></div>
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (none)--><code class="nohighlight">User: arn:aws:iam::<code class="replaceable">123456789012</code>:user/<code class="replaceable">MaryMajor</code> is not authorized to perform: 
+s3:GetObject because no session policy allows the s3:GetObject action</code></pre>
+         
+         
+            <h3 id="access-denied-session-policy-examples-explicit">Access denied due to session policies – explicit denial</h3>
+            <div class="orderedlist">
+                 
+                 
+            <ol><li>
+                    <p>Check for an explicit <code class="code">Deny</code> statement for the action in your
+                        session policies. The error message includes the policy ARN, which
+                        you can use to identify and navigate directly to the policy that denied the
+                        request. For the following example, the action is
+                            <code class="code">s3:GetObject</code>.</p>
+                </li><li>
+                    <p>Update your session policy by changing the <code class="code">Deny</code> statement to
+                        allow the user the necessary access. For example, you can update your
+                            <code class="code">Deny</code> statement to use the <code class="code">aws:PrincipalAccount</code>
+                        condition key with the <code class="code">StringNotEquals</code> condition operator to
+                        allow the specific principal access, as shown in <a href="./amazon-s3-policy-keys.html#example-exclude-principal-from-deny-statement">Example 7: Excluding certain principals from a Deny statement</a>. For more
+                        information about updating your session policy, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+                            policies</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html">Editing
+                            IAM policies</a> in the <em>IAM User Guide</em>.</p>
+                </li></ol></div>
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (none)--><code class="nohighlight">User: arn:aws:iam::<code class="replaceable">123456789012</code>:user/<code class="replaceable">MaryMajor</code> is not authorized to perform: 
+s3:GetObject on resource: "arn:aws:s3:::<code class="replaceable">amzn-s3-demo-bucket1</code>/<code class="replaceable">object-name</code>" with 
+an explicit deny in a session policy, with policy ARN: 
+arn:aws:iam::<code class="replaceable">123456789012</code>:policy/<code class="replaceable">ExampleSessionPolicy</code></code></pre>
+         
+         
+            <h3 id="access-denied-resource-based-policy-examples-implicit">Access denied due to resource-based policies – implicit denial</h3>
+            <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p><em>Resource-based policies</em> means policies such
+                    as bucket policies and access point policies.</p></div></div>
+            <div class="orderedlist">
+                 
+                 
+            <ol><li>
+                    <p>Check for a missing <code class="code">Allow</code> statement for the action in your
+                        resource-based policy. Also check whether the <code class="code">IgnorePublicAcls</code>
+                        S3 Block Public Access setting is applied on the bucket, access point, or
+                        account level. For the following example, the action is
+                            <code class="code">s3:GetObject</code>.</p>
+                </li><li>
+                    <p>Update your policy by adding the <code class="code">Allow</code> statement. For more
+                        information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_resource-based">Resource-based policies</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html">Editing
+                            IAM policies</a> in the <em>IAM User Guide</em>.</p>
+                    <p>You might also need to adjust your <code class="code">IgnorePublicAcls</code> block
+                        public access setting for the bucket, access point, or account. For more
+                        information, see <a href="#access-denied-bpa-examples">Access denied due to Block Public Access settings</a> and <a href="./configuring-block-public-access-bucket.html">Configuring block public access settings for your S3 buckets</a>.</p>
+                </li></ol></div>
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (none)--><code class="nohighlight">User: arn:aws:iam::<code class="replaceable">123456789012</code>:user/<code class="replaceable">MaryMajor</code> is not authorized to perform: 
+s3:GetObject because no resource-based policy allows the s3:GetObject action</code></pre>
+         
+         
+            <h3 id="access-denied-resource-based-policy-examples-explicit">Access denied due to resource-based policies – explicit denial</h3>
+            <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p><em>Resource-based policies</em> means policies such
+                    as bucket policies and access point policies.</p></div></div>
+            <div class="orderedlist">
+                 
+                 
+            <ol><li>
+                    <p>Check for an explicit <code class="code">Deny</code> statement for the action in your
+                        resource-based policy. Also check whether the
+                            <code class="code">RestrictPublicBuckets</code> S3 Block Public Access setting is
+                        applied on the bucket, access point, or account level. For the following
+                        example, the action is <code class="code">s3:GetObject</code>.</p>
+                </li><li>
+                    <p>Update your policy by changing the <code class="code">Deny</code> statement to allow
+                        the user the necessary access. For example, you can update your
+                            <code class="code">Deny</code> statement to use the <code class="code">aws:PrincipalAccount</code>
+                        condition key with the <code class="code">StringNotEquals</code> condition operator to
+                        allow the specific principal access, as shown in <a href="./amazon-s3-policy-keys.html#example-exclude-principal-from-deny-statement">Example 7: Excluding certain principals from a Deny statement</a>. For more
+                        information about updating your resource-based policy, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_resource-based">Resource-based policies</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html">Editing
+                            IAM policies</a> in the <em>IAM User Guide</em>.</p>
+                    <p>You might also need to adjust your <code class="code">RestrictPublicBuckets</code>
+                        block public access setting for the bucket, access point, or account. For
+                        more information, see <a href="#access-denied-bpa-examples">Access denied due to Block Public Access settings</a> and <a href="./configuring-block-public-access-bucket.html">Configuring block public access settings for your S3 buckets</a>.</p>
+                </li></ol></div>
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (none)--><code class="nohighlight">User: arn:aws:iam::<code class="replaceable">123456789012</code>:user/<code class="replaceable">MaryMajor</code> is not authorized to perform: 
+s3:GetObject on resource: "arn:aws:s3:::<code class="replaceable">amzn-s3-demo-bucket1</code>/<code class="replaceable">object-name</code>" with 
+an explicit deny in a resource-based policy</code></pre>
+         
+
+         
+            <h3 id="access-denied-identity-based-policy-examples-implicit">Access denied due to identity-based policies – implicit denial</h3>
+            <div class="orderedlist">
+                 
+                 
+            <ol><li>
+                    <p>Check for a missing <code class="code">Allow</code> statement for the action in
+                        identity-based policies attached to the identity. For the following example,
+                        the action is <code class="code">s3:GetObject</code> and the identity is the IAM user
+                            <code class="code">MaryMajor</code>.</p>
+                </li><li>
+                    <p>Update your policy by adding the <code class="code">Allow</code> statement. For more
+                        information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_id-based">Identity-based policies</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html">Editing
+                            IAM policies</a> in the <em>IAM User Guide</em>.</p>
+                </li></ol></div>
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (none)--><code class="nohighlight">User: arn:aws:iam::<code class="replaceable">123456789012</code>:user/<code class="replaceable">MaryMajor</code> is not authorized to perform: 
+s3:GetObject because no identity-based policy allows the s3:GetObject action</code></pre>
+         
+         
+            <h3 id="access-denied-identity-based-policy-examples-explicit">Access denied due to identity-based policies – explicit denial</h3>
+            <div class="orderedlist">
+                 
+                 
+            <ol><li>
+                    <p>Check for an explicit <code class="code">Deny</code> statement for the action in
+                        identity-based policies attached to the identity. The error message includes
+                        the policy ARN, which you can use to identify and navigate directly to the
+                        policy that denied the request. For the following example,
+                        the action is <code class="code">s3:GetObject</code> and the identity is the IAM user
+                            <code class="code">MaryMajor</code>.</p>
+                </li><li>
+                    <p>Update your policy by changing the <code class="code">Deny</code> statement to allow
+                        the user the necessary access. For example, you can update your
+                            <code class="code">Deny</code> statement to use the <code class="code">aws:PrincipalAccount</code>
+                        condition key with the <code class="code">StringNotEquals</code> condition operator to
+                        allow the specific principal access, as shown in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-principalaccount">aws:PrincipalAccount</a> in the <em>IAM User Guide</em>. For more information, see
+                            <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_id-based">Identity-based policies</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html">Editing
+                            IAM policies</a> in the <em>IAM User Guide</em>.</p>
+                </li></ol></div>
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (none)--><code class="nohighlight">User: arn:aws:iam::<code class="replaceable">123456789012</code>:user/<code class="replaceable">MaryMajor</code> is not authorized to perform: 
+s3:GetObject on resource: "arn:aws:s3:::<code class="replaceable">amzn-s3-demo-bucket1</code>/<code class="replaceable">object-name</code>" with 
+an explicit deny in an identity-based policy, with policy ARN: 
+arn:aws:iam::<code class="replaceable">123456789012</code>:policy/<code class="replaceable">ExampleIdentityBasedPolicy</code></code></pre>
+         
+         
+            <h3 id="access-denied-bpa-examples">Access denied due to Block Public Access settings</h3>
+            <p>The Amazon S3 Block Public Access feature provides settings for access points, buckets,
+                and accounts to help you manage public access to Amazon S3 resources. For more
+                information about how Amazon S3 defines "public," see <a href="./access-control-block-public-access.html#access-control-block-public-access-policy-status">The meaning of "public"</a>. </p>
+            <p>By default, new buckets, access points, and objects don't allow public access.
+                However, users can modify bucket policies, access point policies, IAM user
+                policies, object permissions, or access control lists (ACLs) to allow public access.
+                S3 Block Public Access settings override these policies, permissions, and ACLs.
+                Since April 2023, all Block Public Access settings are enabled by default for new
+                buckets. </p>
+            <p>When Amazon S3 receives a request to access a bucket or an object, it determines
+                whether the bucket or the bucket owner's account has a block public access setting
+                applied. If the request was made through an access point, Amazon S3 also checks for block
+                public access settings for the access point. If there is an existing block public
+                access setting that prohibits the requested access, Amazon S3 rejects the request.</p>
+            <p>Amazon S3 Block Public Access provides four settings. These settings are independent
+                and can be used in any combination. Each setting can be applied to an access point,
+                a bucket, or an entire AWS account. If the block public access settings for the
+                access point, bucket, or account differ, then Amazon S3 applies the most restrictive
+                combination of the access point, bucket, and account settings.</p>
+            <p>When Amazon S3 evaluates whether an operation is prohibited by a block public access
+                setting, it rejects any request that violates an access point, bucket, or account
+                setting.</p>
+            <p>The four settings provided by Amazon S3 Block Public Access are as follows: </p>
+            <div class="itemizedlist">
+                 
+                 
+                 
+                 
+            <ul class="itemizedlist"><li class="listitem">
+                    <p><code class="code">BlockPublicAcls</code> – This setting applies to
+                            <code class="code">PutBucketAcl</code>, <code class="code">PutObjectAcl</code>,
+                            <code class="code">PutObject</code>, <code class="code">CreateBucket</code>,
+                            <code class="code">CopyObject</code>, and <code class="code">POST Object</code> requests. The
+                            <code class="code">BlockPublicAcls</code> setting causes the following behavior: </p>
+                    <div class="itemizedlist">
+                         
+                         
+                         
+                    <ul class="itemizedlist"><li class="listitem">
+                            <p><code class="code">PutBucketAcl</code> and <code class="code">PutObjectAcl</code> calls fail
+                                if the specified access control list (ACL) is public.</p>
+                        </li><li class="listitem">
+                            <p><code class="code">PutObject</code> calls fail if the request includes a public
+                                ACL.</p>
+                        </li><li class="listitem">
+                            <p>If this setting is applied to an account, then
+                                    <code class="code">CreateBucket</code> calls fail with an HTTP
+                                    <code class="code">400</code> (<code class="code">Bad Request</code>) response if the
+                                request includes a public ACL.</p>
+                        </li></ul></div>
+                    <p>For example, when access is denied for a <code class="code">CopyObject</code> request
+                        because of the <code class="code">BlockPublicAcls</code> setting, you receive the
+                        following message: </p>
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (none)--><code class="nohighlight">An error occurred (AccessDenied) when calling the CopyObject operation: 
+User: arn:aws:sts::<code class="replaceable">123456789012</code>:user/<code class="replaceable">MaryMajor</code> is not authorized to 
+perform: s3:CopyObject on resource: "arn:aws:s3:::<code class="replaceable">amzn-s3-demo-bucket1</code>/<code class="replaceable">object-name</code>" 
+because public ACLs are prevented by the BlockPublicAcls setting in S3 Block Public Access.</code></pre>
+                </li><li class="listitem">
+                    <p><code class="code">IgnorePublicAcls</code> – The <code class="code">IgnorePublicAcls</code>
+                        setting causes Amazon S3 to ignore all public ACLs on a bucket and any objects
+                        that it contains. If your request's permission is granted only by a public
+                        ACL, then the <code class="code">IgnorePublicAcls</code> setting rejects the
+                        request.</p>
+                    <p>Any denial resulting from the <code class="code">IgnorePublicAcls</code> setting is
+                        implicit. For example, if <code class="code">IgnorePublicAcls</code> denies a
+                            <code class="code">GetObject</code> request because of a public ACL, you receive the
+                        following message: </p>
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (none)--><code class="nohighlight">User: arn:aws:iam::<code class="replaceable">123456789012</code>:user/<code class="replaceable">MaryMajor</code> is not authorized to perform: 
+s3:GetObject because no resource-based policy allows the s3:GetObject action</code></pre>
+                </li><li class="listitem">
+                    <p><code class="code">BlockPublicPolicy</code> – This setting applies to
+                            <code class="code">PutBucketPolicy</code> and <code class="code">PutAccessPointPolicy</code>
+                        requests. </p>
+                    <p>Setting <code class="code">BlockPublicPolicy</code> for a bucket causes Amazon S3 to reject
+                        calls to <code class="code">PutBucketPolicy</code> if the specified bucket policy allows
+                        public access. This setting also causes Amazon S3 to reject calls to
+                            <code class="code">PutAccessPointPolicy</code> for all of the bucket's same-account
+                        access points if the specified policy allows public access.</p>
+                    <p>Setting <code class="code">BlockPublicPolicy</code> for an access point causes Amazon S3 to
+                        reject calls to <code class="code">PutAccessPointPolicy</code> and
+                            <code class="code">PutBucketPolicy</code> that are made through the access point if
+                        the specified policy (for either the access point or the underlying bucket)
+                        allows public access.</p>
+                    <p>For example, when access is denied on a <code class="code">PutBucketPolicy</code>
+                        request because of the <code class="code">BlockPublicPolicy</code> setting, you receive
+                        the following message: </p>
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (none)--><code class="nohighlight">An error occurred (AccessDenied) when calling the PutBucketPolicy operation: 
+User: arn:aws:sts::<code class="replaceable">123456789012</code>:user/<code class="replaceable">MaryMajor</code> is not authorized to 
+perform: s3:PutBucketPolicy on resource: "arn:aws:s3:::<code class="replaceable">amzn-s3-demo-bucket1</code>/<code class="replaceable">object-name</code>" 
+because public policies are prevented by the BlockPublicPolicy setting in S3 Block Public Access.</code></pre>
+                </li><li class="listitem">
+                    <p><code class="code">RestrictPublicBuckets</code> – The
+                            <code class="code">RestrictPublicBuckets</code> setting restricts access to an access
+                        point or bucket with a public policy to only AWS service principals and
+                        authorized users within the bucket owner's account and the access point
+                        owner's account. This setting blocks all cross-account access to the access
+                        point or bucket (except by AWS service principals), while still allowing
+                        users within the account to manage the access point or bucket. This setting
+                        also rejects all anonymous (or unsigned) calls.</p>
+                    <p>Any denial resulting from the <code class="code">RestrictPublicBuckets</code> setting
+                        is explicit. For example, if <code class="code">RestrictPublicBuckets</code> denies a
+                            <code class="code">GetObject</code> request because of a public bucket or access
+                        point policy, you receive the following message: </p>
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (none)--><code class="nohighlight">User: arn:aws:iam::<code class="replaceable">123456789012</code>:user/<code class="replaceable">MaryMajor</code> is not authorized to perform: 
+s3:GetObject on resource: "arn:aws:s3:::<code class="replaceable">amzn-s3-demo-bucket1</code>/<code class="replaceable">object-name</code>" with 
+an explicit deny in a resource-based policy</code></pre>
+                </li></ul></div>
+            <p>For more information about these settings, see <a href="./access-control-block-public-access.html#access-control-block-public-access-options">Block public access settings</a>. To review and update
+                these settings, see <a href="./access-control-block-public-access.html#configuring-block-public-access">Configuring block public access</a>.</p>
+         
+     
+        <h2 id="access-denied-requester-pays">Access denied due to Requester Pays settings</h2>
+        <p>If the Amazon S3 bucket you are trying to access has the Requester Pays feature enabled, you need to make sure you are passing the correct request parameters when making requests to that bucket. The Requester Pays feature in Amazon S3 allows the requester, instead of the bucket owner, to pay the data transfer and request costs for accessing objects in the bucket. When Requester Pays is enabled for a bucket, the bucket owner is not charged for requests made by other AWS accounts.</p>
+        <p>If you make a request to a Requester Pays-enabled bucket without passing the necessary parameters, you will receive an Access Denied (403 Forbidden) error. To access objects in a Requester Pays-enabled bucket, you must do the following: </p>
+        <div class="orderedlist">
+             
+             
+             
+        <ol><li><p>When making requests using the AWS CLI, you must include the <code class="code">--request-payer requester</code> parameter. For example, to copy an object with the key <code class="code">object.txt</code> located in the <code class="code">s3://<code class="replaceable">amzn-s3-demo-bucket</code>/</code> S3 bucket to a location on your local machine, you must also pass the parameter <code class="code">--request-payer requester</code> if this bucket has Requester Pays enabled. </p>
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (none)--><code class="nohighlight">aws s3 cp s3://<code class="replaceable">amzn-s3-demo-bucket</code>/object.txt /local/path \
+--request-payer requester</code></pre>
+            </li><li><p>When making programmatic requests using an AWS SDK, set the <code class="code">x-amz-request-payer</code> header to the value <code class="code">requester</code>. For an example, see <a href="./ObjectsinRequesterPaysBuckets.html">Downloading objects from Requester Pays buckets</a>.</p></li><li><p>Make sure that the IAM user or role making the request has the necessary permissions to access the Requester Pays bucket, such as the <code class="code">s3:GetObject</code> and <code class="code">s3:ListBucket</code> permissions.</p></li></ol></div>
+        <p>By including the <code class="code">--request-payer requester</code> parameter or setting the <code class="code">x-amz-request-payer</code> header, you are informing Amazon S3 that you, the requester, will pay the costs associated with accessing the objects in the Requester Pays-enabled bucket. This will prevent the Access Denied (403 Forbidden) error.</p>
+     
+        <h2 id="bucket-iam-policies">Bucket policies and IAM policies</h2>
+         
+            <h3 id="troubleshoot-403-bucket-level-ops">Bucket-level operations</h3>
+            <p>If there is no bucket policy in place, then the bucket implicitly allows requests
+                from any AWS Identity and Access Management (IAM) identity in the bucket-owner's account. The bucket also
+                implicitly denies requests from any other IAM identities from any other accounts,
+                and anonymous (unsigned) requests. However, if there is no IAM user policy in
+                place, the requester (unless they're the AWS account root user) is implicitly denied
+                from making any requests. For more information about this evaluation logic, see
+                    <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic_policy-eval-denyallow.html">Determining whether a request is denied or allowed within an account</a> in
+                the <em>IAM User Guide</em>.</p>
+         
+         
+            <h3 id="troubleshoot-403-object-level-ops">Object-level operations</h3>
+            <p>If the object is owned by the bucket-owning account, the bucket policy and IAM
+                user policy will function in the same way for object-level operations as they do for
+                bucket-level operations. For example, if there is no bucket policy in place, then
+                the bucket implicitly allows object requests from any IAM identity in the
+                bucket-owner's account. The bucket also implicitly denies object requests from any
+                other IAM identities from any other accounts, and anonymous (unsigned) requests.
+                However, if there is no IAM user policy in place, the requester (unless they're
+                the AWS account root user) is implicitly denied from making any object
+                requests.</p>
+            <p>If the object is owned by an external account, then access to the object can be
+                granted only through object access control lists (ACLs). The bucket policy and IAM
+                user policy can still be used to deny object requests. </p>
+            <p>Therefore, to ensure that your bucket policy or IAM user policy isn't causing an
+                Access Denied (403 Forbidden) error, make sure that the following requirements are
+                met:</p>
+            <div class="itemizedlist">
+                 
+                 
+            <ul class="itemizedlist"><li class="listitem">
+                    <p>For same-account access, there must not be an explicit <code class="code">Deny</code>
+                        statement against the requester you are trying to grant permissions to, in
+                        either the bucket policy or the IAM user policy. If you want to grant
+                        permissions by using only the bucket policy and the IAM user policy, there
+                        must be at least one explicit <code class="code">Allow</code> statement in one of these
+                        policies.</p>
+                </li><li class="listitem">
+                    <p>For cross-account access, there must not be an explicit <code class="code">Deny</code>
+                        statement against the requester that you're trying to grant permissions to,
+                        in either the bucket policy or the IAM user policy. To grant cross-account
+                        permissions by using only the bucket policy and IAM user policy, make sure
+                        that both the bucket policy and the IAM user policy of the requester
+                        include an explicit <code class="code">Allow</code> statement.</p>
+                </li></ul></div>
+            <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p><code class="code">Allow</code> statements in a bucket policy apply only to objects that
+                    are <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">owned by the
+                        same bucket-owning account</a>. However, <code class="code">Deny</code> statements in
+                    a bucket policy apply to all objects regardless of object ownership. </p></div></div>
+         
+        <div class="procedure"><h6 id="troubleshoot-403-bucket-policy.title">To review or edit your bucket policy</h6><div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>To view a bucket policy, you must have the
+                        <code class="code">s3:GetBucketPolicy</code> permission. To edit a bucket policy, you must have the
+                        <code class="code">s3:PutBucketPolicy</code> permission.</p></div></div><ol><li><p>Sign in to the AWS Management Console and open the Amazon S3 console at
+         <a href="https://console.aws.amazon.com/s3/" rel="noopener noreferrer" target="_blank"><span>https://console.aws.amazon.com/s3/</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</p></li><li>
+                <p>In the left navigation pane, choose <b>Buckets</b>.</p>
+            </li><li>
+                <p>From the <b>Buckets</b> list, choose the name of the bucket that
+                    you want to view or edit a bucket policy for.</p>
+            </li><li>
+                <p>Choose the <b>Permissions</b> tab.</p>
+            </li><li>
+                <p>Under <b>Bucket policy</b>, choose <b>Edit</b>.
+                    The <b>Edit bucket policy</b> page appears.</p>
+            </li></ol></div>
+        <p>To review your bucket policy by using the AWS Command Line Interface (AWS CLI), use the <a href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/get-bucket-policy.html" rel="noopener noreferrer" target="_blank"><span>get-bucket-policy</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a> command. To edit your bucket policy, use the <a href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/put-bucket-policy.html" rel="noopener noreferrer" target="_blank"><span>put-bucket-policy</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a> command.</p>
+        <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>If you get locked out of a bucket because of an incorrect bucket policy, <a href="https://docs.aws.amazon.com/signin/latest/userguide/introduction-to-root-user-sign-in-tutorial.html">sign in to the AWS Management Console by using your AWS account root user
+                    credentials.</a> To regain access to your bucket, make sure to delete the
+                incorrect bucket policy by using your AWS account root user credentials.</p></div></div>
+         
+            <h3 id="troubleshoot-403-tips">Tips for checking permissions</h3>
+            <p>To check whether the requester has proper permissions to perform an Amazon S3
+                operation, try the following:</p>
+            <div class="itemizedlist">
+                 
+                 
+                 
+                 
+                 
+            <ul class="itemizedlist"><li class="listitem">
+                    <p>Identify the requester. If it’s an unsigned request, then it's an
+                        anonymous request without an IAM user policy. If it’s a request that uses
+                        a presigned URL, then the user policy is the same as the one for the
+                        IAM user or role that signed the request.</p>
+                </li><li class="listitem">
+                    <p>Verify that you're using the correct IAM user or role. You can verify
+                        your IAM user or role by checking the console navigation bar
+                        or by using the <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/get-caller-identity.html">aws sts
+                                get-caller-identity</a> command.</p>
+                </li><li class="listitem">
+                    <p>Check the IAM policies that are related to the IAM user or role. You
+                        can use one of the following methods:</p>
+                    <div class="itemizedlist">
+                         
+                         
+                    <ul class="itemizedlist"><li class="listitem">
+                            <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html">Test IAM policies with the IAM policy
+                                simulator</a>.</p>
+                        </li><li class="listitem">
+                            <p>Review the different <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM policy
+                                    types</a>.</p>
+                        </li></ul></div>
+                </li><li class="listitem">
+                    <p>If needed, <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html">edit your
+                            IAM user policy</a>.</p>
+                </li><li class="listitem">
+                    <p>Review the following examples of policies that explicitly deny or allow
+                        access:</p>
+                    <div class="itemizedlist">
+                         
+                         
+                         
+                         
+                    <ul class="itemizedlist"><li class="listitem">
+                            <p>Explicit allow IAM user policy: <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_examples_iam_multiple-services-console.html">IAM: Allows and denies access to multiple services
+                                    programmatically and in the console</a></p>
+                        </li><li class="listitem">
+                            <p>Explicit allow bucket policy: <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html#example-bucket-policies-acl-1">Granting permissions to multiple accounts to upload objects or
+                                    set object ACLs for public access</a></p>
+                        </li><li class="listitem">
+                            <p>Explicit deny IAM user policy: <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_examples_aws_deny-requested-region.html">AWS: Denies access to AWS based on the requested
+                                    AWS Region</a></p>
+                        </li><li class="listitem">
+                            <p>Explicit deny bucket policy: <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html#example-bucket-policies-encryption-1">Require SSE-KMS for all objects written to a
+                                bucket</a></p>
+                        </li></ul></div>
+                </li></ul></div>
+         
+     
+        <h2 id="troubleshoot-403-acl-settings">Amazon S3 ACL settings</h2>
+        <p>When checking your ACL settings, first <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-ownership-retrieving.html">review your Object Ownership
+        setting</a> to check whether ACLs are enabled on the bucket. Be aware that ACL permissions can be
+      used only to grant permissions and can't be used to reject requests. ACLs also can't be used to grant
+      access to requesters that are rejected by explicit denials in bucket policies or IAM user
+      policies.</p>
+         
+            <h3 id="troubleshoot-403-object-ownership-1">The Object Ownership setting is set to Bucket owner enforced</h3>
+            <p>If the <b>Bucket owner enforced</b> setting is enabled, then ACL settings are
+        unlikely to cause an Access Denied (403 Forbidden) error because this setting disables all ACLs that
+        apply to bucket and objects. <b>Bucket owner enforced</b> is the default (and
+        recommended) setting for Amazon S3 buckets.</p>
+         
+         
+            <h3 id="troubleshoot-403-object-ownership-2">The Object Ownership setting is set to Bucket owner preferred or Object writer</h3>
+            <p>ACL permissions are still valid with the <b>Bucket owner preferred</b> setting
+        or the <b>Object writer</b> setting. There are two kinds of ACLs: bucket ACLs and object
+        ACLs. For the differences between these two types of ACLs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#acl-access-policy-permission-mapping">Mapping of
+          ACL permissions and access policy permissions</a>.</p>
+            <p>Depending on the action of the rejected request, <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/managing-acls.html">check the ACL permissions for
+                    your bucket or the object</a>:</p>
+            <div class="itemizedlist">
+                 
+                 
+            <ul class="itemizedlist"><li class="listitem">
+                    <p>If Amazon S3 rejected a <code class="code">LIST</code>, <code class="code">PUT</code> object,
+                            <code class="code">GetBucketAcl</code>, or <code class="code">PutBucketAcl</code> request, then
+                            <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/managing-acls.html">review the ACL
+                            permissions for your bucket</a>.</p>
+                    <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>You can't grant <code class="code">GET</code> object permissions with bucket ACL
+                            settings.</p></div></div>
+                </li><li class="listitem">
+                    <p>If Amazon S3 rejected a <code class="code">GET</code> request on an S3 object, or a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAcl.html">PutObjectAcl</a> request, then <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/managing-acls.html">review the ACL permissions for the object</a>.</p>
+                    <div class="awsdocs-note awsdocs-important"><div class="awsdocs-note-title"><awsui-icon name="status-warning" variant="error"></awsui-icon><h6>Important</h6></div><div class="awsdocs-note-text"><p>If the account that owns the object is different from the account that
+                            owns the bucket, then access to the object isn't controlled by the
+                            bucket policy.</p></div></div>
+                </li></ul></div>
+         
+         
+            <h3 id="troubleshoot-403-object-ownership-tips">Troubleshooting an Access Denied (403 Forbidden) error from a <code class="code">GET</code> object request during cross-account object ownership</h3>
+            <p>Review the bucket's <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html#object-ownership-overview">Object Ownership settings</a> to determine the object owner. If you have
+                access to the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/managing-acls.html">object ACLs</a>, then you
+                can also check the object owner's account. (To view the object owner's account,
+                review the object ACL setting in the Amazon S3 console.) Alternatively, you can also make
+                a <code class="code">GetObjectAcl</code> request to find the object owner’s <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">canonical
+                    ID</a> to verify the object owner account. By default, ACLs grant explicit
+                allow permissions for <code class="code">GET</code> requests to the object owner’s
+                account.</p>
+            <p>After you've confirmed that the object owner is different from the bucket owner,
+                then depending on your use case and access level, choose one of the following
+                methods to help address the Access Denied (403 Forbidden) error:</p>
+            <div class="itemizedlist">
+                 
+                 
+                 
+            <ul class="itemizedlist"><li class="listitem">
+                    <p><b>Disable ACLs (recommended)</b> – This method
+            will apply to all objects and can be performed by the bucket owner. This method automatically
+            gives the bucket owner ownership and full control over every object in the bucket. Before you
+            implement this method, check the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-ownership-migrating-acls-prerequisites.html">prerequisites
+              for disabling ACLs</a>. For information about how to set your bucket to <b>Bucket
+              owner enforced</b> (recommended) mode, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-ownership-existing-bucket.html">Setting Object Ownership
+              on an existing bucket</a>.</p>
+                    <div class="awsdocs-note awsdocs-important"><div class="awsdocs-note-title"><awsui-icon name="status-warning" variant="error"></awsui-icon><h6>Important</h6></div><div class="awsdocs-note-text"><p>To prevent an Access Denied (403 Forbidden) error, be sure to migrate
+                            the ACL permissions to a bucket policy before you disable ACLs. For more
+                            information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-ownership-migrating-acls-prerequisites.html#migrate-acl-permissions-bucket-policies">Bucket policy examples for migrating from ACL
+                            permissions</a>.</p></div></div>
+                </li><li class="listitem">
+                    <p><b>Change the object owner to the bucket
+                            owner</b> – This method can be applied to individual
+                        objects, but only the object owner (or a user with the appropriate
+                        permissions) can change an object's ownership. Additional <code class="code">PUT</code>
+                        costs might apply. (For more information, see <a href="https://aws.amazon.com/s3/pricing/" rel="noopener noreferrer" target="_blank"><span>Amazon S3 pricing</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.)
+                        This method grants the bucket owner full ownership of the object, allowing
+                        the bucket owner to control access to the object through a bucket policy. </p>
+                    <p>To change the object's ownership, do one of the following:</p>
+                    <div class="itemizedlist">
+                         
+                         
+                         
+                    <ul class="itemizedlist"><li class="listitem">
+                            <p>You (the bucket owner) can <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/copy-object.html#CopyingObjectsExamples">copy the object</a> back to the bucket. </p>
+                        </li><li class="listitem">
+                            <p>You can change the Object Ownership setting of the bucket to
+                  <b>Bucket owner preferred</b>. If versioning is disabled, the objects in the
+                bucket are overwritten. If versioning is enabled, duplicate versions of the same object will
+                appear in the bucket, which the bucket owner can <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/lifecycle-expire-general-considerations.html">set a lifecycle
+                  rule to expire</a>. For instructions on how to change your Object Ownership setting, see
+                  <a href="./object-ownership-existing-bucket.html">Setting Object Ownership on an existing bucket</a>.</p>
+                            <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>When you update your Object Ownership setting to <b>Bucket owner
+                    preferred</b>, the setting is applied only to new objects that are uploaded to the
+                  bucket.</p></div></div>
+                        </li><li class="listitem">
+                            <p>You can have the object owner upload the object again with the
+                                    <code class="code">bucket-owner-full-control</code> canned object ACL.
+                            </p>
+                        </li></ul></div>
+                    <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>For cross-account uploads, you can also require the
+                                <code class="code">bucket-owner-full-control</code> canned object ACL in your
+                            bucket policy. For an example bucket policy, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html#example-bucket-policies-acl-2">Grant cross-account permissions to upload objects while ensuring
+                                that the bucket owner has full control</a>.</p></div></div>
+                </li><li class="listitem">
+                    <p><b>Keep the object writer as the object
+                            owner</b> – This method doesn't change the object owner,
+                        but it does allow you to grant access to objects individually. To grant
+                        access to an object, you must have the <code class="code">PutObjectAcl</code> permission
+                        for the object. Then, to fix the Access Denied (403 Forbidden) error, add
+                        the requester as a <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#specifying-grantee">grantee</a> to access the object in the object's ACLs. For more
+                        information, see <a href="./managing-acls.html">Configuring ACLs</a>.</p>
+                </li></ul></div>
+         
+     
+        <h2 id="troubleshoot-403-bpa">S3 Block Public Access settings</h2>
+        <p>If the failed request involves public access or public policies, then check the S3
+            Block Public Access settings on your account, bucket, or access point. For more
+            information about troubleshooting access denied errors related to S3 Block Public Access
+            settings, see <a href="#access-denied-bpa-examples">Access denied due to Block Public Access settings</a>.</p>
+     
+        <h2 id="troubleshoot-403-encryption">Amazon S3 encryption settings</h2>
+        <p>Amazon S3 supports server-side encryption on your bucket. Server-side encryption is the
+            encryption of data at its destination by the application or service that receives it.
+            Amazon S3 encrypts your data at the object level as it writes it to disks in AWS data
+            centers and decrypts it for you when you access it. </p>
+        <p>By default, Amazon S3 now applies server-side encryption with Amazon S3 managed keys (SSE-S3) as
+            the base level of encryption for every bucket in Amazon S3. Amazon S3 also allows you to specify
+            the server-side encryption method when uploading objects.</p>
+        <div class="procedure"><h6>To review your bucket's server-side encryption status and encryption settings</h6><ol><li><p>Sign in to the AWS Management Console and open the Amazon S3 console at
+         <a href="https://console.aws.amazon.com/s3/" rel="noopener noreferrer" target="_blank"><span>https://console.aws.amazon.com/s3/</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</p></li><li>
+                <p>In the left navigation pane, choose <b>Buckets</b>.</p>
+            </li><li>
+                <p>From the <b>Buckets</b> list, choose the bucket that you want to
+                    check the encryption settings for.</p>
+            </li><li>
+                <p>Choose the <b>Properties</b> tab.</p>
+            </li><li>
+                <p>Scroll down to the <b>Default encryption</b> section and view
+                    the <b>Encryption type</b> settings.</p>
+            </li></ol></div>
+        <p>To check your encryption settings by using the AWS CLI, use the <a href="https://docs.aws.amazon.com/cli/latest/reference/s3api/get-bucket-encryption.html">get-bucket-encryption</a> command.</p>
+        <div class="procedure"><h6>To check the encryption status of an object</h6><ol><li><p>Sign in to the AWS Management Console and open the Amazon S3 console at
+         <a href="https://console.aws.amazon.com/s3/" rel="noopener noreferrer" target="_blank"><span>https://console.aws.amazon.com/s3/</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</p></li><li>
+                <p>In the left navigation pane, choose <b>Buckets</b>.</p>
+            </li><li>
+                <p>From the <b>Buckets</b> list, choose the name of the bucket that
+                    contains the object.</p>
+            </li><li>
+                <p>From the <b>Objects</b> list, choose the name of the object that
+                    you want to add or change encryption for. </p>
+                <p>The object's details page appears.</p>
+            </li><li>
+                <p>Scroll down to the <b>Server-side encryption settings</b>
+                    section to view the object's server-side encryption settings.</p>
+            </li></ol></div>
+        <p>To check your object encryption status by using the AWS CLI, use the <a href="https://docs.aws.amazon.com/cli/latest/reference/s3api/head-object.html#examples">head-object</a> command.</p>
+         
+            <h3 id="troubleshoot-403-encryption-requirements">Encryption and permissions requirements</h3>
+            <p>Amazon S3 supports three types of server-side encryption:</p>
+            <div class="itemizedlist">
+                 
+                 
+                 
+            <ul class="itemizedlist"><li class="listitem">
+                    <p>Server-side encryption with Amazon S3 managed keys (SSE-S3)</p>
+                </li><li class="listitem">
+                    <p>Server-side encryption with AWS Key Management Service (AWS KMS) keys (SSE-KMS)</p>
+                </li><li class="listitem">
+                    <p>Server-side encryption with customer-provided keys (SSE-C)</p>
+                </li></ul></div>
+            <p>Based on your encryption settings, make sure that the following permissions
+                requirements are met:</p>
+            <div class="itemizedlist">
+                 
+                 
+                 
+                 
+            <ul class="itemizedlist"><li class="listitem">
+                    <p><b>SSE-S3</b> – No extra permissions are
+                        required.</p>
+                </li><li class="listitem">
+                    <p><b>SSE-KMS (with a customer managed key)</b> – To
+                        upload objects, the <code class="code">kms:GenerateDataKey</code> permission on the
+                        AWS KMS key is required. To download objects and perform multipart
+                        uploads of objects, the <code class="code">kms:Decrypt</code> permission on the KMS key
+                        is required.</p>
+                </li><li class="listitem">
+                    <p><b>SSE-KMS (with an AWS managed key)</b>
+                        – The requester must be from the same account that owns the
+                            <code class="code">aws/s3</code> KMS key. The requester must also have the correct
+                        Amazon S3 permissions to access the object.</p>
+                </li><li class="listitem">
+                    <p><b>SSE-C (with a customer provided key)</b>
+                        – No additional permissions are required. You can configure the
+                        bucket policy to <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/specifying-s3-c-encryption.html#example-bucket-policy-to-enforce-sse-c-encryption">require and restrict server-side encryption with customer-provided encryption keys</a> for objects in your bucket.</p>
+                </li></ul></div>
+            <p>If the object is encrypted with a customer managed key, make sure that the KMS key policy
+                allows you to perform the <code class="code">kms:GenerateDataKey</code> or
+                    <code class="code">kms:Decrypt</code> actions. For instructions on checking your KMS key
+                policy, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-viewing.html">Viewing a key
+                    policy</a> in the <em>AWS Key Management Service Developer Guide</em>.</p>
+         
+     
+        <h2 id="troubleshoot-403-object-lock">S3 Object Lock settings</h2>
+        <p>If your bucket has <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html">S3 Object Lock</a> enabled and the object is protected by a <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-overview.html#object-lock-retention-periods">retention
+        period</a> or <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-overview.html#object-lock-legal-holds">legal hold</a>
+      and you try to delete an object, Amazon S3 returns one of the following responses, depending on how you tried
+      to delete the object:</p>
+    <div class="itemizedlist">
+       
+       
+    <ul class="itemizedlist"><li class="listitem">
+        <p><b>Permanent <code class="code">DELETE</code> request</b> – If you issued a
+          permanent <code class="code">DELETE</code> request (a request that specifies a version ID), Amazon S3 returns an
+          Access Denied (<code class="code">403 Forbidden</code>) error when you try to delete the object.</p>
+      </li><li class="listitem">
+        <p><b>Simple <code class="code">DELETE</code> request</b> – If you issued a
+          simple <code class="code">DELETE</code> request (a request that doesn't specify a version ID), Amazon S3 returns a
+            <code class="code">200 OK</code> response and inserts a <a href="./DeleteMarker.html">delete marker</a> in
+          the bucket, and that marker becomes the current version of the object with a new ID.</p>
+      </li></ul></div>
+        <div class="procedure"><h6>To check whether the bucket has Object Lock enabled</h6><ol><li><p>Sign in to the AWS Management Console and open the Amazon S3 console at
+         <a href="https://console.aws.amazon.com/s3/" rel="noopener noreferrer" target="_blank"><span>https://console.aws.amazon.com/s3/</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</p></li><li>
+                <p>In the left navigation pane, choose <b>Buckets</b>.</p>
+            </li><li>
+                <p>From the <b>Buckets</b> list, choose the name of the bucket that
+                    you want to review.</p>
+            </li><li>
+                <p>Choose the <b>Properties</b> tab.</p>
+            </li><li>
+                <p>Scroll down to the <b>Object Lock</b> section. Verify whether
+                    the <b>Object Lock</b> setting is <b>Enabled</b> or
+                        <b>Disabled</b>.</p>
+            </li></ol></div>
+        <p>To determine whether the object is protected by a retention period or legal hold,
+                <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-managing.html#object-lock-managing-view">view the lock information</a> for your object. </p>
+        <p>If the object is protected by a retention period or legal hold, check the
+            following:</p>
+        <div class="itemizedlist">
+             
+             
+             
+        <ul class="itemizedlist"><li class="listitem">
+                <p>If the object version is protected by the compliance retention mode, there is
+                    no way to permanently delete it. A permanent <code class="code">DELETE</code> request from
+                    any requester, including the AWS account root user, will result in an Access
+                    Denied (403 Forbidden) error. Also, be aware that when you submit a
+                        <code class="code">DELETE</code> request for an object that's protected by the compliance
+                    retention mode, Amazon S3 creates a <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeleteMarker.html">delete marker</a> for
+                    the object.</p>
+            </li><li class="listitem">
+                <p>If the object version is protected with governance retention mode and you have
+                    the <code class="code">s3:BypassGovernanceRetention</code> permission, you can bypass the
+                    protection and permanently delete the version. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-managing.html#object-lock-managing-bypass">Bypassing governance mode</a>.</p>
+            </li><li class="listitem">
+                <p>If the object version is protected by a legal hold, then a permanent
+                        <code class="code">DELETE</code> request can result in an Access Denied (403 Forbidden)
+                    error. To permanently delete the object version, you must remove the legal hold
+                    on the object version. To remove a legal hold, you must have the
+                        <code class="code">s3:PutObjectLegalHold</code> permission. For more information about
+                    removing a legal hold, see <a href="./object-lock-configure.html">Configuring S3 Object Lock</a>.</p>
+            </li></ul></div>
+     
+        <h2 id="troubleshoot-403-vpc">VPC endpoint policies</h2>
+        <p>If you're accessing Amazon S3 by using a virtual private cloud (VPC) endpoint, make sure
+            that the VPC endpoint policy isn't blocking you from accessing your Amazon S3 resources. By
+            default, the VPC endpoint policy allows all requests to Amazon S3. You can also configure
+            the VPC endpoint policy to restrict certain requests. For information about how to
+            check your VPC endpoint policy, see the following resources: </p>
+        <div class="itemizedlist">
+             
+             
+             
+        <ul class="itemizedlist"><li class="listitem">
+                <p><a href="#access-denied-vpc-endpoint-examples-implicit">Access denied due to a VPC endpoint policy – implicit denial</a></p>
+            </li><li class="listitem">
+                <p><a href="#access-denied-vpc-endpoint-examples-explicit">Access denied due to a VPC endpoint policy – explicit denial</a></p>
+            </li><li class="listitem">
+                <p><a href="https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-access.html">Control access to
+                        VPC endpoints by using endpoint policies</a> in the <em>AWS PrivateLink Guide</em></p>
+            </li></ul></div>
+     
+        <h2 id="troubleshoot-403-orgs">AWS Organizations policies</h2>
+        <p>If your AWS account belongs to an organization, AWS Organizations policies can block you from accessing
+      Amazon S3 resources. By default, AWS Organizations policies don't block any requests to Amazon S3. However, make sure that
+      your AWS Organizations policies haven't been configured to block access to S3 buckets. For instructions on how to
+      check your AWS Organizations policies, see the following resources: </p>
+        <div class="itemizedlist">
+             
+             
+             
+             
+        <ul class="itemizedlist"><li class="listitem">
+                <p><a href="#access-denied-scp-examples-implicit">Access denied due to a Service Control Policy – implicit denial</a></p>
+            </li><li class="listitem">
+                <p><a href="#access-denied-scp-examples-explicit">Access denied due to a Service Control Policy – explicit denial</a></p>
+            </li><li class="listitem">
+                <p><a href="#access-denied-rcp-examples-explicit">Access denied due to a resource control policy – explicit denial</a></p>
+            </li><li class="listitem">
+                <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_info-operations.html#list-all-pols-in-org">Listing all policies</a> in the <em>AWS Organizations User
+                        Guide</em></p>
+            </li></ul></div>
+        <p>Additionally, if you incorrectly configured your bucket policy for a member account to deny all
+      users access to your S3 bucket, you can unlock the bucket by launching a privileged session for the
+      member account in IAM. After you launch a privileged session, you can delete the misconfigured bucket
+      policy to regain access to the bucket. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user-privileged-task.html">Perform a privileged
+        task on an AWS Organizations member account</a> in the <em>AWS Identity and Access Management User
+        Guide</em>. </p>
+     
+        <h2 id="troubleshoot-403-cloudfront">CloudFront distribution access</h2>
+        <p>If you receive a Access Denied (403 Forbidden) error when trying to access your S3 static website through CloudFront, check these common issues:</p>
+        <div class="itemizedlist">
+             
+             
+        <ul class="itemizedlist"><li class="listitem">
+                <p><b>Do you have the correct origin domain name format?</b></p>
+                <div class="itemizedlist">
+                     
+                     
+                <ul class="itemizedlist"><li class="listitem">
+                        <p>Make sure you're using the S3 website endpoint format (bucket-name.s3-website-region.amazonaws.com) rather than the REST API endpoint</p>
+                    </li><li class="listitem">
+                        <p>Verify that static website hosting is enabled on your bucket</p>
+                    </li></ul></div>
+            </li><li class="listitem">
+                <p><b>Does your bucket policy allow CloudFront access?</b></p>
+                <div class="itemizedlist">
+                     
+                     
+                <ul class="itemizedlist"><li class="listitem">
+                        <p>Ensure your bucket policy includes permissions for your CloudFront distribution's Origin Access Identity (OAI) or Origin Access Control (OAC)</p>
+                    </li><li class="listitem">
+                        <p>Verify the policy includes the required s3:GetObject permissions</p>
+                    </li></ul></div>
+            </li></ul></div>
+        <p>For additional troubleshooting steps and configurations, including error page setups and protocol settings, see <a href="https://repost.aws/knowledge-center/s3-website-cloudfront-error-403" rel="noopener noreferrer" target="_blank"><span>Why do I get a "403 access denied" error when I use an Amazon S3 website endpoint as the origin of my CloudFront distribution?</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a> in the AWS re:Post Knowledge Center.</p>
+        <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>This error is different from 403 errors you might receive when accessing S3 directly. For CloudFront-specific issues, make sure to check both your CloudFront distribution settings and S3 configurations.</p></div></div>
+     
+        <h2 id="troubleshoot-403-access-points">Access point settings</h2>
+        <p>If you receive an Access Denied (403 Forbidden) error while making requests through
+            Amazon S3 access points, you might need to check the following: </p>
+        <div class="itemizedlist">
+             
+             
+             
+        <ul class="itemizedlist"><li class="listitem">
+                <p>The configurations for your access points</p>
+            </li><li class="listitem">
+                <p>The IAM user policy that's used for your access points</p>
+            </li><li class="listitem">
+                <p>The bucket policy that's used to manage or configure your cross-account
+                    access points</p>
+            </li></ul></div>
+        <div class="itemizedlist">
+            <h6>Access point configurations and policies</h6>
+             
+             
+             
+             
+        <ul class="itemizedlist"><li class="listitem">
+                <p>When you create an access point, you can choose to designate
+                        <b>Internet</b> or <b>VPC</b> as the network
+                    origin. If the network origin is set to VPC only, Amazon S3 will reject any
+                    requests made to the access point that don't originate from the specified VPC. To
+                    check the network origin of your access point, see <a href="./access-points-vpc.html">Creating access points restricted to a virtual private cloud</a>.</p>
+            </li><li class="listitem">
+                <p>With access points, you can also configure custom Block Public Access settings, which
+                    work similarly to the Block Public Access settings at the bucket or account
+                    level. To check your custom Block Public Access settings, see <a href="./access-points-bpa-settings.html">Managing public access to access points for general purpose buckets</a>.</p>
+            </li><li class="listitem">
+                <p>To make successful requests to Amazon S3 by using access points, make sure that the
+                    requester has the necessary IAM permissions. For more information, see <a href="./access-points-policies.html">Configuring IAM policies for using access points</a>.</p>
+            </li><li class="listitem">
+                <p>If the request involves cross-account access points, make sure that the bucket
+                    owner has updated the bucket policy to authorize requests from the access point. For
+                    more information, see <a href="./access-points-policies.html#access-points-cross-account">Granting permissions for cross-account access points</a>.</p>
+            </li></ul></div>
+        <p>If the Access Denied (403 Forbidden) error still persists after checking all the items
+            in this topic, <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/get-request-ids.html">retrieve your Amazon S3 request
+                ID</a> and contact Support for additional guidance.</p>
+     
+        <h2 id="troubleshoot-403-additional-resources">Additional resources</h2>
+        <p>For more guidance on Access Denied (403 Forbidden) errors you can check the following resources:</p>
+        <div class="itemizedlist">
+             
+             
+             
+             
+             
+             
+             
+        <ul class="itemizedlist"><li class="listitem">
+                <p><a href="https://repost.aws/knowledge-center/s3-troubleshoot-403" rel="noopener noreferrer" target="_blank"><span>How do I troubleshoot 403 Access Denied errors from Amazon S3?</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a> in the AWS re:Post Knowledge Center.</p>
+            </li><li class="listitem">
+                <p><a href="https://repost.aws/knowledge-center/s3-403-forbidden-error" rel="noopener noreferrer" target="_blank"><span>Why am I getting a "403 Forbidden" error when I try to upload files in Amazon S3?</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a> in the AWS re:Post Knowledge Center.</p>
+            </li><li class="listitem">
+                <p><a href="https://repost.aws/knowledge-center/s3-troubleshoot-403-resource-same-account" rel="noopener noreferrer" target="_blank"><span>Why do I get an Access Denied error when I try to access an Amazon S3 resource in the same AWS account?</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a> in the AWS re:Post Knowledge Center.</p>
+            </li><li class="listitem">
+                <p><a href="https://repost.aws/knowledge-center/s3-troubleshoot-403-public-read" rel="noopener noreferrer" target="_blank"><span>Why do I get an Access Denied error when I try to access an Amazon S3 bucket with public read access?</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a> in the AWS re:Post Knowledge Center.</p>
+            </li><li class="listitem">
+                <p><a href="https://repost.aws/knowledge-center/s3-presigned-url-signature-mismatch" rel="noopener noreferrer" target="_blank"><span>Why do I get a "signature mismatch" error when I try to use a presigned URL to upload an object to Amazon S3?</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a> in the AWS re:Post Knowledge Center.</p>
+            </li><li class="listitem">
+                <p><a href="https://repost.aws/knowledge-center/s3-access-denied-listobjects-sync" rel="noopener noreferrer" target="_blank"><span>Why do I get an Access Denied error for ListObjectsV2 when I run the sync command on my Amazon S3 bucket?</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a> in the AWS re:Post Knowledge Center.</p>
+            </li><li class="listitem">
+                <p><a href="https://repost.aws/knowledge-center/s3-website-cloudfront-error-403" rel="noopener noreferrer" target="_blank"><span>Why do I get a "403 access denied" error when I use an Amazon S3 website endpoint as the origin of my CloudFront distribution?</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a> in the AWS re:Post Knowledge Center.</p>
+            </li></ul></div>
+    <awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./security_iam_troubleshoot.html">Troubleshooting Amazon S3 identity and
+            access</div><div id="next" class="next-link" accesskey="n" href="./security-iam-awsmanpol.html">AWS managed policies</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=S3&amp;topic_url=https://docs.aws.amazon.com/en_us/AmazonS3/latest/userguide/troubleshoot-403-errors.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=S3&amp;topic_url=https://docs.aws.amazon.com/en_us/AmazonS3/latest/userguide/troubleshoot-403-errors.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

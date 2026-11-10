@@ -1,0 +1,28 @@
+{
+  "source_id": "ibm-ceph-version-matrix",
+  "catalog_url": "https://www.ibm.com/support/pages/what-are-red-hat-and-ibm-storage-ceph-releases-and-corresponding-ceph-package-versions",
+  "catalog_title": "Red Hat and IBM Storage Ceph releases and corresponding package versions",
+  "catalog_product": "IBM Storage Ceph",
+  "catalog_versions": [
+    "7.1",
+    "8.1"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:26:55.371663+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://www.ibm.com/support/pages/what-are-red-hat-and-ibm-storage-ceph-releases-and-corresponding-ceph-package-versions",
+  "requested_url": "https://www.ibm.com/support/pages/what-are-red-hat-and-ibm-storage-ceph-releases-and-corresponding-ceph-package-versions",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "67c3486a264cbd79b153ba3ef3a247d322be82d46c5ae71b620d6477c595ad01",
+  "raw_bytes": 120937,
+  "extracted_sha256": "8c9b924e524ec2278f77ab2af8a9c10aee722574bfea2cf83979ddfd428998d7",
+  "extracted_bytes": 24145,
+  "words": 3729,
+  "document_title": "What are the Red Hat and IBM Storage ceph releases and corresponding Ceph package versions?",
+  "extracted_links": 239,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:26:56.297375+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

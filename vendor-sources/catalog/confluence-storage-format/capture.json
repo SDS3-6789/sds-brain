@@ -1,0 +1,27 @@
+{
+  "source_id": "confluence-storage-format",
+  "catalog_url": "https://confluence.atlassian.com/doc/confluence-storage-format-790796544.html",
+  "catalog_title": "Confluence storage format",
+  "catalog_product": "Confluence Data Center",
+  "catalog_versions": [
+    "storage format; match installed release"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:18.204042+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://confluence.atlassian.com/doc/confluence-storage-format-790796544.html",
+  "requested_url": "https://confluence.atlassian.com/doc/confluence-storage-format-790796544.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "dc0540150b437dee2f944eec909f46e19903ed55081e8e2f0d4e3fcba14f49b7",
+  "raw_bytes": 186231,
+  "extracted_sha256": "6ddb1d1312c996a162a4c908650dbe1a847a2dceda5ba6f3f5673f9fd59004f9",
+  "extracted_bytes": 15565,
+  "words": 2170,
+  "document_title": "Confluence Storage Format",
+  "extracted_links": 22,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:19.799348+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

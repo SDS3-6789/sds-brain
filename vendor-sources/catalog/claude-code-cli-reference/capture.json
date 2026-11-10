@@ -1,0 +1,27 @@
+{
+  "source_id": "claude-code-cli-reference",
+  "catalog_url": "https://code.claude.com/docs/en/cli-reference",
+  "catalog_title": "Claude Code CLI reference",
+  "catalog_product": "Claude Code",
+  "catalog_versions": [
+    "installed version unknown"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:18.081017+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://code.claude.com/docs/en/cli-reference",
+  "requested_url": "https://code.claude.com/docs/en/cli-reference",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "d56a5c2f152e558d5b17e776376588f7339c6187ea6fccf3c3866a3d8cf577eb",
+  "raw_bytes": 378521,
+  "extracted_sha256": "9ec9c1ce97db639780b9a85948a2f7ab4c2eee5e57ae5ba3f05a697f92b5ede4",
+  "extracted_bytes": 39398,
+  "words": 5939,
+  "document_title": "CLI reference - Claude Code Docs",
+  "extracted_links": 161,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:19.298789+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

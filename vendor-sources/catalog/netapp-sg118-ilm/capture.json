@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg118-ilm",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-118/ilm/index.html",
+  "catalog_title": "Manage objects with ILM in 11.8",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "11.8"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:21.054645+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-118/ilm/index.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-118/ilm/index.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "4e937a85f15da4053d29d7056d40a21bdc8e4cb934c3963fb05e18bbfc7569e2",
+  "raw_bytes": 54480,
+  "extracted_sha256": "837facddf8a5c1827e24461da1c83d605a7538ec65b41735857a9436fbab6aea",
+  "extracted_bytes": 1389,
+  "words": 217,
+  "document_title": "Manage objects with ILM",
+  "extracted_links": 14,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:24.374799+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

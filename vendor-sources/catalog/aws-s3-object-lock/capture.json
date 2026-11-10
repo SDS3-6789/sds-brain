@@ -1,0 +1,27 @@
+{
+  "source_id": "aws-s3-object-lock",
+  "catalog_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html",
+  "catalog_title": "Locking objects with Object Lock",
+  "catalog_product": "Amazon S3",
+  "catalog_versions": [
+    "service-current-reference"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:33.453991+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html",
+  "requested_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "1973b7edbd23283658f7b910fff34715a93faf98d39bdc66cdca50e3000d8731",
+  "raw_bytes": 36155,
+  "extracted_sha256": "3c2be85dbe37d7a2c34dd91774f5a4ba045d113123addff97d5393fa476cc1c9",
+  "extracted_bytes": 15242,
+  "words": 2416,
+  "document_title": "Locking objects with Object Lock",
+  "extracted_links": 17,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:35.217991+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

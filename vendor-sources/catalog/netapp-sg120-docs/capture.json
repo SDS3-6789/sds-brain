@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg120-docs",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-120/",
+  "catalog_title": "StorageGRID 12.0 documentation",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "12.0"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:19.590371+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-120/",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-120/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "ea108ad4787c085377024fe1fbec0882edf1ac4eb1796df25780ee7c713c6831",
+  "raw_bytes": 62055,
+  "extracted_sha256": "06abef75c97a0a5aadd9774cd2ed01a53adf9c1cfef76bb2c357eb58edbc9312",
+  "extracted_bytes": 1490,
+  "words": 197,
+  "document_title": "StorageGRID 12.0 software documentation",
+  "extracted_links": 31,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:21.053358+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

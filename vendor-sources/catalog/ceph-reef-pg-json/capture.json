@@ -1,0 +1,11 @@
+{
+  "sourceId": "ceph-reef-pg-json",
+  "originalURL": "https://github.com/ceph/ceph/blob/reef/qa/tasks/ceph_manager.py",
+  "fetchedURL": "https://github.com/ceph/ceph/blob/reef/qa/tasks/ceph_manager.py",
+  "repo": "ceph/ceph",
+  "ref": "reef",
+  "blobSHA": "f2ad7a29ec60091db420958f88d237c7e871a2be",
+  "retrievedUTC": "2026-11-10T09:25:19Z",
+  "status": "retrieved",
+  "attribution": "Original upstream file content and its existing copyright/license notices are preserved. The source URL, repository, version ref and exact Git blob SHA identify the attributed source."
+}

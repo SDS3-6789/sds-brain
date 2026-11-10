@@ -1,0 +1,27 @@
+{
+  "source_id": "claude-mcp",
+  "catalog_url": "https://code.claude.com/docs/en/mcp",
+  "catalog_title": "Claude Code MCP configuration",
+  "catalog_product": "Claude Code",
+  "catalog_versions": [
+    "installed version unknown"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:10.555529+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://code.claude.com/docs/en/mcp",
+  "requested_url": "https://code.claude.com/docs/en/mcp",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "aa86801dd4c2f354ef3f7e988d04d25a0a8d3cf52c742bde53084df624af40e7",
+  "raw_bytes": 1322402,
+  "extracted_sha256": "1bfe0ea79e14b38c9d9e9735095bda3c929717920a60c4b17ba6366c1e3f6c45",
+  "extracted_bytes": 135084,
+  "words": 21396,
+  "document_title": "Connect Claude Code to tools via MCP - Claude Code Docs",
+  "extracted_links": 443,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:12.594687+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

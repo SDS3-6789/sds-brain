@@ -1,0 +1,27 @@
+{
+  "source_id": "aws-s3-head-bucket",
+  "catalog_url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html",
+  "catalog_title": "HeadBucket API reference",
+  "catalog_product": "Amazon S3",
+  "catalog_versions": [
+    "service-current-reference"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:32.776098+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html",
+  "requested_url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "f7e401d1dafdd5f9d020e0b6018896fc1fa89b8528e18199902f4c252a80ed0c",
+  "raw_bytes": 33776,
+  "extracted_sha256": "1b512a154531b31771b78e1b56df749660b75637c890cae92f1184739b1e57a2",
+  "extracted_bytes": 10220,
+  "words": 1430,
+  "document_title": "HeadBucket",
+  "extracted_links": 29,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:34.027568+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

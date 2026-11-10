@@ -1,0 +1,28 @@
+{
+  "source_id": "podman-container-inspect",
+  "catalog_url": "https://docs.podman.io/en/latest/markdown/podman-container-inspect.1.html",
+  "catalog_title": "Podman container inspect command reference",
+  "catalog_product": "Podman",
+  "catalog_versions": [
+    "current-reference",
+    "installed-version-unconfirmed"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:09.777094+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.podman.io/en/latest/markdown/podman-container-inspect.1.html",
+  "requested_url": "https://docs.podman.io/en/latest/markdown/podman-container-inspect.1.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "e4351696e4b8c98d875eab888ff97765ebae320508a2171382621f31f78769f6",
+  "raw_bytes": 21567,
+  "extracted_sha256": "c02c51059d9ca7eb9fb81492768f67afc55eb3700c2f9855bfc3c71e910bc23d",
+  "extracted_bytes": 12717,
+  "words": 1052,
+  "document_title": "NAME\u00b6",
+  "extracted_links": 14,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:11.598789+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

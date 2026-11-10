@@ -1,0 +1,27 @@
+{
+  "source_id": "aws-s3-multipart",
+  "catalog_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html",
+  "catalog_title": "Multipart upload overview",
+  "catalog_product": "Amazon S3",
+  "catalog_versions": [
+    "service-current-reference"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:32.859186+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html",
+  "requested_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "9a93ae3eeeaa4d681c6872b1b74a185d00b5851928f2b89746036487a6ae7292",
+  "raw_bytes": 53241,
+  "extracted_sha256": "829bb43d0c73b6d629554913d29bf5587df2dc49a682bdbfc0a040a806b23985",
+  "extracted_bytes": 23367,
+  "words": 3670,
+  "document_title": "Uploading and copying objects using multipart upload in Amazon S3",
+  "extracted_links": 62,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:34.152969+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

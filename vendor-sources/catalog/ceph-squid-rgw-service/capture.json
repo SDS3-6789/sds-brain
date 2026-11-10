@@ -1,0 +1,27 @@
+{
+  "source_id": "ceph-squid-rgw-service",
+  "catalog_url": "https://docs.ceph.com/en/squid/cephadm/services/rgw/",
+  "catalog_title": "Ceph Squid RGW service specification and TLS",
+  "catalog_product": "Ceph RGW",
+  "catalog_versions": [
+    "Squid"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:09.992415+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.ceph.com/en/squid/cephadm/services/rgw/",
+  "requested_url": "https://docs.ceph.com/en/squid/cephadm/services/rgw/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "4a6bcbffee9e500b9e34f8ed1d6fdeec7519cdf57465dc5678123cd01e7f5116",
+  "raw_bytes": 66609,
+  "extracted_sha256": "ae56f92312746513b313a510ae901a7cec6bf32c4101cf8619809f137c8b61ca",
+  "extracted_bytes": 16116,
+  "words": 2151,
+  "document_title": "RGW Service\uf0c1",
+  "extracted_links": 52,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:11.045601+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

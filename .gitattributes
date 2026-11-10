@@ -1,0 +1,8 @@
+* text=auto eol=lf
+*.zip binary
+*.tar.gz binary
+*.docx binary
+*.pdf binary
+*.db binary
+*.mcpb binary
+vendor-sources/** -text

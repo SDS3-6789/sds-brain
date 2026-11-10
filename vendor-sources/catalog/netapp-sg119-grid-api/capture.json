@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg119-grid-api",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/admin/using-grid-management-api.html",
+  "catalog_title": "Use the Grid Management API",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "11.9"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:21.822914+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-119/admin/using-grid-management-api.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-119/admin/using-grid-management-api.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "eba3c61ed28d42a696ae326e86c9178f286962a6283613b2b747c9ec50a5f5f9",
+  "raw_bytes": 55290,
+  "extracted_sha256": "b36138ac13e11f831937094e48977931bf12aea9580fdc199fd92e237232bc4d",
+  "extracted_bytes": 2847,
+  "words": 468,
+  "document_title": "Use the Grid Management API",
+  "extracted_links": 5,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:25.218720+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

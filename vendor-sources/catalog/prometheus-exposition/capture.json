@@ -1,0 +1,27 @@
+{
+  "source_id": "prometheus-exposition",
+  "catalog_url": "https://prometheus.io/docs/instrumenting/exposition_formats/",
+  "catalog_title": "Prometheus exposition formats",
+  "catalog_product": "Prometheus",
+  "catalog_versions": [
+    "general"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:14.253559+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://prometheus.io/docs/instrumenting/exposition_formats/",
+  "requested_url": "https://prometheus.io/docs/instrumenting/exposition_formats/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "f27c828e1877fa323d6c46a2a8bdb0b284c22af55d5f609b3ec472b77d1d9a7a",
+  "raw_bytes": 327203,
+  "extracted_sha256": "bb824963a5b5d08cedfd23ffb19c9c7d8a93727f5a184d87e9f2414f57da5b68",
+  "extracted_bytes": 13671,
+  "words": 1908,
+  "document_title": "Exposition formats",
+  "extracted_links": 42,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:17.160093+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

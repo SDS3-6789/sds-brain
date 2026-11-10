@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg118-consistency",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-118/s3/consistency-controls.html",
+  "catalog_title": "StorageGRID 11.8 consistency values",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "11.8"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:27.436234+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-118/s3/consistency-controls.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-118/s3/consistency-controls.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "fbf616b67a3dbba9c4fb3177081881654c3514587327fa3df56d08e9f645c69e",
+  "raw_bytes": 62285,
+  "extracted_sha256": "18dadfcc15d4d94c1b73e5ea5f45f3226a90ccd288ba23cb000bca5efbcd909e",
+  "extracted_bytes": 7655,
+  "words": 1191,
+  "document_title": "Consistency values",
+  "extracted_links": 10,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:29.440049+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

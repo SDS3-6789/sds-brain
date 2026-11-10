@@ -1,0 +1,1004 @@
+[
+  {
+    "id": "netapp-sg118-docs",
+    "title": "StorageGRID 11.8 documentation",
+    "url": "https://docs.netapp.com/us-en/storagegrid-118/",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.8"
+    ],
+    "topics": [
+      "overview",
+      "version-routing"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg119-docs",
+    "title": "StorageGRID 11.9 documentation",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "overview",
+      "version-routing"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg120-docs",
+    "title": "StorageGRID 12.0 documentation",
+    "url": "https://docs.netapp.com/us-en/storagegrid-120/",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "12.0"
+    ],
+    "topics": [
+      "overview",
+      "version-routing"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Candidate for user-reported 12; exact installed minor/build unconfirmed."
+  },
+  {
+    "id": "netapp-sg120-whats-new",
+    "title": "What is new in StorageGRID 12.0",
+    "url": "https://docs.netapp.com/us-en/storagegrid-120/release-notes/whats-new.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "12.0"
+    ],
+    "topics": [
+      "release",
+      "upgrade"
+    ],
+    "access": "mixed",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Full fixed/known-issue release notes require support login."
+  },
+  {
+    "id": "netapp-sg119-release-notes",
+    "title": "StorageGRID 11.9 release notes access",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/release-notes/index.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "release",
+      "known-issues"
+    ],
+    "access": "mixed",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Public landing page opened; authenticated release-note PDF not retrieved."
+  },
+  {
+    "id": "netapp-sg118-s3",
+    "title": "StorageGRID 11.8 S3 API versions and updates",
+    "url": "https://docs.netapp.com/us-en/storagegrid-118/s3/index.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.8"
+    ],
+    "topics": [
+      "s3",
+      "compatibility"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg119-s3",
+    "title": "StorageGRID 11.9 S3 API versions and updates",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/s3/index.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "s3",
+      "compatibility",
+      "checksums"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg120-s3",
+    "title": "StorageGRID 12.0 S3 API versions and updates",
+    "url": "https://docs.netapp.com/us-en/storagegrid-120/s3/index.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "12.0"
+    ],
+    "topics": [
+      "s3",
+      "compatibility",
+      "sts"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg119-monitor",
+    "title": "Monitor StorageGRID",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/index.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "monitoring",
+      "health"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg119-troubleshoot",
+    "title": "StorageGRID troubleshooting overview",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/troubleshoot/index.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "troubleshooting",
+      "evidence"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg118-ilm",
+    "title": "Manage objects with ILM in 11.8",
+    "url": "https://docs.netapp.com/us-en/storagegrid-118/ilm/index.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.8"
+    ],
+    "topics": [
+      "ilm",
+      "protection"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg119-ilm",
+    "title": "Manage objects with ILM in 11.9",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/ilm/index.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "ilm",
+      "protection"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg119-grid-api",
+    "title": "Use the Grid Management API",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/admin/using-grid-management-api.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "api",
+      "grid",
+      "swagger"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg119-tenant-api",
+    "title": "Understand Tenant Management API",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/understanding-tenant-management-api.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "api",
+      "tenant",
+      "authentication"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg119-capacity",
+    "title": "Monitor storage capacity",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/monitoring-storage-capacity.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "capacity",
+      "metadata",
+      "metrics"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg119-ilm-monitor",
+    "title": "Monitor information lifecycle management",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/monitoring-information-lifecycle-management.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "ilm",
+      "backlog",
+      "recovery"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg119-lb-monitor",
+    "title": "Monitor load balancing operations",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/monitoring-load-balancing-operations.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "load-balancer",
+      "latency",
+      "monitoring"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg119-logs",
+    "title": "StorageGRID log files reference",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/logs-files-reference.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "logs",
+      "audit",
+      "elasticsearch"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg119-upgrade",
+    "title": "Upgrade StorageGRID software to 11.9",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/upgrade/index.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "upgrade",
+      "maintenance"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg120-upgrade",
+    "title": "Upgrade StorageGRID software to 12.0",
+    "url": "https://docs.netapp.com/us-en/storagegrid-120/upgrade/index.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "12.0"
+    ],
+    "topics": [
+      "upgrade",
+      "maintenance"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg119-network",
+    "title": "StorageGRID networking guidelines",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/network/index.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "network",
+      "connectivity"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg119-object-lock",
+    "title": "Manage objects with S3 Object Lock",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/ilm/managing-objects-with-s3-object-lock.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "retention",
+      "object-lock",
+      "ilm"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg119-ilm-lifecycle",
+    "title": "How ILM operates throughout an object life",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/ilm/how-ilm-operates-throughout-objects-life.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "ilm",
+      "lifecycle"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg119-object-operations",
+    "title": "StorageGRID operations on objects",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/s3/operations-on-objects.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "s3",
+      "ownership",
+      "compatibility"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg119-bucket-operations",
+    "title": "StorageGRID operations on buckets",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/s3/operations-on-buckets.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "s3",
+      "buckets",
+      "limits"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg118-consistency",
+    "title": "StorageGRID 11.8 consistency values",
+    "url": "https://docs.netapp.com/us-en/storagegrid-118/s3/consistency-controls.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.8"
+    ],
+    "topics": [
+      "consistency",
+      "s3",
+      "availability"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg119-consistency",
+    "title": "StorageGRID 11.9 consistency values",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/s3/consistency-controls.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "consistency",
+      "s3",
+      "availability"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg119-metadata",
+    "title": "Troubleshoot metadata issues",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/troubleshoot/troubleshooting-metadata-issues.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "metadata",
+      "capacity",
+      "alerts"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg119-lb-endpoints",
+    "title": "Configure load balancer endpoints",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/admin/configuring-load-balancer-endpoints.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "load-balancer",
+      "tls",
+      "network"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Reference only; configuration operations are outside read-only release."
+  },
+  {
+    "id": "netapp-sg119-errors",
+    "title": "StorageGRID S3 error responses",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/s3/error-responses.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "s3",
+      "errors"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg119-tenant",
+    "title": "StorageGRID tenant account model",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/index.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "tenant",
+      "identity",
+      "objectify"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg119-notifications",
+    "title": "Understand notifications for buckets",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/understanding-notifications-for-buckets.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "s3",
+      "events",
+      "platform-services"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg119-search-integration",
+    "title": "Understand search integration service",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/understanding-search-integration-service.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "elasticsearch",
+      "metadata",
+      "platform-services"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "User Elasticsearch role is unconfirmed; do not assume this integration is enabled."
+  },
+  {
+    "id": "netapp-sg119-tenant-dashboard",
+    "title": "Understand Tenant Manager dashboard",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/understanding-tenant-manager-dashboard.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "quota",
+      "capacity",
+      "tenant"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg119-client-connections",
+    "title": "Configure S3 client connections",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/admin/configuring-client-connections.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "s3",
+      "connectivity",
+      "tls"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Read configuration as evidence; do not run setup wizard during diagnosis."
+  },
+  {
+    "id": "netapp-sg119-client-ports",
+    "title": "IP addresses and ports for client connections",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/admin/summary-ip-addresses-and-ports-for-client-connections.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "network",
+      "ports",
+      "load-balancer"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-sg119-s3-quick-reference",
+    "title": "Quick reference to supported S3 API requests",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/s3/quick-reference-support-for-aws-apis.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "s3",
+      "api",
+      "compatibility"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": ""
+  },
+  {
+    "id": "netapp-imt",
+    "title": "NetApp Interoperability Matrix Tool",
+    "url": "https://imt.netapp.com/matrix/",
+    "vendor": "NetApp",
+    "product": "Interoperability Matrix",
+    "versions": [
+      "live-matrix"
+    ],
+    "topics": [
+      "compatibility",
+      "hardware",
+      "os"
+    ],
+    "access": "subscription",
+    "verification": "unverified",
+    "checked_on": "2026-11-09",
+    "notes": "Linked from official version docs; fetch redirected to login. Matrix contents unverified."
+  },
+  {
+    "id": "aws-s3-sigv4",
+    "title": "Authenticating requests with AWS Signature Version 4",
+    "url": "https://docs.aws.amazon.com/AmazonS3/latest/developerguide/sig-v4-authenticating-requests.html",
+    "vendor": "AWS",
+    "product": "Amazon S3",
+    "versions": [
+      "service-current-reference"
+    ],
+    "topics": [
+      "authentication",
+      "signature"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "AWS behavior only; not evidence of Ceph RGW or StorageGRID support."
+  },
+  {
+    "id": "aws-s3-errors",
+    "title": "Amazon S3 error responses",
+    "url": "https://docs.aws.amazon.com/AmazonS3/latest/developerguide/ErrorResponses.html",
+    "vendor": "AWS",
+    "product": "Amazon S3",
+    "versions": [
+      "service-current-reference"
+    ],
+    "topics": [
+      "s3",
+      "errors"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "AWS behavior only; not evidence of Ceph RGW or StorageGRID support."
+  },
+  {
+    "id": "aws-s3-access-denied",
+    "title": "Troubleshoot access denied errors",
+    "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/troubleshoot-403-errors.html",
+    "vendor": "AWS",
+    "product": "Amazon S3",
+    "versions": [
+      "service-current-reference"
+    ],
+    "topics": [
+      "permissions",
+      "403"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "AWS behavior only; not evidence of Ceph RGW or StorageGRID support."
+  },
+  {
+    "id": "aws-s3-head-object",
+    "title": "HeadObject API reference",
+    "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html",
+    "vendor": "AWS",
+    "product": "Amazon S3",
+    "versions": [
+      "service-current-reference"
+    ],
+    "topics": [
+      "metadata",
+      "diagnostics"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "AWS behavior only; not evidence of Ceph RGW or StorageGRID support."
+  },
+  {
+    "id": "aws-s3-head-bucket",
+    "title": "HeadBucket API reference",
+    "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html",
+    "vendor": "AWS",
+    "product": "Amazon S3",
+    "versions": [
+      "service-current-reference"
+    ],
+    "topics": [
+      "bucket",
+      "diagnostics"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "AWS behavior only; not evidence of Ceph RGW or StorageGRID support."
+  },
+  {
+    "id": "aws-s3-multipart",
+    "title": "Multipart upload overview",
+    "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html",
+    "vendor": "AWS",
+    "product": "Amazon S3",
+    "versions": [
+      "service-current-reference"
+    ],
+    "topics": [
+      "multipart",
+      "checksums",
+      "performance"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "AWS behavior only; not evidence of Ceph RGW or StorageGRID support."
+  },
+  {
+    "id": "aws-s3-versioning",
+    "title": "S3 Versioning",
+    "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html",
+    "vendor": "AWS",
+    "product": "Amazon S3",
+    "versions": [
+      "service-current-reference"
+    ],
+    "topics": [
+      "versioning",
+      "retention"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "AWS behavior only; not evidence of Ceph RGW or StorageGRID support."
+  },
+  {
+    "id": "aws-s3-lifecycle",
+    "title": "Managing the lifecycle of objects",
+    "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html",
+    "vendor": "AWS",
+    "product": "Amazon S3",
+    "versions": [
+      "service-current-reference"
+    ],
+    "topics": [
+      "lifecycle",
+      "expiration"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "AWS behavior only; not evidence of Ceph RGW or StorageGRID support."
+  },
+  {
+    "id": "aws-s3-object-lock",
+    "title": "Locking objects with Object Lock",
+    "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html",
+    "vendor": "AWS",
+    "product": "Amazon S3",
+    "versions": [
+      "service-current-reference"
+    ],
+    "topics": [
+      "retention",
+      "object-lock"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "AWS behavior only; not evidence of Ceph RGW or StorageGRID support."
+  },
+  {
+    "id": "aws-s3-kms",
+    "title": "Server-side encryption with AWS KMS keys",
+    "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html",
+    "vendor": "AWS",
+    "product": "Amazon S3",
+    "versions": [
+      "service-current-reference"
+    ],
+    "topics": [
+      "kms",
+      "encryption",
+      "permissions"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "AWS behavior only; not evidence of Ceph RGW or StorageGRID support."
+  },
+  {
+    "id": "aws-s3-performance",
+    "title": "Performance guidelines for Amazon S3",
+    "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/optimizing-performance-guidelines.html",
+    "vendor": "AWS",
+    "product": "Amazon S3",
+    "versions": [
+      "service-current-reference"
+    ],
+    "topics": [
+      "latency",
+      "performance",
+      "503"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "AWS behavior only; not evidence of Ceph RGW or StorageGRID support."
+  },
+  {
+    "id": "aws-s3-presigned",
+    "title": "Download and upload using presigned URLs",
+    "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html",
+    "vendor": "AWS",
+    "product": "Amazon S3",
+    "versions": [
+      "service-current-reference"
+    ],
+    "topics": [
+      "authentication",
+      "presigned-url"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "AWS behavior only; not evidence of Ceph RGW or StorageGRID support."
+  },
+  {
+    "id": "aws-s3-consistency",
+    "title": "Amazon S3 overview and consistency model",
+    "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html",
+    "vendor": "AWS",
+    "product": "Amazon S3",
+    "versions": [
+      "service-current-reference"
+    ],
+    "topics": [
+      "consistency",
+      "architecture"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "AWS behavior only; not evidence of Ceph RGW or StorageGRID support."
+  },
+  {
+    "id": "aws-s3-list-multipart",
+    "title": "AWS CLI list-multipart-uploads reference",
+    "url": "https://docs.aws.amazon.com/cli/latest/reference/s3api/list-multipart-uploads.html",
+    "vendor": "AWS",
+    "product": "Amazon S3",
+    "versions": [
+      "service-current-reference"
+    ],
+    "topics": [
+      "cli",
+      "multipart",
+      "pagination"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "AWS behavior only; not evidence of Ceph RGW or StorageGRID support."
+  },
+  {
+    "id": "aws-iam-policy-evaluation",
+    "title": "IAM policy evaluation logic",
+    "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html",
+    "vendor": "AWS",
+    "product": "IAM",
+    "versions": [
+      "service-current-reference"
+    ],
+    "topics": [
+      "iam",
+      "permissions",
+      "policy"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "AWS identity/resource/organization policy model; do not assume identical backend support."
+  },
+  {
+    "id": "netapp-sg119-ilm-policies",
+    "title": "StorageGRID 11.9 ILM policy selection and bucket policy tags",
+    "url": "https://docs.netapp.com/us-en/storagegrid-119/ilm/ilm-policy-overview.html",
+    "vendor": "NetApp",
+    "product": "StorageGRID",
+    "versions": [
+      "11.9"
+    ],
+    "topics": [
+      "ilm",
+      "policy-tags",
+      "tenant",
+      "placement"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Multiple policies may be active simultaneously. Resolve the bucket policy tag to the assigned active policy; untagged buckets use the Default tag policy. Read-only investigation must preserve the tag."
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg119-ilm-monitor",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/monitoring-information-lifecycle-management.html",
+  "catalog_title": "Monitor information lifecycle management",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "11.9"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:23.660615+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/monitoring-information-lifecycle-management.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-119/monitor/monitoring-information-lifecycle-management.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "341c8369c2bfb49858332617fe551a642297b09b4e9f29f283e95db999e11bc0",
+  "raw_bytes": 56418,
+  "extracted_sha256": "1bbad47e4cd27bf75b7a01d44290f4252dc4294476724db1b66b8a2cb91f945f",
+  "extracted_bytes": 3326,
+  "words": 554,
+  "document_title": "Monitor information lifecycle management",
+  "extracted_links": 2,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:26.001904+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

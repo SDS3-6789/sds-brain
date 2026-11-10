@@ -1,0 +1,27 @@
+{
+  "source_id": "ceph-squid-monitoring",
+  "catalog_url": "https://docs.ceph.com/en/squid/rados/operations/monitoring/",
+  "catalog_title": "Ceph Squid cluster monitoring",
+  "catalog_product": "Ceph",
+  "catalog_versions": [
+    "squid"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:04.372961+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.ceph.com/en/squid/rados/operations/monitoring/",
+  "requested_url": "https://docs.ceph.com/en/squid/rados/operations/monitoring/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "f9c156b5d34a4b2ccac22b939ea774d91589e000781e2c70cf93a63add754607",
+  "raw_bytes": 89326,
+  "extracted_sha256": "3025701818690990311f43b79a4eb2c367836627bf26c339b0d943628f301a10",
+  "extracted_bytes": 23740,
+  "words": 3411,
+  "document_title": "Monitoring a Cluster\uf0c1",
+  "extracted_links": 27,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:05.209093+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

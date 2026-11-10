@@ -1,0 +1,68 @@
+{
+  "grafana": {
+    "repo": "grafana/mcp-grafana",
+    "version": "v2.2.0",
+    "binary": "mcp-grafana",
+    "license": "Apache-2.0",
+    "enabled_by_default": false,
+    "assets": {
+      "darwin-arm64": {
+        "file": "mcp-grafana_Darwin_arm64.tar.gz",
+        "bytes": 17867102,
+        "sha256": "3710a7453b86fb535b41b6dab6bb0b1a7db86743e2ade8e06a187ca68f1e3df0",
+        "url": "https://github.com/grafana/mcp-grafana/releases/download/v2.2.0/mcp-grafana_Darwin_arm64.tar.gz",
+        "binary_path": "mcp-grafana",
+        "binary_sha256": "46b60324d6c03c483cc78b58c67ff00759a3e74a406c64f31c58e48196a64632",
+        "binary_bytes": 59722162
+      },
+      "linux-x86_64": {
+        "file": "mcp-grafana_Linux_x86_64.tar.gz",
+        "bytes": 18792058,
+        "sha256": "f93bfbd94cde68cc2e43cf5ba55da4f8e28b1a36b14fb14dadd566fc36b1312b",
+        "url": "https://github.com/grafana/mcp-grafana/releases/download/v2.2.0/mcp-grafana_Linux_x86_64.tar.gz",
+        "binary_path": "mcp-grafana",
+        "binary_sha256": "83f9e5f5419359e987add4ccc84e5a82953f59e16c7df48768a42d1f33e0a424",
+        "binary_bytes": 61558946
+      },
+      "windows-x86_64": {
+        "file": "mcp-grafana_Windows_x86_64.zip",
+        "bytes": 19280347,
+        "sha256": "231695fef9031a2aed064ddab46b3288e7abd11822890a320cd21b547ffdc684",
+        "url": "https://github.com/grafana/mcp-grafana/releases/download/v2.2.0/mcp-grafana_Windows_x86_64.zip",
+        "binary_path": "mcp-grafana.exe",
+        "binary_sha256": "3ea946ae5e918b3764aa7a945c4ea24c296a90e8a61c94c99da6064c9a4ae3d5",
+        "binary_bytes": 63076864
+      }
+    }
+  },
+  "kubernetes": {
+    "repo": "containers/kubernetes-mcp-server",
+    "version": "v0.0.67",
+    "binary": "kubernetes-mcp-server",
+    "license": "Apache-2.0",
+    "enabled_by_default": false,
+    "assets": {
+      "darwin-arm64": {
+        "file": "kubernetes-mcp-server-0.0.67-darwin-arm64.mcpb",
+        "bytes": 25172664,
+        "sha256": "a0992f069ad592f506d87635b26b9d7ab8b00f0a3fba8e689a155fd4eec9a052",
+        "url": "https://github.com/containers/kubernetes-mcp-server/releases/download/v0.0.67/kubernetes-mcp-server-0.0.67-darwin-arm64.mcpb",
+        "release_asset_id": 572723601
+      },
+      "linux-x86_64": {
+        "file": "kubernetes-mcp-server-0.0.67-linux-x64.mcpb",
+        "bytes": 24263328,
+        "sha256": "09a791ede01af271c82d49ff35797533296f9396678dbd31b88b5928152c6fbc",
+        "url": "https://github.com/containers/kubernetes-mcp-server/releases/download/v0.0.67/kubernetes-mcp-server-0.0.67-linux-x64.mcpb",
+        "release_asset_id": 572723635
+      },
+      "windows-x86_64": {
+        "file": "kubernetes-mcp-server-0.0.67-windows-x64.mcpb",
+        "bytes": 24812392,
+        "sha256": "947fb433d7c68577aefd03298057d44c849bbdffd06281a622d0acc1d1656067",
+        "url": "https://github.com/containers/kubernetes-mcp-server/releases/download/v0.0.67/kubernetes-mcp-server-0.0.67-windows-x64.mcpb",
+        "release_asset_id": 572723538
+      }
+    }
+  }
+}

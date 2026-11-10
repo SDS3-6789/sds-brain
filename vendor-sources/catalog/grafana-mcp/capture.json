@@ -1,0 +1,11 @@
+{
+  "sourceId": "grafana-mcp",
+  "originalURL": "https://github.com/grafana/mcp-grafana/blob/v2.2.0/README.md",
+  "fetchedURL": "https://github.com/grafana/mcp-grafana/blob/v2.2.0/README.md",
+  "repo": "grafana/mcp-grafana",
+  "ref": "v2.2.0",
+  "blobSHA": "abd6660d8e0e602d258fcfb53724ace72c7ffb18",
+  "retrievedUTC": "2026-11-10T09:25:19Z",
+  "status": "retrieved",
+  "attribution": "Original upstream file content and its existing copyright/license notices are preserved. The source URL, repository, version ref and exact Git blob SHA identify the attributed source."
+}

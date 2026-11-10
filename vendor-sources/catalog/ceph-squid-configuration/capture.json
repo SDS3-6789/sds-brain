@@ -1,0 +1,27 @@
+{
+  "source_id": "ceph-squid-configuration",
+  "catalog_url": "https://docs.ceph.com/en/squid/rados/configuration/ceph-conf/",
+  "catalog_title": "Ceph Squid configuration sources and inspection commands",
+  "catalog_product": "Ceph",
+  "catalog_versions": [
+    "Squid"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:09.599845+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.ceph.com/en/squid/rados/configuration/ceph-conf/",
+  "requested_url": "https://docs.ceph.com/en/squid/rados/configuration/ceph-conf/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "0e0aeb996d3574b648bdceb3b5ccd6b3e8884deace2b7f98de5cfaba19d2868c",
+  "raw_bytes": 87540,
+  "extracted_sha256": "b252348fde0fbed006998abd94c5037699b3c73eddec5c4c620c8ead3313e24c",
+  "extracted_bytes": 28593,
+  "words": 4517,
+  "document_title": "Configuring Ceph\uf0c1",
+  "extracted_links": 56,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:10.169139+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

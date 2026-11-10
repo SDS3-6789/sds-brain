@@ -1,0 +1,33 @@
+name: Validate SDS Brain
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Validate documentation and metadata
+        run: python3 scripts/brain.py validate
+      - name: Check generated indexes
+        run: python3 scripts/brain.py index --check
+      - name: Verify repository hierarchy and package hashes
+        run: python3 scripts/check_repository.py --manifest
+      - name: Run local regression tests
+        run: python3 -m unittest discover -s tests
+      - name: Check priority retrieval
+        run: python3 scripts/acceptance.py
+      - name: Verify offline vendor bytes and document body retrieval
+        run: python3 scripts/verify_offline_knowledge.py
+      - name: Verify bundled Grafana release archives offline
+        run: python3 scripts/vendor_grafana.py --check
+      - name: Verify exact plugin hierarchy and bundled archives
+        run: python3 scripts/check_plugin_layout.py
+      - name: Check persistent SQLite snapshot and input freshness
+        run: python3 scripts/sqlite_brain.py check --fresh

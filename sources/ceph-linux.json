@@ -1,0 +1,1112 @@
+[
+  {
+    "id": "rhcs-7-release",
+    "title": "Red Hat Ceph Storage 7.1 Release Notes",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/7/html-single/7.1_release_notes/index",
+    "vendor": "Red Hat",
+    "product": "Red Hat Ceph Storage",
+    "versions": [
+      "7.1",
+      "7.1z7"
+    ],
+    "topics": [
+      "release-notes",
+      "errata",
+      "rgw",
+      "cephadm"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Confirms 7.1z7 as a container-only update. Scope each issue to its z-stream; this evolving page also describes later patches."
+  },
+  {
+    "id": "rhcs-8-release",
+    "title": "Red Hat Ceph Storage 8.1 Release Notes",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html-single/8.1_release_notes/8.1_release_notes",
+    "vendor": "Red Hat",
+    "product": "Red Hat Ceph Storage",
+    "versions": [
+      "8.1",
+      "8.1z3",
+      "8.1z6",
+      "8.1z7",
+      "8.1z8",
+      "8.1z9"
+    ],
+    "topics": [
+      "release-notes",
+      "errata",
+      "rgw",
+      "cephadm"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "The requested z-streams appear in official release notes. Feature and fix applicability still require the installed image/build."
+  },
+  {
+    "id": "rhcs-7-compat",
+    "title": "Red Hat Ceph Storage 7 Compatibility Guide",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/7/html/compatibility_guide/index",
+    "vendor": "Red Hat",
+    "product": "Red Hat Ceph Storage",
+    "versions": [
+      "7"
+    ],
+    "topics": [
+      "support",
+      "os-compatibility"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Official guide/index opened. Follow version-specific chapters for procedures; index presence is not a claim that every linked chapter was reviewed."
+  },
+  {
+    "id": "rhcs-7-rgw",
+    "title": "Red Hat Ceph Storage 7 Object Gateway Guide",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/7/html/object_gateway_guide/index",
+    "vendor": "Red Hat",
+    "product": "Red Hat Ceph Storage",
+    "versions": [
+      "7"
+    ],
+    "topics": [
+      "s3",
+      "rgw",
+      "multisite",
+      "quotas"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Official guide/index opened. Follow version-specific chapters for procedures; index presence is not a claim that every linked chapter was reviewed."
+  },
+  {
+    "id": "rhcs-7-troubleshooting",
+    "title": "Red Hat Ceph Storage 7 Troubleshooting Guide",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/7/html/troubleshooting_guide/index",
+    "vendor": "Red Hat",
+    "product": "Red Hat Ceph Storage",
+    "versions": [
+      "7"
+    ],
+    "topics": [
+      "health",
+      "osd",
+      "pg",
+      "rgw"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Official guide/index opened. Follow version-specific chapters for procedures; index presence is not a claim that every linked chapter was reviewed."
+  },
+  {
+    "id": "rhcs-8-hardware",
+    "title": "Red Hat Ceph Storage 8 Hardware Guide",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/hardware_guide/index",
+    "vendor": "Red Hat",
+    "product": "Red Hat Ceph Storage",
+    "versions": [
+      "8"
+    ],
+    "topics": [
+      "hardware",
+      "sizing",
+      "network",
+      "osd"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Official guide/index opened. Follow version-specific chapters for procedures; index presence is not a claim that every linked chapter was reviewed."
+  },
+  {
+    "id": "rhcs-8-hardening",
+    "title": "Red Hat Ceph Storage 8 Data Security and Hardening Guide",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/data_security_and_hardening_guide/index",
+    "vendor": "Red Hat",
+    "product": "Red Hat Ceph Storage",
+    "versions": [
+      "8"
+    ],
+    "topics": [
+      "security",
+      "cephx",
+      "encryption",
+      "identity"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Official guide/index opened. Follow version-specific chapters for procedures; index presence is not a claim that every linked chapter was reviewed."
+  },
+  {
+    "id": "rhcs-8-configuration",
+    "title": "Red Hat Ceph Storage 8 Configuration Guide",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/configuration_guide/index",
+    "vendor": "Red Hat",
+    "product": "Red Hat Ceph Storage",
+    "versions": [
+      "8"
+    ],
+    "topics": [
+      "configuration",
+      "monitor",
+      "osd",
+      "network"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Official guide/index opened. Follow version-specific chapters for procedures; index presence is not a claim that every linked chapter was reviewed."
+  },
+  {
+    "id": "rhcs-8-installation",
+    "title": "Red Hat Ceph Storage 8 Installation Guide",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/installation_guide/index",
+    "vendor": "Red Hat",
+    "product": "Red Hat Ceph Storage",
+    "versions": [
+      "8"
+    ],
+    "topics": [
+      "cephadm",
+      "deployment",
+      "containers"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Official guide/index opened. Follow version-specific chapters for procedures; index presence is not a claim that every linked chapter was reviewed."
+  },
+  {
+    "id": "rhcs-8-upgrade",
+    "title": "Red Hat Ceph Storage 8 Upgrade Guide",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/upgrade_guide/index",
+    "vendor": "Red Hat",
+    "product": "Red Hat Ceph Storage",
+    "versions": [
+      "8"
+    ],
+    "topics": [
+      "upgrade",
+      "prerequisites",
+      "compatibility"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Official guide/index opened. Follow version-specific chapters for procedures; index presence is not a claim that every linked chapter was reviewed."
+  },
+  {
+    "id": "rhcs-8-operations",
+    "title": "Red Hat Ceph Storage 8 Operations Guide",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/operations_guide/index",
+    "vendor": "Red Hat",
+    "product": "Red Hat Ceph Storage",
+    "versions": [
+      "8"
+    ],
+    "topics": [
+      "cephadm",
+      "hosts",
+      "services",
+      "devices"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Official guide/index opened. Follow version-specific chapters for procedures; index presence is not a claim that every linked chapter was reviewed."
+  },
+  {
+    "id": "rhcs-8-administration",
+    "title": "Red Hat Ceph Storage 8 Administration Guide",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/administration_guide/index",
+    "vendor": "Red Hat",
+    "product": "Red Hat Ceph Storage",
+    "versions": [
+      "8"
+    ],
+    "topics": [
+      "pools",
+      "crush",
+      "monitoring",
+      "capacity"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Official guide/index opened. Follow version-specific chapters for procedures; index presence is not a claim that every linked chapter was reviewed."
+  },
+  {
+    "id": "rhcs-8-troubleshooting",
+    "title": "Red Hat Ceph Storage 8 Troubleshooting Guide",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/troubleshooting_guide/index",
+    "vendor": "Red Hat",
+    "product": "Red Hat Ceph Storage",
+    "versions": [
+      "8"
+    ],
+    "topics": [
+      "health",
+      "osd",
+      "pg",
+      "rgw"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Official guide/index opened. Follow version-specific chapters for procedures; index presence is not a claim that every linked chapter was reviewed."
+  },
+  {
+    "id": "rhcs-8-rgw",
+    "title": "Red Hat Ceph Storage 8 Object Gateway Guide",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/object_gateway_guide/index",
+    "vendor": "Red Hat",
+    "product": "Red Hat Ceph Storage",
+    "versions": [
+      "8"
+    ],
+    "topics": [
+      "s3",
+      "rgw",
+      "multisite",
+      "quotas",
+      "lifecycle"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Official guide/index opened. Follow version-specific chapters for procedures; index presence is not a claim that every linked chapter was reviewed."
+  },
+  {
+    "id": "rhcs-8-compat",
+    "title": "RHCS 8.1 Compatibility Matrix",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/compatibility_guide/compatibility-matrix-for-red-hat-ceph-storage-8.1",
+    "vendor": "Red Hat",
+    "product": "Red Hat Ceph Storage",
+    "versions": [
+      "8.1"
+    ],
+    "topics": [
+      "support",
+      "rhel",
+      "compatibility"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Live page lists RHEL 9.6 and 9.8 on retrieval. Applies to the product matrix, not proof of every patch/hardware combination."
+  },
+  {
+    "id": "rhcs-8-osd-troubleshooting",
+    "title": "RHCS 8 Troubleshooting Ceph OSDs",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/troubleshooting_guide/troubleshooting-ceph-osds",
+    "vendor": "Red Hat",
+    "product": "Red Hat Ceph Storage",
+    "versions": [
+      "8"
+    ],
+    "topics": [
+      "osd",
+      "slow-operations",
+      "capacity",
+      "flapping"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Includes full, backfillfull, nearfull, down/flapping OSD and slow-request diagnosis; remediation commands in the source are not authorized by read-only mode."
+  },
+  {
+    "id": "rhcs-8-pg-troubleshooting",
+    "title": "RHCS 8 Troubleshooting Ceph placement groups",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/troubleshooting_guide/troubleshooting-ceph-placement-groups",
+    "vendor": "Red Hat",
+    "product": "Red Hat Ceph Storage",
+    "versions": [
+      "8"
+    ],
+    "topics": [
+      "pg",
+      "recovery",
+      "peering",
+      "inconsistency"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Use diagnostic portions only. Recovery and repair actions require a separate reviewed change."
+  },
+  {
+    "id": "rhcs-8-multisite",
+    "title": "RHCS 8 Multi-site configuration and administration",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_ceph_storage/8/html/object_gateway_guide/multisite-configuration-and-administration",
+    "vendor": "Red Hat",
+    "product": "Red Hat Ceph Storage",
+    "versions": [
+      "8"
+    ],
+    "topics": [
+      "rgw",
+      "multisite",
+      "sync",
+      "realms"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Scope every command to the selected realm/zone. The document also contains write workflows, excluded from this initial brain."
+  },
+  {
+    "id": "ibm-ceph-version-matrix",
+    "title": "Red Hat and IBM Storage Ceph releases and corresponding package versions",
+    "url": "https://www.ibm.com/support/pages/what-are-red-hat-and-ibm-storage-ceph-releases-and-corresponding-ceph-package-versions",
+    "vendor": "IBM",
+    "product": "IBM Storage Ceph",
+    "versions": [
+      "7.1",
+      "8.1"
+    ],
+    "topics": [
+      "release-mapping",
+      "images",
+      "packages",
+      "reef",
+      "squid"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Maps vendor releases to package versions, upstream families and image tags. IBM rows do not establish a Red Hat image digest; inspect each deployed image."
+  },
+  {
+    "id": "ibm-ceph-master-reference",
+    "title": "IBM Storage Ceph Master Troubleshooting and Operations Reference Guide",
+    "url": "https://www.ibm.com/support/pages/node/7239015",
+    "vendor": "IBM",
+    "product": "IBM Storage Ceph",
+    "versions": [
+      "5.x+",
+      "7.1",
+      "8.1"
+    ],
+    "topics": [
+      "support",
+      "troubleshooting",
+      "operations"
+    ],
+    "access": "mixed",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Broad support index; linked articles may have separate access requirements and version caveats."
+  },
+  {
+    "id": "ibm-ceph-supported",
+    "title": "IBM Storage Ceph Supported Configurations",
+    "url": "https://www.ibm.com/support/pages/node/7236061",
+    "vendor": "IBM",
+    "product": "IBM Storage Ceph",
+    "versions": [
+      "version-dependent"
+    ],
+    "topics": [
+      "support",
+      "compatibility"
+    ],
+    "access": "mixed",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Support landing page opened. Follow its product/version-specific documents; no cross-vendor support equivalence is assumed."
+  },
+  {
+    "id": "ibm-ceph-architecture",
+    "title": "IBM Storage Ceph Concepts and Architecture Guide REDP-5721",
+    "url": "https://www.redbooks.ibm.com/redpapers/pdfs/redp5721.pdf",
+    "vendor": "IBM",
+    "product": "IBM Storage Ceph",
+    "versions": [
+      "7"
+    ],
+    "topics": [
+      "architecture",
+      "rados",
+      "rgw",
+      "rbd",
+      "cephfs"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "June 2024 first edition applies to IBM Storage Ceph 7. Architecture background, not 8.1 patch-level authority."
+  },
+  {
+    "id": "ibm-ceph-recovery",
+    "title": "Differences between backfill, recovery and peering",
+    "url": "https://www.ibm.com/support/pages/node/7176025",
+    "vendor": "IBM",
+    "product": "IBM Storage Ceph",
+    "versions": [
+      "5.x+"
+    ],
+    "topics": [
+      "pg",
+      "backfill",
+      "recovery",
+      "peering"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Read conceptual distinctions; older general tuning examples need current scheduler and vendor validation."
+  },
+  {
+    "id": "ibm-ceph-throttling",
+    "title": "Managing backfill, recovery and rebalancing throttles",
+    "url": "https://www.ibm.com/support/pages/node/6963280",
+    "vendor": "IBM",
+    "product": "IBM Storage Ceph",
+    "versions": [
+      "5.x+"
+    ],
+    "topics": [
+      "recovery",
+      "backfill",
+      "performance"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Reference only. Do not copy legacy throttling settings onto mClock-managed OSDs without checking the current product guidance."
+  },
+  {
+    "id": "ibm-ceph-multisite",
+    "title": "IBM Storage Ceph 8.1 Multi-site considerations",
+    "url": "https://www.ibm.com/docs/en/storage-ceph/8.1.0?topic=gateway-multi-site-considerations",
+    "vendor": "IBM",
+    "product": "IBM Storage Ceph",
+    "versions": [
+      "8.1.0"
+    ],
+    "topics": [
+      "rgw",
+      "multisite",
+      "metadata"
+    ],
+    "access": "public",
+    "verification": "search-verified",
+    "checked_on": "2026-11-09",
+    "notes": "Search result verified content; direct retrieval returned HTTP 403. Not a downloaded offline document."
+  },
+  {
+    "id": "ibm-ceph-deployment",
+    "title": "IBM Storage Ceph 8.1 RGW deployment guidelines",
+    "url": "https://www.ibm.com/docs/en/storage-ceph/8.1.0?topic=gateway-deployment-guidelines",
+    "vendor": "IBM",
+    "product": "IBM Storage Ceph",
+    "versions": [
+      "8.1.0"
+    ],
+    "topics": [
+      "rgw",
+      "design",
+      "sites"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Describes site and realm/zone planning."
+  },
+  {
+    "id": "ibm-ceph-low-level",
+    "title": "IBM Storage Ceph low-level monitoring",
+    "url": "https://www.ibm.com/docs/en/storage-ceph/8.0.0?topic=cluster-low-level-monitoring",
+    "vendor": "IBM",
+    "product": "IBM Storage Ceph",
+    "versions": [
+      "8.0.0"
+    ],
+    "topics": [
+      "pg",
+      "monitoring",
+      "recovery"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Older product version; useful conceptual material, not 8.1 patch-level confirmation."
+  },
+  {
+    "id": "ceph-reef-health",
+    "title": "Ceph Reef health checks",
+    "url": "https://docs.ceph.com/en/reef/rados/operations/health-checks/",
+    "vendor": "Ceph upstream",
+    "product": "Ceph",
+    "versions": [
+      "reef"
+    ],
+    "topics": [
+      "health",
+      "monitor",
+      "osd",
+      "pg"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Pinned upstream release-family reference. Downstream Red Hat/IBM support and backports take precedence for their own installations."
+  },
+  {
+    "id": "ceph-squid-health",
+    "title": "Ceph Squid health checks",
+    "url": "https://docs.ceph.com/en/squid/rados/operations/health-checks/",
+    "vendor": "Ceph upstream",
+    "product": "Ceph",
+    "versions": [
+      "squid"
+    ],
+    "topics": [
+      "health",
+      "monitor",
+      "osd",
+      "pg"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Pinned upstream release-family reference. Downstream Red Hat/IBM support and backports take precedence for their own installations."
+  },
+  {
+    "id": "ceph-squid-monitoring",
+    "title": "Ceph Squid cluster monitoring",
+    "url": "https://docs.ceph.com/en/squid/rados/operations/monitoring/",
+    "vendor": "Ceph upstream",
+    "product": "Ceph",
+    "versions": [
+      "squid"
+    ],
+    "topics": [
+      "monitoring",
+      "capacity",
+      "quorum"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Pinned upstream release-family reference. Downstream Red Hat/IBM support and backports take precedence for their own installations."
+  },
+  {
+    "id": "ceph-squid-cephadm",
+    "title": "Ceph Squid cephadm troubleshooting",
+    "url": "https://docs.ceph.com/en/squid/cephadm/troubleshooting/",
+    "vendor": "Ceph upstream",
+    "product": "Ceph",
+    "versions": [
+      "squid"
+    ],
+    "topics": [
+      "cephadm",
+      "containers",
+      "logs",
+      "systemd"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Pinned upstream release-family reference. Downstream Red Hat/IBM support and backports take precedence for their own installations."
+  },
+  {
+    "id": "ceph-squid-rgw-admin",
+    "title": "Ceph Squid RGW administration",
+    "url": "https://docs.ceph.com/en/squid/radosgw/admin/",
+    "vendor": "Ceph upstream",
+    "product": "Ceph",
+    "versions": [
+      "squid"
+    ],
+    "topics": [
+      "users",
+      "quotas",
+      "keys",
+      "buckets"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Pinned upstream release-family reference. Downstream Red Hat/IBM support and backports take precedence for their own installations."
+  },
+  {
+    "id": "ceph-squid-s3",
+    "title": "Ceph Squid S3 API and feature support",
+    "url": "https://docs.ceph.com/en/squid/radosgw/s3/",
+    "vendor": "Ceph upstream",
+    "product": "Ceph",
+    "versions": [
+      "squid"
+    ],
+    "topics": [
+      "s3",
+      "compatibility",
+      "api"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Pinned upstream release-family reference. Downstream Red Hat/IBM support and backports take precedence for their own installations."
+  },
+  {
+    "id": "ceph-squid-multisite",
+    "title": "Ceph Squid RGW multi-site",
+    "url": "https://docs.ceph.com/en/squid/radosgw/multisite/",
+    "vendor": "Ceph upstream",
+    "product": "Ceph",
+    "versions": [
+      "squid"
+    ],
+    "topics": [
+      "rgw",
+      "multisite",
+      "sync"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Pinned upstream release-family reference. Downstream Red Hat/IBM support and backports take precedence for their own installations."
+  },
+  {
+    "id": "ceph-squid-prometheus",
+    "title": "Ceph Squid Prometheus module",
+    "url": "https://docs.ceph.com/en/squid/mgr/prometheus/",
+    "vendor": "Ceph upstream",
+    "product": "Ceph",
+    "versions": [
+      "squid"
+    ],
+    "topics": [
+      "metrics",
+      "prometheus",
+      "exporter"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Pinned upstream release-family reference. Downstream Red Hat/IBM support and backports take precedence for their own installations."
+  },
+  {
+    "id": "ceph-squid-rgw-metrics",
+    "title": "Ceph Squid RGW metrics",
+    "url": "https://docs.ceph.com/en/squid/radosgw/metrics/",
+    "vendor": "Ceph upstream",
+    "product": "Ceph",
+    "versions": [
+      "squid"
+    ],
+    "topics": [
+      "rgw",
+      "latency",
+      "metrics",
+      "counters"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Pinned upstream release-family reference. Downstream Red Hat/IBM support and backports take precedence for their own installations."
+  },
+  {
+    "id": "ceph-squid-s3-auth",
+    "title": "Ceph Squid S3 authentication and ACLs",
+    "url": "https://docs.ceph.com/en/squid/radosgw/s3/authentication/",
+    "vendor": "Ceph upstream",
+    "product": "Ceph",
+    "versions": [
+      "squid"
+    ],
+    "topics": [
+      "s3",
+      "sigv4",
+      "identity",
+      "acl"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Pinned upstream release-family reference. Downstream Red Hat/IBM support and backports take precedence for their own installations."
+  },
+  {
+    "id": "ceph-squid-mclock",
+    "title": "Ceph Squid mClock configuration reference",
+    "url": "https://docs.ceph.com/en/squid/rados/configuration/mclock-config-ref/",
+    "vendor": "Ceph upstream",
+    "product": "Ceph",
+    "versions": [
+      "squid"
+    ],
+    "topics": [
+      "qos",
+      "recovery",
+      "performance",
+      "scheduler"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Pinned upstream release-family reference. Downstream Red Hat/IBM support and backports take precedence for their own installations."
+  },
+  {
+    "id": "rhel-96-release",
+    "title": "RHEL 9.6 Release Notes",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html-single/9.6_release_notes/index",
+    "vendor": "Red Hat",
+    "product": "RHEL",
+    "versions": [
+      "9.6"
+    ],
+    "topics": [
+      "release-notes",
+      "kernel",
+      "network",
+      "storage"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Confirms official RHEL 9.6 documentation; retain host RPM build and architecture."
+  },
+  {
+    "id": "rhel-98-release",
+    "title": "RHEL 9.8 Release Notes",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html-single/9.8_release_notes/index",
+    "vendor": "Red Hat",
+    "product": "RHEL",
+    "versions": [
+      "9.8"
+    ],
+    "topics": [
+      "release-notes",
+      "kernel",
+      "network",
+      "storage"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Official 9.8 release notes were opened. Do not misclassify the user-reported version as nonexistent."
+  },
+  {
+    "id": "rhel-9-kernel",
+    "title": "RHEL 9 Managing, monitoring, and updating the kernel",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/managing_monitoring_and_updating_the_kernel/index",
+    "vendor": "Red Hat",
+    "product": "RHEL",
+    "versions": [
+      "9",
+      "9.6",
+      "9.8"
+    ],
+    "topics": [
+      "kernel",
+      "crash",
+      "modules",
+      "versioning"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Rolling RHEL 9 guide. Check the release notes and installed package versions for minor-specific behavior."
+  },
+  {
+    "id": "rhel-9-performance",
+    "title": "RHEL 9 Monitoring and managing system status and performance",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/monitoring_and_managing_system_status_and_performance/index",
+    "vendor": "Red Hat",
+    "product": "RHEL",
+    "versions": [
+      "9",
+      "9.6",
+      "9.8"
+    ],
+    "topics": [
+      "performance",
+      "pcp",
+      "cpu",
+      "memory",
+      "io"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Rolling RHEL 9 guide. Check the release notes and installed package versions for minor-specific behavior."
+  },
+  {
+    "id": "rhel-9-networking",
+    "title": "RHEL 9 Configuring and managing networking",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/configuring_and_managing_networking/index",
+    "vendor": "Red Hat",
+    "product": "RHEL",
+    "versions": [
+      "9",
+      "9.6",
+      "9.8"
+    ],
+    "topics": [
+      "network",
+      "networkmanager",
+      "bonding",
+      "routing",
+      "dns"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Rolling RHEL 9 guide. Check the release notes and installed package versions for minor-specific behavior."
+  },
+  {
+    "id": "rhel-9-storage",
+    "title": "RHEL 9 Managing storage devices",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/managing_storage_devices/index",
+    "vendor": "Red Hat",
+    "product": "RHEL",
+    "versions": [
+      "9",
+      "9.6",
+      "9.8"
+    ],
+    "topics": [
+      "block",
+      "devices",
+      "nvme",
+      "iscsi"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Rolling RHEL 9 guide. Check the release notes and installed package versions for minor-specific behavior."
+  },
+  {
+    "id": "rhel-9-containers",
+    "title": "RHEL 9 Building, running, and managing containers",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/building_running_and_managing_containers/index",
+    "vendor": "Red Hat",
+    "product": "RHEL",
+    "versions": [
+      "9",
+      "9.6",
+      "9.8"
+    ],
+    "topics": [
+      "podman",
+      "containers",
+      "cgroups"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Rolling RHEL 9 guide. Check the release notes and installed package versions for minor-specific behavior."
+  },
+  {
+    "id": "rhel-9-selinux",
+    "title": "RHEL 9 Using SELinux",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/using_selinux/index",
+    "vendor": "Red Hat",
+    "product": "RHEL",
+    "versions": [
+      "9",
+      "9.6",
+      "9.8"
+    ],
+    "topics": [
+      "selinux",
+      "security",
+      "labels"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Rolling RHEL 9 guide. Check the release notes and installed package versions for minor-specific behavior."
+  },
+  {
+    "id": "rhel-9-tls",
+    "title": "RHEL 9 Securing networks",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/securing_networks/index",
+    "vendor": "Red Hat",
+    "product": "RHEL",
+    "versions": [
+      "9",
+      "9.6",
+      "9.8"
+    ],
+    "topics": [
+      "tls",
+      "certificates",
+      "crypto"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Rolling RHEL 9 guide. Check the release notes and installed package versions for minor-specific behavior."
+  },
+  {
+    "id": "rhel-9-selinux-troubleshooting",
+    "title": "RHEL 9 Troubleshooting problems related to SELinux",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/using_selinux/troubleshooting-problems-related-to-selinux_using-selinux",
+    "vendor": "Red Hat",
+    "product": "RHEL",
+    "versions": [
+      "9",
+      "9.6",
+      "9.8"
+    ],
+    "topics": [
+      "selinux",
+      "audit",
+      "avc",
+      "troubleshooting"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Diagnostic logging and label inspection are relevant; policy modifications remain outside read-only mode."
+  },
+  {
+    "id": "rhel-9-performance-overview",
+    "title": "RHEL 9 Overview of performance monitoring options",
+    "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/monitoring_and_managing_system_status_and_performance/overview-of-performance-monitoring-options",
+    "vendor": "Red Hat",
+    "product": "RHEL",
+    "versions": [
+      "9",
+      "9.6",
+      "9.8"
+    ],
+    "topics": [
+      "performance",
+      "vmstat",
+      "iostat",
+      "pcp",
+      "ss"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Documents available monitoring utilities; exact flags should be checked against locally installed man pages."
+  },
+  {
+    "id": "ceph-squid-configuration",
+    "title": "Ceph Squid configuration sources and inspection commands",
+    "url": "https://docs.ceph.com/en/squid/rados/configuration/ceph-conf/",
+    "vendor": "Ceph upstream",
+    "product": "Ceph",
+    "versions": [
+      "Squid"
+    ],
+    "topics": [
+      "configuration",
+      "runtime-overrides",
+      "monitor-database"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Distinguishes Monitor database/default configuration from values reported by a running daemon. Match the installed vendor release before choosing an inspection command."
+  },
+  {
+    "id": "podman-container-inspect",
+    "title": "Podman container inspect command reference",
+    "url": "https://docs.podman.io/en/latest/markdown/podman-container-inspect.1.html",
+    "vendor": "Podman",
+    "product": "Podman",
+    "versions": [
+      "current-reference",
+      "installed-version-unconfirmed"
+    ],
+    "topics": [
+      "container-inventory",
+      "field-projection",
+      "inspection"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "Formatting can select approved fields for one verified container ID; the complete inspect response includes sensitive configuration. Confirm syntax against the installed RHEL Podman manual."
+  },
+  {
+    "id": "ceph-squid-multitenancy",
+    "title": "Ceph Squid RGW multi-tenancy and qualified identities",
+    "url": "https://docs.ceph.com/en/squid/radosgw/multitenancy/",
+    "vendor": "Ceph upstream",
+    "product": "Ceph RGW",
+    "versions": [
+      "Squid"
+    ],
+    "topics": [
+      "identity",
+      "tenant-namespace",
+      "administration"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "User IDs can repeat across tenant namespaces; an explicit tenant mapping or fully qualified UID is necessary for a scoped administrative read."
+  },
+  {
+    "id": "ceph-squid-rgw-service",
+    "title": "Ceph Squid RGW service specification and TLS",
+    "url": "https://docs.ceph.com/en/squid/cephadm/services/rgw/",
+    "vendor": "Ceph upstream",
+    "product": "Ceph RGW",
+    "versions": [
+      "Squid"
+    ],
+    "topics": [
+      "cephadm",
+      "rgw-service",
+      "tls",
+      "specification-privacy"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "RGW and ingress specification examples include certificate/private-key material; do not export unrestricted specifications into agent context."
+  },
+  {
+    "id": "ceph-reef-pg-json",
+    "title": "Ceph Reef QA client: stuck PG JSON structure",
+    "url": "https://github.com/ceph/ceph/blob/reef/qa/tasks/ceph_manager.py",
+    "vendor": "Ceph upstream",
+    "product": "Ceph",
+    "versions": [
+      "reef"
+    ],
+    "topics": [
+      "pg",
+      "json-schema",
+      "diagnostics"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "The get_stuck_pgs method reads the stuck_pg_stats array from the JSON object returned by pg dump_stuck. Retrieved file blob f2ad7a29ec60091db420958f88d237c7e871a2be. Release-family source evidence; the installed downstream build remains authoritative."
+  },
+  {
+    "id": "ceph-squid-pg-json",
+    "title": "Ceph Squid QA client: stuck PG JSON structure",
+    "url": "https://github.com/ceph/ceph/blob/squid/qa/tasks/ceph_manager.py",
+    "vendor": "Ceph upstream",
+    "product": "Ceph",
+    "versions": [
+      "squid"
+    ],
+    "topics": [
+      "pg",
+      "json-schema",
+      "diagnostics"
+    ],
+    "access": "public",
+    "verification": "opened",
+    "checked_on": "2026-11-09",
+    "notes": "The get_stuck_pgs method reads the stuck_pg_stats array from the JSON object returned by pg dump_stuck. Retrieved file blob ffa7bd75506c2bb60425438a8b4a93e64c014acb. Release-family source evidence; the installed downstream build remains authoritative."
+  }
+]

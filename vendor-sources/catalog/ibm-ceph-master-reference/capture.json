@@ -1,0 +1,29 @@
+{
+  "source_id": "ibm-ceph-master-reference",
+  "catalog_url": "https://www.ibm.com/support/pages/node/7239015",
+  "catalog_title": "IBM Storage Ceph Master Troubleshooting and Operations Reference Guide",
+  "catalog_product": "IBM Storage Ceph",
+  "catalog_versions": [
+    "5.x+",
+    "7.1",
+    "8.1"
+  ],
+  "declared_access": "mixed",
+  "started_at": "2026-11-10T09:26:55.554253+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://www.ibm.com/support/pages/node/7239015",
+  "requested_url": "https://www.ibm.com/support/pages/node/7239015",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "1d9ef8d30bc76884552c6426b686e2180d71a9787b569e126a33b0b3e9b99a9d",
+  "raw_bytes": 55160,
+  "extracted_sha256": "8edcb5cf23d9ccb7c0bfe1635db820d28f75847c8b735c07dca4297957e290a4",
+  "extracted_bytes": 5206,
+  "words": 791,
+  "document_title": "IBM Storage Ceph \u2013 Master Troubleshooting and Operations Reference Guide",
+  "extracted_links": 52,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:17.866812+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

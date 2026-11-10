@@ -1,0 +1,27 @@
+{
+  "source_id": "aws-s3-consistency",
+  "catalog_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html",
+  "catalog_title": "Amazon S3 overview and consistency model",
+  "catalog_product": "Amazon S3",
+  "catalog_versions": [
+    "service-current-reference"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:34.221212+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html",
+  "requested_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "44cb9f3ece31a6f871ef55a1ed5566421822a13f76cc868182d2afb86cfb578d",
+  "raw_bytes": 62332,
+  "extracted_sha256": "43d23dcc640d6ca59d62a2a457cc872c4397402f6ead26d52a08c13c3e41352a",
+  "extracted_bytes": 34995,
+  "words": 5694,
+  "document_title": "What is Amazon S3?",
+  "extracted_links": 94,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:36.598782+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

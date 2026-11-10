@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg119-tenant",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/index.html",
+  "catalog_title": "StorageGRID tenant account model",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "11.9"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:28.805048+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/index.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/index.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "7c10bfcbdf511ed7095343f0e80c1b00e9231bc2b33f4ef9aedd7735625a8cc1",
+  "raw_bytes": 55097,
+  "extracted_sha256": "e09f32160ab2c60a8a8f751b058dae1d313efebfef5304e11923ff6edbc00aef",
+  "extracted_bytes": 3010,
+  "words": 496,
+  "document_title": "Use a tenant account",
+  "extracted_links": 7,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:31.665754+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

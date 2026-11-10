@@ -1,0 +1,27 @@
+{
+  "source_id": "ibm-ceph-recovery",
+  "catalog_url": "https://www.ibm.com/support/pages/node/7176025",
+  "catalog_title": "Differences between backfill, recovery and peering",
+  "catalog_product": "IBM Storage Ceph",
+  "catalog_versions": [
+    "5.x+"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:26:55.788534+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://www.ibm.com/support/pages/node/7176025",
+  "requested_url": "https://www.ibm.com/support/pages/node/7176025",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "a48b28d177a238d7ba49f154f8ab55406dd1e0e25283ebcb87b335c88b8cb40a",
+  "raw_bytes": 53738,
+  "extracted_sha256": "257b7d3fb59592e5e261635c99a8c3ed28ec184a8d0467ae7c63ceff82ea2877",
+  "extracted_bytes": 6032,
+  "words": 984,
+  "document_title": "IBM Storage Ceph - What are the differences between backfill and recovery? What is peering?",
+  "extracted_links": 7,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:05.907966+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

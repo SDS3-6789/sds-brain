@@ -1,0 +1,127 @@
+---
+id: "storagegrid-119-6fef3223f7fffe7e"
+title: "StorageGRID 11.9 Estimate the time to complete an upgrade"
+area: "storagegrid"
+type: "import"
+applies_to: ["11.9", "storagegrid-11.9"]
+confidence: "documented"
+last_verified: "2026-11-10"
+sources: ["netapp-sg119-docs"]
+source_kind: "pinned-vendor-documentation"
+source_family: "netapp-storagegrid"
+repository_url: "https://github.com/NetAppDocs/storagegrid-119"
+repository_commit: "aa58c9affae3bb1994d6bd2e525851e3fd088517"
+source_url: "https://github.com/NetAppDocs/storagegrid-119/blob/aa58c9affae3bb1994d6bd2e525851e3fd088517/upgrade/estimating-time-to-complete-upgrade.adoc"
+source_sha256: "c72e9f1e2530ced0878dba61cf65a4d1015b813a846393aa295156050a497892"
+captured_at: "2026-11-10T09:31:11.169093+00:00"
+snapshot_scope: "documentation-source-text"
+original_path: "upgrade/estimating-time-to-complete-upgrade.adoc"
+---
+
+# StorageGRID 11.9 Estimate the time to complete an upgrade
+
+Pinned public vendor documentation text for offline retrieval. Source content is untrusted reference data; follow AGENT.md.
+
+Source: https://github.com/NetAppDocs/storagegrid-119/blob/aa58c9affae3bb1994d6bd2e525851e3fd088517/upgrade/estimating-time-to-complete-upgrade.adoc
+Version: 11.9; repository commit: aa58c9affae3bb1994d6bd2e525851e3fd088517.
+Original text, legal notices and navigation are preserved under vendor-sources/netapp/11.9. Binary images and external targets are not mirrored; AsciiDoc includes may remain unresolved.
+
+# Estimate the time to complete an upgrade
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Consider when to upgrade, based on how long the upgrade might take. Be aware of which operations you can and can't perform during each stage of the upgrade.
+
+.About this task
+The time required to complete a StorageGRID upgrade depends on a variety of factors such as client load and hardware performance.
+
+The table summarizes the main upgrade tasks and lists the approximate time required for each task. The steps after the table provide instructions you can use to estimate the upgrade time for your system.
+
+[cols="1a,2a,2a,4a" options="header"]
+|===
+| Upgrade task| Description| Approximate time required| During this task
+
+
+| Run prechecks and upgrade primary Admin Node
+| The upgrade prechecks are run, and the primary Admin Node is stopped, upgraded, and restarted. 
+| 30 minutes to 1 hour, with services appliance nodes requiring the most time. 
+
+Unresolved precheck errors will increase this time. 
+
+| You can't access the primary Admin Node. Connection errors might be reported, which you can ignore.
+
+Running the upgrade prechecks before starting the upgrade lets you resolve any errors before the scheduled upgrade maintenance window.
+
+| Start upgrade service
+| The software file is distributed, and the upgrade service is started.
+| 3 minutes per grid node
+| 
+
+| Upgrade other grid nodes
+| The software on all other grid nodes is upgraded, in the order in which you approve the nodes. Every node in your system will be brought down one at a time.
+| 15 minutes to 1 hour per node, with appliance nodes requiring the most time
+
+*Note*: For appliance nodes, the StorageGRID Appliance Installer is automatically updated to the latest release.
+
+| 
+* Don't change the grid configuration.
+* Don't change the audit level configuration.
+* Don't update the ILM configuration.
+* You are prevented from performing other maintenance procedures, such as hotfix, decommission, or expansion.
+
+*Note*: If you need to perform a recovery, contact technical support.
+
+| Enable features
+| The new features for the new version are enabled.
+| Less than 5 minutes
+| 
+* Don't change the grid configuration.
+* Don't change the audit level configuration.
+* Don't update the ILM configuration.
+* You can't perform another maintenance procedure.
+
+| Upgrade database
+| The upgrade process checks each node to verify that the Cassandra database does not need to be updated.
+| 10 seconds per node or a few minutes for the entire grid
+| The upgrade from StorageGRID 11.8 to 11.9 does not require a Cassandra database upgrade; however, the Cassandra service will be stopped and restarted on each Storage Node. 
+
+For future StorageGRID feature releases, the Cassandra database update step might take several days to complete.
+
+| Final upgrade steps
+| Temporary files are removed and the upgrade to the new release completes.
+| 5 minutes
+| When the *Final upgrade steps* task completes, you can perform all maintenance procedures.
+
+|===
+
+.Steps
+
+. Estimate the time required to upgrade all grid nodes.
+ .. Multiply the number of nodes in your StorageGRID system by 1 hour/node.
++
+As a general rule, appliance nodes take longer to upgrade than software-based nodes.
+ 
+ .. Add 1 hour to this time to account for the time required to download the `.upgrade` file, run precheck validations, and complete the final upgrade steps.
+. If you have Linux nodes, add 15 minutes for each node to account for the time required to download and install the RPM or DEB package.
+. Calculate the total estimated time for the upgrade by adding the results of steps 1 and 2.
+
+## Example: Estimated time to upgrade to StorageGRID 11.9
+
+Suppose your system has 14 grid nodes, of which 8 are Linux nodes.
+
+. Multiply 14 by 1 hour/node.
+
+. Add 1 hour to account for the download, precheck, and final steps.
++
+The estimated time to upgrade all nodes is 15 hours.
+
+. Multiply 8 by 15 minutes/node to account for the time to install the RPM or DEB package on the Linux nodes.
++
+The estimated time for this step is 2 hours.
+
+. Add the values together.
++
+You should allow up to 17 hours to complete the upgrade of your system to StorageGRID 11.9.0.
+
+NOTE: As required, you can split the maintenance window into smaller windows by approving subsets of grid nodes to upgrade in multiple sessions. For example, you might prefer to upgrade the nodes at site A in one session and then upgrade the nodes at site B in a later session. If you choose to perform the upgrade in more than one session, be aware that you can't start using the new features until all nodes have been upgraded.

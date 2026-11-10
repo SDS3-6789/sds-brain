@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg119-tenant-dashboard",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/understanding-tenant-manager-dashboard.html",
+  "catalog_title": "Understand Tenant Manager dashboard",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "11.9"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:30.014426+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/understanding-tenant-manager-dashboard.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-119/tenant/understanding-tenant-manager-dashboard.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "f2802cb6244f55ba30d50fb3c645bd7695400c993c5bb3d585827e98a966f44f",
+  "raw_bytes": 57784,
+  "extracted_sha256": "2873ffe6d783e9b2f456d91952bca4b8bbbdf534606372f7883c3cb0255dd5e3",
+  "extracted_bytes": 4143,
+  "words": 696,
+  "document_title": "Understand Tenant Manager dashboard",
+  "extracted_links": 4,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:32.774153+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

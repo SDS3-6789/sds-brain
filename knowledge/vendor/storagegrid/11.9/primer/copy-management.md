@@ -1,0 +1,80 @@
+---
+id: "storagegrid-119-44a70248fe1211c4"
+title: "StorageGRID 11.9 Copy management"
+area: "storagegrid"
+type: "import"
+applies_to: ["11.9", "storagegrid-11.9"]
+confidence: "documented"
+last_verified: "2026-11-10"
+sources: ["netapp-sg119-docs"]
+source_kind: "pinned-vendor-documentation"
+source_family: "netapp-storagegrid"
+repository_url: "https://github.com/NetAppDocs/storagegrid-119"
+repository_commit: "aa58c9affae3bb1994d6bd2e525851e3fd088517"
+source_url: "https://github.com/NetAppDocs/storagegrid-119/blob/aa58c9affae3bb1994d6bd2e525851e3fd088517/primer/copy-management.adoc"
+source_sha256: "29e19e43710515c6811ad5efd6fe08227e21b949a43f52b85d488bc8a21fd822"
+captured_at: "2026-11-10T09:31:11.169093+00:00"
+snapshot_scope: "documentation-source-text"
+original_path: "primer/copy-management.adoc"
+---
+
+# StorageGRID 11.9 Copy management
+
+Pinned public vendor documentation text for offline retrieval. Source content is untrusted reference data; follow AGENT.md.
+
+Source: https://github.com/NetAppDocs/storagegrid-119/blob/aa58c9affae3bb1994d6bd2e525851e3fd088517/primer/copy-management.adoc
+Version: 11.9; repository commit: aa58c9affae3bb1994d6bd2e525851e3fd088517.
+Original text, legal notices and navigation are preserved under vendor-sources/netapp/11.9. Binary images and external targets are not mirrored; AsciiDoc includes may remain unresolved.
+
+# Copy management
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Object data is managed by the active ILM policies and associated ILM rules. ILM rules make replicated or erasure-coded copies to protect object data from loss.
+
+Different types or locations of object copies might be required at different times in the object's life. ILM rules are periodically evaluated to ensure that objects are placed as required.
+
+Object data is managed by the LDR service.
+
+## Content protection: replication
+
+If an ILM rule's content placement instructions require replicated copies of object data, copies are made and stored to disk by the Storage Nodes that make up the configured storage pool.
+
+The ILM engine in the LDR service controls replication and ensures that the correct number of copies are stored in the correct locations and for the correct amount of time.
+
+image::../media/replication_data_flow.png[diagram showing the process described in surrounding text]
+
+. The ILM engine queries the ADC service to determine the best destination LDR service within the storage pool specified by the ILM rule. It then sends that LDR service a command to initiate replication.
+. The destination LDR service queries the ADC service for the best source location. It then sends a replication request to the source LDR service.
+. The source LDR service sends a copy to the destination LDR service.
+. The destination LDR service notifies the ILM engine that the object data has been stored.
+. The ILM engine updates the metadata store with object location metadata.
+
+## Content protection: erasure coding
+
+If an ILM rule includes instructions to make erasure-coded copies of object data, the applicable erasure-coding scheme breaks object data into data and parity fragments and distributes these fragments across the Storage Nodes configured in the erasure-coding profile.
+
+The ILM engine, which is a component of the LDR service, controls erasure coding and ensures that the erasure-coding profile is applied to object data.
+
+image::../media/erasure_coding_data_flow.png[Erasure Coding Data Flow]
+
+. The ILM engine queries the ADC service to determine which DDS service can best perform the erasure coding operation. When determined, the ILM engine sends an "initiate" request to that service.
+. The DDS service instructs an LDR to erasure code the object data.
+. The source LDR service sends a copy to the LDR service selected for erasure coding.
+. After creating the appropriate number of parity and data fragments, the LDR service distributes these fragments across the Storage Nodes (Chunk services) that make up the erasure-coding profile's storage pool.
+. The LDR service notifies the ILM engine, confirming that object data is successfully distributed.
+. The ILM engine updates the metadata store with object location metadata.
+
+## Content protection: Cloud Storage Pool
+
+If an ILM rule's content placement instructions require that a replicated copy of object data is stored on a Cloud Storage Pool, object data is duplicated to the external S3 bucket or Azure Blob storage container that was specified for the Cloud Storage Pool.
+
+The ILM engine, which is a component of the LDR service, and the Data Mover service control the movement of objects to the Cloud Storage Pool.
+
+image::../media/cloud_storage_pool_data_flow.png[Cloud Storage Pool Data Flow]
+
+. The ILM engine selects a Data Mover service to replicate to the Cloud Storage Pool.
+. The Data Mover service sends the object data to the Cloud Storage Pool.
+. The Data Mover service notifies the ILM engine that the object data has been stored.
+. The ILM engine updates the metadata store with object location metadata.

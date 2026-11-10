@@ -1,0 +1,27 @@
+{
+  "source_id": "ceph-squid-cephadm",
+  "catalog_url": "https://docs.ceph.com/en/squid/cephadm/troubleshooting/",
+  "catalog_title": "Ceph Squid cephadm troubleshooting",
+  "catalog_product": "Ceph",
+  "catalog_versions": [
+    "squid"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:04.724641+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.ceph.com/en/squid/cephadm/troubleshooting/",
+  "requested_url": "https://docs.ceph.com/en/squid/cephadm/troubleshooting/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "c98d0a383fa7c2f930d27e0573aadec3b4b9be1c95054a7c609a7b3a42e89ad3",
+  "raw_bytes": 55201,
+  "extracted_sha256": "02c5d89bcdc296166ab57296054db6b4f7d06cf1416b7e2ab7ad5fa20c805ac4",
+  "extracted_bytes": 15402,
+  "words": 2211,
+  "document_title": "Troubleshooting\uf0c1",
+  "extracted_links": 33,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:05.616984+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg119-errors",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/s3/error-responses.html",
+  "catalog_title": "StorageGRID S3 error responses",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "11.9"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:28.670147+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-119/s3/error-responses.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-119/s3/error-responses.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "3eb1c77932c75a54eab6b2250fea4238f6f5e734050b15998a0ea6a8043ccbb8",
+  "raw_bytes": 66728,
+  "extracted_sha256": "59ce4591235cc549bc5d5707be715a8a51996be6bad41f3286a929c348ad1937",
+  "extracted_bytes": 2810,
+  "words": 390,
+  "document_title": "Error responses",
+  "extracted_links": 2,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:30.802091+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

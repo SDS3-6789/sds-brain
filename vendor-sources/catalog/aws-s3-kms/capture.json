@@ -1,0 +1,27 @@
+{
+  "source_id": "aws-s3-kms",
+  "catalog_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html",
+  "catalog_title": "Server-side encryption with AWS KMS keys",
+  "catalog_product": "Amazon S3",
+  "catalog_versions": [
+    "service-current-reference"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:33.472827+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html",
+  "requested_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "289d0c0d98acfb20cc820adb44bae9c76da2eed3228a3d355fad11f79c8ba217",
+  "raw_bytes": 42599,
+  "extracted_sha256": "233922893b89f8f067e08f62b989aaf674e619f971a0c21f1eda85dfefcd0d8b",
+  "extracted_bytes": 16157,
+  "words": 2589,
+  "document_title": "Using server-side encryption with AWS KMS keys (SSE-KMS)",
+  "extracted_links": 53,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:35.596476+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

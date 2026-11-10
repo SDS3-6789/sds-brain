@@ -1,0 +1,27 @@
+{
+  "source_id": "ceph-squid-multitenancy",
+  "catalog_url": "https://docs.ceph.com/en/squid/radosgw/multitenancy/",
+  "catalog_title": "Ceph Squid RGW multi-tenancy and qualified identities",
+  "catalog_product": "Ceph RGW",
+  "catalog_versions": [
+    "Squid"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:09.801463+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.ceph.com/en/squid/radosgw/multitenancy/",
+  "requested_url": "https://docs.ceph.com/en/squid/radosgw/multitenancy/",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "7797c10e7c7b03e6a063affef5c294b08a5d8beabb6219e65ccaa7c9e6e5dfbe",
+  "raw_bytes": 26362,
+  "extracted_sha256": "3bda16c1d7ebe1e7c3f4d4d85ba8b961ca8924e125c7d8d7a4b0b07fe2c31f19",
+  "extracted_bytes": 7163,
+  "words": 1024,
+  "document_title": "RGW Multi-tenancy\uf0c1",
+  "extracted_links": 11,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:10.580828+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}

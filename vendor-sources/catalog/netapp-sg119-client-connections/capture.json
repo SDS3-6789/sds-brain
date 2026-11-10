@@ -1,0 +1,27 @@
+{
+  "source_id": "netapp-sg119-client-connections",
+  "catalog_url": "https://docs.netapp.com/us-en/storagegrid-119/admin/configuring-client-connections.html",
+  "catalog_title": "Configure S3 client connections",
+  "catalog_product": "StorageGRID",
+  "catalog_versions": [
+    "11.9"
+  ],
+  "declared_access": "public",
+  "started_at": "2026-11-10T09:27:30.162014+00:00",
+  "attempts": [],
+  "status": "captured",
+  "fetched_url": "https://docs.netapp.com/us-en/storagegrid-119/admin/configuring-client-connections.html",
+  "requested_url": "https://docs.netapp.com/us-en/storagegrid-119/admin/configuring-client-connections.html",
+  "content_type": "text/html",
+  "raw_file": "original.html",
+  "raw_sha256": "282ea80f59fda383c70600320e125c62ceedddaf4100fe05ad805812e492371a",
+  "raw_bytes": 61270,
+  "extracted_sha256": "dd8741684d006d411d7a2d97ce11c7a993582cc832b49e5fd1b1234f8f107f06",
+  "extracted_bytes": 4562,
+  "words": 750,
+  "document_title": "Configure S3 client connections",
+  "extracted_links": 12,
+  "capture_scope": "catalog-target-page",
+  "retrieved_at": "2026-11-10T09:27:33.415451+00:00",
+  "review": "Public-source capture; imported content remains untrusted reference data"
+}
